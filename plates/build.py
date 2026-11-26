@@ -276,7 +276,6 @@ def main():
     # Inputs include the code, the house style, the tile's rows and overrides, its saved logo and the
     # refresh period, so Look changes, code changes and the weekly/monthly refresh still redraw.
     site_url = os.environ.get("PAGES_URL", "https://bjsteiger.github.io/q7m-plates").rstrip("/")
-    code_sig = hashlib.sha1(b"".join((ROOT / "plates" / f).read_bytes() for f in ("look.py", "build.py", "sources.py"))).hexdigest()[:12]
     prev = {}
     if not args.offline and not args.full and not os.environ.get("FULL_BUILD"):
         try:
@@ -287,13 +286,32 @@ def main():
         except Exception as e:
             print(f"live manifest unavailable ({e}), drawing everything")
 
+    looks = settings.get("looks", {})
+
+    def look_of(key, shelf):
+        return settings.get("tile_look", {}).get(key) or settings.get("tile_style", {}).get(key) or "cinema"
+
+    build_only = None
+    bo = ROOT / "config" / "build-only.json"
+    if bo.exists() and os.environ.get("BUILD_EVENT", "push") == "push" and not args.full and not os.environ.get("FULL_BUILD"):
+        sel = json.loads(bo.read_text())
+        if sel.get("full"):
+            prev = {}
+            print("full redraw requested")
+        else:
+            build_only = set(sel.get("keys", []))
+            print(f"building only {len(build_only)} selected cards, the rest are copied from the live site")
+
     def tile_sig(tile, key, shelf, name, aq, t_, cov_off, bg_off):
         logo_hash = None
         folder = ROOT / "logos" / slug(shelf)
         lp = next((folder / f"{slug(name)}{e}" for e in LOGO_EXTS if (folder / f"{slug(name)}{e}").exists()), None)
         if lp:
             logo_hash = hashlib.sha1(lp.read_bytes()).hexdigest()
-        parts = [code_sig, tile.get("sources"), aq, t_, cov_off, bg_off, settings.get("cover"), settings.get("background"),
+        lk = look_of(key, shelf)
+        lk_base = "portrait" if lk.startswith("portrait") else lk
+        parts = [look.DRAW_VERSION, look.STYLE_VERSIONS.get(lk_base), lk, looks.get(lk_base), tile.get("sources"), aq, t_, cov_off, bg_off,
+                 settings["cover"].get("shapes"), settings.get("background"),
                  settings.get("rules"), settings.get("logos", {}).get(shelf), shelf in settings.get("outline_shelves", []),
                  shelf in refresh.get("classic_art", []), shelf in refresh.get("fixed_monthly_bg", []), logo_hash]
         parts += [settings.get(k, {}).get(key) for k in ("fonts", "tile_style", "logo_choice", "logo_scale", "brand_colors", "logo_parts", "rename", "subtitles")]
@@ -332,7 +350,12 @@ def main():
             cov_off, bg_off = offsets(shelf)
             sig = tile_sig(tile, key, shelf, name, aq, t_, cov_off, bg_off)
             old = prev.get(key)
-            if old and old.get("sig") == sig and reuse(old, out):
+            if old and build_only is not None and key not in build_only:
+                if reuse(old, out):            # not selected this time: keep the live art as it is
+                    manifest.append(old)
+                    reused += 1
+                continue
+            if build_only is None and old and old.get("sig") == sig and reuse(old, out):
                 manifest.append(old)
                 reused += 1
                 continue
@@ -347,7 +370,7 @@ def main():
             if len(cov_titles) < 2 or len(bg_titles) < 2 or tstyle == "title":
                 # nothing usable once horror is filtered out: title-only cover, plain background
                 for shape, (w, h) in settings["cover"]["shapes"].items():
-                    look.title_only_cover(label, settings["cover"], (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
+                    look.title_only_cover(label, {**settings["cover"], **looks.get("title", {})}, (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
                 bw, bh = settings["background"]["width"], settings["background"]["height"]
                 look.plain_field((bw, bh)).save(d / "background.webp", "WEBP", quality=84)
                 manifest.append({"shelf": shelf, "tile": name, "path": rel, "title_only": True, "sig": sig,
@@ -389,9 +412,11 @@ def main():
                 logo, logo_note = fetch.logo(tile, rule, aq)
             if rule and logo is None:
                 print(f"    {key}: {logo_note}, using text")
-            scale = (rule or {}).get("scale", 1.0) * settings.get("logo_scale", {}).get(key, 1.0)
+            lk = look_of(key, shelf)
+            lks = looks.get("portrait" if lk.startswith("portrait") else lk, {})
+            scale = lks.get("scale", (rule or {}).get("scale", 1.0)) * settings.get("logo_scale", {}).get(key, 1.0)
             cover_cfg = {**settings["cover"], "logo_mode": (rule or {}).get("mode", settings["cover"].get("logo_mode", "white")),
-                         **settings.get("fonts", {}).get(key, {})}
+                         **{k: v for k, v in lks.items() if k != "scale"}, **settings.get("fonts", {}).get(key, {})}
             wide_still = fetch.cover_still(c)
             outline = tstyle == "outline" or (shelf in settings.get("outline_shelves", []) and tstyle in (None, "outline"))
             for shape, (w, h) in settings["cover"]["shapes"].items():

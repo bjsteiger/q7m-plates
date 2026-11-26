@@ -10,14 +10,49 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 FONT_PATH = str(Path(__file__).resolve().parent.parent / "fonts" / "Montserrat.ttf")
 DARK = (8, 10, 14)
 
+# Bump a style's number when its drawing changes, so only cards using it redraw.
+# DRAW_VERSION covers shared code (grading, fills, backgrounds) and redraws everything.
+DRAW_VERSION = 1
+STYLE_VERSIONS = {"cinema": 1, "vibrant": 1, "outline": 1, "brand": 1, "station": 1, "studio": 1,
+                  "portrait": 1, "award": 1, "title": 1}
+
 
 # ---------- shared helpers ----------
 
 FONT_DIR = Path(FONT_PATH).parent
 
 
+_GF = {}
+
+
+def google_font(family):
+    """Path to a Google Font's regular .ttf: fonts/gf/<Family>.ttf if it's in the repo, otherwise
+    downloaded once per build (Google Fonts' CSS API hands old browsers .ttf links)."""
+    if family in _GF:
+        return _GF[family]
+    local = FONT_DIR / "gf" / f"{family}.ttf"
+    if local.exists():
+        _GF[family] = str(local)
+        return _GF[family]
+    import re
+    import tempfile
+    import urllib.parse
+    import requests
+    css = requests.get("https://fonts.googleapis.com/css2?family=" + urllib.parse.quote_plus(family),
+                       headers={"User-Agent": "Mozilla/4.0"}, timeout=30).text
+    m = re.search(r"url\((https://[^)]+\.ttf)\)", css)
+    if not m:
+        raise ValueError(f"Google font not found: {family}")
+    path = Path(tempfile.gettempdir()) / f"gf-{re.sub(r'[^A-Za-z0-9]+', '-', family)}.ttf"
+    path.write_bytes(requests.get(m.group(1), timeout=60).content)
+    _GF[family] = str(path)
+    return _GF[family]
+
+
 def font(size, weight, file=None):
-    """Montserrat at a named weight, or a specific font file from fonts/ (e.g. a seasonal face)."""
+    """Montserrat at a named weight, a font file from fonts/, or "gf:Family Name" for a Google Font."""
+    if file and file.startswith("gf:"):
+        return ImageFont.truetype(google_font(file[3:]), size)
     if file:
         return ImageFont.truetype(str(FONT_DIR / file), size)
     f = ImageFont.truetype(FONT_PATH, size)
@@ -390,7 +425,7 @@ def person_cover(headshot, name, role, size, cfg):
     a = int(255 * cfg["opacity"])
     words = name.upper().split()
     lines = [" ".join(words[:1]), " ".join(words[1:])] if len(words) > 1 else [name.upper()]
-    size_ = int(min(w, h) * 0.085)
+    size_ = int(min(w, h) * cfg.get("name_size", 0.085))
     tr = size_ * 0.12
     while size_ > 18:
         f = font(size_, cfg.get("weight", "Bold"))
@@ -576,9 +611,9 @@ def vibrant_cover(still, title, subtitle, size, cfg=None):
     w, h = size
     k = min(w, h) / 720
     base = ImageEnhance.Contrast(ImageEnhance.Color(fill(still, w, h)).enhance(1.25)).enhance(1.08)
-    img = ImageEnhance.Brightness(base).enhance(0.5)
+    img = ImageEnhance.Brightness(base).enhance(cfg.get("backdrop", 0.5))
     img = Image.composite(img, Image.new("RGB", (w, h), DARK), _vignette(w, h, 0.75, 0.2))
-    vivid = ImageEnhance.Brightness(ImageEnhance.Color(base).enhance(1.7)).enhance(1.45)
+    vivid = ImageEnhance.Brightness(ImageEnhance.Color(base).enhance(1.7)).enhance(cfg.get("vivid", 1.45))
     vivid = Image.blend(vivid, Image.new("RGB", (w, h), (255, 255, 255)), 0.18)
 
     d0 = ImageDraw.Draw(Image.new("L", (1, 1)))
@@ -599,7 +634,7 @@ def vibrant_cover(still, title, subtitle, size, cfg=None):
             continue
         size_ = int(size_ * 0.94)
     sub = (subtitle or "").upper()
-    sf = font(max(12, int(size_ * 0.21)), "Bold")
+    sf = font(max(12, int(size_ * cfg.get("subtitle_size", 0.21))), "Bold")
     str_ = sf.size * 0.14
     lh = f.size * 1.0
     block = lh * len(lines) + (sf.size * 1.8 if sub else 0)
@@ -621,7 +656,8 @@ def vibrant_cover(still, title, subtitle, size, cfg=None):
     shadow = outline.filter(ImageFilter.GaussianBlur(max(4, int(10 * k)))).point(lambda v: int(v * 0.55))
     img = Image.composite(Image.new("RGB", (w, h), (0, 0, 0)), img, shadow)
     img = Image.composite(vivid, img, mask)
-    img = Image.composite(Image.new("RGB", (w, h), (245, 245, 250)), img, ring.point(lambda v: int(v * 0.8)))
+    oa = cfg.get("outline", 0.8)
+    img = Image.composite(Image.new("RGB", (w, h), (245, 245, 250)), img, ring.point(lambda v: int(v * oa)))
 
     if sub:
         col = accent_color(still)

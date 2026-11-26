@@ -58,6 +58,8 @@ RULES = {
 out_tiles, notes, problems = [], [], []
 fonts, tile_style, logo_choice, logo_color, logo_scale, brand, queries, links = {}, {}, {}, [], {}, {}, {}, {}
 subtitles = {}
+tile_look = {}
+shelf_style = {s["title"]: s["style"] for s in meta["shelves"]}
 for t in tiles:
     key = f'{t["shelf"]}/{t["title"]}'
     srcs = t["sources"]
@@ -87,6 +89,7 @@ for t in tiles:
         fonts[key] = f
     if a.get("style"):
         tile_style[key] = a["style"]
+    tile_look[key] = a.get("style") or shelf_style.get(t["shelf"], "cinema")
     if a.get("subtitle"):
         subtitles[key] = a["subtitle"]
     if a.get("logoSource") in ("tmdb", "none"):
@@ -144,10 +147,23 @@ settings["logo_scale"] = logo_scale
 settings["brand_colors"] = brand
 settings["art_queries"] = queries
 settings["subtitles"] = subtitles
+settings["tile_look"] = tile_look
 prefs = meta.get("prefs", {})
 settings["cover"].update({k: v for k, v in prefs.get("cover", {}).items() if k in ("weight", "opacity", "title_size", "tracking", "dash")})
 settings["background"].update({k: v for k, v in prefs.get("background", {}).items()
                                if k in ("panels", "panel_lean", "blend_softness", "wall_angle", "wall_brightness", "max_dark")})
+looks = prefs.get("looks") or {}
+if "cinema" not in looks:
+    looks["cinema"] = {k: v for k, v in prefs.get("cover", {}).items() if k in ("weight", "opacity", "title_size", "tracking", "dash")}
+settings["looks"] = looks
+# a build limited to the cards chosen in the page's send dialog (removed again after that build)
+bo = cfg / "build-only.json"
+if meta.get("full"):
+    bo.write_text(json.dumps({"plan": meta.get("createdAt"), "full": True}) + "\n")
+elif meta.get("only") is not None:
+    bo.write_text(json.dumps({"plan": meta.get("createdAt"), "keys": meta["only"]}) + "\n")
+elif bo.exists():
+    bo.unlink()
 rules = prefs.get("rules", {})
 settings["rules"] = {"noHorror": rules.get("noHorror", True), "freshDays": rules.get("freshDays", 540)}
 if rules.get("note"):

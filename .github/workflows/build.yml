@@ -27,9 +27,9 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -49,7 +49,19 @@ jobs:
         env:
           PYTHONUNBUFFERED: "1"
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          BUILD_EVENT: ${{ github.event_name }}
         run: python -m plates.build
+
+      - name: Clear the one-time card selection
+        run: |
+          if [ -f config/build-only.json ]; then
+            git pull -q --rebase origin main || true
+            git rm -q config/build-only.json
+            python -c "import json;p='config/plan/meta.json';m=json.load(open(p));m.pop('only',None);m.pop('full',None);json.dump(m,open(p,'w'))"
+            git add config/plan/meta.json
+            git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" commit -qm "Clear card selection after build"
+            git push -q origin HEAD:main
+          fi
 
       - name: Pack small previews for the editing page
         run: python -m plates.thumbs --site site --out thumbs/thumbs.json
@@ -64,7 +76,7 @@ jobs:
           git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" commit -qm "previews"
           git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" thumbs
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
@@ -76,7 +88,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   cleanup:
     needs: deploy
