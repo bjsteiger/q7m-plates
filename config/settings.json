@@ -13,6 +13,7 @@
     "Reality TV",
     "Directors",
     "Actors",
+    "Actresses",
     "Film Collections",
     "Kids and Family",
     "Anime"
@@ -666,6 +667,11 @@
       "type": "person",
       "style": "portrait",
       "role": "Actor"
+    },
+    "Actresses": {
+      "type": "person",
+      "style": "portrait",
+      "role": "Actress"
     }
   },
   "refresh": {
@@ -689,15 +695,18 @@
       "Studios",
       "Networks",
       "Directors",
-      "Actors"
+      "Actors",
+      "Actresses"
     ],
     "fixed_monthly_bg": [
       "Actors",
+      "Actresses",
       "Awards",
       "Directors"
     ],
     "classic_art": [
       "Actors",
+      "Actresses",
       "Awards",
       "Directors"
     ]
