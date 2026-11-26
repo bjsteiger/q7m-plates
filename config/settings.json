@@ -58,6 +58,10 @@
     "max_dark": 0.9
   },
   "art_queries": {
+    "Discover/Top Series": {
+      "media": "tv",
+      "min_votes": 500
+    },
     "Streaming Services/Netflix": {
       "media": "tv",
       "provider": [
@@ -729,9 +733,26 @@
   "logo_scale": {
     "Networks/Game Show Network": 1.35
   },
-  "tile_style": {},
+  "tile_style": {
+    "Discover/For You": "vibrant",
+    "Discover/New Movies": "vibrant",
+    "Discover/Trending Movies": "vibrant",
+    "Discover/Top Movies": "vibrant",
+    "Discover/New Series": "vibrant",
+    "Discover/Trending TV": "vibrant",
+    "Discover/Top Series": "vibrant"
+  },
   "rules": {
     "noHorror": true,
     "freshDays": 360
+  },
+  "subtitles": {
+    "Discover/For You": "Curated picks matching your taste",
+    "Discover/New Movies": "Fresh arrivals & theatrical hits",
+    "Discover/Trending Movies": "The hottest blockbusters streaming",
+    "Discover/Top Movies": "Most streamed movies right now",
+    "Discover/New Series": "Fresh seasons & TV premieres",
+    "Discover/Trending TV": "The shows everyone is watching",
+    "Discover/Top Series": "Most streamed series right now"
   }
 }
