@@ -24,6 +24,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -39,6 +41,19 @@ jobs:
           PYTHONUNBUFFERED: "1"
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python -m plates.build
+
+      - name: Pack small previews for the editing page
+        run: python -m plates.thumbs --site site --out thumbs/thumbs.json
+
+      - name: Publish previews to the thumbs branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd thumbs
+          git init -q -b thumbs
+          git add thumbs.json
+          git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" commit -qm "previews"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" thumbs
 
       - uses: actions/upload-pages-artifact@v3
         with:
