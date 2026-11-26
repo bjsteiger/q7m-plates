@@ -307,6 +307,9 @@ def brand_cover(logo, bg_hex, size, scale=1.0):
     img = Image.composite(Image.new("RGB", (w, h), (0, 0, 0)), img, fade)
 
     lg = _prep_logo(logo, "color")
+    col, _ = _dominant(lg)
+    if sum((col[i] - bg[i]) ** 2 for i in range(3)) ** 0.5 < 110:   # logo would vanish into the field
+        lg = _prep_logo(logo, "white")
     box_w = min(w * 0.8, w * (0.58 if h >= w else 0.42) * scale)
     box_h = min(h * 0.5, h * (0.22 if h > w else 0.28) * scale)
     k = min(box_w / lg.width, box_h / lg.height)

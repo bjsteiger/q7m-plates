@@ -246,11 +246,13 @@ def main():
             ov_bg = None
             logo, logo_note = (None, "")
             if ov and hasattr(fetch, "override_logo"):
-                try:
-                    logo, ov_bg, nblocks = fetch.override_logo(ov)
-                    logo_note = f"your logo link ({nblocks} logo{'s' if nblocks != 1 else ''} in file)"
-                except Exception as e:
-                    print(f"    {key}: logo link failed ({e}), falling back")
+                for url in [ov["url"]] + ([ov["fallback_url"]] if ov.get("fallback_url") else []):
+                    try:
+                        logo, ov_bg, nblocks = fetch.override_logo({**ov, "url": url})
+                        logo_note = f"logo link ({nblocks} logo{'s' if nblocks != 1 else ''} in file)"
+                        break
+                    except Exception as e:
+                        print(f"    {key}: logo link failed ({e})")
             if logo is None and rule:
                 logo, logo_note = fetch.logo(tile, rule, aq)
             if rule and logo is None:
