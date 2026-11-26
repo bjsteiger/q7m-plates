@@ -6,6 +6,7 @@ Supported source types:
 import io
 import os
 import time
+from collections import OrderedDict
 
 import requests
 from PIL import Image
@@ -23,7 +24,8 @@ class TMDB:
             self.s.headers["Authorization"] = f"Bearer {key}"
         else:                                # v3 api key
             self.params["api_key"] = key
-        self._img_cache = {}
+        self._img_cache = OrderedDict()   # small LRU: full-size stills are big
+        self._img_cache_max = 30
 
     def get(self, path, **params):
         for attempt in range(4):
@@ -43,11 +45,18 @@ class TMDB:
 
     def image(self, path, size="w1280"):
         key = (path, size)
-        if key not in self._img_cache:
-            r = self.s.get(f"{TMDB_IMG}/{size}{path}", timeout=60)
-            self._check(r, f"image {path}")
-            self._img_cache[key] = Image.open(io.BytesIO(r.content)).convert("RGB")
-        return self._img_cache[key]
+        if key in self._img_cache:
+            self._img_cache.move_to_end(key)
+            return self._img_cache[key]
+        r = self.s.get(f"{TMDB_IMG}/{size}{path}", timeout=60)
+        self._check(r, f"image {path}")
+        img = Image.open(io.BytesIO(r.content)).convert("RGB")
+        if max(img.size) > 2400:           # 'original' can be 4K+; we never need more than 1920 wide
+            img.thumbnail((2400, 2400), Image.LANCZOS)
+        self._img_cache[key] = img
+        while len(self._img_cache) > self._img_cache_max:
+            self._img_cache.popitem(last=False)
+        return img
 
     def clean_backdrop(self, media, tmdb_id, fallback):
         """Prefer a backdrop with no text or logo on it."""
@@ -247,6 +256,11 @@ def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None):
                 res = tmdb.get(f"/discover/{media}", **_discover_params(q, min_votes))["results"]
                 if len(res) < 6:   # niche query, relax the vote floor
                     res = tmdb.get(f"/discover/{media}", **_discover_params(q, 10))["results"]
+                if len([r for r in res if r.get("backdrop_path")]) < 3:   # very small catalog
+                    q0 = {**q, "voteCountGte": 0}
+                    p0 = _discover_params(q0, 0)
+                    p0["vote_count.gte"] = 0
+                    res = tmdb.get(f"/discover/{media}", **p0)["results"]
                 for r in res:
                     add(media, r)
             elif kind == "tmdbList":
