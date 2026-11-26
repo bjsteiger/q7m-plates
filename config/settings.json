@@ -38,7 +38,9 @@
         1000
       ]
     },
-    "logo_mode": "white"
+    "logo_mode": "white",
+    "outline_font": "BebasNeue-Regular.ttf",
+    "outline_bleed": 1.12
   },
   "background": {
     "width": 1920,
@@ -441,226 +443,19 @@
       "dash": false
     }
   },
-  "logo_overrides": {
-    "Streaming Services/Apple TV+": {
-      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/apple-tv-transparent.png",
-      "bg": "#000000"
-    },
-    "Streaming Services/Prime Video": {
-      "url": "https://cdn.rebrand.gallery/images/vf63fv1z/production/336131f2d140dd230e15e8d000b93d6136dee855-393x396.svg",
-      "bg": "#00a8e1"
-    },
-    "Streaming Services/Hulu": {
-      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/hulu-transparent.png",
-      "bg": "#0b0c0f"
-    },
-    "Streaming Services/Discovery+": {
-      "url": "https://static.wikitide.net/avidwiki/thumb/1/1c/Discovery%2B_Originals_%282020%29.png/1200px-Discovery%2B_Originals_%282020%29.png"
-    },
-    "Streaming Services/Magellan": {
-      "url": "https://image.roku.com/developer_channels/prod/d307578f55088038cca8e20a76bddb91537fb00e0a5494bf9646d7f752cd9004.png"
-    },
-    "Networks/A&E": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/a-and-e-us.png"
-    },
-    "Networks/ABC": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/abc-us.png"
-    },
-    "Networks/Adult Swim": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/adult-swim-us.png"
-    },
-    "Networks/AMC": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/amc-us.png"
-    },
-    "Networks/BBC America": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/bbc-america-us.png"
-    },
-    "Networks/BBC One": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-one-uk.png"
-    },
-    "Networks/BBC Two": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-two-uk.png"
-    },
-    "Networks/BBC Three": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-three-uk.png"
-    },
-    "Networks/BBC Four": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/bbc-four-uk.png"
-    },
-    "Networks/Bravo": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/bravo-us.png"
-    },
-    "Networks/Cartoon Network": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cartoon-network-us.png"
-    },
-    "Networks/CBC": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/cbc-ca.png"
-    },
-    "Networks/CBS": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cbs-logo-white-us.png"
-    },
-    "Networks/Channel 4": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-4-uk.png"
-    },
-    "Networks/Channel 5": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/channel-5-uk.png"
-    },
-    "Networks/Cinemax": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cinemax-us.png"
-    },
-    "Networks/Cooking Channel": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cooking-channel-us.png"
-    },
-    "Networks/Comedy Central": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/comedy-central-us.png"
-    },
-    "Networks/CTV": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/ctv-ca.png"
-    },
-    "Networks/CW": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/the-cw-us.png"
-    },
-    "Networks/Discovery": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/discovery-channel-us.png"
-    },
-    "Networks/Disney Channel": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/disney-channel-us.png"
-    },
-    "Networks/E!": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/e-entertainment-us.png"
-    },
-    "Networks/E4": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/e-4-uk.png"
-    },
-    "Networks/Food Network": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/food-network-us.png"
-    },
-    "Networks/FOX": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fox-us.png"
-    },
-    "Networks/Freeform": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/freeform-us.png"
-    },
-    "Networks/FX": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/fx-us.png"
-    },
-    "Networks/Game Show Network": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/game-show-network-us.png"
-    },
-    "Networks/Hallmark Channel": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hallmark-channel-us.png"
-    },
-    "Networks/Hallmark Mystery": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hallmark-mystery-us.png"
-    },
-    "Networks/HBO": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hbo-us.png"
-    },
-    "Networks/HGTV": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hgtv-us.png"
-    },
-    "Networks/History": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/history-channel-us.png"
-    },
-    "Networks/IFC": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/ifc-us.png"
-    },
-    "Networks/ITV": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-uk.png"
-    },
-    "Networks/ITV2": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/itv-2-uk.png"
-    },
-    "Networks/Lifetime": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/lifetime-us.png"
-    },
-    "Networks/Magnolia Network": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/magnolia-network-us.png"
-    },
-    "Networks/MeTV": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/me-tv-us.png"
-    },
-    "Networks/Nat Geo Wild": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nat-geo-wild-us.png"
-    },
-    "Networks/National Geographic": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/national-geographic-us.png"
-    },
-    "Networks/NBC": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/nbc-us.png"
-    },
-    "Networks/OWN": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/oprah-winfrey-network-us.png"
-    },
-    "Networks/Oxygen": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/oxygen-us.png"
-    },
-    "Networks/Paramount Network": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/paramount-network-us.png"
-    },
-    "Networks/PBS": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/pbs-us.png"
-    },
-    "Networks/Science Channel": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/discovery-science-us.png"
-    },
-    "Networks/Showtime": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/showtime-us.png"
-    },
-    "Networks/Sky Atlantic": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-atlantic-uk.png"
-    },
-    "Networks/Sky Max": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-kingdom/sky-max-uk.png"
-    },
-    "Networks/Smithsonian Channel": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/smithsonian-channel-us.png"
-    },
-    "Networks/STARZ": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/starz-us.png"
-    },
-    "Networks/SundanceTV": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/sundance-tv-us.png"
-    },
-    "Networks/TBS": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tbs-us.png"
-    },
-    "Networks/TLC": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tlc-us.png"
-    },
-    "Networks/TNT": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tnt-us.png"
-    },
-    "Networks/Travel Channel": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/travel-channel-us.png"
-    },
-    "Networks/truTV": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tru-tv-us.png"
-    },
-    "Networks/TV Land": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/tv-land-us.png"
-    },
-    "Networks/USA Network": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/usa-network-ca.png"
-    },
-    "Networks/WE tv": {
-      "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/we-tv-us.png"
-    },
-    "Streaming Services/Disney+": {
-      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/disney-plus-transparent.png",
-      "bg": "#0b1a46"
-    },
-    "Streaming Services/Paramount+": {
-      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/paramount-plus-transparent.png",
-      "bg": "#0b3fd6"
-    },
-    "Streaming Services/Netflix": {
-      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/Netflix_Symbol_RGB.png",
-      "bg": "#000000"
-    },
-    "Streaming Services/HBO Max": {
-      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/hbo-max-transparent.png",
-      "bg": "#0d1240"
-    }
-  }
+  "brand_colors": {
+    "Streaming Services/Apple TV+": "#000000",
+    "Streaming Services/Prime Video": "#00a8e1",
+    "Streaming Services/Hulu": "#0b0c0f",
+    "Streaming Services/Disney+": "#0b1a46",
+    "Streaming Services/Paramount+": "#0b3fd6",
+    "Streaming Services/Netflix": "#000000",
+    "Streaming Services/HBO Max": "#0d1240"
+  },
+  "logo_parts": {},
+  "logo_white": [],
+  "logo_choice": {},
+  "outline_shelves": [
+    "Decades"
+  ]
 }

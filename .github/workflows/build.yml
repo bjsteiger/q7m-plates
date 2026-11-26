@@ -9,6 +9,7 @@ on:
     paths:
       - "config/**"
       - "plates/**"
+      - "logos/**"
 
 permissions:
   contents: read

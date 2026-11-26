@@ -1,0 +1,47 @@
+name: save logo links
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Download each link into logos/<shelf>/<tile>
+        run: |
+          python - <<'PY'
+          import json, os, re, requests
+          def slug(s):
+              s = s.lower().replace("&", "and").replace("+", "plus")
+              return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+          links = json.load(open("config/logo-links.json"))
+          for key, url in links.items():
+              shelf, tile = key.split("/", 1)
+              r = requests.get(url, timeout=60, headers={"User-Agent": "Mozilla/5.0"})
+              if not r.ok:
+                  print("failed", key, r.status_code); continue
+              ext = ".svg" if url.lower().split("?")[0].endswith(".svg") or r.content[:200].lstrip().startswith((b"<svg", b"<?xml")) else os.path.splitext(url.split("?")[0])[1].lower() or ".png"
+              if ext not in (".png", ".svg", ".webp", ".jpg", ".jpeg"):
+                  ext = ".png"
+              d = f"logos/{slug(shelf)}"; os.makedirs(d, exist_ok=True)
+              for old in os.listdir(d):
+                  if os.path.splitext(old)[0] == slug(tile):
+                      os.remove(os.path.join(d, old))
+              open(f"{d}/{slug(tile)}{ext}", "wb").write(r.content)
+              print("saved", key)
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add logos
+          git diff --cached --quiet || git commit -m "Save logo links"
+          git push

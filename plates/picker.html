@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logo picker</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:#0b0d10;color:#d6d8dc;font:15px/1.5 -apple-system,system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#0b0d10ee;backdrop-filter:blur(6px);border-bottom:1px solid #1d2026;padding:12px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+h1{font-size:18px;font-weight:600;margin:0 12px 0 0}
+select,button,input{font:inherit;color:inherit;background:#1a1d23;border:1px solid #2a2e36;border-radius:8px;padding:8px 12px;min-height:40px}
+button{cursor:pointer}button.primary{background:#3a6df0;border-color:#3a6df0;color:#fff}
+.count{color:#8a8f98;font-size:13px}
+main{padding:8px 20px 80px;max-width:1400px}
+h2{font-size:15px;font-weight:600;color:#9aa0a8;margin:28px 0 8px}
+.tile{display:grid;grid-template-columns:180px 1fr;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid #16191e}
+.name{font-weight:600}.name small{display:block;color:#7c818a;font-weight:400;font-size:12px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{width:170px;border:2px solid #22262d;border-radius:10px;background:#15181d;cursor:pointer;padding:0;overflow:hidden;text-align:left}
+.opt .im{height:96px;display:grid;place-items:center;padding:10px;background:repeating-conic-gradient(#1b1e24 0 25%,#13161a 0 50%) 50%/16px 16px}
+.opt.light .im{background:repeating-conic-gradient(#e9eaec 0 25%,#d9dbde 0 50%) 50%/16px 16px}
+.opt img{max-width:100%;max-height:76px;object-fit:contain}
+.opt .lb{display:block;font-size:12px;padding:6px 8px;color:#a8adb5}
+.opt.sel{border-color:#3a6df0}.opt.sel .lb{color:#fff;background:#3a6df0}
+.opt:focus-visible{outline:2px solid #8fb0ff;outline-offset:2px}
+.none{color:#6d727b;font-size:13px}
+dialog{background:#15181d;color:inherit;border:1px solid #2a2e36;border-radius:12px;max-width:720px;width:92vw}
+textarea{width:100%;height:280px;background:#0b0d10;color:#d6d8dc;border:1px solid #2a2e36;border-radius:8px;padding:10px;font:13px ui-monospace,monospace}
+@media(max-width:600px){.tile{grid-template-columns:1fr}.opt{width:140px}}
+</style></head><body>
+<header>
+  <h1>Logo picker</h1>
+  <select id="shelf" aria-label="Shelf"></select>
+  <label><input type="checkbox" id="light"> Light background</label>
+  <span class="count" id="count"></span>
+  <span style="flex:1"></span>
+  <button id="reset">Reset</button>
+  <button class="primary" id="copy">Copy my choices</button>
+</header>
+<main id="list"><p class="none">Loading…</p></main>
+<dialog id="dlg"><p>Your choices. Paste these back in the chat.</p><textarea id="out" readonly></textarea>
+<p style="text-align:right"><button id="close">Close</button></p></dialog>
+<script>
+{
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let data = [], picks = {};
+const KEY = "logo-picks";
+try { picks = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { picks = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(picks)); } catch (e) {} };
+const $ = id => document.getElementById(id);
+
+function changed() {
+  return data.filter(t => picks[t.key] && picks[t.key] !== t.current);
+}
+function render() {
+  const shelf = $("shelf").value;
+  const rows = data.filter(t => shelf === "All" || t.shelf === shelf);
+  let html = "", last = "";
+  for (const t of rows) {
+    if (t.shelf !== last) { html += `<h2>${esc(t.shelf)}</h2>`; last = t.shelf; }
+    const sel = picks[t.key] || t.current;
+    const opts = t.options.length ? t.options.map(o => `
+      <button class="opt ${$("light").checked ? "light" : ""} ${o.id === sel ? "sel" : ""}" data-k="${esc(t.key)}" data-id="${esc(o.id)}" aria-pressed="${o.id === sel}">
+        <span class="im"><img loading="lazy" src="../${esc(o.src)}" alt=""></span>
+        <span class="lb">${esc(o.label)}${o.id === t.current ? " · in use" : ""}</span>
+      </button>`).join("") : `<span class="none">No logo options found</span>`;
+    html += `<div class="tile"><div class="name">${esc(t.tile)}<small>${esc(t.options.length)} option${t.options.length === 1 ? "" : "s"}</small></div><div class="opts">${opts}</div></div>`;
+  }
+  $("list").innerHTML = html || `<p class="none">Nothing here.</p>`;
+  $("count").textContent = `${changed().length} change${changed().length === 1 ? "" : "s"} picked`;
+}
+$("list").addEventListener("click", e => {
+  const b = e.target.closest(".opt"); if (!b) return;
+  picks[b.dataset.k] = b.dataset.id; save(); render();
+});
+$("shelf").addEventListener("change", render);
+$("light").addEventListener("change", render);
+$("reset").addEventListener("click", () => { picks = {}; save(); render(); });
+$("copy").addEventListener("click", async () => {
+  const out = {}; for (const t of changed()) out[t.key] = picks[t.key];
+  const txt = "logo_choice " + JSON.stringify(out, null, 1);
+  $("out").value = txt; $("dlg").showModal();
+  try { await navigator.clipboard.writeText(txt); } catch (e) {}
+});
+$("close").addEventListener("click", () => $("dlg").close());
+fetch("candidates.json?" + Date.now()).then(r => r.json()).then(j => {
+  data = j;
+  const shelves = ["All", ...new Set(j.map(t => t.shelf))];
+  $("shelf").innerHTML = shelves.map(s => `<option>${esc(s)}</option>`).join("");
+  render();
+}).catch(() => { $("list").innerHTML = `<p class="none">Couldn't load the logo list.</p>`; });
+}
+</script>
+</body></html>

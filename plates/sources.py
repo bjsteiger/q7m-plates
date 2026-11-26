@@ -97,6 +97,16 @@ class TMDB:
         pngs.sort(key=lambda l: (l.get("vote_average", 0), l.get("width", 0)), reverse=True)
         return pngs[0]["file_path"] if pngs else None
 
+    def all_logos(self, kind, oid, limit=6):
+        """Every PNG logo TMDB has for a network or company, best first."""
+        try:
+            logos = self.get(f"/{kind}/{oid}/images").get("logos", [])
+        except requests.HTTPError:
+            return []
+        pngs = [l for l in logos if l["file_path"].endswith(".png")]
+        pngs.sort(key=lambda l: (l.get("vote_average", 0), l.get("width", 0)), reverse=True)
+        return [l["file_path"] for l in pngs[:limit]]
+
     def logo_image(self, path):
         r = self.s.get(f"{TMDB_IMG}/original{path}", timeout=60)
         self._check(r, f"logo {path}")

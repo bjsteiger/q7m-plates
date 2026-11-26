@@ -123,10 +123,18 @@ def _knockout_white(logo):
     hues = [hh * 12 // 256 for (hh, ss, vv), al in zip(hsv.getdata(), sa.getdata()) if al > 128 and ss > 90 and vv > 60]
     if hues:
         counts = [hues.count(i) for i in range(12)]
-        if sum(1 for c in counts if c > 0.06 * len(hues)) >= 4:
+        if sum(1 for c in counts if c > 0.08 * len(hues)) >= 5:
             return out
     # luminance over black where transparent, so the plate edge doesn't count as a mark
-    lum = Image.composite(small.convert("L"), Image.new("L", (sw, sh), 0), sa)
+    # transparent areas take the plate's own brightness (the most common opaque value), so the
+    # empty space around a small logo doesn't drag the local estimate toward black
+    L = small.convert("L")
+    hist = [0] * 256
+    for v, al in zip(L.getdata(), sa.getdata()):
+        if al > 200:
+            hist[v] += 1
+    plate_lum = max(range(256), key=lambda i: sum(hist[max(0, i - 6):i + 7]))
+    lum = Image.composite(L, Image.new("L", (sw, sh), plate_lum), sa)
     k = max(5, min(41, int(min(sw, sh) / 2.2) | 1))
     plate = lum.filter(ImageFilter.MedianFilter(k))
     solid = sa.filter(ImageFilter.MedianFilter(k)).point(lambda v: 255 if v > 230 else 0)
@@ -148,7 +156,7 @@ def _prep_logo(logo, mode):
     if alpha.getextrema()[0] == 255:      # no transparency: knock out a flat backdrop
         logo = knock_background(logo)
         alpha = logo.getchannel("A")
-    bbox = alpha.getbbox()
+    bbox = alpha.point(lambda v: 255 if v > 24 else 0).getbbox()   # ignore faint haze around the mark
     if bbox:
         logo = logo.crop(bbox)
     if mode == "white":
@@ -420,6 +428,48 @@ def plain_field(size):
 def title_only_cover(title, cfg, size):
     """Same title treatment as the Cinema cover, on a plain dark field, no film image."""
     return cover(plain_field(size), title, {**cfg, "title_band": 0.0}, size)
+
+
+def outline_year_cover(still, text, size, cfg):
+    """Decades tile: the year huge, in outline, so big it runs off the edges but still reads.
+    A faint filled copy sits behind for depth, like it's coming off the screen."""
+    w, h = size
+    img = grade(fill(still, w, h))
+    img = ImageEnhance.Brightness(img).enhance(0.55)
+    dark = Image.new("RGB", (w, h), DARK)
+    img = Image.composite(img, dark, _vignette(w, h, 0.85, 0.2))
+    f_file = cfg.get("outline_font", "BebasNeue-Regular.ttf")
+    if cfg.get("outline_drop_s", True) and text[-1:] in "sS" and text[:-1].isdigit():
+        text = text[:-1]                 # "1970s" -> "1970"
+    if h > w and len(text) > 3:          # tall tile: stack it, "19" over "70s"
+        text = text[:2] + "\n" + text[2:]
+    # size the text so it is ~1.12x the tile width: it bleeds past both sides, every digit still visible
+    probe = font(400, "Bold", f_file)
+    d0 = ImageDraw.Draw(Image.new("L", (1, 1)))
+    tw = max(d0.textlength(ln, font=probe) for ln in text.split("\n"))
+    fs = int(400 * (w * cfg.get("outline_bleed", 1.12)) / max(1, tw))
+    fs = min(fs, int(h * (0.62 if "\n" in text else 1.25)))
+    f = font(fs, "Bold", f_file)
+    bbox = d0.multiline_textbbox((0, 0), text, font=f, spacing=-int(fs * 0.12), align="center")
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    x = (w - tw) / 2 - bbox[0]
+    y = (h - th) / 2 - bbox[1] + h * 0.03
+    stroke = max(2, fs // cfg.get("outline_weight", 85))
+    layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    ld = ImageDraw.Draw(layer)
+    # faint solid copy, slightly larger and offset, gives the 'coming at you' depth
+    ghost = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    sp = -int(fs * 0.12)
+    ImageDraw.Draw(ghost).multiline_text((x - fs * 0.02, y - fs * 0.02), text, font=f, fill=(255, 255, 255, 22),
+                                         spacing=sp, align="center")
+    ghost = ghost.filter(ImageFilter.GaussianBlur(fs // 40))
+    a = int(255 * cfg.get("outline_opacity", 0.72))
+    ld.multiline_text((x, y), text, font=f, fill=(0, 0, 0, 0), stroke_width=stroke,
+                      stroke_fill=(255, 255, 255, a), spacing=sp, align="center")
+    out = img.convert("RGBA")
+    out.alpha_composite(ghost)
+    out.alpha_composite(layer)
+    return out.convert("RGB")
 
 
 # ---------- background ----------

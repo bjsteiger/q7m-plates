@@ -52,27 +52,6 @@ class OnlineFetcher:
         path = self.tmdb.clean_backdrop(t["media"], t["id"], t["backdrop"])
         return self.tmdb.image(path, "original")
 
-    def override_logo(self, ov):
-        """Download a logo from a link you chose (png, jpg, webp or svg)."""
-        import io
-        import requests
-        r = requests.get(ov["url"], timeout=60, headers={"User-Agent": "Mozilla/5.0 (q7m-plates image build)"})
-        r.raise_for_status()
-        data = r.content
-        if ov["url"].lower().split("?")[0].endswith(".svg") or data[:200].lstrip().startswith((b"<svg", b"<?xml")):
-            import cairosvg
-            data = cairosvg.svg2png(bytestring=data, output_width=1800)
-        img = Image.open(io.BytesIO(data)).convert("RGBA")
-        raw = img
-        if img.getchannel("A").getextrema()[0] == 255:
-            img = look.knock_background(img)
-        blocks = look.split_blocks(img)
-        img = blocks[min(ov.get("part", 0), len(blocks) - 1)]
-        if ov.get("white"):
-            img = look._prep_logo(img, "white")
-        bg = ov.get("bg") or (look.corner_color(raw) if raw.getchannel("A").getextrema()[0] == 255 else None)
-        return img, bg, len(blocks)
-
     def logo(self, tile, rule, art_query):
         """Return (logo image, where it came from) or (None, reason)."""
         kind = rule["type"]
@@ -142,6 +121,88 @@ class OfflineFetcher:
 
     def logo(self, tile, rule, art_query):
         return None, "offline"
+
+
+LOGO_EXTS = (".png", ".webp", ".jpg", ".jpeg", ".svg")
+
+
+def local_logo(settings, shelf, tile):
+    """A logo you saved in logos/<shelf>/<tile>.<ext>, unless settings say to use TMDB for it.
+    Returns (image, background colour or None, note) or (None, None, None)."""
+    key = f"{shelf}/{tile}"
+    if settings.get("logo_choice", {}).get(key, "").startswith("tmdb"):
+        return None, None, None
+    folder = ROOT / "logos" / slug(shelf)
+    path = next((folder / f"{slug(tile)}{e}" for e in LOGO_EXTS if (folder / f"{slug(tile)}{e}").exists()), None)
+    if not path:
+        return None, None, None
+    data = path.read_bytes()
+    if path.suffix == ".svg":
+        import cairosvg
+        data = cairosvg.svg2png(bytestring=data, output_width=1800)
+    import io
+    raw = Image.open(io.BytesIO(data)).convert("RGBA")
+    img = raw
+    opaque = raw.getchannel("A").getextrema()[0] == 255
+    if opaque:
+        img = look.knock_background(raw)
+    if key in settings.get("logo_parts", {}):        # only split files that hold several logos
+        blocks = look.split_blocks(img)
+        img = blocks[min(settings["logo_parts"][key], len(blocks) - 1)]
+    if key in settings.get("logo_white", []):
+        img = look._prep_logo(img, "white")
+    bg = settings.get("brand_colors", {}).get(key) or (look.corner_color(raw) if opaque else None)
+    return img, bg, f"saved logo {path.relative_to(ROOT)}"
+
+
+def picker_candidates(fetch, settings, tile, out):
+    """Collect logo options for one tile: your saved file plus TMDB's alternatives.
+    Thumbnails go to site/picker/<shelf>/<tile>/ for the picker page."""
+    shelf, name = tile["shelf"], tile["title"]
+    key = f"{shelf}/{name}"
+    rule = settings.get("logos", {}).get(shelf) or {}
+    if rule.get("type") not in ("network", "company", "service"):
+        return None
+    d = out / "picker" / slug(shelf) / slug(name)
+    d.mkdir(parents=True, exist_ok=True)
+    opts = []
+    folder = ROOT / "logos" / slug(shelf)
+    saved = next((folder / f"{slug(name)}{e}" for e in LOGO_EXTS if (folder / f"{slug(name)}{e}").exists()), None)
+    if saved:
+        import shutil
+        shutil.copy(saved, d / f"saved{saved.suffix}")
+        opts.append({"id": "saved", "label": "Saved in repo", "src": f"picker/{slug(shelf)}/{slug(name)}/saved{saved.suffix}"})
+    tm = getattr(fetch, "tmdb", None)
+    if tm:
+        paths = []
+        def first(field):
+            for s_ in tile["sources"]:
+                ids = s_.get("tmdbDiscover", {}).get("_0", {}).get(field) or []
+                if ids:
+                    return ids[0]
+        try:
+            if rule["type"] == "network" and first("networks"):
+                paths = tm.all_logos("network", first("networks"))
+            elif rule["type"] == "company":
+                cid = first("companies") or tm.search_company(name)
+                paths = tm.all_logos("company", cid) if cid else []
+            elif rule["type"] == "service":
+                from .sources import find_provider
+                aq = settings.get("art_queries", {}).get(key, {})
+                pr = find_provider(tm, aq.get("provider", name))
+                if pr and pr.get("logo_path"):
+                    paths = [pr["logo_path"]]
+        except Exception as e:
+            print(f"    picker {key}: {e}")
+        for i, pth in enumerate(paths):
+            try:
+                tm.logo_image(pth).save(d / f"tmdb-{i}.png")
+                opts.append({"id": f"tmdb:{pth}", "label": f"TMDB {i + 1}", "src": f"picker/{slug(shelf)}/{slug(name)}/tmdb-{i}.png"})
+            except Exception:
+                continue
+    choice = settings.get("logo_choice", {}).get(key)
+    current = choice or ("saved" if saved else "tmdb")
+    return {"shelf": shelf, "tile": name, "key": key, "current": current, "options": opts}
 
 
 def pick(titles, used, offset):
@@ -242,17 +303,20 @@ def main():
             n = settings["background"]["panels"]
             bg_imgs = [fetch.still(t, big=i < n) for i, t in enumerate(rest)]
             rule = settings.get("logos", {}).get(shelf)
-            ov = settings.get("logo_overrides", {}).get(key)
-            ov_bg = None
-            logo, logo_note = (None, "")
-            if ov and hasattr(fetch, "override_logo"):
-                for url in [ov["url"]] + ([ov["fallback_url"]] if ov.get("fallback_url") else []):
-                    try:
-                        logo, ov_bg, nblocks = fetch.override_logo({**ov, "url": url})
-                        logo_note = f"logo link ({nblocks} logo{'s' if nblocks != 1 else ''} in file)"
-                        break
-                    except Exception as e:
-                        print(f"    {key}: logo link failed ({e})")
+            ov_bg, logo, logo_note = None, None, ""
+            choice = settings.get("logo_choice", {}).get(key, "")
+            if rule and choice.startswith("tmdb:") and hasattr(fetch, "tmdb"):
+                try:
+                    logo, logo_note = fetch.tmdb.logo_image(choice[5:]), f"picked TMDB logo {choice[5:]}"
+                except Exception as e:
+                    print(f"    {key}: picked TMDB logo failed ({e})")
+            if rule and logo is None and not choice.startswith("tmdb"):
+                try:
+                    logo, ov_bg, logo_note = local_logo(settings, shelf, name)
+                except Exception as e:
+                    print(f"    {key}: saved logo unreadable ({e})")
+                    logo = None
+            ov = logo is not None and logo_note.startswith("saved")
             if logo is None and rule:
                 logo, logo_note = fetch.logo(tile, rule, aq)
             if rule and logo is None:
@@ -261,13 +325,16 @@ def main():
             cover_cfg = {**settings["cover"], "logo_mode": (rule or {}).get("mode", settings["cover"].get("logo_mode", "white")),
                          **settings.get("fonts", {}).get(key, {})}
             wide_still = fetch.cover_still(c)
+            outline = shelf in settings.get("outline_shelves", [])
             for shape, (w, h) in settings["cover"]["shapes"].items():
                 still = wide_still
                 if h > w and not (rule and logo is not None):   # poster: text-free poster when TMDB has one
                     still = fetch.poster_still(c) or wide_still
-                if logo is not None and rule.get("style") == "brand":
+                if outline:
+                    im = look.outline_year_cover(wide_still, label, (w, h), cover_cfg)
+                elif logo is not None and rule.get("style") == "brand":
                     # the app icon's own backdrop colour becomes the tile colour; its mark sits on top
-                    if ov_bg or (ov and logo is not None):
+                    if ov:
                         bgc = ov_bg or "#0b0d10"
                         im = look.brand_cover(logo, bgc, (w, h), scale)
                     else:
@@ -293,6 +360,16 @@ def main():
             print(f"  ! {key}: {e}")
             traceback.print_exc(limit=1)
 
+    # logo picker page and its data
+    cands = []
+    for tile in tiles:
+        if tile["shelf"] in wanted:
+            cnd = picker_candidates(fetch, settings, tile, out)
+            if cnd:
+                cands.append(cnd)
+    (out / "picker").mkdir(exist_ok=True)
+    (out / "picker" / "candidates.json").write_text(json.dumps(cands, indent=1))
+    (out / "picker" / "index.html").write_text((ROOT / "plates" / "picker.html").read_text(), encoding="utf-8")
     (out / ".nojekyll").write_text("")
     (out / "manifest.json").write_text(json.dumps({
         "built": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
