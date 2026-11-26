@@ -247,3 +247,18 @@ for lf in sorted(plan_dir.glob("logo*.json")):
                 old.unlink()
         (d / f"{_slug(it['title'])}{ext}").write_bytes(base64.b64decode(m.group(2)))
         print("saved uploaded logo", f'{it["shelf"]}/{it["title"]}')
+
+# fonts uploaded on the editing page: config/plan/font*.json hold {"items": [{"file": "custom/name.ttf", "data": data URI}]}
+for ff in sorted(plan_dir.glob("font*.json")):
+    for it in json.loads(ff.read_text()).get("items", []):
+        f = it.get("file", "")
+        m = _re.match(r"data:[^;]*;base64,(.+)", it.get("data", ""), _re.S)
+        if not (_re.fullmatch(r"custom/[a-z0-9-]+\.(ttf|otf)", f) and m):
+            print("CHECK uploaded font not readable", f)
+            continue
+        dst = repo / "fonts" / f
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        data = base64.b64decode(m.group(1))
+        if not dst.exists() or dst.read_bytes() != data:
+            dst.write_bytes(data)
+            print("saved uploaded font", f)
