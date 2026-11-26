@@ -1147,14 +1147,14 @@
       "cards": [
         {
           "a": {
-            "note": "use a screen from Survivor showing the host Jeff P.",
             "artQuery": {
+              "actor": "Jeff Probst",
+              "media": "tv",
               "titles": [
                 "Survivor"
-              ],
-              "media": "tv",
-              "actor": "Jeff Probst"
+              ]
             },
+            "note": "use a screen from Survivor showing the host Jeff P.",
             "noteDone": true
           },
           "r": "B188"
