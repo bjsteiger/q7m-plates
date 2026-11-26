@@ -222,6 +222,8 @@ class Trakt:
 
 
 HORROR = 27
+NO_HORROR = True      # settings rules.noHorror; build.py sets these two at start
+FRESH_DAYS = 540      # settings rules.freshDays
 
 
 def _discover_params(q, min_votes, mode=None, no_horror_kw=None):
@@ -231,12 +233,15 @@ def _discover_params(q, min_votes, mode=None, no_horror_kw=None):
         p["with_genres"] = ",".join(map(str, q["genres"]))
     without = list(q.get("excludeGenres") or [])
     tv = q.get("mediaType") == "tv"
-    if not tv and HORROR not in without:
+    if not tv and NO_HORROR and HORROR not in without:
         without.append(HORROR)
     if without:
         p["without_genres"] = ",".join(map(str, without))
-    if tv and no_horror_kw:
-        p["without_keywords"] = str(no_horror_kw)
+    wk = [str(k) for k in (q.get("excludeKeywords") or [])]
+    if tv and no_horror_kw and NO_HORROR:
+        wk.append(str(no_horror_kw))
+    if wk:
+        p["without_keywords"] = "|".join(wk)
     if q.get("keywords"):
         p["with_keywords"] = "|".join(map(str, q["keywords"]))
     if q.get("companies"):
@@ -246,17 +251,21 @@ def _discover_params(q, min_votes, mode=None, no_horror_kw=None):
     if q.get("originalLanguage"):
         p["with_original_language"] = q["originalLanguage"]
     if mode == "fresh" and not q.get("releaseDateGte") and not q.get("releaseDateLte"):
-        since = (dt.date.today() - dt.timedelta(days=540)).isoformat()
+        since = (dt.date.today() - dt.timedelta(days=FRESH_DAYS)).isoformat()
         p["first_air_date.gte" if tv else "primary_release_date.gte"] = since
     if q.get("releaseDateGte"):
         p["first_air_date.gte" if tv else "primary_release_date.gte"] = q["releaseDateGte"]
     if q.get("releaseDateLte"):
         p["first_air_date.lte" if tv else "primary_release_date.lte"] = q["releaseDateLte"]
-    if q.get("providers"):
-        p["with_watch_providers"] = "|".join(map(str, q["providers"]))
-        p["watch_region"] = q.get("region", "US")
+    if q.get("providers") or q.get("watchProviders"):
+        p["with_watch_providers"] = "|".join(map(str, q.get("providers") or q["watchProviders"]))
+        p["watch_region"] = q.get("region", "US")   # art always looks at what's streaming in the US
+    if q.get("year"):
+        p["first_air_date_year" if tv else "primary_release_year"] = q["year"]
     if q.get("crew"):
         p["with_crew"] = "|".join(map(str, q["crew"]))
+    if q.get("cast"):
+        p["with_cast"] = "|".join(map(str, q["cast"]))
     if q.get("voteAverageGte"):
         p["vote_average.gte"] = q["voteAverageGte"]
     p["vote_count.gte"] = max(int(q.get("voteCountGte") or 0), min_votes)
@@ -264,7 +273,7 @@ def _discover_params(q, min_votes, mode=None, no_horror_kw=None):
 
 
 def _is_horror(media, r):
-    return media == "movie" and HORROR in (r.get("genre_ids") or [g.get("id") for g in r.get("genres", [])])
+    return NO_HORROR and media == "movie" and HORROR in (r.get("genre_ids") or [g.get("id") for g in r.get("genres", [])])
 
 
 def _norm(media, r):
@@ -357,6 +366,11 @@ def art_query_source(tmdb, aq):
         if not pid:
             return None
         q["crew"] = [pid]
+    if aq.get("actor"):
+        pid = resolve_person(tmdb, aq["actor"])
+        if not pid:
+            return None
+        q["cast"] = [pid]
     if aq.get("provider"):
         pid = resolve_provider(tmdb, aq["provider"], aq.get("region", "US"))
         if not pid:

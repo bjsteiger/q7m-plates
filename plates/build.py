@@ -23,7 +23,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from . import look
+from . import look, sources
 from .sources import TMDB, Wikimedia, gather, trakt_from_env
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -122,6 +122,15 @@ class OfflineFetcher:
     def logo(self, tile, rule, art_query):
         return None, "offline"
 
+
+# per-tile art style overrides (settings "tile_style") map to these logo rules
+STYLE_RULES = {
+    "brand": {"type": "service", "style": "brand", "scale": 1.7},
+    "station": {"type": "network", "style": "station"},
+    "studio": {"type": "company", "style": "studio"},
+    "portrait-director": {"type": "person", "style": "portrait", "role": "Director"},
+    "portrait-actor": {"type": "person", "style": "portrait", "role": "Actor"},
+}
 
 LOGO_EXTS = (".png", ".webp", ".jpg", ".jpeg", ".svg")
 
@@ -225,6 +234,9 @@ def main():
     args = ap.parse_args()
 
     settings = json.loads((ROOT / "config" / "settings.json").read_text())
+    rules = settings.get("rules", {})
+    sources.NO_HORROR = rules.get("noHorror", True)
+    sources.FRESH_DAYS = int(rules.get("freshDays", 540))
     tiles = json.loads((ROOT / "config" / "tiles.json").read_text())
     out = Path(args.out)
     (out / "art").mkdir(parents=True, exist_ok=True)
@@ -282,7 +294,8 @@ def main():
             d.mkdir(parents=True, exist_ok=True)
             label = settings.get("rename", {}).get(key, name)
 
-            if len(cov_titles) < 2 or len(bg_titles) < 2:
+            tstyle = settings.get("tile_style", {}).get(key)
+            if len(cov_titles) < 2 or len(bg_titles) < 2 or tstyle == "title":
                 # nothing usable once horror is filtered out: title-only cover, plain background
                 for shape, (w, h) in settings["cover"]["shapes"].items():
                     look.title_only_cover(label, settings["cover"], (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
@@ -303,8 +316,14 @@ def main():
             n = settings["background"]["panels"]
             bg_imgs = [fetch.still(t, big=i < n) for i, t in enumerate(rest)]
             rule = settings.get("logos", {}).get(shelf)
+            if tstyle == "cinema" or tstyle == "outline":
+                rule = None
+            elif tstyle in STYLE_RULES:
+                rule = {**STYLE_RULES[tstyle], **({k: v for k, v in (rule or {}).items() if k == "scale"} if rule and rule.get("style") == STYLE_RULES[tstyle]["style"] else {})}
             ov_bg, logo, logo_note = None, None, ""
             choice = settings.get("logo_choice", {}).get(key, "")
+            if choice == "none":
+                rule = None
             if rule and choice.startswith("tmdb:") and hasattr(fetch, "tmdb"):
                 try:
                     logo, logo_note = fetch.tmdb.logo_image(choice[5:]), f"picked TMDB logo {choice[5:]}"
@@ -321,11 +340,11 @@ def main():
                 logo, logo_note = fetch.logo(tile, rule, aq)
             if rule and logo is None:
                 print(f"    {key}: {logo_note}, using text")
-            scale = (rule or {}).get("scale", 1.0)
+            scale = (rule or {}).get("scale", 1.0) * settings.get("logo_scale", {}).get(key, 1.0)
             cover_cfg = {**settings["cover"], "logo_mode": (rule or {}).get("mode", settings["cover"].get("logo_mode", "white")),
                          **settings.get("fonts", {}).get(key, {})}
             wide_still = fetch.cover_still(c)
-            outline = shelf in settings.get("outline_shelves", [])
+            outline = tstyle == "outline" or (shelf in settings.get("outline_shelves", []) and tstyle in (None, "outline"))
             for shape, (w, h) in settings["cover"]["shapes"].items():
                 still = wide_still
                 if h > w and not (rule and logo is not None):   # poster: text-free poster when TMDB has one
