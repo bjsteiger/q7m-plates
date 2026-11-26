@@ -491,6 +491,8 @@ def person_cover(headshot, name, role, size, cfg):
     w, h = size
     z = cfg.get("photo_zoom", 1.0)
     fx, fy = cfg.get("photo_x", 0.5), cfg.get("photo_y", 0.18)
+    if ("photo_x" in cfg or "photo_y" in cfg) and z < 1.25:
+        z = 1.25            # a photo that exactly fills the card has no room to move, so moving it zooms in a little
     if z == 1.0:
         img = fill(headshot, w, h, focus_x=fx, focus_y=fy)
     else:                                  # zoom in, then crop around the chosen spot
