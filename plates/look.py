@@ -232,8 +232,9 @@ def _vgradient(logo, top=1.0, bottom=0.78):
     return Image.merge("RGBA", (r, g, b, a))
 
 
-def station_cover(still, logo, size, scale=1.0):
-    """Network tile: a dim, blurred still behind a soft glow, white logo with a slight gradient."""
+def station_cover(still, logo, size, scale=1.0, color=False):
+    """Network tile: a dim, blurred still behind a soft glow, white logo with a slight gradient.
+    color=True keeps the logo in its own colours (for logos listed in logo_color)."""
     w, h = size
     img = fill(still, w, h).filter(ImageFilter.GaussianBlur(max(6, w // 110)))
     img = ImageEnhance.Color(img).enhance(0.8)
@@ -243,7 +244,7 @@ def station_cover(still, logo, size, scale=1.0):
     glow = _mask_from_fn(w, h, lambda x, y: 0.22 * max(0, 1 - ((x - 0.5) * 2.2) ** 2 - ((y - 0.5) * 2.4 * (h / w if h > w else 1)) ** 2), 60)
     img = Image.composite(Image.new("RGB", (w, h), (120, 140, 170)), img, glow)
 
-    lg = _vgradient(_prep_logo(logo, "white"))
+    lg = _prep_logo(logo, None) if color else _vgradient(_prep_logo(logo, "white"))
     box_w = min(w * 0.8, w * (0.6 if h >= w else 0.42) * scale)
     box_h = min(h * 0.5, h * (0.26 if h > w else 0.32) * scale)
     k = min(box_w / lg.width, box_h / lg.height)

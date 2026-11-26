@@ -26,7 +26,7 @@ jobs:
           links = json.load(open("config/logo-links.json"))
           for key, url in links.items():
               shelf, tile = key.split("/", 1)
-              r = requests.get(url, timeout=60, headers={"User-Agent": "Mozilla/5.0"})
+              r = requests.get(url, timeout=60, headers={"User-Agent": "q7m-plates/1.0 (https://github.com/bjsteiger/q7m-plates)"})
               if not r.ok:
                   print("failed", key, r.status_code); continue
               ext = ".svg" if url.lower().split("?")[0].endswith(".svg") or r.content[:200].lstrip().startswith((b"<svg", b"<?xml")) else os.path.splitext(url.split("?")[0])[1].lower() or ".png"

@@ -341,7 +341,8 @@ def main():
                         bgc = rule.get("colors", {}).get(name) or look.corner_color(logo)
                         im = look.brand_cover(look.knock_background(logo), bgc, (w, h), scale)
                 elif logo is not None and rule.get("style") == "station":
-                    im = look.station_cover(still, logo, (w, h), scale)
+                    im = look.station_cover(still, logo, (w, h), scale,
+                                           color=f"{shelf}/{name}" in settings.get("logo_color", []))
                 elif logo is not None and rule.get("style") == "studio":
                     im = look.studio_cover(wide_still, logo, (w, h), scale)
                 elif logo is not None and rule.get("style") == "portrait":
