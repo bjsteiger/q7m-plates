@@ -666,7 +666,10 @@
         "B62",
         "B63",
         "B64",
-        "L579"
+        {
+          "r": "L579",
+          "t": "1950s"
+        }
       ],
       "refresh": "monthly",
       "shape": "wide",
@@ -703,6 +706,9 @@
     {
       "cards": [
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B101",
           "s": "square"
         },
@@ -723,30 +729,51 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B106",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B107",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B108",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B109",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B110",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B111",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B112",
           "s": "square"
         },
@@ -755,30 +782,51 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B114",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B115",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B116",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B117",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B118",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B119",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B120",
           "s": "square"
         },
@@ -787,6 +835,9 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B122",
           "s": "square"
         },
@@ -795,18 +846,30 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B124",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B125",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B126",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B127",
           "s": "square"
         },
@@ -823,10 +886,16 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B130",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B131",
           "s": "square"
         },
@@ -835,22 +904,37 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B133",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B134",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B135",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B136",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B137",
           "s": "square"
         },
@@ -859,6 +943,9 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B139",
           "s": "square"
         },
@@ -867,26 +954,44 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B141",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B142",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B143",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B144",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B145",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B146",
           "s": "square"
         },
@@ -895,30 +1000,51 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B148",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B149",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B150",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B151",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B152",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B153",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B154",
           "s": "square"
         },
@@ -927,10 +1053,16 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B156",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B157",
           "s": "square"
         },
@@ -939,14 +1071,23 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B159",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B160",
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B161",
           "s": "square"
         },
@@ -959,6 +1100,9 @@
           "s": "square"
         },
         {
+          "a": {
+            "logoColor": true
+          },
           "r": "B164",
           "s": "square"
         },
@@ -1003,7 +1147,15 @@
       "cards": [
         {
           "a": {
-            "note": "use a screen from Survivor showing the host Jeff."
+            "note": "use a screen from Survivor showing the host Jeff P.",
+            "artQuery": {
+              "titles": [
+                "Survivor"
+              ],
+              "media": "tv",
+              "actor": "Jeff Probst"
+            },
+            "noteDone": true
           },
           "r": "B188"
         },
@@ -1013,7 +1165,16 @@
         },
         {
           "a": {
-            "note": "use imagery from hells kitchen and Gordon Ramsay, but no words from show."
+            "artQuery": {
+              "media": "tv",
+              "titles": [
+                "Hell's Kitchen",
+                "Kitchen Nightmares",
+                "Gordon Ramsay's 24 Hours to Hell and Back"
+              ]
+            },
+            "note": "use imagery from hells kitchen and Gordon Ramsay, but no words from show.",
+            "noteDone": true
           },
           "r": "B190"
         },
@@ -1028,7 +1189,6 @@
     },
     {
       "cards": [
-        "L53",
         "L54",
         "L55",
         "L56",
@@ -1058,7 +1218,10 @@
         },
         "L77",
         "L78",
-        "L80",
+        {
+          "r": "L80",
+          "t": "Batman (1989-1997)"
+        },
         {
           "r": "L81",
           "t": "Beauty and the Beast"
@@ -1897,7 +2060,8 @@
           "t": "Basic Instinct"
         },
         "L121",
-        "L182"
+        "L182",
+        "L53"
       ],
       "parked": true,
       "refresh": "fixed",
