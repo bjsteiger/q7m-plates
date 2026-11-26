@@ -454,30 +454,7 @@
   },
   "logo_parts": {},
   "logo_white": [],
-  "logo_choice": {
-    "Studios/20th Century Studios": "tmdb:/cxMxGzAgMMBhTXkcpYYCxWCOY90.png",
-    "Studios/A24": "tmdb:/4RtX0UFtKeaEoTggOEQVaFi0dZY.png",
-    "Studios/Blumhouse Productions": "tmdb:/jEbiuMUp6yrHHqbYzgNDfvOoYTO.png",
-    "Studios/DC": "tmdb:/4Y00XuSMuP1gimd0jP6JT57QbCI.png",
-    "Studios/DreamWorks Pictures": "tmdb:/usgsrIyUwaPR9MOtPK1WNh5jnZN.png",
-    "Studios/Focus Features": "tmdb:/xnFIOeq5cKw09kCWqV7foWDe4AA.png",
-    "Studios/Illumination": "tmdb:/fOG2oY4m1YuYTQh4bMqqZkmgOAI.png",
-    "Studios/Lionsgate": "tmdb:/cisLn1YAUuptXVBa0xjq7ST9cH0.png",
-    "Studios/Lucasfilm Ltd.": "tmdb:/tlVSws0RvvtPBwViUyOFAO0vcQS.png",
-    "Studios/Marvel Studios": "tmdb:/mIkZDuulwMPzESbzF9lg3rD8CcO.png",
-    "Studios/MGM": "tmdb:/usUnaYV6hQnlVAXP6r4HwrlLFPG.png",
-    "Studios/New Line Cinema": "tmdb:/5ThIuO93vsk47oexKTSdfKEr7EC.png",
-    "Studios/Paramount Pictures": "tmdb:/lH1dIv66K2BLgyDa3I3Pj6Q2Lre.png",
-    "Studios/Pixar": "tmdb:/1TjvGVDMYsj6JBxOAkUHpPEwLf7.png",
-    "Studios/Searchlight Pictures": "tmdb:/7DLKyL15ETI9645XSr9JcbMV79c.png",
-    "Studios/Sony Pictures": "tmdb:/71BqEFAF4V3qjjMPCpLuyJFB9A.png",
-    "Studios/Studio Ghibli": "tmdb:/dT3UbXjca6TClutHJtr7GhkRALP.png",
-    "Studios/Universal Pictures": "tmdb:/rfGWzz3pdI7ZnDgjsOaXxnXXfcb.png",
-    "Studios/Walt Disney Studio": "tmdb:/8bH86UPmMP8hlITzXV3XgV9eaAc.png",
-    "Studios/Warner Bros. Entertainment": "tmdb:/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
-    "Networks/ABC": "tmdb:/9Gm2erWBaDQxaGgEVrsagSTOsrI.png",
-    "Networks/tvN": "tmdb:/4iJILrndsUAvriueBVHe8u0nVqo.png"
-  },
+  "logo_choice": {},
   "outline_shelves": [
     "Decades"
   ]
