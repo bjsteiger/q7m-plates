@@ -1,10 +1,12 @@
 {
   "shelves": [
+    "Streaming Services",
     "Genres",
     "Decades",
     "Directors",
     "Awards",
     "Studios",
+    "Networks",
     "Moods & Vibes",
     "Based on",
     "Documentaries",
@@ -48,6 +50,46 @@
     "max_dark": 0.9
   },
   "art_queries": {
+    "Streaming Services/Netflix": {
+      "media": "tv",
+      "provider": "Netflix"
+    },
+    "Streaming Services/Apple TV+": {
+      "media": "tv",
+      "provider": "Apple TV"
+    },
+    "Streaming Services/HBO Max": {
+      "media": "tv",
+      "provider": "HBO Max"
+    },
+    "Streaming Services/Paramount+": {
+      "media": "tv",
+      "provider": "Paramount Plus"
+    },
+    "Streaming Services/Prime Video": {
+      "media": "tv",
+      "provider": "Amazon Prime Video"
+    },
+    "Streaming Services/Disney+": {
+      "media": "tv",
+      "provider": "Disney Plus"
+    },
+    "Streaming Services/Hulu": {
+      "media": "tv",
+      "provider": "Hulu"
+    },
+    "Streaming Services/Discovery+": {
+      "media": "tv",
+      "provider": "Discovery+"
+    },
+    "Streaming Services/Magellan": {
+      "media": "tv",
+      "provider": "Magellan TV"
+    },
+    "Streaming Services/Peacock": {
+      "media": "tv",
+      "provider": "Peacock"
+    },
     "Genres/Action Adventures": {
       "genres": [
         28,

@@ -1,5 +1,6471 @@
 [
  {
+  "shelf": "Streaming Services",
+  "title": "Netflix",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99,
+       16
+      ],
+      "mediaType": "movie",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "releaseDateGte": "2020-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 1000
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 500
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       14
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       36
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       15060,
+       192772
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       27
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10767,
+       10763
+      ],
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9840
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9799
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "keywords": [
+       9716
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "keywords": [
+       9716
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       53
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10752
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10768
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Streaming Services",
+  "title": "Apple TV+",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99,
+       16
+      ],
+      "mediaType": "movie",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "releaseDateGte": "2020-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 1000
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 500
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       14
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       36
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       15060,
+       192772
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10767,
+       10763
+      ],
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9840
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9799
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       53
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10752
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10768
+      ],
+      "mediaType": "tv",
+      "networks": [
+       2552
+      ],
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Streaming Services",
+  "title": "HBO Max",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99,
+       16
+      ],
+      "mediaType": "movie",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "releaseDateGte": "2020-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 1000
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 500
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       14
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       36
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       15060,
+       192772
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       27
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10767,
+       10763
+      ],
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9840
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9799
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "keywords": [
+       9716
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       53
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10752
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10768
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Streaming Services",
+  "title": "Paramount+",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99,
+       16
+      ],
+      "mediaType": "movie",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "releaseDateGte": "2020-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 1000
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 500
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       14
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       36
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       15060,
+       192772
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       27
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10767,
+       10763
+      ],
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9840
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9799
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "keywords": [
+       9716
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "keywords": [
+       9716
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       53
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10752
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10768
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Streaming Services",
+  "title": "Prime Video",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99,
+       16
+      ],
+      "mediaType": "movie",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "releaseDateGte": "2020-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 1000
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 500
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       14
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       36
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       15060,
+       192772
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       27
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10767,
+       10763
+      ],
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9840
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9799
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "keywords": [
+       9716
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       53
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10752
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10768
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Streaming Services",
+  "title": "Disney+",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99,
+       16
+      ],
+      "mediaType": "movie",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "releaseDateGte": "2020-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 1000
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 500
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       14
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       36
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       27
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10767,
+       10763
+      ],
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9840
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9799
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       53
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10752
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10768
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Streaming Services",
+  "title": "Hulu",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99,
+       16
+      ],
+      "mediaType": "movie",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "releaseDateGte": "2020-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 1000
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 500
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       14
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       36
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       15060,
+       192772
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       27
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10767,
+       10763
+      ],
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9840
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9799
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "keywords": [
+       9716
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       53
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10752
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10768
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Streaming Services",
+  "title": "Discovery+",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99,
+       16
+      ],
+      "mediaType": "movie",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "releaseDateGte": "2020-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 500
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       36
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10767,
+       10763
+      ],
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Streaming Services",
+  "title": "Magellan",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Streaming Services",
+  "title": "Peacock",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99,
+       16
+      ],
+      "mediaType": "movie",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "releaseDateGte": "2020-01-01",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 1000
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "mediaType": "tv",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 500
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10751
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       14
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       36
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       15060,
+       192772
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       27
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10767,
+       10763
+      ],
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "keywords": [
+       9840
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       53
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       80
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       10752
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       10768
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10764,
+       10767,
+       10763
+      ],
+      "genres": [
+       37
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 35
+     }
+    }
+   }
+  ]
+ },
+ {
   "shelf": "Genres",
   "title": "Action",
   "sources": [
@@ -2140,6 +8606,2892 @@
       "originalLanguage": "en",
       "sortBy": "vote_average.desc",
       "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "A&E",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       129
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       129
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       129
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "ABC",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       2
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       2
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       2
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Adult Swim",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       80
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       80
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       80
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "AMC",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       174
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       174
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       174
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "BBC America",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       493
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       493
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       493
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "BBC One",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       4
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       4
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       4
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "BBC Two",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       332
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       332
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       332
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "BBC Three",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       3
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       3
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       3
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "BBC Four",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       100
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       100
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       100
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Bravo",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       74
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       74
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       74
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Cartoon Network",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       56
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       56
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       56
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "CBC",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       23
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       23
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       23
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "CBS",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       16
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       16
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       16
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Channel 4",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       26
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       26
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       26
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Channel 5",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       99
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       99
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       99
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Cinemax",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       359
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       359
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       359
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Cooking Channel",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       802
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       802
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       802
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Comedy Central",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       47
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       47
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       47
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "CTV",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       110
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       110
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       110
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "CW",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       71
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       71
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       71
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Discovery",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       64
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       64
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       64
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Disney Channel",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       54
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       54
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       54
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "E!",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       76
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       76
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       76
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "E4",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       136
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       136
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       136
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Food Network",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       143
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       143
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       143
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "FOX",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       19
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       19
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       19
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Freeform",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       1267
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       1267
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       1267
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "FX",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       88
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       88
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       88
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Game Show Network",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       63
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       63
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       63
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Hallmark Channel",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       384
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       384
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       384
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Hallmark Mystery",
+  "sources": [
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 521293
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 364344
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 1083910
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 659184
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 584691
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 565004
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "HBO",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       49
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       49
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       49
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "HGTV",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       210
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       210
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       210
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "History",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       65
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       65
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       65
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "IFC",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       124
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       124
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       124
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "ITV",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       9
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       9
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       9
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "ITV2",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       149
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       149
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       149
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "JTBC",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       885
+      ],
+      "originalLanguage": "ko",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       885
+      ],
+      "originalLanguage": "ko",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       885
+      ],
+      "originalLanguage": "ko",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Lifetime",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       34
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       34
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       34
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Magnolia Network",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       4519,
+       625
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       4519,
+       625
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       4519,
+       625
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "MeTV",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       3037
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       3037
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       3037
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Nat Geo Wild",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       1043
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       1043
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       1043
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "National Geographic",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       43
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       43
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       43
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "NBC",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       6
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       6
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       6
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "OWN",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       827
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       827
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       827
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Oxygen",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       132
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       132
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       132
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Paramount Network",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       2076
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       2076
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       2076
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "PBS",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       14
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       14
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       14
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Science Channel",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       226
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       226
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       226
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Showtime",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       67
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       67
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       67
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Sky Atlantic",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       1063
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       1063
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       1063
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Sky Max",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       5237
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       5237
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       5237
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Smithsonian Channel",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       658
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       658
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       658
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "STARZ",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       318
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       318
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       318
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "SundanceTV",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       270
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       270
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       270
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "TBS",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       68
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       68
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       68
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "TLC",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       84
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       84
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       84
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "TNT",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       41
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       41
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       41
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "Travel Channel",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       209
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       209
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       209
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "truTV",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       364
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       364
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       364
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "TV Land",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       397
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       397
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       397
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "tvN",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       866
+      ],
+      "originalLanguage": "ko",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       866
+      ],
+      "originalLanguage": "ko",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       866
+      ],
+      "originalLanguage": "ko",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "USA Network",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       30
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       30
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       30
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Networks",
+  "title": "WE tv",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       448
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       448
+      ],
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       448
+      ],
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 5
      }
     }
    }

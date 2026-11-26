@@ -116,6 +116,9 @@ def _discover_params(q, min_votes):
         p["first_air_date.gte" if tv else "primary_release_date.gte"] = q["releaseDateGte"]
     if q.get("releaseDateLte"):
         p["first_air_date.lte" if tv else "primary_release_date.lte"] = q["releaseDateLte"]
+    if q.get("providers"):
+        p["with_watch_providers"] = "|".join(map(str, q["providers"]))
+        p["watch_region"] = q.get("region", "US")
     if q.get("crew"):
         p["with_crew"] = "|".join(map(str, q["crew"]))
     if q.get("voteAverageGte"):
@@ -146,6 +149,28 @@ def resolve_keyword(tmdb, text):
     return _kw_cache[text]
 
 
+_provider_cache = {}
+
+
+def resolve_provider(tmdb, name, region="US"):
+    """Find a streaming service's TMDB watch-provider id by its name."""
+    key = (name.lower(), region)
+    if key not in _provider_cache:
+        best = None
+        for media in ("tv", "movie"):
+            for r in tmdb.get(f"/watch/providers/{media}", watch_region=region).get("results", []):
+                pn = r["provider_name"].lower()
+                if pn == name.lower():
+                    best = r["provider_id"]
+                    break
+                if best is None and name.lower() in pn and "channel" not in pn and "amazon channel" not in pn:
+                    best = r["provider_id"]
+            if best:
+                break
+        _provider_cache[key] = best
+    return _provider_cache[key]
+
+
 def resolve_person(tmdb, name):
     if name not in _person_cache:
         res = tmdb.get("/search/person", query=name).get("results", [])
@@ -157,6 +182,7 @@ def art_query_source(tmdb, aq):
     """Turn a friendly art query from settings.json into a tmdbDiscover-style source.
 
     Keys: media ("movie"/"tv"), genres [ids], keywords ["names"], director "name",
+    provider "streaming service name" (US watch providers unless region is set),
     before "YYYY-MM-DD", after "YYYY-MM-DD", languages "fr|ko|ja", min_rating, min_votes
     """
     q = {"mediaType": aq.get("media", "movie"), "genres": aq.get("genres", [])}
@@ -170,6 +196,12 @@ def art_query_source(tmdb, aq):
         if not pid:
             return None
         q["crew"] = [pid]
+    if aq.get("provider"):
+        pid = resolve_provider(tmdb, aq["provider"], aq.get("region", "US"))
+        if not pid:
+            return None
+        q["providers"] = [pid]
+        q["region"] = aq.get("region", "US")
     if aq.get("before"):
         q["releaseDateLte"] = aq["before"]
     if aq.get("after"):
