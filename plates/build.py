@@ -30,6 +30,13 @@ from .sources import TMDB, Wikimedia, gather, trakt_from_env
 ROOT = Path(__file__).resolve().parent.parent
 
 
+# a subtle field color for studios whose logos have no color of their own (a card's own brand color wins)
+STUDIO_TINTS = {"20th-century-studios": "#b08a3e", "a24": "#4f7a6b", "blumhouse-productions": "#8a1c1c", "dreamworks-pictures": "#3f6fb5",
+                "focus-features": "#5a6e8c", "illumination": "#e0b21f", "lionsgate": "#b9802f", "lucasfilm-ltd": "#6f7a8a",
+                "new-line-cinema": "#6a5a8c", "pixar": "#3a7bbf", "searchlight-pictures": "#c48a2c", "sony-pictures": "#4b6fa8",
+                "studio-ghibli": "#5d8fb8", "walt-disney-studio": "#1f4fb5"}
+
+
 def slug(s):
     s = s.lower().replace("&", "and").replace("+", "plus")
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
@@ -245,7 +252,7 @@ def main():
     (out / "art").mkdir(parents=True, exist_ok=True)
 
     fetch = OfflineFetcher(settings, args.offline) if args.offline else OnlineFetcher(settings)
-    wanted = args.only or settings["shelves"]
+    wanted = args.only or settings["shelves"] + settings.get("parked_shelves", [])
     skip = set(settings.get("skip_tiles", []))
     today = dt.date.today()
     week = today.isocalendar()[1]
@@ -302,6 +309,14 @@ def main():
             build_only = set(sel.get("keys", []))
             print(f"building only {len(build_only)} selected cards, the rest are copied from the live site")
 
+    def studio_tint(shelf, name, key):
+        rule = settings.get("logos", {}).get(shelf) or {}
+        lk = look_of(key, shelf)
+        lb = settings.get("look_base", {}).get(lk, lk)
+        if rule.get("style") != "studio" and lb != "studio":
+            return None
+        return settings.get("brand_colors", {}).get(key) or STUDIO_TINTS.get(slug(name))
+
     def tile_sig(tile, key, shelf, name, aq, t_, cov_off, bg_off):
         logo_hash = None
         folder = ROOT / "logos" / slug(shelf)
@@ -309,13 +324,19 @@ def main():
         if lp:
             logo_hash = hashlib.sha1(lp.read_bytes()).hexdigest()
         lk = look_of(key, shelf)
-        lk_base = "portrait" if lk.startswith("portrait") else lk
-        parts = [look.DRAW_VERSION, look.STYLE_VERSIONS.get(lk_base), lk, looks.get(lk_base), tile.get("sources"), aq, t_, cov_off, bg_off,
+        lb = settings.get("look_base", {}).get(lk, lk)
+        lk_base = "portrait" if lb.startswith("portrait") else lb
+        parts = [look.DRAW_VERSION, look.STYLE_VERSIONS.get(lk_base), lk, looks.get(lk if lk != lb else lk_base), tile.get("sources"), aq, t_, cov_off, bg_off,
                  settings["cover"].get("shapes"), settings.get("background"),
                  settings.get("rules"), settings.get("logos", {}).get(shelf), shelf in settings.get("outline_shelves", []),
                  shelf in refresh.get("classic_art", []), shelf in refresh.get("fixed_monthly_bg", []), logo_hash]
         parts += [settings.get(k, {}).get(key) for k in ("fonts", "tile_style", "logo_choice", "logo_scale", "brand_colors", "logo_parts", "rename", "subtitles")]
         parts += [key in settings.get(k, []) for k in ("logo_color", "logo_white")]
+        if key in settings.get("logo_y", {}):
+            parts.append(["logo_y", settings["logo_y"][key]])
+        tint = studio_tint(shelf, name, key)
+        if tint:
+            parts.append(tint)
         return hashlib.sha1(json.dumps(parts, sort_keys=True, default=str).encode()).hexdigest()[:16]
 
     def reuse(entry, d_out):
@@ -367,10 +388,12 @@ def main():
             label = settings.get("rename", {}).get(key, name)
 
             tstyle = settings.get("tile_style", {}).get(key)
+            tstyle = settings.get("look_base", {}).get(tstyle, tstyle)     # your own looks draw like the look they're based on
             if len(cov_titles) < 2 or len(bg_titles) < 2 or tstyle == "title":
                 # nothing usable once horror is filtered out: title-only cover, plain background
                 for shape, (w, h) in settings["cover"]["shapes"].items():
-                    look.title_only_cover(label, {**settings["cover"], **looks.get("title", {})}, (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
+                    tl = looks.get("title", {})
+                    look.title_only_cover(label, {**settings["cover"], **{k: v for k, v in tl.items() if k != "sizes"}, **tl.get("sizes", {}).get(shape, {})}, (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
                 bw, bh = settings["background"]["width"], settings["background"]["height"]
                 look.plain_field((bw, bh)).save(d / "background.webp", "WEBP", quality=84)
                 manifest.append({"shelf": shelf, "tile": name, "path": rel, "title_only": True, "sig": sig,
@@ -413,13 +436,23 @@ def main():
             if rule and logo is None:
                 print(f"    {key}: {logo_note}, using text")
             lk = look_of(key, shelf)
-            lks = looks.get("portrait" if lk.startswith("portrait") else lk, {})
+            lks = looks.get(lk) if lk in settings.get("look_base", {}) else looks.get("portrait" if lk.startswith("portrait") else lk, {})
+            lks = lks or {}
             scale = lks.get("scale", (rule or {}).get("scale", 1.0)) * settings.get("logo_scale", {}).get(key, 1.0)
-            cover_cfg = {**settings["cover"], "logo_mode": (rule or {}).get("mode", settings["cover"].get("logo_mode", "white")),
-                         **{k: v for k, v in lks.items() if k != "scale"}, **settings.get("fonts", {}).get(key, {})}
+            def cfg_for(shape):
+                """The look's settings, then that size's own adjustments, then this card's own choices."""
+                sz = lks.get("sizes", {}).get(shape, {})
+                return {**settings["cover"], "logo_mode": (rule or {}).get("mode", settings["cover"].get("logo_mode", "white")),
+                        **{k: v for k, v in lks.items() if k not in ("scale", "sizes")}, **{k: v for k, v in sz.items() if k != "scale"},
+                        **settings.get("fonts", {}).get(key, {}),
+                        **({"logo_y": settings["logo_y"][key]} if key in settings.get("logo_y", {}) else {})}
+            base_scale = scale
             wide_still = fetch.cover_still(c)
             outline = tstyle == "outline" or (shelf in settings.get("outline_shelves", []) and tstyle in (None, "outline"))
             for shape, (w, h) in settings["cover"]["shapes"].items():
+                cover_cfg = cfg_for(shape)
+                sz_scale = lks.get("sizes", {}).get(shape, {}).get("scale")
+                scale = base_scale if sz_scale is None else sz_scale * settings.get("logo_scale", {}).get(key, 1.0)
                 still = wide_still
                 if h > w and not (rule and logo is not None):   # poster: text-free poster when TMDB has one
                     still = fetch.poster_still(c) or wide_still
@@ -431,15 +464,15 @@ def main():
                     # the app icon's own backdrop colour becomes the tile colour; its mark sits on top
                     if ov:
                         bgc = ov_bg or "#0b0d10"
-                        im = look.brand_cover(logo, bgc, (w, h), scale)
+                        im = look.brand_cover(logo, bgc, (w, h), scale, cover_cfg)
                     else:
                         bgc = rule.get("colors", {}).get(name) or look.corner_color(logo)
-                        im = look.brand_cover(look.knock_background(logo), bgc, (w, h), scale)
+                        im = look.brand_cover(look.knock_background(logo), bgc, (w, h), scale, cover_cfg)
                 elif logo is not None and rule.get("style") == "station":
                     im = look.station_cover(still, logo, (w, h), scale,
-                                           color=f"{shelf}/{name}" in settings.get("logo_color", []))
+                                           color=f"{shelf}/{name}" in settings.get("logo_color", []), cfg=cover_cfg)
                 elif logo is not None and rule.get("style") == "studio":
-                    im = look.studio_cover(wide_still, logo, (w, h), scale)
+                    im = look.studio_cover(wide_still, logo, (w, h), scale, {**cover_cfg, "tint": studio_tint(shelf, name, key), "logo_color": f"{shelf}/{name}" in settings.get("logo_color", [])})
                 elif logo is not None and rule.get("style") == "portrait":
                     im = look.person_cover(logo, label, rule.get("role", ""), (w, h), cover_cfg)
                 else:

@@ -23,7 +23,9 @@ tiles, shelf_meta = [], []
 if meta.get("v") in (2, 3):
     for i in range(meta["parts"]):
         for sh in json.loads((plan_dir / f"p{i}.json").read_text())["shelves"]:
-            shelf_meta.append({k: sh[k] for k in ("title", "style", "refresh")})
+            # parked cards come as extra shelves marked parked: drawn so they're ready, but not a shelf of their own
+            if not any(m["title"] == sh["title"] for m in shelf_meta):
+                shelf_meta.append({**{k: sh[k] for k in ("title", "style", "refresh")}, "parked": bool(sh.get("parked"))})
             for c in sh["cards"]:
                 c = {"r": c} if isinstance(c, str) else c
                 ref = c.get("r")
@@ -57,9 +59,10 @@ RULES = {
 
 out_tiles, notes, problems = [], [], []
 fonts, tile_style, logo_choice, logo_color, logo_scale, brand, queries, links = {}, {}, {}, [], {}, {}, {}, {}
-subtitles = {}
+subtitles, logo_y, logo_white = {}, {}, []
 tile_look = {}
 shelf_style = {s["title"]: s["style"] for s in meta["shelves"]}
+look_base = {c["id"]: c["base"] for c in meta.get("prefs", {}).get("customLooks", [])}
 for t in tiles:
     key = f'{t["shelf"]}/{t["title"]}'
     srcs = t["sources"]
@@ -98,8 +101,12 @@ for t in tiles:
         links[key] = a["logoUrl"]
     if a.get("logoColor"):
         logo_color.append(key)
+    if a.get("logoWhite"):
+        logo_white.append(key)
     if a.get("logoScale"):
         logo_scale[key] = a["logoScale"]
+    if a.get("logoY") is not None:
+        logo_y[key] = a["logoY"]
     if a.get("brandColor"):
         brand[key] = a["brandColor"]
     q = a.get("artQuery")
@@ -113,10 +120,16 @@ for t in tiles:
         problems.append(f"{key}: only Trakt sources and no art keyword, so it gets a title-only cover")
 
 shelf_cfg = meta["shelves"]
-settings["shelves"] = [s["title"] for s in shelf_cfg]
+settings["shelves"] = [s["title"] for s in shelf_cfg if not s.get("parked")]
+settings["parked_shelves"] = [s["title"] for s in shelf_cfg if s.get("parked")]
 logos, outline = {}, []
 for s in shelf_cfg:
-    st, title = s["style"], s["title"]
+    title = s["title"]
+    st = look_base.get(s["style"], s["style"])
+    if s["style"] in look_base:          # your own look: every card on the shelf uses it
+        for t in tiles:
+            if t["shelf"] == title:
+                tile_style.setdefault(f'{title}/{t["title"]}', s["style"])
     if st in RULES:
         prev = old_logos.get(title, {})
         logos[title] = {**RULES[st], **({"scale": prev["scale"]} if prev.get("style") == RULES[st]["style"] and "scale" in prev else {})}
@@ -135,7 +148,7 @@ ref = settings.setdefault("refresh", {})
 for tier in ("weekly", "monthly", "fixed"):
     ref[tier] = [s["title"] for s in shelf_cfg if s["refresh"] == tier]
 portrait = [s["title"] for s in shelf_cfg if s["style"].startswith("portrait") or s["style"] == "award"]
-names = set(settings["shelves"])
+names = set(settings["shelves"]) | set(settings["parked_shelves"])
 ref["fixed_monthly_bg"] = sorted(set(x for x in ref.get("fixed_monthly_bg", []) if x in names) | set(portrait))
 ref["classic_art"] = sorted(set(x for x in ref.get("classic_art", []) if x in names) | set(portrait))
 
@@ -143,11 +156,14 @@ settings["fonts"] = fonts
 settings["tile_style"] = tile_style
 settings["logo_choice"] = {**{k: v for k, v in settings.get("logo_choice", {}).items() if v.startswith("tmdb:")}, **logo_choice}
 settings["logo_color"] = logo_color
+settings["logo_white"] = logo_white
 settings["logo_scale"] = logo_scale
+settings["logo_y"] = logo_y
 settings["brand_colors"] = brand
 settings["art_queries"] = queries
 settings["subtitles"] = subtitles
 settings["tile_look"] = tile_look
+settings["look_base"] = look_base
 prefs = meta.get("prefs", {})
 settings["cover"].update({k: v for k, v in prefs.get("cover", {}).items() if k in ("weight", "opacity", "title_size", "tracking", "dash")})
 settings["background"].update({k: v for k, v in prefs.get("background", {}).items()
@@ -206,3 +222,28 @@ if links:
                 old.unlink()
         (d / f"{slug(tile)}{ext}").write_bytes(r.content)
         print("saved logo", key)
+
+# logos uploaded on the editing page: config/plan/logo*.json hold {"items": [{"shelf", "title", "data": data URI}]}
+import base64
+import re as _re
+
+
+def _slug(x):
+    x = x.lower().replace("&", "and").replace("+", "plus")
+    return _re.sub(r"[^a-z0-9]+", "-", x).strip("-")
+
+
+for lf in sorted(plan_dir.glob("logo*.json")):
+    for it in json.loads(lf.read_text()).get("items", []):
+        m = _re.match(r"data:image/(png|svg\+xml|webp|jpeg);base64,(.+)", it.get("data", ""), _re.S)
+        if not m:
+            print("CHECK uploaded logo not readable", it.get("shelf"), it.get("title"))
+            continue
+        ext = {"png": ".png", "svg+xml": ".svg", "webp": ".webp", "jpeg": ".jpg"}[m.group(1)]
+        d = repo / "logos" / _slug(it["shelf"])
+        d.mkdir(parents=True, exist_ok=True)
+        for old in d.iterdir():
+            if old.stem == _slug(it["title"]):
+                old.unlink()
+        (d / f"{_slug(it['title'])}{ext}").write_bytes(base64.b64decode(m.group(2)))
+        print("saved uploaded logo", f'{it["shelf"]}/{it["title"]}')

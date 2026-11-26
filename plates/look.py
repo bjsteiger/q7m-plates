@@ -25,34 +25,50 @@ FONT_DIR = Path(FONT_PATH).parent
 _GF = {}
 
 
-def google_font(family):
-    """Path to a Google Font's regular .ttf: fonts/gf/<Family>.ttf if it's in the repo, otherwise
-    downloaded once per build (Google Fonts' CSS API hands old browsers .ttf links)."""
-    if family in _GF:
-        return _GF[family]
-    local = FONT_DIR / "gf" / f"{family}.ttf"
+def hex_rgb(v):
+    v = str(v or "#ffffff").lstrip("#")
+    return tuple(int(v[i:i + 2], 16) for i in (0, 2, 4)) if len(v) == 6 else (255, 255, 255)
+
+
+WGHT = {"Thin": 100, "ExtraLight": 200, "Light": 300, "Regular": 400, "Medium": 500, "SemiBold": 600, "Bold": 700, "ExtraBold": 800, "Black": 900}
+
+
+def google_font(family, wght=400):
+    """Path to a Google Font .ttf at a weight (100-900): fonts/gf/<Family>[-<wght>].ttf if it's in the repo,
+    otherwise downloaded once per build (Google Fonts' CSS API hands old browsers .ttf links).
+    A weight the font doesn't come in falls back to its regular weight."""
+    key = (family, wght)
+    if key in _GF:
+        return _GF[key]
+    local = FONT_DIR / "gf" / (f"{family}.ttf" if wght == 400 else f"{family}-{wght}.ttf")
     if local.exists():
-        _GF[family] = str(local)
-        return _GF[family]
+        _GF[key] = str(local)
+        return _GF[key]
     import re
     import tempfile
     import urllib.parse
     import requests
-    css = requests.get("https://fonts.googleapis.com/css2?family=" + urllib.parse.quote_plus(family),
-                       headers={"User-Agent": "Mozilla/4.0"}, timeout=30).text
-    m = re.search(r"url\((https://[^)]+\.ttf)\)", css)
+    q = urllib.parse.quote_plus(family) + ("" if wght == 400 else f":wght@{wght}")
+    try:
+        r = requests.get("https://fonts.googleapis.com/css2?family=" + q, headers={"User-Agent": "Mozilla/4.0"}, timeout=30)
+        m = re.search(r"url\((https://[^)]+\.ttf)\)", r.text) if r.ok else None
+    except requests.RequestException:
+        m = None
     if not m:
+        if wght != 400:
+            _GF[key] = google_font(family, 400)
+            return _GF[key]
         raise ValueError(f"Google font not found: {family}")
-    path = Path(tempfile.gettempdir()) / f"gf-{re.sub(r'[^A-Za-z0-9]+', '-', family)}.ttf"
+    path = Path(tempfile.gettempdir()) / f"gf-{re.sub(r'[^A-Za-z0-9]+', '-', family)}-{wght}.ttf"
     path.write_bytes(requests.get(m.group(1), timeout=60).content)
-    _GF[family] = str(path)
-    return _GF[family]
+    _GF[key] = str(path)
+    return _GF[key]
 
 
 def font(size, weight, file=None):
     """Montserrat at a named weight, a font file from fonts/, or "gf:Family Name" for a Google Font."""
     if file and file.startswith("gf:"):
-        return ImageFont.truetype(google_font(file[3:]), size)
+        return ImageFont.truetype(google_font(file[3:], WGHT.get(weight, 400)), size)
     if file:
         return ImageFont.truetype(str(FONT_DIR / file), size)
     f = ImageFont.truetype(FONT_PATH, size)
@@ -267,28 +283,56 @@ def _vgradient(logo, top=1.0, bottom=0.78):
     return Image.merge("RGBA", (r, g, b, a))
 
 
-def station_cover(still, logo, size, scale=1.0, color=False):
+def _bright(img, cfg, default=1.0):
+    """Backdrop brightness ("backdrop"), skipped when it's the look's default."""
+    b = cfg.get("backdrop", default)
+    return img if b == default else ImageEnhance.Brightness(img).enhance(b / default if default else b)
+
+
+def _fade(img, cfg, strength, start, power=1.4, color=(0, 0, 0)):
+    """Darkening gradient across the tile. Settings: fade (strength), fade_start (0..1, where it begins),
+    fade_dir (bottom, top, left, right, both, none) and fade_color (hex)."""
+    w, h = img.size
+    k = cfg.get("fade", strength)
+    d = cfg.get("fade_dir", "bottom")
+    if not k or d == "none":
+        return img
+    st = cfg.get("fade_start", start)
+    col = hex_rgb(cfg["fade_color"]) if cfg.get("fade_color") else color
+    def ramp(t):
+        return (max(0, (t - st) / max(0.01, 1 - st)) ** power) * k
+    fn = {"bottom": lambda x, y: ramp(y), "top": lambda x, y: ramp(1 - y),
+          "left": lambda x, y: ramp(1 - x), "right": lambda x, y: ramp(x),
+          "both": lambda x, y: max(ramp(y), ramp(1 - y))}.get(d, lambda x, y: ramp(y))
+    return Image.composite(Image.new("RGB", (w, h), col), img, _mask_from_fn(w, h, fn, 10))
+
+
+def station_cover(still, logo, size, scale=1.0, color=False, cfg=None):
     """Network tile: a dim, blurred still behind a soft glow, white logo with a slight gradient.
     color=True keeps the logo in its own colours (for logos listed in logo_color)."""
+    cfg = cfg or {}
     w, h = size
-    img = fill(still, w, h).filter(ImageFilter.GaussianBlur(max(6, w // 110)))
+    img = fill(still, w, h).filter(ImageFilter.GaussianBlur(max(1, int(max(6, w // 110) * cfg.get("blur", 1.0)))))
     img = ImageEnhance.Color(img).enhance(0.8)
-    img = ImageEnhance.Brightness(img).enhance(0.24)
+    img = ImageEnhance.Brightness(img).enhance(cfg.get("backdrop", 0.24))
     dark = Image.new("RGB", (w, h), (6, 7, 10))
-    img = Image.composite(img, dark, _vignette(w, h, 0.95, 0.15))
-    glow = _mask_from_fn(w, h, lambda x, y: 0.22 * max(0, 1 - ((x - 0.5) * 2.2) ** 2 - ((y - 0.5) * 2.4 * (h / w if h > w else 1)) ** 2), 60)
-    img = Image.composite(Image.new("RGB", (w, h), (120, 140, 170)), img, glow)
+    img = Image.composite(img, dark, _vignette(w, h, cfg.get("edges", 0.95), 0.15))
+    gl = cfg.get("glow", 0.22)
+    glow = _mask_from_fn(w, h, lambda x, y: gl * max(0, 1 - ((x - 0.5) * 2.2) ** 2 - ((y - 0.5) * 2.4 * (h / w if h > w else 1)) ** 2), 60)
+    img = Image.composite(Image.new("RGB", (w, h), hex_rgb(cfg.get("glow_color", "#788caa"))), img, glow)
+    img = _fade(img, cfg, 0, 0.45)
 
-    lg = _prep_logo(logo, None) if color else _vgradient(_prep_logo(logo, "white"))
+    lg = _prep_logo(logo, None) if color else _vgradient(_prep_logo(logo, "white"), cfg.get("gradient_top", 1.0), cfg.get("gradient", 0.78))
     box_w = min(w * 0.8, w * (0.6 if h >= w else 0.42) * scale)
     box_h = min(h * 0.5, h * (0.26 if h > w else 0.32) * scale)
     k = min(box_w / lg.width, box_h / lg.height)
     lg = lg.resize((max(1, int(lg.width * k)), max(1, int(lg.height * k))), Image.LANCZOS)
     shadow = Image.new("RGBA", lg.size, (0, 0, 0, 0))
-    shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * 0.5)))
-    shadow = shadow.filter(ImageFilter.GaussianBlur(8))
+    sa = cfg.get("shadow", 0.5)
+    shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * sa)))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(cfg.get("shadow_blur", 8)))
     out = img.convert("RGBA")
-    x, y = (w - lg.width) // 2, int(h * 0.5 - lg.height / 2)
+    x, y = (w - lg.width) // 2, int(h * cfg.get("logo_y", 0.5) - lg.height / 2)
     out.alpha_composite(shadow, (x, y + 4))
     out.alpha_composite(lg, (x, y))
     return out.convert("RGB")
@@ -301,11 +345,14 @@ def cover(still, title, cfg, size=None, logo=None, logo_scale=1.0):
     title scales with the short side and wraps to two lines when needed.
     """
     w, h = size or (1280, 720)
-    img = grade(fill(still, w, h, focus_x=0.5, focus_y=0.35 if h > w else 0.4))
+    ty = cfg.get("title_y", 0.5)
+    img = grade(fill(still, w, h, focus_x=0.5, focus_y=0.35 if h > w else 0.4), cfg.get("saturation", 0.85))
+    img = _bright(img, cfg)
     dark = Image.new("RGB", (w, h), DARK)
-    img = Image.composite(img, dark, _vignette(w, h, 0.8, 0.25))
+    img = Image.composite(img, dark, _vignette(w, h, cfg.get("vignette", 0.8), 0.25))
+    img = _fade(img, cfg, 0, 0.45)
     band = Image.new("L", (w, h), 0)
-    ImageDraw.Draw(band).rectangle([0, h * 0.32, w, h * 0.68], fill=int(255 * cfg["title_band"]))
+    ImageDraw.Draw(band).rectangle([0, h * (ty - 0.18), w, h * (ty + 0.18)], fill=int(255 * cfg["title_band"]))
     img = Image.composite(dark, img, band.filter(ImageFilter.GaussianBlur(70)))
 
     layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
@@ -318,9 +365,10 @@ def cover(still, title, cfg, size=None, logo=None, logo_scale=1.0):
         a = cfg["opacity"]
         lg.putalpha(lg.getchannel("A").point(lambda v: int(v * a)))
         shadow = Image.new("RGBA", lg.size, (0, 0, 0, 0))
-        shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * 0.45)))
-        shadow = shadow.filter(ImageFilter.GaussianBlur(6))
-        x, y = (w - lg.width) // 2, (h - lg.height) // 2
+        lsa = cfg.get("logo_shadow", 0.45)
+        shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * lsa)))
+        shadow = shadow.filter(ImageFilter.GaussianBlur(cfg.get("logo_shadow_blur", 6)))
+        x, y = (w - lg.width) // 2, (h - lg.height) // 2 if "logo_y" not in cfg else int(h * cfg["logo_y"] - lg.height / 2)
         layer.alpha_composite(shadow, (x, y + 3))
         layer.alpha_composite(lg, (x, y))
         out = img.convert("RGBA")
@@ -331,30 +379,42 @@ def cover(still, title, cfg, size=None, logo=None, logo_scale=1.0):
     base = int(base * cfg.get("font_scale", 1.0))
     lines, f, tr = _fit(d, title, w * (0.84 if h >= w else 0.78), base, cfg["tracking"], cfg["weight"],
                         file=cfg.get("font_file"), upper=cfg.get("upper", True),
-                        max_lines=3 if h > w else 2)
+                        max_lines=cfg["lines"] if isinstance(cfg.get("lines"), int) else (3 if h > w else 2))
     a = int(255 * cfg["opacity"])
+    col = hex_rgb(cfg.get("text_color", "#ffffff"))
     lh = f.size * 1.08
-    top = h / 2 - lh * len(lines) / 2
+    top = h * ty - lh * len(lines) / 2
+    sa, sb = int(round(255 * cfg.get("shadow", 70 / 255))), cfg.get("shadow_blur", 0)
     if cfg.get("dash", True):
-        d.rectangle([w / 2 - 22, top - 26, w / 2 + 22, top - 22], fill=(255, 255, 255, int(a * 0.8)))
+        d.rectangle([w / 2 - 22, top - 26, w / 2 + 22, top - 22], fill=col + (int(a * 0.8),))
+    if sb:      # soft shadow on its own layer
+        sl = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+        sd = ImageDraw.Draw(sl)
+        for i, ln in enumerate(lines):
+            _tracked(sd, w / 2, top + lh * i + lh / 2 + 3, ln, f, tr, (0, 0, 0, sa))
+        layer = Image.alpha_composite(sl.filter(ImageFilter.GaussianBlur(sb * min(w, h) / 720)), layer)
+        d = ImageDraw.Draw(layer)
     for i, ln in enumerate(lines):
-        _tracked(d, w / 2, top + lh * i + lh / 2, ln, f, tr, (255, 255, 255, a), shadow=(0, 0, 0, 70))
+        _tracked(d, w / 2, top + lh * i + lh / 2, ln, f, tr, col + (a,), shadow=None if sb else (0, 0, 0, sa))
     out = img.convert("RGBA")
     out.alpha_composite(layer)
     return out.convert("RGB")
 
 
-def brand_cover(logo, bg_hex, size, scale=1.0):
+def brand_cover(logo, bg_hex, size, scale=1.0, cfg=None):
     """App-tile style: brand-colour field, full-colour logo, soft dark gradient rising from the bottom."""
+    cfg = cfg or {}
     w, h = size
     bg = tuple(int(bg_hex.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4))
     img = Image.new("RGB", (w, h), bg)
     # gentle lift in the middle so the field isn't flat
-    glow = _mask_from_fn(w, h, lambda x, y: 0.10 * max(0, 1 - (((x - 0.5) * 1.6) ** 2 + ((y - 0.5) * 2) ** 2)), 40)
+    gl = cfg.get("glow", 0.10)
+    glow = _mask_from_fn(w, h, lambda x, y: gl * max(0, 1 - (((x - 0.5) * 1.6) ** 2 + ((y - 0.5) * 2) ** 2)), 40)
     img = Image.composite(Image.new("RGB", (w, h), tuple(min(255, c + 40) for c in bg)), img, glow)
     # dark gradient coming up from the bottom
-    fade = _mask_from_fn(w, h, lambda x, y: (max(0, (y - 0.45) / 0.55) ** 1.4) * 0.6, 10)
-    img = Image.composite(Image.new("RGB", (w, h), (0, 0, 0)), img, fade)
+    if cfg.get("edges"):
+        img = Image.composite(img, Image.new("RGB", (w, h), (6, 7, 10)), _vignette(w, h, cfg["edges"], 0.15))
+    img = _fade(img, cfg, 0.6, 0.45)
 
     lg = _prep_logo(logo, "color")
     col, _ = _dominant(lg)
@@ -364,8 +424,16 @@ def brand_cover(logo, bg_hex, size, scale=1.0):
     box_h = min(h * 0.5, h * (0.22 if h > w else 0.28) * scale)
     k = min(box_w / lg.width, box_h / lg.height)
     lg = lg.resize((max(1, int(lg.width * k)), max(1, int(lg.height * k))), Image.LANCZOS)
+    if cfg.get("gradient_top", 1.0) != 1.0 or cfg.get("gradient", 1.0) != 1.0:
+        lg = _vgradient(lg, cfg.get("gradient_top", 1.0), cfg.get("gradient", 1.0))
     out = img.convert("RGBA")
-    out.alpha_composite(lg, ((w - lg.width) // 2, int(h * 0.5 - lg.height / 2)))
+    pos = ((w - lg.width) // 2, int(h * cfg.get("logo_y", 0.5) - lg.height / 2))
+    if cfg.get("shadow", 0):
+        sh = Image.new("RGBA", lg.size, (0, 0, 0, 0))
+        sa = cfg["shadow"]
+        sh.putalpha(lg.getchannel("A").point(lambda v: int(v * sa)))
+        out.alpha_composite(sh.filter(ImageFilter.GaussianBlur(cfg.get("shadow_blur", 8))), (pos[0], pos[1] + 4))
+    out.alpha_composite(lg, pos)
     return out.convert("RGB")
 
 
@@ -379,32 +447,40 @@ def _dominant(logo):
     return (int(r), int(g), int(b)), 0.299 * r + 0.587 * g + 0.114 * b
 
 
-def studio_cover(still, logo, size, scale=1.0):
+def studio_cover(still, logo, size, scale=1.0, cfg=None):
     """Studio tile: the logo large and in its own colours over a deep field tinted from the logo,
     with the film still faintly underneath, like a studio's opening card."""
+    cfg = cfg or {}
     w, h = size
     col, _ = _dominant(_prep_logo(logo, "color"))
-    lg = _vgradient(_prep_logo(logo, "white"), 1.0, 0.82)   # every studio logo in white, same treatment
-    if max(col) - min(col) < 25:      # grey or black logo: use a neutral blue-grey field
-        col = (60, 70, 90)
+    lg = _prep_logo(logo, "color") if cfg.get("logo_color") else _vgradient(_prep_logo(logo, "white"), cfg.get("gradient_top", 1.0), cfg.get("gradient", 0.82))   # studio logos in white unless kept in color
+    if cfg.get("tint"):               # the studio's own color, picked per studio
+        col = hex_rgb(cfg["tint"])
+    elif max(col) - min(col) < 25:    # grey or black logo with no color picked: a neutral field
+        col = hex_rgb(cfg.get("neutral", "#3c465a"))
     deep = tuple(max(6, int(c * 0.28)) for c in col)
     mid = tuple(max(10, int(c * 0.55)) for c in col)
     base = Image.new("RGB", (w, h), deep)
-    glow = _mask_from_fn(w, h, lambda x, y: max(0, 1 - ((x - 0.5) * 1.5) ** 2 - ((y - 0.5) * 1.8) ** 2) * 0.75, 50)
-    base = Image.composite(Image.new("RGB", (w, h), mid), base, glow)
+    gl = cfg.get("glow", 0.75)
+    glow = _mask_from_fn(w, h, lambda x, y: max(0, 1 - ((x - 0.5) * 1.5) ** 2 - ((y - 0.5) * 1.8) ** 2) * gl, 50)
+    base = Image.composite(Image.new("RGB", (w, h), hex_rgb(cfg["glow_color"]) if cfg.get("glow_color") else mid), base, glow)
     under = ImageEnhance.Brightness(ImageOps.grayscale(fill(still, w, h)).convert("RGB")).enhance(0.5)
-    base = Image.blend(base, ImageChops.multiply(base, under.point(lambda v: min(255, v + 120))), 0.6)
-    base = Image.composite(Image.new("RGB", (w, h), (0, 0, 0)), base,
-                           _mask_from_fn(w, h, lambda x, y: (max(0, (y - 0.55) / 0.45) ** 1.5) * 0.55, 10))
+    if cfg.get("blur"):
+        under = under.filter(ImageFilter.GaussianBlur(max(1, int(max(6, w // 110) * cfg["blur"]))))
+    base = Image.blend(base, ImageChops.multiply(base, under.point(lambda v: min(255, v + 120))), cfg.get("still", 0.6))
+    if cfg.get("edges"):
+        base = Image.composite(base, Image.new("RGB", (w, h), (6, 7, 10)), _vignette(w, h, cfg["edges"], 0.15))
+    base = _fade(base, cfg, 0.55, 0.55, 1.5)
     box_w = min(w * 0.88, w * (0.78 if h >= w else 0.62) * scale)
     box_h = min(h * 0.7, h * (0.42 if h > w else 0.56) * scale)
     k = min(box_w / lg.width, box_h / lg.height)
     lg = lg.resize((max(1, int(lg.width * k)), max(1, int(lg.height * k))), Image.LANCZOS)
     shadow = Image.new("RGBA", lg.size, (0, 0, 0, 0))
-    shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * 0.55)))
-    shadow = shadow.filter(ImageFilter.GaussianBlur(10))
+    sa = cfg.get("shadow", 0.55)
+    shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * sa)))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(cfg.get("shadow_blur", 10)))
     out = base.convert("RGBA")
-    x, y = (w - lg.width) // 2, int(h * 0.5 - lg.height / 2)
+    x, y = (w - lg.width) // 2, int(h * cfg.get("logo_y", 0.5) - lg.height / 2)
     out.alpha_composite(shadow, (x, y + 6))
     out.alpha_composite(lg, (x, y))
     return out.convert("RGB")
@@ -413,12 +489,22 @@ def studio_cover(still, logo, size, scale=1.0):
 def person_cover(headshot, name, role, size, cfg):
     """Portrait tile for a person: moody headshot, dark vignette, name anchored bottom left."""
     w, h = size
-    img = fill(headshot, w, h, focus_x=0.5, focus_y=0.18)
-    img = ImageEnhance.Color(img).enhance(0.75)
+    z = cfg.get("photo_zoom", 1.0)
+    fx, fy = cfg.get("photo_x", 0.5), cfg.get("photo_y", 0.18)
+    if z == 1.0:
+        img = fill(headshot, w, h, focus_x=fx, focus_y=fy)
+    else:                                  # zoom in, then crop around the chosen spot
+        big = fill(headshot, int(w * z), int(h * z), focus_x=fx, focus_y=fy)
+        x, y = int((big.width - w) * fx), int((big.height - h) * fy)
+        img = big.crop((x, y, x + w, y + h))
+    img = ImageEnhance.Color(img).enhance(cfg.get("saturation", 0.75))
     img = ImageEnhance.Contrast(img).enhance(1.1)
+    img = _bright(img, cfg)
     dark = Image.new("RGB", (w, h), (6, 7, 10))
-    img = Image.composite(img, dark, _vignette(w, h, 0.85, 0.3))
-    img = Image.composite(dark, img, _mask_from_fn(w, h, lambda x, y: (max(0, (y - 0.5) / 0.5) ** 1.3) * 0.92, 12))
+    img = Image.composite(img, dark, _vignette(w, h, cfg.get("vignette", 0.85), 0.3))
+    img = Image.composite(dark, img, _mask_from_fn(w, h, lambda x, y: (max(0, (y - 0.5) / 0.5) ** 1.3) * cfg.get("shade", 0.92), 12))
+    img = _fade(img, cfg, 0, 0.45)
+    ntr, nfile, ncol = cfg.get("name_tracking", 0.12), cfg.get("font_file"), hex_rgb(cfg.get("text_color", "#ffffff"))
 
     layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
@@ -426,32 +512,39 @@ def person_cover(headshot, name, role, size, cfg):
     words = name.upper().split()
     lines = [" ".join(words[:1]), " ".join(words[1:])] if len(words) > 1 else [name.upper()]
     size_ = int(min(w, h) * cfg.get("name_size", 0.085))
-    tr = size_ * 0.12
+    tr = size_ * ntr
     while size_ > 18:
-        f = font(size_, cfg.get("weight", "Bold"))
+        f = font(size_, cfg.get("weight", "Bold"), nfile)
         widest = max(sum(d.textlength(c, font=f) for c in ln) + tr * (len(ln) - 1) for ln in lines)
         if widest <= w * 0.84:
             break
         size_ -= 2
-        tr = size_ * 0.12
-    f = font(size_, cfg.get("weight", "Bold"))
-    small = font(max(12, int(size_ * 0.32)), "SemiBold")
-    x0 = int(w * 0.08)
+        tr = size_ * ntr
+    f = font(size_, cfg.get("weight", "Bold"), nfile)
+    small = font(max(12, int(size_ * cfg.get("role_size", 0.32))), cfg.get("role_weight", "SemiBold"), cfg.get("role_font"))
+    x0 = int(w * cfg.get("name_x", 0.08))
+    align = cfg.get("name_align", "left")
     lh = size_ * 1.02
-    bottom = h - int(h * 0.06) - (small.size + 10 if role else 0)
+    bottom = h - int(h * cfg.get("name_bottom", 0.06)) - (small.size + 10 if role else 0)
     y = bottom - lh * len(lines)
+
+    def start(text, fnt, gap):            # left edge of a line for the chosen alignment
+        if align == "left":
+            return x0
+        tw = sum(d.textlength(c, font=fnt) for c in text) + gap * (len(text) - 1)
+        return (w - tw) / 2 if align == "center" else w - x0 - tw
     for ln in lines:
-        cx = x0
+        cx = start(ln, f, tr)
         for ch in ln:
-            d.text((cx, y + 2), ch, font=f, fill=(0, 0, 0, 90))
-            d.text((cx, y), ch, font=f, fill=(255, 255, 255, a))
+            d.text((cx, y + 2), ch, font=f, fill=(0, 0, 0, int(round(255 * cfg.get("shadow", 90 / 255)))))
+            d.text((cx, y), ch, font=f, fill=ncol + (a,))
             cx += d.textlength(ch, font=f) + tr
         y += lh
-    if role:
-        cx = x0
+    if role and cfg.get("show_role", True):
+        cx = start(role.upper(), small, small.size * cfg.get("role_tracking", 0.35))
         for ch in role.upper():
-            d.text((cx, y + 6), ch, font=small, fill=(255, 255, 255, int(a * 0.55)))
-            cx += d.textlength(ch, font=small) + small.size * 0.35
+            d.text((cx, y + 6), ch, font=small, fill=hex_rgb(cfg.get("role_color", "#ffffff")) + (int(a * cfg.get("role_opacity", 0.55)),))
+            cx += d.textlength(ch, font=small) + small.size * cfg.get("role_tracking", 0.35)
     out = img.convert("RGBA")
     out.alpha_composite(layer)
     return out.convert("RGB")
@@ -476,39 +569,49 @@ def outline_year_cover(still, text, size, cfg):
     """Decades tile: the year huge, in outline, so big it runs off the edges but still reads.
     A faint filled copy sits behind for depth, like it's coming off the screen."""
     w, h = size
-    img = grade(fill(still, w, h))
-    img = ImageEnhance.Brightness(img).enhance(0.55)
+    img = grade(fill(still, w, h), cfg.get("saturation", 0.85))
+    img = ImageEnhance.Brightness(img).enhance(cfg.get("backdrop", 0.55))
     dark = Image.new("RGB", (w, h), DARK)
-    img = Image.composite(img, dark, _vignette(w, h, 0.85, 0.2))
+    img = Image.composite(img, dark, _vignette(w, h, cfg.get("vignette", 0.85), 0.2))
+    img = _fade(img, cfg, 0, 0.45)
+    ow = cfg.get("outline_weight_name", "Bold")
     f_file = cfg.get("outline_font", "BebasNeue-Regular.ttf")
     if cfg.get("outline_drop_s", True) and text[-1:] in "sS" and text[:-1].isdigit():
         text = text[:-1]                 # "1970s" -> "1970"
     if h > w and len(text) > 3:          # tall tile: stack it, "19" over "70s"
         text = text[:2] + "\n" + text[2:]
     # size the text so it is ~1.12x the tile width: it bleeds past both sides, every digit still visible
-    probe = font(400, "Bold", f_file)
+    probe = font(400, ow, f_file)
     d0 = ImageDraw.Draw(Image.new("L", (1, 1)))
     tw = max(d0.textlength(ln, font=probe) for ln in text.split("\n"))
     fs = int(400 * (w * cfg.get("outline_bleed", 1.12)) / max(1, tw))
     fs = min(fs, int(h * (0.62 if "\n" in text else 1.25)))
-    f = font(fs, "Bold", f_file)
+    f = font(fs, ow, f_file)
     bbox = d0.multiline_textbbox((0, 0), text, font=f, spacing=-int(fs * 0.12), align="center")
     tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
     x = (w - tw) / 2 - bbox[0]
-    y = (h - th) / 2 - bbox[1] + h * 0.03
+    y = (h - th) / 2 - bbox[1] + h * 0.03 + h * (cfg.get("title_y", 0.5) - 0.5)
     stroke = max(2, fs // cfg.get("outline_weight", 85))
     layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
     # faint solid copy, slightly larger and offset, gives the 'coming at you' depth
     ghost = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     sp = -int(fs * 0.12)
-    ImageDraw.Draw(ghost).multiline_text((x - fs * 0.02, y - fs * 0.02), text, font=f, fill=(255, 255, 255, 22),
+    ImageDraw.Draw(ghost).multiline_text((x - fs * 0.02, y - fs * 0.02), text, font=f, fill=hex_rgb(cfg.get("outline_color", "#ffffff")) + (int(255 * cfg.get("ghost", 22 / 255)),),
                                          spacing=sp, align="center")
     ghost = ghost.filter(ImageFilter.GaussianBlur(fs // 40))
     a = int(255 * cfg.get("outline_opacity", 0.72))
+    oc = hex_rgb(cfg.get("outline_color", "#ffffff"))
     ld.multiline_text((x, y), text, font=f, fill=(0, 0, 0, 0), stroke_width=stroke,
-                      stroke_fill=(255, 255, 255, a), spacing=sp, align="center")
+                      stroke_fill=oc + (a,), spacing=sp, align="center")
     out = img.convert("RGBA")
+    sa = cfg.get("shadow", 0)
+    if sa:                            # soft drop shadow under the outline
+        k = min(w, h) / 720
+        sh = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+        sh.putalpha(layer.getchannel("A").point(lambda v: int(v * sa)))
+        sh = sh.filter(ImageFilter.GaussianBlur(max(1, int(cfg.get("shadow_blur", 10) * k))))
+        out.alpha_composite(sh, (0, int(4 * k)))
     out.alpha_composite(ghost)
     out.alpha_composite(layer)
     return out.convert("RGB")
@@ -610,9 +713,10 @@ def vibrant_cover(still, title, subtitle, size, cfg=None):
     cfg = cfg or {}
     w, h = size
     k = min(w, h) / 720
-    base = ImageEnhance.Contrast(ImageEnhance.Color(fill(still, w, h)).enhance(1.25)).enhance(1.08)
+    base = ImageEnhance.Contrast(ImageEnhance.Color(fill(still, w, h)).enhance(cfg.get("saturation", 1.25))).enhance(1.08)
     img = ImageEnhance.Brightness(base).enhance(cfg.get("backdrop", 0.5))
-    img = Image.composite(img, Image.new("RGB", (w, h), DARK), _vignette(w, h, 0.75, 0.2))
+    img = Image.composite(img, Image.new("RGB", (w, h), DARK), _vignette(w, h, cfg.get("vignette", 0.75), 0.2))
+    img = _fade(img, cfg, 0, 0.45)
     vivid = ImageEnhance.Brightness(ImageEnhance.Color(base).enhance(1.7)).enhance(cfg.get("vivid", 1.45))
     vivid = Image.blend(vivid, Image.new("RGB", (w, h), (255, 255, 255)), 0.18)
 
@@ -621,29 +725,33 @@ def vibrant_cover(still, title, subtitle, size, cfg=None):
     size_ = int(cfg.get("title_size", 88) * 1.45 * k * cfg.get("font_scale", 1.0))
     max_w = w * (0.86 if h >= w else 0.82)
     words = text.split()
+    wrap = cfg.get("lines", "auto")
     lines = [text]
+    if wrap == 2 and len(words) > 1:
+        mid = max(1, len(words) // 2)
+        lines = [" ".join(words[:mid]), " ".join(words[mid:])]
     while True:
-        f = font(size_, "Black", cfg.get("font_file"))
-        tr = size_ * 0.01
+        f = font(size_, cfg.get("weight_v", "Black"), cfg.get("font_file"))
+        tr = size_ * cfg.get("tracking_v", 0.01)
         widest = max(sum(d0.textlength(c, font=f) for c in ln) + tr * (len(ln) - 1) for ln in lines)
         if widest <= max_w or size_ < 30 * k:
             break
-        if len(lines) == 1 and len(words) > 1 and h > w:
+        if len(lines) == 1 and len(words) > 1 and (h > w if wrap == "auto" else wrap != 1):
             mid = max(1, len(words) // 2)
             lines = [" ".join(words[:mid]), " ".join(words[mid:])]
             continue
         size_ = int(size_ * 0.94)
-    sub = (subtitle or "").upper()
+    sub = (subtitle or "").upper() if cfg.get("show_subtitle", True) else ""
     sf = font(max(12, int(size_ * cfg.get("subtitle_size", 0.21))), "Bold")
-    str_ = sf.size * 0.14
+    str_ = sf.size * cfg.get("subtitle_tracking", 0.14)
     lh = f.size * 1.0
     block = lh * len(lines) + (sf.size * 1.8 if sub else 0)
-    top = h / 2 - block / 2
+    top = h * cfg.get("title_y", 0.5) - block / 2
 
     mask = Image.new("L", (w, h), 0)
     outline = Image.new("L", (w, h), 0)
     md, od = ImageDraw.Draw(mask), ImageDraw.Draw(outline)
-    sw = max(2, int(size_ * 0.03))
+    sw = max(2 if "outline_width" not in cfg else 1, int(size_ * cfg.get("outline_width", 0.03)))
     for i, ln in enumerate(lines):
         widths = [d0.textlength(c, font=f) for c in ln]
         x = w / 2 - (sum(widths) + tr * (len(ln) - 1)) / 2
@@ -653,20 +761,21 @@ def vibrant_cover(still, title, subtitle, size, cfg=None):
             md.text((x, y), ch, font=f, fill=255)
             x += cw + tr
     ring = ImageChops.subtract(outline, mask)
-    shadow = outline.filter(ImageFilter.GaussianBlur(max(4, int(10 * k)))).point(lambda v: int(v * 0.55))
+    sa = cfg.get("shadow", 0.55)
+    shadow = outline.filter(ImageFilter.GaussianBlur(max(4 if "shadow_blur" not in cfg else 1, int(cfg.get("shadow_blur", 10) * k)))).point(lambda v: int(v * sa))
     img = Image.composite(Image.new("RGB", (w, h), (0, 0, 0)), img, shadow)
     img = Image.composite(vivid, img, mask)
     oa = cfg.get("outline", 0.8)
-    img = Image.composite(Image.new("RGB", (w, h), (245, 245, 250)), img, ring.point(lambda v: int(v * oa)))
+    img = Image.composite(Image.new("RGB", (w, h), hex_rgb(cfg.get("outline_color", "#f5f5fa"))), img, ring.point(lambda v: int(v * oa)))
 
     if sub:
-        col = accent_color(still)
+        col = accent_color(still) if cfg.get("subtitle_color", "auto") == "auto" else hex_rgb(cfg["subtitle_color"])
         dd = ImageDraw.Draw(img)
         widths = [dd.textlength(c, font=sf) for c in sub]
         total = sum(widths) + str_ * (len(sub) - 1)
         if total > w * 0.9:
             sf = font(max(10, int(sf.size * w * 0.9 / total)), "Bold")
-            str_ = sf.size * 0.1
+            str_ = sf.size * cfg.get("subtitle_tracking", 0.14) * 0.1 / 0.14
             widths = [dd.textlength(c, font=sf) for c in sub]
             total = sum(widths) + str_ * (len(sub) - 1)
         x = w / 2 - total / 2
