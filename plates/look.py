@@ -322,7 +322,7 @@ def station_cover(still, logo, size, scale=1.0, color=False, cfg=None):
     img = Image.composite(Image.new("RGB", (w, h), hex_rgb(cfg.get("glow_color", "#788caa"))), img, glow)
     img = _fade(img, cfg, 0, 0.45)
 
-    lg = _prep_logo(logo, None) if color else _vgradient(_prep_logo(logo, "white"), cfg.get("gradient_top", 1.0), cfg.get("gradient", 0.78))
+    lg = _vgradient(_prep_logo(logo, None) if color else _prep_logo(logo, "white"), cfg.get("gradient_top", 1.0), cfg.get("gradient", 0.78))   # shading applies to color logos too
     box_w = min(w * 0.8, w * (0.6 if h >= w else 0.42) * scale)
     box_h = min(h * 0.5, h * (0.26 if h > w else 0.32) * scale)
     k = min(box_w / lg.width, box_h / lg.height)
@@ -453,7 +453,7 @@ def studio_cover(still, logo, size, scale=1.0, cfg=None):
     cfg = cfg or {}
     w, h = size
     col, _ = _dominant(_prep_logo(logo, "color"))
-    lg = _prep_logo(logo, "color") if cfg.get("logo_color") else _vgradient(_prep_logo(logo, "white"), cfg.get("gradient_top", 1.0), cfg.get("gradient", 0.82))   # studio logos in white unless kept in color
+    lg = _vgradient(_prep_logo(logo, "color") if cfg.get("logo_color") else _prep_logo(logo, "white"), cfg.get("gradient_top", 1.0), cfg.get("gradient", 0.82))   # studio logos in white unless kept in color
     if cfg.get("tint"):               # the studio's own color, picked per studio
         col = hex_rgb(cfg["tint"])
     elif max(col) - min(col) < 25:    # grey or black logo with no color picked: a neutral field
