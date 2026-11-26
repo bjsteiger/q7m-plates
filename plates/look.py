@@ -5,7 +5,7 @@ Every number that shapes the look lives in config/settings.json under
 """
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 FONT_PATH = str(Path(__file__).resolve().parent.parent / "fonts" / "Montserrat.ttf")
 DARK = (8, 10, 14)
@@ -109,10 +109,55 @@ def _prep_logo(logo, mode):
     if bbox:
         logo = logo.crop(bbox)
     if mode == "white":
+        # white logo, but keep near-black details (letters inside a badge) dark so they stay readable
         a = logo.getchannel("A")
-        logo = Image.new("RGBA", logo.size, (255, 255, 255, 0))
-        logo.putalpha(a)
+        lum = logo.convert("L")
+        dark = Image.eval(lum, lambda v: 255 if v < 60 else 0)
+        dark = Image.composite(dark, Image.new("L", logo.size, 0), a.point(lambda v: 255 if v > 200 else 0))
+        n_dark = dark.histogram()[255]
+        n_opaque = a.point(lambda v: 255 if v > 200 else 0).histogram()[255]
+        has_dark = 0 < n_dark < 0.6 * max(1, n_opaque)
+        out = Image.new("RGBA", logo.size, (255, 255, 255, 0))
+        out.putalpha(a)
+        if has_dark:
+            out.paste((18, 20, 24, 255), (0, 0), dark)
+        logo = out
     return logo
+
+
+def _vgradient(logo, top=1.0, bottom=0.78):
+    """Subtle top-to-bottom shading on a logo (white at top, soft grey at the bottom)."""
+    w, h = logo.size
+    grad = Image.linear_gradient("L").resize((w, h)).point(lambda v: int(255 * (top + (bottom - top) * v / 255)))
+    r, g, b, a = logo.split()
+    r, g, b = (ImageChops.multiply(ch, grad) for ch in (r, g, b))
+    return Image.merge("RGBA", (r, g, b, a))
+
+
+def station_cover(still, logo, size, scale=1.0):
+    """Network tile: a dim, blurred still behind a soft glow, white logo with a slight gradient."""
+    w, h = size
+    img = fill(still, w, h).filter(ImageFilter.GaussianBlur(max(6, w // 110)))
+    img = ImageEnhance.Color(img).enhance(0.8)
+    img = ImageEnhance.Brightness(img).enhance(0.24)
+    dark = Image.new("RGB", (w, h), (6, 7, 10))
+    img = Image.composite(img, dark, _vignette(w, h, 0.95, 0.15))
+    glow = _mask_from_fn(w, h, lambda x, y: 0.22 * max(0, 1 - ((x - 0.5) * 2.2) ** 2 - ((y - 0.46) * 2.4 * (h / w if h > w else 1)) ** 2), 60)
+    img = Image.composite(Image.new("RGB", (w, h), (120, 140, 170)), img, glow)
+
+    lg = _vgradient(_prep_logo(logo, "white"))
+    box_w = min(w * 0.8, w * (0.6 if h >= w else 0.42) * scale)
+    box_h = min(h * 0.5, h * (0.26 if h > w else 0.32) * scale)
+    k = min(box_w / lg.width, box_h / lg.height)
+    lg = lg.resize((max(1, int(lg.width * k)), max(1, int(lg.height * k))), Image.LANCZOS)
+    shadow = Image.new("RGBA", lg.size, (0, 0, 0, 0))
+    shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * 0.5)))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(8))
+    out = img.convert("RGBA")
+    x, y = (w - lg.width) // 2, int(h * 0.46 - lg.height / 2)
+    out.alpha_composite(shadow, (x, y + 4))
+    out.alpha_composite(lg, (x, y))
+    return out.convert("RGB")
 
 
 def cover(still, title, cfg, size=None, logo=None, logo_scale=1.0):

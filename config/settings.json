@@ -400,7 +400,8 @@
       "type": "company"
     },
     "Networks": {
-      "type": "network"
+      "type": "network",
+      "style": "station"
     },
     "Awards": {
       "type": "wikimedia",
