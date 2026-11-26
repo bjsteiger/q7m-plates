@@ -1,0 +1,232 @@
+"""Turn a tile's sources into a ranked list of titles with artwork.
+
+Supported source types:
+  tmdbDiscover, tmdbList, tmdbCollection, traktList (needs TRAKT_CLIENT_ID)
+"""
+import io
+import os
+import time
+
+import requests
+from PIL import Image
+
+TMDB_API = "https://api.themoviedb.org/3"
+TMDB_IMG = "https://image.tmdb.org/t/p"
+TRAKT_API = "https://api.trakt.tv"
+
+
+class TMDB:
+    def __init__(self, key):
+        self.s = requests.Session()
+        self.params = {}
+        if key.startswith("eyJ"):            # v4 read access token
+            self.s.headers["Authorization"] = f"Bearer {key}"
+        else:                                # v3 api key
+            self.params["api_key"] = key
+        self._img_cache = {}
+
+    def get(self, path, **params):
+        for attempt in range(4):
+            r = self.s.get(f"{TMDB_API}{path}", params={**self.params, **params}, timeout=30)
+            if r.status_code == 429:
+                time.sleep(2 + attempt * 2)
+                continue
+            self._check(r, path)
+            return r.json()
+        self._check(r, path)
+
+    @staticmethod
+    def _check(r, path):
+        """Raise without the request URL, so the API key never lands in a public log."""
+        if not r.ok:
+            raise requests.HTTPError(f"TMDB {r.status_code} on {path}")
+
+    def image(self, path, size="w1280"):
+        key = (path, size)
+        if key not in self._img_cache:
+            r = self.s.get(f"{TMDB_IMG}/{size}{path}", timeout=60)
+            self._check(r, f"image {path}")
+            self._img_cache[key] = Image.open(io.BytesIO(r.content)).convert("RGB")
+        return self._img_cache[key]
+
+    def clean_backdrop(self, media, tmdb_id, fallback):
+        """Prefer a backdrop with no text or logo on it."""
+        try:
+            data = self.get(f"/{media}/{tmdb_id}/images", include_image_language="null")
+            shots = [b for b in data.get("backdrops", []) if b.get("iso_639_1") is None]
+            shots.sort(key=lambda b: (b.get("vote_average", 0), b.get("width", 0)), reverse=True)
+            if shots:
+                return shots[0]["file_path"]
+        except requests.HTTPError:
+            pass
+        return fallback
+
+
+class Trakt:
+    def __init__(self, client_id):
+        self.s = requests.Session()
+        self.s.headers.update({
+            "trakt-api-version": "2",
+            "trakt-api-key": client_id,
+            "Content-Type": "application/json",
+        })
+
+    def list_items(self, username, slug):
+        r = self.s.get(f"{TRAKT_API}/users/{username}/lists/{slug}/items", timeout=30)
+        r.raise_for_status()
+        out = []
+        for it in r.json():
+            kind = it.get("type")
+            obj = it.get(kind) or {}
+            tid = (obj.get("ids") or {}).get("tmdb")
+            if tid and kind in ("movie", "show"):
+                out.append(("movie" if kind == "movie" else "tv", tid))
+        return out
+
+
+def _discover_params(q, min_votes):
+    p = {"sort_by": "popularity.desc", "include_adult": "false", "page": 1}
+    if q.get("genres"):
+        p["with_genres"] = ",".join(map(str, q["genres"]))
+    if q.get("excludeGenres"):
+        p["without_genres"] = ",".join(map(str, q["excludeGenres"]))
+    if q.get("keywords"):
+        p["with_keywords"] = "|".join(map(str, q["keywords"]))
+    if q.get("companies"):
+        p["with_companies"] = "|".join(map(str, q["companies"]))
+    if q.get("networks"):
+        p["with_networks"] = "|".join(map(str, q["networks"]))
+    if q.get("originalLanguage"):
+        p["with_original_language"] = q["originalLanguage"]
+    tv = q.get("mediaType") == "tv"
+    if q.get("releaseDateGte"):
+        p["first_air_date.gte" if tv else "primary_release_date.gte"] = q["releaseDateGte"]
+    if q.get("releaseDateLte"):
+        p["first_air_date.lte" if tv else "primary_release_date.lte"] = q["releaseDateLte"]
+    if q.get("crew"):
+        p["with_crew"] = "|".join(map(str, q["crew"]))
+    if q.get("voteAverageGte"):
+        p["vote_average.gte"] = q["voteAverageGte"]
+    p["vote_count.gte"] = max(int(q.get("voteCountGte") or 0), min_votes)
+    return p
+
+
+def _norm(media, r):
+    return {
+        "media": media,
+        "id": r["id"],
+        "title": r.get("title") or r.get("name") or "",
+        "backdrop": r.get("backdrop_path"),
+        "popularity": r.get("popularity", 0),
+    }
+
+
+_kw_cache, _person_cache = {}, {}
+
+
+def resolve_keyword(tmdb, text):
+    """Find a TMDB keyword id by name. Exact match wins, otherwise the first hit."""
+    if text not in _kw_cache:
+        res = tmdb.get("/search/keyword", query=text).get("results", [])
+        exact = [r for r in res if r["name"].lower() == text.lower()]
+        _kw_cache[text] = (exact or res or [{"id": None}])[0]["id"]
+    return _kw_cache[text]
+
+
+def resolve_person(tmdb, name):
+    if name not in _person_cache:
+        res = tmdb.get("/search/person", query=name).get("results", [])
+        _person_cache[name] = res[0]["id"] if res else None
+    return _person_cache[name]
+
+
+def art_query_source(tmdb, aq):
+    """Turn a friendly art query from settings.json into a tmdbDiscover-style source.
+
+    Keys: media ("movie"/"tv"), genres [ids], keywords ["names"], director "name",
+    before "YYYY-MM-DD", after "YYYY-MM-DD", languages "fr|ko|ja", min_rating, min_votes
+    """
+    q = {"mediaType": aq.get("media", "movie"), "genres": aq.get("genres", [])}
+    if aq.get("keywords"):
+        ids = [resolve_keyword(tmdb, k) for k in aq["keywords"]]
+        q["keywords"] = [i for i in ids if i]
+        if not q["keywords"] and not q["genres"]:
+            return None
+    if aq.get("director"):
+        pid = resolve_person(tmdb, aq["director"])
+        if not pid:
+            return None
+        q["crew"] = [pid]
+    if aq.get("before"):
+        q["releaseDateLte"] = aq["before"]
+    if aq.get("after"):
+        q["releaseDateGte"] = aq["after"]
+    if aq.get("languages"):
+        q["originalLanguage"] = aq["languages"]
+    if aq.get("min_rating"):
+        q["voteAverageGte"] = aq["min_rating"]
+    if aq.get("min_votes"):
+        q["voteCountGte"] = aq["min_votes"]
+    return {"tmdbDiscover": {"_0": q}}
+
+
+def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None):
+    """Return up to `want` distinct titles (most popular first) that have a backdrop.
+
+    Discover queries are re-sorted by popularity with a vote floor so the
+    artwork uses recognizable titles even if the row itself sorts by newest.
+    """
+    seen, out = set(), []
+
+    def add(media, r):
+        key = (media, r["id"])
+        if key in seen or not r.get("backdrop_path"):
+            return
+        seen.add(key)
+        out.append(_norm(media, r))
+
+    sources = list(tile["sources"])
+    if art_query:
+        extra = art_query_source(tmdb, art_query)
+        if extra:
+            sources.insert(0, extra)
+
+    for src in sources:
+        if len(out) >= want:
+            break
+        kind = next(iter(src))
+        q = src[kind]["_0"]
+        try:
+            if kind == "tmdbDiscover":
+                media = "tv" if q.get("mediaType") == "tv" else "movie"
+                res = tmdb.get(f"/discover/{media}", **_discover_params(q, min_votes))["results"]
+                if len(res) < 6:   # niche query, relax the vote floor
+                    res = tmdb.get(f"/discover/{media}", **_discover_params(q, 10))["results"]
+                for r in res:
+                    add(media, r)
+            elif kind == "tmdbList":
+                data = tmdb.get(f"/list/{q['listId']}")
+                items = sorted(data.get("items", []), key=lambda r: r.get("popularity", 0), reverse=True)
+                for r in items:
+                    add("tv" if r.get("media_type") == "tv" else "movie", r)
+            elif kind == "tmdbCollection":
+                data = tmdb.get(f"/collection/{q['collectionId']}")
+                for r in sorted(data.get("parts", []), key=lambda r: r.get("popularity", 0), reverse=True):
+                    add("movie", r)
+            elif kind == "traktList" and trakt:
+                for media, tid in trakt.list_items(q["username"], q["listSlug"])[:want * 2]:
+                    try:
+                        add(media, tmdb.get(f"/{media}/{tid}"))
+                    except requests.HTTPError:
+                        continue
+                    if len(out) >= want:
+                        break
+        except requests.HTTPError as e:
+            print(f"    source skipped ({kind}): {e}")
+    out.sort(key=lambda t: t["popularity"], reverse=True)
+    return out[:want]
+
+
+def trakt_from_env():
+    cid = os.environ.get("TRAKT_CLIENT_ID")
+    return Trakt(cid) if cid else None

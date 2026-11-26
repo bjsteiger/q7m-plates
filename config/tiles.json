@@ -1,0 +1,5016 @@
+[
+ {
+  "shelf": "Genres",
+  "title": "Action",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Action Adventures",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Action Thrillers",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Adult Animation",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Adventure",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Aliens",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Animated Comedies",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16,
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16,
+       35
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Animation",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Anime",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "ja",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Arthouse Animation",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Classics",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Comedy",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       10762,
+       10763,
+       10764,
+       10767
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Creature Features",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Crime",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Dark Fantasy",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Disaster Epics",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Documentary",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Drama",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Dystopian Futures",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Family Movie Night",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Fantasy",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Fantasy Adventures",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Favorite Cartoons",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Frontier Grit",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "High Seas Heroics",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Historical Blockbusters",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Horror",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       27
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Independent",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "International",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Kids",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10751
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Learning Corner",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Lovable Monsters",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Music",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Music Movies",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Myths and Legends",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Nature",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Psychological Terror",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Reality",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 50
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Robots and AI",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Romance",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Sci-Fi",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       10765
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Short Films",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Space Epics",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Spies",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Super Shocks",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Superheroes",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Tearjerkers",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Techno Thrillers",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Thriller",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       53
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 200
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Treasure Hunts",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "VHS Era Frightmares",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "War Stories",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       10768
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Genres",
+  "title": "Westerns",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Whodunits",
+  "sources": []
+ },
+ {
+  "shelf": "Genres",
+  "title": "Workplace Comedies",
+  "sources": []
+ },
+ {
+  "shelf": "Decades",
+  "title": "1960s",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "movie",
+      "releaseDateGte": "1960-01-01",
+      "releaseDateLte": "1969-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Decades",
+  "title": "1970s",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "movie",
+      "releaseDateGte": "1970-01-01",
+      "releaseDateLte": "1979-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Decades",
+  "title": "1980s",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "movie",
+      "releaseDateGte": "1980-01-01",
+      "releaseDateLte": "1989-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Decades",
+  "title": "1990s",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "movie",
+      "releaseDateGte": "1990-01-01",
+      "releaseDateLte": "1999-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Decades",
+  "title": "2000s",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "movie",
+      "releaseDateGte": "2000-01-01",
+      "releaseDateLte": "2009-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Decades",
+  "title": "2010s",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "movie",
+      "releaseDateGte": "2010-01-01",
+      "releaseDateLte": "2019-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Decades",
+  "title": "2020s",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "movie",
+      "releaseDateGte": "2020-01-01",
+      "releaseDateLte": "2029-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Directors",
+  "title": "Paul Thomas Anderson",
+  "sources": []
+ },
+ {
+  "shelf": "Directors",
+  "title": "John Carpenter",
+  "sources": []
+ },
+ {
+  "shelf": "Directors",
+  "title": "Brian De Palma",
+  "sources": []
+ },
+ {
+  "shelf": "Directors",
+  "title": "David Fincher",
+  "sources": []
+ },
+ {
+  "shelf": "Directors",
+  "title": "Alfred Hitchcock",
+  "sources": []
+ },
+ {
+  "shelf": "Directors",
+  "title": "Stanley Kubrick",
+  "sources": []
+ },
+ {
+  "shelf": "Directors",
+  "title": "Christopher Nolan",
+  "sources": []
+ },
+ {
+  "shelf": "Directors",
+  "title": "Martin Scorsese",
+  "sources": []
+ },
+ {
+  "shelf": "Directors",
+  "title": "Steven Spielberg",
+  "sources": []
+ },
+ {
+  "shelf": "Directors",
+  "title": "Denis Villeneuve",
+  "sources": []
+ },
+ {
+  "shelf": "Awards",
+  "title": "BAFTA",
+  "sources": []
+ },
+ {
+  "shelf": "Awards",
+  "title": "Independent Spirit",
+  "sources": []
+ },
+ {
+  "shelf": "Awards",
+  "title": "Golden Globes",
+  "sources": []
+ },
+ {
+  "shelf": "Awards",
+  "title": "Cannes",
+  "sources": []
+ },
+ {
+  "shelf": "Awards",
+  "title": "Oscars",
+  "sources": []
+ },
+ {
+  "shelf": "Awards",
+  "title": "Venice",
+  "sources": []
+ },
+ {
+  "shelf": "Studios",
+  "title": "20th Century Studios",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       127928
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       127928
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       127928
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "A24",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       41077
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       41077
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       41077
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       41077
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       41077
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       41077
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Blumhouse Productions",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3172
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3172
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3172
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3172
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3172
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3172
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "DC",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       429
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       429
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       429
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       429
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       429
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       429
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "DreamWorks Pictures",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       7
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       7
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       7
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       7
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       7
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       7
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Focus Features",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       10146
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       10146
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       10146
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       10146
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       10146
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       10146
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Illumination",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       6704
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       6704
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       6704
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Lionsgate",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       1632
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       1632
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       1632
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Lucasfilm Ltd.",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       1
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       1
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       1
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       1
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       1
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       1
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Marvel Studios",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       420
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       420
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       420
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       420
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       420
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       420
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "MGM",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       21
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       21
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       21
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       21
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       21
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       21
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "New Line Cinema",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       12
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       12
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       12
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       12
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       12
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       12
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Paramount Pictures",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       4
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       4
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       4
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       4
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       4
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       4
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Pixar",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       3
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Searchlight Pictures",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       127929
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       127929
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       127929
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Sony Pictures",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       5
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       5
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       5
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Studio Ghibli",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       10342
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       10342
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       10342
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Universal Pictures",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       33
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       33
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       33
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       33
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       33
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       33
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Walt Disney Studio",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       6125
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       6125
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       6125
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       6125
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       6125
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       6125
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Studios",
+  "title": "Warner Bros. Entertainment",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       174
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       174
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc"
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "companies": [
+       174
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Moods & Vibes",
+  "title": "Christmas",
+  "sources": [
+   {
+    "tmdbList": {
+     "_0": {
+      "listId": 124970
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       27
+      ],
+      "keywords": [
+       207317
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       27
+      ],
+      "keywords": [
+       207317
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       27
+      ],
+      "keywords": [
+       207317
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       27
+      ],
+      "genres": [
+       10751
+      ],
+      "keywords": [
+       207317
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Moods & Vibes",
+  "title": "Cozy & Comforting",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       35,
+       18
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       10749
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteAverageGte": 7.2,
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       35,
+       18
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteAverageGte": 7.8,
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       16,
+       10751
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       35,
+       10749
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Moods & Vibes",
+  "title": "Mind-Bending",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       878,
+       53
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       9648
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       53,
+       9648
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "keywords": [
+       10854,
+       4565
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       53,
+       18
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteAverageGte": 7.8,
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       878
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Moods & Vibes",
+  "title": "Adrenaline Rush",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "keywords": [
+       10051,
+       10349
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       10759
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "keywords": [
+       779,
+       377418
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteAverageGte": 7.5,
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       28,
+       53
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Moods & Vibes",
+  "title": "Epic & Sweeping",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       36,
+       10752
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       14,
+       12
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       10765,
+       18
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       878
+      ],
+      "keywords": [
+       161176
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteAverageGte": 7.6,
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       12
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Moods & Vibes",
+  "title": "Feel-Good",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       18
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       18
+      ],
+      "keywords": [
+       5565
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "keywords": [
+       7312
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteAverageGte": 7.8,
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16,
+       99
+      ],
+      "genres": [
+       35,
+       10751
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Moods & Vibes",
+  "title": "Tearjerkers",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       18,
+       10749
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       18
+      ],
+      "keywords": [
+       156924,
+       10614,
+       9872
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       10749,
+       18
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteAverageGte": 7.4,
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       18
+      ],
+      "keywords": [
+       9872
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       18
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteAverageGte": 8,
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       18,
+       10749
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Moods & Vibes",
+  "title": "80s & 90s Vibes",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "1980-01-01",
+      "releaseDateLte": "1989-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "1990-01-01",
+      "releaseDateLte": "1999-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       28
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "1980-01-01",
+      "releaseDateLte": "1999-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       35
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "1980-01-01",
+      "releaseDateLte": "1999-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "genres": [
+       10765,
+       9648
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateGte": "1980-01-01",
+      "releaseDateLte": "1999-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 300
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       16
+      ],
+      "keywords": [
+       281237,
+       11800,
+       3131
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "1990-01-01",
+      "releaseDateLte": "1999-12-31",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Based on",
+  "title": "True Story",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       9672
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       9672
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       9672
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       9672
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       9672
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       9672
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Based on",
+  "title": "Book",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       818
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       818
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       818
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       818
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       818
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       818
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Based on",
+  "title": "Mythology",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       2035,
+       2036,
+       185343,
+       179101,
+       2037
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       2035,
+       2036,
+       185343,
+       179101,
+       2037
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       2035,
+       2036,
+       185343,
+       179101,
+       2037
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       2035,
+       2036,
+       185343,
+       179101,
+       2037
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       2035,
+       2036,
+       185343,
+       179101,
+       2037
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       2035,
+       2036,
+       185343,
+       179101,
+       2037
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Based on",
+  "title": "Play",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       10181
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       10181
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       10181
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       10181
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       10181
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       10181
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Based on",
+  "title": "Fairy Tale",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       179411
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       179411
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       179411
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       179411
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       179411
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       179411
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Based on",
+  "title": "Toy",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       10542
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       10542
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       10542
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       10542
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       10542
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       10542
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Based on",
+  "title": "TV Show",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       269769
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       269769
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       269769
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       269769
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       269769
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       269769
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Based on",
+  "title": "Short Story",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       156866
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       156866
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       156866
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 75
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       156866
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 40
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "excludeGenres": [
+       99
+      ],
+      "keywords": [
+       156866
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       156866
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Based on",
+  "title": "Board Games",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       344283,
+       10090
+      ],
+      "mediaType": "movie",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       344283,
+       10090
+      ],
+      "mediaType": "tv",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       344283,
+       10090
+      ],
+      "mediaType": "movie",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 20
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       344283,
+       10090
+      ],
+      "mediaType": "tv",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       344283,
+       10090
+      ],
+      "mediaType": "movie",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 200
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "keywords": [
+       344283,
+       10090
+      ],
+      "mediaType": "tv",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Documentaries",
+  "title": "History, War & Civilizations",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       282633,
+       15012,
+       1956
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       282633,
+       1956
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       1956,
+       273967
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       15012,
+       308477
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       1956,
+       162365,
+       273967
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       282633,
+       1956,
+       162365
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Documentaries",
+  "title": "Investigative & Scandals",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       5340,
+       3692
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       4373,
+       3692
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       3692,
+       5340
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       6158,
+       4373
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       5340,
+       6158
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       5340,
+       3692,
+       4373
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Documentaries",
+  "title": "Nature, Wildlife & Earth",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902,
+       221355
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       270
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 10
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18165,
+       9902
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       4627,
+       18330
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       18330,
+       9902
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Documentaries",
+  "title": "Sports & Athletic Stories",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       6075,
+       6496
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       6075,
+       6496,
+       209476
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       10039
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       209476,
+       377418,
+       5970
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       6075,
+       6496,
+       10039
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       6075,
+       6496,
+       10039
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Documentaries",
+  "title": "Science, Tech & Cosmos",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       287067,
+       9882,
+       204390
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       9882,
+       204390
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       1576,
+       378084,
+       310
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       1279,
+       360221,
+       14673,
+       159315
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       9882,
+       204390,
+       287067
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       287067,
+       1576,
+       9882,
+       18330
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateGte": "2022-01-01",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Documentaries",
+  "title": "Music & Concert Documentaries",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       4048,
+       283297
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       4048,
+       283297
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       283297,
+       4048
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       281554,
+       898
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 15
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99,
+       10402
+      ],
+      "keywords": [
+       156205,
+       6029
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 25
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       99
+      ],
+      "keywords": [
+       283297,
+       4048,
+       6029
+      ],
+      "mediaType": "movie",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "primary_release_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Reality TV",
+  "title": "Discover Reality TV",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       250845
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       215119,
+       262705
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateGte": "2024-01-01",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 1
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_count.desc"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Reality TV",
+  "title": "High-Stakes Competition & Survival",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       262705,
+       10349
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       64
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       250845
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 50
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       9935
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       33
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       250845
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Reality TV",
+  "title": "Culinary Battles & Cooking Shows",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       227635,
+       1918
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       240810
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       143
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       1918,
+       227635
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       10637,
+       9935
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       1918,
+       227635,
+       240810
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Reality TV",
+  "title": "Real Estate, Home & Lifestyle Makeovers",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       179867
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       231230
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "mediaType": "tv",
+      "networks": [
+       210
+      ],
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       34130,
+       15479
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       208454
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 0
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       179867,
+       231230,
+       34130,
+       208454
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateGte": "2021-01-01",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Reality TV",
+  "title": "Game Shows, Talent & Trivia",
+  "sources": [
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       4325
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       186120,
+       8290
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       4325
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "vote_average.desc",
+      "voteCountGte": 100
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       4325
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateLte": "1999-12-31",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10767,
+       35
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "sortBy": "popularity.desc",
+      "voteCountGte": 5
+     }
+    }
+   },
+   {
+    "tmdbDiscover": {
+     "_0": {
+      "genres": [
+       10764
+      ],
+      "keywords": [
+       4325,
+       8290
+      ],
+      "mediaType": "tv",
+      "originalLanguage": "en",
+      "releaseDateGte": "2023-01-01",
+      "sortBy": "first_air_date.desc",
+      "voteCountGte": 10
+     }
+    }
+   }
+  ]
+ }
+]

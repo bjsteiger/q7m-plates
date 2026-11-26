@@ -1,0 +1,160 @@
+"""Build cover and background images for each tile.
+
+Run:   python -m plates.build
+Needs: TMDB_API_KEY (required), TRAKT_CLIENT_ID (optional, for Trakt-list tiles)
+
+Writes images only to site/, which the GitHub workflow publishes to Pages:
+  site/art/<shelf>/<tile>/cover.webp
+  site/art/<shelf>/<tile>/background.webp
+  site/manifest.json   <- which tiles rendered this week (tile names and paths only)
+
+Image links: <pages url>/art/<shelf-slug>/<tile-slug>/cover.webp and background.webp.
+"""
+import argparse
+import datetime as dt
+import json
+import os
+import re
+import sys
+import traceback
+from pathlib import Path
+
+from PIL import Image
+
+from . import look
+from .sources import TMDB, gather, trakt_from_env
+
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def slug(s):
+    s = s.lower().replace("&", "and").replace("+", "plus")
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+
+class OnlineFetcher:
+    def __init__(self, settings):
+        key = os.environ.get("TMDB_API_KEY")
+        if not key:
+            sys.exit("TMDB_API_KEY is not set. Add it under Settings > Secrets and variables > Actions.")
+        self.tmdb = TMDB(key)
+        self.trakt = trakt_from_env()
+        self.want = settings["titles_per_tile"]
+        self.min_votes = settings["min_votes"]
+
+    def titles(self, tile, art_query=None):
+        return gather(tile, self.tmdb, self.trakt, want=self.want, min_votes=self.min_votes, art_query=art_query)
+
+    def cover_still(self, t):
+        path = self.tmdb.clean_backdrop(t["media"], t["id"], t["backdrop"])
+        return self.tmdb.image(path, "original")
+
+    def still(self, t, big=False):
+        return self.tmdb.image(t["backdrop"], "original" if big else "w1280")
+
+
+class OfflineFetcher:
+    """Uses local images instead of TMDB, for testing the look without a key."""
+
+    def __init__(self, settings, folder):
+        self.files = sorted(p for p in Path(folder).iterdir() if p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp"))
+        self.want = settings["titles_per_tile"]
+
+    def titles(self, tile, art_query=None):
+        n = len(tile["title"])
+        return [{"media": "movie", "id": (n * 7 + i) % len(self.files), "title": f.stem, "backdrop": str(f), "popularity": 0}
+                for i, f in enumerate(self.files[n % len(self.files):] + self.files[:n % len(self.files)])][: self.want]
+
+    def cover_still(self, t):
+        return Image.open(t["backdrop"]).convert("RGB")
+
+    def still(self, t, big=False):
+        return Image.open(t["backdrop"]).convert("RGB")
+
+
+def pick(titles, used, offset):
+    """Rotate through the top titles week to week, avoiding covers used by other tiles."""
+    if not titles:
+        return None
+    order = titles[offset % len(titles):] + titles[:offset % len(titles)]
+    for t in order:
+        if (t["media"], t["id"]) not in used:
+            return t
+    return order[0]
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--only", action="append", help="limit to these shelf titles (repeatable)")
+    ap.add_argument("--limit", type=int, help="max tiles per shelf, for quick tests")
+    ap.add_argument("--offline", help="folder of local stills to use instead of TMDB")
+    ap.add_argument("--out", default=str(ROOT / "site"))
+    args = ap.parse_args()
+
+    settings = json.loads((ROOT / "config" / "settings.json").read_text())
+    tiles = json.loads((ROOT / "config" / "tiles.json").read_text())
+    out = Path(args.out)
+    (out / "art").mkdir(parents=True, exist_ok=True)
+
+    fetch = OfflineFetcher(settings, args.offline) if args.offline else OnlineFetcher(settings)
+    wanted = args.only or settings["shelves"]
+    skip = set(settings.get("skip_tiles", []))
+    week = dt.date.today().isocalendar()[1]
+    offset = week if settings.get("rotate_weekly", True) else 0
+
+    used, manifest, per_shelf = set(), [], {}
+    done = failed = kept = 0
+
+    for tile in tiles:
+        shelf, name = tile["shelf"], tile["title"]
+        if shelf not in wanted:
+            continue
+        per_shelf[shelf] = per_shelf.get(shelf, 0) + 1
+        if args.limit and per_shelf[shelf] > args.limit:
+            continue
+        key = f"{shelf}/{name}"
+        if key in skip:
+            kept += 1
+            continue
+        rel = f"art/{slug(shelf)}/{slug(name)}"
+        try:
+            aq = settings.get("art_queries", {}).get(key)
+            if aq is None and shelf == "Directors":
+                aq = {"director": name}
+            titles = fetch.titles(tile, aq)
+            if len(titles) < 2:
+                print(f"  - {key}: not enough titles with art, skipped")
+                kept += 1
+                continue
+            c = pick(titles, used, offset)
+            used.add((c["media"], c["id"]))
+            rest = [t for t in titles if t is not c]
+            n = settings["background"]["panels"]
+            bg_imgs = [fetch.still(t, big=i < n) for i, t in enumerate(rest)]
+
+            d = out / rel
+            d.mkdir(parents=True, exist_ok=True)
+            label = settings.get("rename", {}).get(key, name)
+            look.cover(fetch.cover_still(c), label, settings["cover"]).save(d / "cover.webp", "WEBP", quality=88)
+            look.background(bg_imgs, settings["background"]).save(d / "background.webp", "WEBP", quality=84)
+            manifest.append({"shelf": shelf, "tile": name, "path": rel})
+            done += 1
+            print(f"  + {key}  (cover: {c['title']})")
+        except Exception as e:  # one bad tile shouldn't sink the run
+            failed += 1
+            print(f"  ! {key}: {e}")
+            traceback.print_exc(limit=1)
+
+    (out / ".nojekyll").write_text("")
+    (out / "manifest.json").write_text(json.dumps({
+        "built": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        "week": week, "rendered": done, "skipped": kept, "failed": failed,
+        "tiles": manifest,
+    }, indent=1))
+    print(f"\nDone. rendered={done} skipped={kept} failed={failed}")
+    if done == 0:
+        sys.exit("Nothing rendered, not publishing.")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,326 @@
+{
+  "shelves": [
+    "Genres",
+    "Decades",
+    "Directors",
+    "Awards",
+    "Studios",
+    "Moods & Vibes",
+    "Based on",
+    "Documentaries",
+    "Reality TV"
+  ],
+  "skip_tiles": [],
+  "rename": {},
+  "titles_per_tile": 14,
+  "min_votes": 200,
+  "rotate_weekly": true,
+  "cover": {
+    "width": 1280,
+    "height": 720,
+    "weight": "Bold",
+    "opacity": 0.85,
+    "title_size": 88,
+    "tracking": 0.14,
+    "title_band": 0.37,
+    "dash": true
+  },
+  "background": {
+    "width": 1920,
+    "height": 1080,
+    "panels": 3,
+    "panel_lean": 0.22,
+    "blend_softness": 60,
+    "wall_angle": -11,
+    "wall_brightness": 0.45,
+    "max_dark": 0.9
+  },
+  "art_queries": {
+    "Genres/Action Adventures": {
+      "genres": [
+        28,
+        12
+      ]
+    },
+    "Genres/Action Thrillers": {
+      "genres": [
+        28,
+        53
+      ]
+    },
+    "Genres/Adult Animation": {
+      "media": "tv",
+      "keywords": [
+        "adult animation"
+      ],
+      "genres": [
+        16
+      ]
+    },
+    "Genres/Adventure": {
+      "genres": [
+        12
+      ]
+    },
+    "Genres/Aliens": {
+      "keywords": [
+        "alien"
+      ]
+    },
+    "Genres/Arthouse Animation": {
+      "keywords": [
+        "stop motion"
+      ],
+      "genres": [
+        16
+      ]
+    },
+    "Genres/Classics": {
+      "before": "1975-12-31",
+      "min_rating": 7.8,
+      "min_votes": 1500
+    },
+    "Genres/Creature Features": {
+      "keywords": [
+        "monster"
+      ],
+      "genres": [
+        27
+      ]
+    },
+    "Genres/Crime": {
+      "genres": [
+        80
+      ]
+    },
+    "Genres/Dark Fantasy": {
+      "keywords": [
+        "dark fantasy"
+      ]
+    },
+    "Genres/Disaster Epics": {
+      "keywords": [
+        "disaster"
+      ]
+    },
+    "Genres/Dystopian Futures": {
+      "keywords": [
+        "dystopia"
+      ]
+    },
+    "Genres/Family Movie Night": {
+      "genres": [
+        10751
+      ]
+    },
+    "Genres/Fantasy": {
+      "genres": [
+        14
+      ]
+    },
+    "Genres/Fantasy Adventures": {
+      "genres": [
+        14,
+        12
+      ]
+    },
+    "Genres/Favorite Cartoons": {
+      "media": "tv",
+      "genres": [
+        16,
+        10762
+      ],
+      "before": "2008-12-31"
+    },
+    "Genres/Frontier Grit": {
+      "keywords": [
+        "neo-western"
+      ]
+    },
+    "Genres/High Seas Heroics": {
+      "keywords": [
+        "pirate"
+      ]
+    },
+    "Genres/Historical Blockbusters": {
+      "genres": [
+        36
+      ],
+      "min_votes": 3000
+    },
+    "Genres/Independent": {
+      "keywords": [
+        "independent film"
+      ]
+    },
+    "Genres/International": {
+      "languages": "fr|ko|ja|es|it|de|zh",
+      "min_rating": 7.5,
+      "min_votes": 1000
+    },
+    "Genres/Learning Corner": {
+      "genres": [
+        99,
+        36
+      ]
+    },
+    "Genres/Lovable Monsters": {
+      "genres": [
+        16,
+        10751
+      ],
+      "keywords": [
+        "monster"
+      ]
+    },
+    "Genres/Music": {
+      "genres": [
+        10402
+      ]
+    },
+    "Genres/Music Movies": {
+      "genres": [
+        10402,
+        18
+      ]
+    },
+    "Genres/Myths and Legends": {
+      "keywords": [
+        "mythology"
+      ]
+    },
+    "Genres/Nature": {
+      "media": "tv",
+      "genres": [
+        99
+      ],
+      "keywords": [
+        "nature"
+      ]
+    },
+    "Genres/Psychological Terror": {
+      "keywords": [
+        "psychological thriller"
+      ]
+    },
+    "Genres/Robots and AI": {
+      "keywords": [
+        "artificial intelligence"
+      ]
+    },
+    "Genres/Short Films": {
+      "keywords": [
+        "short film"
+      ]
+    },
+    "Genres/Space Epics": {
+      "keywords": [
+        "space"
+      ],
+      "genres": [
+        878
+      ]
+    },
+    "Genres/Spies": {
+      "keywords": [
+        "spy"
+      ]
+    },
+    "Genres/Super Shocks": {
+      "keywords": [
+        "supernatural"
+      ],
+      "genres": [
+        27
+      ]
+    },
+    "Genres/Superheroes": {
+      "keywords": [
+        "superhero"
+      ]
+    },
+    "Genres/Tearjerkers": {
+      "keywords": [
+        "melodrama"
+      ],
+      "genres": [
+        18
+      ]
+    },
+    "Genres/Techno Thrillers": {
+      "keywords": [
+        "hacker"
+      ]
+    },
+    "Genres/Treasure Hunts": {
+      "keywords": [
+        "treasure hunt"
+      ]
+    },
+    "Genres/VHS Era Frightmares": {
+      "genres": [
+        27
+      ],
+      "after": "1978-01-01",
+      "before": "1995-12-31"
+    },
+    "Genres/Westerns": {
+      "genres": [
+        37
+      ]
+    },
+    "Genres/Whodunits": {
+      "keywords": [
+        "whodunit"
+      ]
+    },
+    "Genres/Workplace Comedies": {
+      "media": "tv",
+      "genres": [
+        35
+      ],
+      "keywords": [
+        "workplace comedy"
+      ]
+    },
+    "Awards/Oscars": {
+      "genres": [
+        18
+      ],
+      "min_rating": 7.8,
+      "min_votes": 8000
+    },
+    "Awards/BAFTA": {
+      "languages": "en",
+      "min_rating": 7.6,
+      "min_votes": 5000,
+      "genres": [
+        18
+      ]
+    },
+    "Awards/Golden Globes": {
+      "min_rating": 7.6,
+      "min_votes": 6000,
+      "genres": [
+        35
+      ]
+    },
+    "Awards/Cannes": {
+      "languages": "fr|ko|it|es|ja",
+      "min_rating": 7.6,
+      "min_votes": 800
+    },
+    "Awards/Venice": {
+      "languages": "it|fr|en",
+      "min_rating": 7.5,
+      "min_votes": 2000,
+      "before": "2005-12-31"
+    },
+    "Awards/Independent Spirit": {
+      "keywords": [
+        "independent film"
+      ],
+      "min_rating": 7.2
+    }
+  }
+}
