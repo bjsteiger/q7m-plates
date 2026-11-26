@@ -64,10 +64,14 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
     steps:
-      - name: Keep the 3 newest runs
+      - name: Remove old and cancelled runs
         run: |
-          gh api "repos/$GH_REPO/actions/runs?per_page=100" \
-            --jq '[.workflow_runs[] | select(.status=="completed")][3:][] | .id' |
+          # keep: this run, the newest successful build, the newest logo save. Delete everything else that finished.
+          gh api "repos/$GH_REPO/actions/runs?per_page=100" --jq '
+            [.workflow_runs[] | select(.status=="completed")] as $done
+            | ([$done[] | select(.name=="build" and .conclusion=="success")][0].id) as $lastbuild
+            | ([$done[] | select(.name=="save logo links" and .conclusion=="success")][0].id) as $lastsave
+            | $done[] | select(.id != $lastbuild and .id != $lastsave) | .id' |
           while read -r id; do gh api -X DELETE "repos/$GH_REPO/actions/runs/$id" || true; done
 
       - name: Keep only the live deployment
