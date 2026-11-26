@@ -443,19 +443,16 @@
   },
   "logo_overrides": {
     "Streaming Services/Apple TV+": {
-      "url": "https://crystalpng.com/wp-content/uploads/2025/11/apple-tv-logo.png",
-      "bg": "#000000",
-      "white": true
+      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/apple-tv-transparent.png",
+      "bg": "#000000"
     },
     "Streaming Services/Prime Video": {
       "url": "https://cdn.rebrand.gallery/images/vf63fv1z/production/336131f2d140dd230e15e8d000b93d6136dee855-393x396.svg",
       "bg": "#00a8e1"
     },
     "Streaming Services/Hulu": {
-      "url": "https://www.thisishulu.com/app/uploads/2023/10/logo-gradient-3up.svg",
-      "part": 0,
-      "bg": "#0b0c0f",
-      "fallback_url": "https://raw.githubusercontent.com/Liikevin77/Nuvio-Streaming-logo-choose/main/%F0%9F%93%81%20streaming-logo-selector/%F0%9F%9F%A2%20hulu/Hulu-logo-500-281.png"
+      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/hulu-transparent.png",
+      "bg": "#0b0c0f"
     },
     "Streaming Services/Discovery+": {
       "url": "https://static.wikitide.net/avidwiki/thumb/1/1c/Discovery%2B_Originals_%282020%29.png/1200px-Discovery%2B_Originals_%282020%29.png"
@@ -650,12 +647,20 @@
       "url": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/we-tv-us.png"
     },
     "Streaming Services/Disney+": {
-      "url": "https://raw.githubusercontent.com/Liikevin77/Nuvio-Streaming-logo-choose/main/%F0%9F%93%81%20streaming-logo-selector/%F0%9F%94%B5%20disney-plus/Disney-Plus-Logo-500x281.png",
+      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/disney-plus-transparent.png",
       "bg": "#0b1a46"
     },
     "Streaming Services/Paramount+": {
-      "url": "https://raw.githubusercontent.com/Liikevin77/Nuvio-Streaming-logo-choose/main/%F0%9F%93%81%20streaming-logo-selector/%F0%9F%9F%A1%20paramount/Paramount_Plus-500-281.png",
+      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/paramount-plus-transparent.png",
       "bg": "#0b3fd6"
+    },
+    "Streaming Services/Netflix": {
+      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/Netflix_Symbol_RGB.png",
+      "bg": "#000000"
+    },
+    "Streaming Services/HBO Max": {
+      "url": "https://raw.githubusercontent.com/One800burner/Transparent-Logos/main/hbo-max-transparent.png",
+      "bg": "#0d1240"
     }
   }
 }
