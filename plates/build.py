@@ -4,11 +4,13 @@ Run:   python -m plates.build
 Needs: TMDB_API_KEY (required), TRAKT_CLIENT_ID (optional, for Trakt-list tiles)
 
 Writes images only to site/, which the GitHub workflow publishes to Pages:
-  site/art/<shelf>/<tile>/cover.webp
-  site/art/<shelf>/<tile>/background.webp
+  site/art/<shelf>/<tile>/cover-wide.webp     1280x720  (16:9)
+  site/art/<shelf>/<tile>/cover-poster.webp   800x1200  (2:3)
+  site/art/<shelf>/<tile>/cover-square.webp   1000x1000 (1:1)
+  site/art/<shelf>/<tile>/background.webp     1920x1080
   site/manifest.json   <- which tiles rendered this week (tile names and paths only)
 
-Image links: <pages url>/art/<shelf-slug>/<tile-slug>/cover.webp and background.webp.
+Every tile gets all three cover shapes, so a tile's shape can change without a rebuild.
 """
 import argparse
 import datetime as dt
@@ -52,6 +54,10 @@ class OnlineFetcher:
     def still(self, t, big=False):
         return self.tmdb.image(t["backdrop"], "original" if big else "w1280")
 
+    def poster_still(self, t):
+        path = self.tmdb.clean_poster(t["media"], t["id"])
+        return self.tmdb.image(path, "original") if path else None
+
 
 class OfflineFetcher:
     """Uses local images instead of TMDB, for testing the look without a key."""
@@ -70,6 +76,9 @@ class OfflineFetcher:
 
     def still(self, t, big=False):
         return Image.open(t["backdrop"]).convert("RGB")
+
+    def poster_still(self, t):
+        return None
 
 
 def pick(titles, used, offset):
@@ -135,9 +144,16 @@ def main():
             d = out / rel
             d.mkdir(parents=True, exist_ok=True)
             label = settings.get("rename", {}).get(key, name)
-            look.cover(fetch.cover_still(c), label, settings["cover"]).save(d / "cover.webp", "WEBP", quality=88)
+            wide_still = fetch.cover_still(c)
+            for shape, (w, h) in settings["cover"]["shapes"].items():
+                still = wide_still
+                if h > w:   # poster: use a text-free poster when TMDB has one
+                    still = fetch.poster_still(c) or wide_still
+                look.cover(still, label, settings["cover"], (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
             look.background(bg_imgs, settings["background"]).save(d / "background.webp", "WEBP", quality=84)
-            manifest.append({"shelf": shelf, "tile": name, "path": rel})
+            manifest.append({"shelf": shelf, "tile": name, "path": rel,
+                             "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
+                             "background": f"{rel}/background.webp"})
             done += 1
             print(f"  + {key}  (cover: {c['title']})")
         except Exception as e:  # one bad tile shouldn't sink the run

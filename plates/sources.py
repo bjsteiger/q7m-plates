@@ -62,6 +62,19 @@ class TMDB:
         return fallback
 
 
+    def clean_poster(self, media, tmdb_id):
+        """A poster with no text on it, if TMDB has one. Many titles don't."""
+        try:
+            data = self.get(f"/{media}/{tmdb_id}/images", include_image_language="null")
+            shots = [p for p in data.get("posters", []) if p.get("iso_639_1") is None]
+            shots.sort(key=lambda p: (p.get("vote_average", 0), p.get("width", 0)), reverse=True)
+            if shots:
+                return shots[0]["file_path"]
+        except requests.HTTPError:
+            pass
+        return None
+
+
 class Trakt:
     def __init__(self, client_id):
         self.s = requests.Session()

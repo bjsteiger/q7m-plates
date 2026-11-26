@@ -16,14 +16,26 @@
   "min_votes": 200,
   "rotate_weekly": true,
   "cover": {
-    "width": 1280,
-    "height": 720,
     "weight": "Bold",
     "opacity": 0.85,
     "title_size": 88,
     "tracking": 0.14,
     "title_band": 0.37,
-    "dash": true
+    "dash": true,
+    "shapes": {
+      "wide": [
+        1280,
+        720
+      ],
+      "poster": [
+        800,
+        1200
+      ],
+      "square": [
+        1000,
+        1000
+      ]
+    }
   },
   "background": {
     "width": 1920,

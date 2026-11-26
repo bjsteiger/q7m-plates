@@ -73,13 +73,19 @@ def _tracked(draw, cx, cy, text, fnt, tracking, fill_rgba, shadow=None):
         x += w + tracking
 
 
-def _fit(draw, title, max_w, size, tracking_ratio, weight):
+def _fit(draw, title, max_w, size, tracking_ratio, weight, max_lines=2):
     words = title.upper().split()
     options = [[" ".join(words)]]
     if len(words) > 1:
         best = min(range(1, len(words)),
                    key=lambda i: abs(len(" ".join(words[:i])) - len(" ".join(words[i:]))))
         options.append([" ".join(words[:best]), " ".join(words[best:])])
+    if max_lines >= 3 and len(words) > 2:
+        splits = [(i, j) for i in range(1, len(words) - 1) for j in range(i + 1, len(words))]
+        i, j = min(splits, key=lambda ij: max(len(" ".join(words[:ij[0]])),
+                                              len(" ".join(words[ij[0]:ij[1]])),
+                                              len(" ".join(words[ij[1]:]))))
+        options.append([" ".join(words[:i]), " ".join(words[i:j]), " ".join(words[j:])])
     for s in range(size, 40, -4):
         f = font(s, weight)
         tr = s * tracking_ratio
@@ -90,10 +96,14 @@ def _fit(draw, title, max_w, size, tracking_ratio, weight):
     return options[-1], font(44, weight), 44 * tracking_ratio
 
 
-def cover(still, title, cfg):
-    """Cinema-style tile: one graded still, darker edges, centered title."""
-    w, h = cfg["width"], cfg["height"]
-    img = grade(fill(still, w, h))
+def cover(still, title, cfg, size=None):
+    """Cinema-style tile: one graded still, darker edges, centered title.
+
+    size: (w, h). Wide, poster and square tiles all use the same look; the
+    title scales with the short side and wraps to two lines when needed.
+    """
+    w, h = size or (1280, 720)
+    img = grade(fill(still, w, h, focus_x=0.5, focus_y=0.35 if h > w else 0.4))
     dark = Image.new("RGB", (w, h), DARK)
     img = Image.composite(img, dark, _vignette(w, h, 0.8, 0.25))
     band = Image.new("L", (w, h), 0)
@@ -102,7 +112,9 @@ def cover(still, title, cfg):
 
     layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
-    lines, f, tr = _fit(d, title, w * 0.78, cfg["title_size"], cfg["tracking"], cfg["weight"])
+    base = int(cfg["title_size"] * min(w, h) / 720)
+    lines, f, tr = _fit(d, title, w * (0.84 if h >= w else 0.78), base, cfg["tracking"], cfg["weight"],
+                        max_lines=3 if h > w else 2)
     a = int(255 * cfg["opacity"])
     lh = f.size * 1.08
     top = h / 2 - lh * len(lines) / 2
