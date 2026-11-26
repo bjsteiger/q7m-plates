@@ -2,6 +2,7 @@
  {
   "shelf": "Discover",
   "title": "For You",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24,6 +25,7 @@
  {
   "shelf": "Discover",
   "title": "New Movies",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -433,6 +435,7 @@
  {
   "shelf": "Discover",
   "title": "Trending Movies",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -842,6 +845,7 @@
  {
   "shelf": "Discover",
   "title": "Top Movies",
+  "shape": "wide",
   "sources": [
    {
     "tmdbList": {
@@ -925,6 +929,7 @@
  {
   "shelf": "Discover",
   "title": "New Series",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -1235,6 +1240,7 @@
  {
   "shelf": "Discover",
   "title": "Trending TV",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -1545,11 +1551,13 @@
  {
   "shelf": "Discover",
   "title": "Top Series",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Streaming Services",
   "title": "Netflix",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -2369,6 +2377,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Apple TV+",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -3134,6 +3143,7 @@
  {
   "shelf": "Streaming Services",
   "title": "HBO Max",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -3915,6 +3925,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Paramount+",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -4686,6 +4697,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Prime Video",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -5484,6 +5496,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Disney+",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -6243,6 +6256,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Hulu",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -7041,6 +7055,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Discovery+",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -7252,6 +7267,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Magellan",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -7308,6 +7324,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Peacock",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -8016,6 +8033,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Crunchyroll",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -8424,6 +8442,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Hayu",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -8509,6 +8528,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Tubi TV",
+  "shape": "wide",
   "sources": [
    {
     "tmdbList": {
@@ -9929,6 +9949,7 @@
  {
   "shelf": "Streaming Services",
   "title": "AMC+",
+  "shape": "wide",
   "sources": [
    {
     "tmdbList": {
@@ -11259,6 +11280,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Crave",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -11412,6 +11434,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Criterion",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -12062,6 +12085,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Curiosity Stream",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -12401,6 +12425,7 @@
  {
   "shelf": "Streaming Services",
   "title": "MGM+",
+  "shape": "wide",
   "sources": [
    {
     "tmdbList": {
@@ -13624,6 +13649,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Mubi",
+  "shape": "wide",
   "sources": [
    {
     "tmdbList": {
@@ -14228,6 +14254,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Pluto TV",
+  "shape": "wide",
   "sources": [
    {
     "tmdbList": {
@@ -15603,6 +15630,7 @@
  {
   "shelf": "Streaming Services",
   "title": "Starz",
+  "shape": "wide",
   "sources": [
    {
     "tmdbList": {
@@ -16878,6 +16906,7 @@
  {
   "shelf": "Genres",
   "title": "Action",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -16911,26 +16940,31 @@
  {
   "shelf": "Genres",
   "title": "Action Adventures",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Action Thrillers",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Adult Animation",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Adventure",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Animated Comedies",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -16963,6 +16997,7 @@
  {
   "shelf": "Genres",
   "title": "Animation",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -16993,16 +17028,19 @@
  {
   "shelf": "Genres",
   "title": "Arthouse Animation",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Classics",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Comedy",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17040,21 +17078,25 @@
  {
   "shelf": "Genres",
   "title": "Crime",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Dark Fantasy",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Disaster Epics",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Documentary",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17085,6 +17127,7 @@
  {
   "shelf": "Genres",
   "title": "Drama",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17118,56 +17161,67 @@
  {
   "shelf": "Genres",
   "title": "Dystopian Futures",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Family Movie Night",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Fantasy",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Fantasy Adventures",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Favorite Cartoons",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Frontier Grit",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "High Seas Heroics",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Historical Blockbusters",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Independent",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "International",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Kids",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17186,31 +17240,37 @@
  {
   "shelf": "Genres",
   "title": "Lovable Monsters",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Music",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Music Movies",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Myths and Legends",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Nature",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Reality",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17229,11 +17289,13 @@
  {
   "shelf": "Genres",
   "title": "Robots and AI",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Romance",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17252,6 +17314,7 @@
  {
   "shelf": "Genres",
   "title": "Sci-Fi",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17285,36 +17348,43 @@
  {
   "shelf": "Genres",
   "title": "Short Films",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Space Epics",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Spies",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Superheroes",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Tearjerkers",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Techno Thrillers",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Thriller",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17333,11 +17403,13 @@
  {
   "shelf": "Genres",
   "title": "Treasure Hunts",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "War Stories",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17359,21 +17431,25 @@
  {
   "shelf": "Genres",
   "title": "Westerns",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Whodunits",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "Workplace Comedies",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Genres",
   "title": "History",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17566,6 +17642,7 @@
  {
   "shelf": "Genres",
   "title": "K-Drama",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17734,6 +17811,7 @@
  {
   "shelf": "Genres",
   "title": "Martial Arts",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -17881,6 +17959,7 @@
  {
   "shelf": "Genres",
   "title": "Romantic Comedy",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18165,6 +18244,7 @@
  {
   "shelf": "Genres",
   "title": "Sports",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18312,6 +18392,7 @@
  {
   "shelf": "Genres",
   "title": "Stand-Up Comedy",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18459,6 +18540,7 @@
  {
   "shelf": "Decades",
   "title": "2020s",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18476,6 +18558,7 @@
  {
   "shelf": "Decades",
   "title": "2010s",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18493,6 +18576,7 @@
  {
   "shelf": "Decades",
   "title": "2000s",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18510,6 +18594,7 @@
  {
   "shelf": "Decades",
   "title": "1990s",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18527,6 +18612,7 @@
  {
   "shelf": "Decades",
   "title": "1980s",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18544,6 +18630,7 @@
  {
   "shelf": "Decades",
   "title": "1970s",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18561,6 +18648,7 @@
  {
   "shelf": "Decades",
   "title": "1960s",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18578,6 +18666,7 @@
  {
   "shelf": "Decades",
   "title": "50s Movies",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18846,36 +18935,43 @@
  {
   "shelf": "Awards",
   "title": "BAFTA",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Awards",
   "title": "Independent Spirit",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Awards",
   "title": "Golden Globes",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Awards",
   "title": "Cannes",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Awards",
   "title": "Oscars",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Awards",
   "title": "Venice",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Studios",
   "title": "20th Century Studios",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -18920,6 +19016,7 @@
  {
   "shelf": "Studios",
   "title": "A24",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19002,6 +19099,7 @@
  {
   "shelf": "Studios",
   "title": "Blumhouse Productions",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19084,6 +19182,7 @@
  {
   "shelf": "Studios",
   "title": "DC",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19166,6 +19265,7 @@
  {
   "shelf": "Studios",
   "title": "DreamWorks Pictures",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19248,6 +19348,7 @@
  {
   "shelf": "Studios",
   "title": "Focus Features",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19330,6 +19431,7 @@
  {
   "shelf": "Studios",
   "title": "Illumination",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19374,6 +19476,7 @@
  {
   "shelf": "Studios",
   "title": "Lionsgate",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19418,6 +19521,7 @@
  {
   "shelf": "Studios",
   "title": "Lucasfilm Ltd.",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19500,6 +19604,7 @@
  {
   "shelf": "Studios",
   "title": "Marvel Studios",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19582,6 +19687,7 @@
  {
   "shelf": "Studios",
   "title": "MGM",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19664,6 +19770,7 @@
  {
   "shelf": "Studios",
   "title": "New Line Cinema",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19746,6 +19853,7 @@
  {
   "shelf": "Studios",
   "title": "Paramount Pictures",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19828,6 +19936,7 @@
  {
   "shelf": "Studios",
   "title": "Pixar",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19910,6 +20019,7 @@
  {
   "shelf": "Studios",
   "title": "Searchlight Pictures",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19954,6 +20064,7 @@
  {
   "shelf": "Studios",
   "title": "Sony Pictures",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -19998,6 +20109,7 @@
  {
   "shelf": "Studios",
   "title": "Studio Ghibli",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20039,6 +20151,7 @@
  {
   "shelf": "Studios",
   "title": "Universal Pictures",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20121,6 +20234,7 @@
  {
   "shelf": "Studios",
   "title": "Walt Disney Studio",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20203,6 +20317,7 @@
  {
   "shelf": "Studios",
   "title": "Warner Bros. Entertainment",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20247,6 +20362,7 @@
  {
   "shelf": "Networks",
   "title": "A&E",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20292,6 +20408,7 @@
  {
   "shelf": "Networks",
   "title": "ABC",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20337,6 +20454,7 @@
  {
   "shelf": "Networks",
   "title": "Adult Swim",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20382,6 +20500,7 @@
  {
   "shelf": "Networks",
   "title": "AMC",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20427,6 +20546,7 @@
  {
   "shelf": "Networks",
   "title": "BBC America",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20472,6 +20592,7 @@
  {
   "shelf": "Networks",
   "title": "BBC One",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20517,6 +20638,7 @@
  {
   "shelf": "Networks",
   "title": "BBC Two",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20562,6 +20684,7 @@
  {
   "shelf": "Networks",
   "title": "BBC Three",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20607,6 +20730,7 @@
  {
   "shelf": "Networks",
   "title": "BBC Four",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20652,6 +20776,7 @@
  {
   "shelf": "Networks",
   "title": "Bravo",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20697,6 +20822,7 @@
  {
   "shelf": "Networks",
   "title": "Cartoon Network",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20742,6 +20868,7 @@
  {
   "shelf": "Networks",
   "title": "CBC",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20787,6 +20914,7 @@
  {
   "shelf": "Networks",
   "title": "CBS",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20832,6 +20960,7 @@
  {
   "shelf": "Networks",
   "title": "Channel 4",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20877,6 +21006,7 @@
  {
   "shelf": "Networks",
   "title": "Channel 5",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20922,6 +21052,7 @@
  {
   "shelf": "Networks",
   "title": "Cinemax",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -20967,6 +21098,7 @@
  {
   "shelf": "Networks",
   "title": "Cooking Channel",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21012,6 +21144,7 @@
  {
   "shelf": "Networks",
   "title": "Comedy Central",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21057,6 +21190,7 @@
  {
   "shelf": "Networks",
   "title": "CTV",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21102,6 +21236,7 @@
  {
   "shelf": "Networks",
   "title": "CW",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21147,6 +21282,7 @@
  {
   "shelf": "Networks",
   "title": "Discovery",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21192,6 +21328,7 @@
  {
   "shelf": "Networks",
   "title": "Disney Channel",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21237,6 +21374,7 @@
  {
   "shelf": "Networks",
   "title": "E!",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21282,6 +21420,7 @@
  {
   "shelf": "Networks",
   "title": "E4",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21327,6 +21466,7 @@
  {
   "shelf": "Networks",
   "title": "Food Network",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21372,6 +21512,7 @@
  {
   "shelf": "Networks",
   "title": "FOX",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21417,6 +21558,7 @@
  {
   "shelf": "Networks",
   "title": "Freeform",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21462,6 +21604,7 @@
  {
   "shelf": "Networks",
   "title": "FX",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21507,6 +21650,7 @@
  {
   "shelf": "Networks",
   "title": "Game Show Network",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21552,6 +21696,7 @@
  {
   "shelf": "Networks",
   "title": "Hallmark Channel",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21597,6 +21742,7 @@
  {
   "shelf": "Networks",
   "title": "Hallmark Mystery",
+  "shape": "square",
   "sources": [
    {
     "tmdbCollection": {
@@ -21645,6 +21791,7 @@
  {
   "shelf": "Networks",
   "title": "HBO",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21690,6 +21837,7 @@
  {
   "shelf": "Networks",
   "title": "HGTV",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21735,6 +21883,7 @@
  {
   "shelf": "Networks",
   "title": "History",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21780,6 +21929,7 @@
  {
   "shelf": "Networks",
   "title": "IFC",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21825,6 +21975,7 @@
  {
   "shelf": "Networks",
   "title": "ITV",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21870,6 +22021,7 @@
  {
   "shelf": "Networks",
   "title": "ITV2",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21915,6 +22067,7 @@
  {
   "shelf": "Networks",
   "title": "JTBC",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -21960,6 +22113,7 @@
  {
   "shelf": "Networks",
   "title": "Lifetime",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22005,6 +22159,7 @@
  {
   "shelf": "Networks",
   "title": "Magnolia Network",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22053,6 +22208,7 @@
  {
   "shelf": "Networks",
   "title": "MeTV",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22098,6 +22254,7 @@
  {
   "shelf": "Networks",
   "title": "Nat Geo Wild",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22143,6 +22300,7 @@
  {
   "shelf": "Networks",
   "title": "National Geographic",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22188,6 +22346,7 @@
  {
   "shelf": "Networks",
   "title": "NBC",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22233,6 +22392,7 @@
  {
   "shelf": "Networks",
   "title": "OWN",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22278,6 +22438,7 @@
  {
   "shelf": "Networks",
   "title": "Oxygen",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22323,6 +22484,7 @@
  {
   "shelf": "Networks",
   "title": "Paramount Network",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22368,6 +22530,7 @@
  {
   "shelf": "Networks",
   "title": "PBS",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22413,6 +22576,7 @@
  {
   "shelf": "Networks",
   "title": "Science Channel",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22458,6 +22622,7 @@
  {
   "shelf": "Networks",
   "title": "Showtime",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22503,6 +22668,7 @@
  {
   "shelf": "Networks",
   "title": "Sky Atlantic",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22548,6 +22714,7 @@
  {
   "shelf": "Networks",
   "title": "Sky Max",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22593,6 +22760,7 @@
  {
   "shelf": "Networks",
   "title": "Smithsonian Channel",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22638,6 +22806,7 @@
  {
   "shelf": "Networks",
   "title": "STARZ",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22683,6 +22852,7 @@
  {
   "shelf": "Networks",
   "title": "SundanceTV",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22728,6 +22898,7 @@
  {
   "shelf": "Networks",
   "title": "TBS",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22773,6 +22944,7 @@
  {
   "shelf": "Networks",
   "title": "TLC",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22818,6 +22990,7 @@
  {
   "shelf": "Networks",
   "title": "TNT",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22863,6 +23036,7 @@
  {
   "shelf": "Networks",
   "title": "Travel Channel",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22908,6 +23082,7 @@
  {
   "shelf": "Networks",
   "title": "truTV",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22953,6 +23128,7 @@
  {
   "shelf": "Networks",
   "title": "TV Land",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -22998,6 +23174,7 @@
  {
   "shelf": "Networks",
   "title": "tvN",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23043,6 +23220,7 @@
  {
   "shelf": "Networks",
   "title": "USA Network",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23088,6 +23266,7 @@
  {
   "shelf": "Networks",
   "title": "WE tv",
+  "shape": "square",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23133,6 +23312,7 @@
  {
   "shelf": "Networks",
   "title": "ABC TV (AU)",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23193,6 +23373,7 @@
  {
   "shelf": "Networks",
   "title": "MTV",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23253,6 +23434,7 @@
  {
   "shelf": "Networks",
   "title": "Animal Planet",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23313,6 +23495,7 @@
  {
   "shelf": "Networks",
   "title": "BET",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23373,6 +23556,7 @@
  {
   "shelf": "Networks",
   "title": "Canal+",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23433,6 +23617,7 @@
  {
   "shelf": "Networks",
   "title": "Dave",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23493,6 +23678,7 @@
  {
   "shelf": "Networks",
   "title": "Disney Junior",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23553,6 +23739,7 @@
  {
   "shelf": "Networks",
   "title": "Disney XD",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23613,6 +23800,7 @@
  {
   "shelf": "Networks",
   "title": "Investigation Discovery",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23673,6 +23861,7 @@
  {
   "shelf": "Networks",
   "title": "MotorTrend",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23733,6 +23922,7 @@
  {
   "shelf": "Networks",
   "title": "Nickelodeon",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23793,6 +23983,7 @@
  {
   "shelf": "Networks",
   "title": "Syfy",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23853,6 +24044,7 @@
  {
   "shelf": "Networks",
   "title": "Tokyo MX",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23913,6 +24105,7 @@
  {
   "shelf": "Networks",
   "title": "TV Tokyo",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -23973,6 +24166,7 @@
  {
   "shelf": "Networks",
   "title": "VH1",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24033,6 +24227,7 @@
  {
   "shelf": "Networks",
   "title": "Vice TV",
+  "shape": "poster",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24096,6 +24291,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Christmas",
+  "shape": "wide",
   "sources": [
    {
     "tmdbList": {
@@ -24172,6 +24368,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Cozy & Comforting",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24279,6 +24476,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Mind-Bending",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24387,6 +24585,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Adrenaline Rush",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24494,6 +24693,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Epic & Sweeping",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24604,6 +24804,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Feel-Good",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24722,6 +24923,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Tearjerkers",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24838,6 +25040,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "80s & 90s Vibes",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -24949,6 +25152,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Valentine\u2019s Day",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25043,6 +25247,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Slow Burn",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25176,6 +25381,7 @@
  {
   "shelf": "Moods & Vibes",
   "title": "Dark & Gritty",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25307,6 +25513,7 @@
  {
   "shelf": "Based on",
   "title": "True Stories",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25391,6 +25598,7 @@
  {
   "shelf": "Based on",
   "title": "Books",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25484,6 +25692,7 @@
  {
   "shelf": "Based on",
   "title": "Mythology",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25601,6 +25810,7 @@
  {
   "shelf": "Based on",
   "title": "Plays",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25694,6 +25904,7 @@
  {
   "shelf": "Based on",
   "title": "Fairy Tales",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25787,6 +25998,7 @@
  {
   "shelf": "Based on",
   "title": "Toys",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25880,6 +26092,7 @@
  {
   "shelf": "Based on",
   "title": "TV Shows",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -25973,6 +26186,7 @@
  {
   "shelf": "Based on",
   "title": "Short Stories",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -26066,6 +26280,7 @@
  {
   "shelf": "Based on",
   "title": "Board Games",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -26150,6 +26365,7 @@
  {
   "shelf": "Based on",
   "title": "Video Games",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -26270,6 +26486,7 @@
  {
   "shelf": "Based on",
   "title": "Comics",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -26396,6 +26613,7 @@
  {
   "shelf": "Documentaries",
   "title": "History, War & Civilizations",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -26508,6 +26726,7 @@
  {
   "shelf": "Documentaries",
   "title": "Investigative & Scandals",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -26618,6 +26837,7 @@
  {
   "shelf": "Documentaries",
   "title": "Nature, Wildlife & Earth",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -26727,6 +26947,7 @@
  {
   "shelf": "Documentaries",
   "title": "Sports & Athletic Stories",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -26839,6 +27060,7 @@
  {
   "shelf": "Documentaries",
   "title": "Science, Tech & Cosmos",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -26955,6 +27177,7 @@
  {
   "shelf": "Documentaries",
   "title": "Music & Concert Documentaries",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -27066,6 +27289,7 @@
  {
   "shelf": "Documentaries",
   "title": "True Crime & Serial Killers",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -27197,6 +27421,7 @@
  {
   "shelf": "Reality TV",
   "title": "Discover Reality TV",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -27288,6 +27513,7 @@
  {
   "shelf": "Reality TV",
   "title": "Survivor",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -27386,6 +27612,7 @@
  {
   "shelf": "Reality TV",
   "title": "Culinary Battles & Cooking Shows",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -27491,6 +27718,7 @@
  {
   "shelf": "Reality TV",
   "title": "Real Estate, Home & Lifestyle Makeovers",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -27595,6 +27823,7 @@
  {
   "shelf": "Reality TV",
   "title": "Game Shows, Talent & Trivia",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -27699,6 +27928,7 @@
  {
   "shelf": "Reality TV",
   "title": "Juicy Drama, Dating & Relationship",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -27822,6 +28052,7 @@
  {
   "shelf": "Directors",
   "title": "Akira Kurosawa",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -27850,6 +28081,7 @@
  {
   "shelf": "Directors",
   "title": "Alejandro Gonz\u00e1lez I\u00f1\u00e1rritu",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -27878,6 +28110,7 @@
  {
   "shelf": "Directors",
   "title": "Alex Garland",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -27906,6 +28139,7 @@
  {
   "shelf": "Directors",
   "title": "Alfonso Cuar\u00f3n",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -27934,11 +28168,13 @@
  {
   "shelf": "Directors",
   "title": "Alfred Hitchcock",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "Antoine Fuqua",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -27967,6 +28203,7 @@
  {
   "shelf": "Directors",
   "title": "Ari Aster",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -27995,6 +28232,7 @@
  {
   "shelf": "Directors",
   "title": "Billy Wilder",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28023,6 +28261,7 @@
  {
   "shelf": "Directors",
   "title": "Bong Joon Ho",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28051,11 +28290,13 @@
  {
   "shelf": "Directors",
   "title": "Brian De Palma",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "Chad Stahelski",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28084,11 +28325,13 @@
  {
   "shelf": "Directors",
   "title": "Christopher Nolan",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "Clint Eastwood",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28117,6 +28360,7 @@
  {
   "shelf": "Directors",
   "title": "Damien Chazelle",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28145,6 +28389,7 @@
  {
   "shelf": "Directors",
   "title": "Daniel Scheinert",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28173,6 +28418,7 @@
  {
   "shelf": "Directors",
   "title": "Danny Boyle",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28201,6 +28447,7 @@
  {
   "shelf": "Directors",
   "title": "Darren Aronofsky",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28229,6 +28476,7 @@
  {
   "shelf": "Directors",
   "title": "David Cronenberg",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28257,11 +28505,13 @@
  {
   "shelf": "Directors",
   "title": "David Fincher",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "David Lynch",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28290,11 +28540,13 @@
  {
   "shelf": "Directors",
   "title": "Denis Villeneuve",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "Edgar Wright",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28323,6 +28575,7 @@
  {
   "shelf": "Directors",
   "title": "Emerald Fennell",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28351,6 +28604,7 @@
  {
   "shelf": "Directors",
   "title": "Francis Ford Coppola",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28379,6 +28633,7 @@
  {
   "shelf": "Directors",
   "title": "George Lucas",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28407,6 +28662,7 @@
  {
   "shelf": "Directors",
   "title": "George Miller",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28435,6 +28691,7 @@
  {
   "shelf": "Directors",
   "title": "Gore Verbinski",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28463,6 +28720,7 @@
  {
   "shelf": "Directors",
   "title": "Greta Gerwig",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28491,6 +28749,7 @@
  {
   "shelf": "Directors",
   "title": "Guillermo del Toro",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28519,6 +28778,7 @@
  {
   "shelf": "Directors",
   "title": "Guy Ritchie",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28547,6 +28807,7 @@
  {
   "shelf": "Directors",
   "title": "Hayao Miyazaki",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28575,6 +28836,7 @@
  {
   "shelf": "Directors",
   "title": "James Cameron",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28603,6 +28865,7 @@
  {
   "shelf": "Directors",
   "title": "James Gunn",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28631,6 +28894,7 @@
  {
   "shelf": "Directors",
   "title": "James Wan",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28659,6 +28923,7 @@
  {
   "shelf": "Directors",
   "title": "Joel Coen",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28687,11 +28952,13 @@
  {
   "shelf": "Directors",
   "title": "John Carpenter",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "John Hughes",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28720,6 +28987,7 @@
  {
   "shelf": "Directors",
   "title": "Jonathan Demme",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28748,6 +29016,7 @@
  {
   "shelf": "Directors",
   "title": "Jordan Peele",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28776,6 +29045,7 @@
  {
   "shelf": "Directors",
   "title": "Kathryn Bigelow",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28804,6 +29074,7 @@
  {
   "shelf": "Directors",
   "title": "Luc Besson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28832,6 +29103,7 @@
  {
   "shelf": "Directors",
   "title": "Martin McDonagh",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28860,11 +29132,13 @@
  {
   "shelf": "Directors",
   "title": "Martin Scorsese",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "Mel Brooks",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28893,6 +29167,7 @@
  {
   "shelf": "Directors",
   "title": "Michael Mann",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28921,6 +29196,7 @@
  {
   "shelf": "Directors",
   "title": "Mike Flanagan",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28949,6 +29225,7 @@
  {
   "shelf": "Directors",
   "title": "Oliver Stone",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -28977,6 +29254,7 @@
  {
   "shelf": "Directors",
   "title": "Park Chan-wook",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29005,11 +29283,13 @@
  {
   "shelf": "Directors",
   "title": "Paul Thomas Anderson",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "Paul Verhoeven",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29038,6 +29318,7 @@
  {
   "shelf": "Directors",
   "title": "Pedro Almod\u00f3var",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29066,6 +29347,7 @@
  {
   "shelf": "Directors",
   "title": "Peter Jackson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29094,6 +29376,7 @@
  {
   "shelf": "Directors",
   "title": "Quentin Tarantino",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29122,6 +29405,7 @@
  {
   "shelf": "Directors",
   "title": "Richard Linklater",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29150,6 +29434,7 @@
  {
   "shelf": "Directors",
   "title": "Ridley Scott",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29178,6 +29463,7 @@
  {
   "shelf": "Directors",
   "title": "Rob Reiner",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29206,6 +29492,7 @@
  {
   "shelf": "Directors",
   "title": "Robert Eggers",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29234,6 +29521,7 @@
  {
   "shelf": "Directors",
   "title": "Robert Zemeckis",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29262,6 +29550,7 @@
  {
   "shelf": "Directors",
   "title": "Roland Emmerich",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29290,6 +29579,7 @@
  {
   "shelf": "Directors",
   "title": "Ron Howard",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29318,6 +29608,7 @@
  {
   "shelf": "Directors",
   "title": "Ryan Coogler",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29346,6 +29637,7 @@
  {
   "shelf": "Directors",
   "title": "Sam Esmail",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29374,6 +29666,7 @@
  {
   "shelf": "Directors",
   "title": "Sam Mendes",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29402,6 +29695,7 @@
  {
   "shelf": "Directors",
   "title": "Sam Raimi",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29430,6 +29724,7 @@
  {
   "shelf": "Directors",
   "title": "Satoshi Kon",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29458,6 +29753,7 @@
  {
   "shelf": "Directors",
   "title": "Sergio Leone",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29486,6 +29782,7 @@
  {
   "shelf": "Directors",
   "title": "Sidney Lumet",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29514,6 +29811,7 @@
  {
   "shelf": "Directors",
   "title": "Spike Jonze",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29542,6 +29840,7 @@
  {
   "shelf": "Directors",
   "title": "Spike Lee",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29570,11 +29869,13 @@
  {
   "shelf": "Directors",
   "title": "Stanley Kubrick",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "Steven Soderbergh",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29603,11 +29904,13 @@
  {
   "shelf": "Directors",
   "title": "Steven Spielberg",
+  "shape": "poster",
   "sources": []
  },
  {
   "shelf": "Directors",
   "title": "Taika Waititi",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29636,6 +29939,7 @@
  {
   "shelf": "Directors",
   "title": "Terry Gilliam",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29664,6 +29968,7 @@
  {
   "shelf": "Directors",
   "title": "Tim Burton",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29692,6 +29997,7 @@
  {
   "shelf": "Directors",
   "title": "Todd Phillips",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29720,6 +30026,7 @@
  {
   "shelf": "Directors",
   "title": "Tony Scott",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29748,6 +30055,7 @@
  {
   "shelf": "Directors",
   "title": "Vince Gilligan",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29776,6 +30084,7 @@
  {
   "shelf": "Directors",
   "title": "The Wachowskis",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29804,6 +30113,7 @@
  {
   "shelf": "Directors",
   "title": "Wes Anderson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29832,6 +30142,7 @@
  {
   "shelf": "Directors",
   "title": "Wes Craven",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29860,6 +30171,7 @@
  {
   "shelf": "Directors",
   "title": "Wong Kar-wai",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29888,6 +30200,7 @@
  {
   "shelf": "Directors",
   "title": "Yorgos Lanthimos",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29916,6 +30229,7 @@
  {
   "shelf": "Directors",
   "title": "Zack Snyder",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29944,6 +30258,7 @@
  {
   "shelf": "Actors",
   "title": "Adam Sandler",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -29983,6 +30298,7 @@
  {
   "shelf": "Actors",
   "title": "Al Pacino",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30011,6 +30327,7 @@
  {
   "shelf": "Actors",
   "title": "Amy Adams",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30039,6 +30356,7 @@
  {
   "shelf": "Actors",
   "title": "Ana de Armas",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30078,6 +30396,7 @@
  {
   "shelf": "Actors",
   "title": "Andrew Garfield",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30117,6 +30436,7 @@
  {
   "shelf": "Actors",
   "title": "Angela Bassett",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30156,6 +30476,7 @@
  {
   "shelf": "Actors",
   "title": "Angelina Jolie",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30195,6 +30516,7 @@
  {
   "shelf": "Actors",
   "title": "Anne Hathaway",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30234,6 +30556,7 @@
  {
   "shelf": "Actors",
   "title": "Anthony Hopkins",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30262,6 +30585,7 @@
  {
   "shelf": "Actors",
   "title": "Anya Taylor-Joy",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30301,6 +30625,7 @@
  {
   "shelf": "Actors",
   "title": "Arnold Schwarzenegger",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30340,6 +30665,7 @@
  {
   "shelf": "Actors",
   "title": "Audrey Hepburn",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30379,6 +30705,7 @@
  {
   "shelf": "Actors",
   "title": "Austin Butler",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30418,6 +30745,7 @@
  {
   "shelf": "Actors",
   "title": "Barry Keoghan",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30457,6 +30785,7 @@
  {
   "shelf": "Actors",
   "title": "Ben Stiller",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30496,6 +30825,7 @@
  {
   "shelf": "Actors",
   "title": "Benedict Cumberbatch",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30535,6 +30865,7 @@
  {
   "shelf": "Actors",
   "title": "Bill Hader",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30574,6 +30905,7 @@
  {
   "shelf": "Actors",
   "title": "Bill Murray",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30613,6 +30945,7 @@
  {
   "shelf": "Actors",
   "title": "Brad Pitt",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30652,6 +30985,7 @@
  {
   "shelf": "Actors",
   "title": "Bruce Willis",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30680,6 +31014,7 @@
  {
   "shelf": "Actors",
   "title": "Bryan Cranston",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30719,6 +31054,7 @@
  {
   "shelf": "Actors",
   "title": "Cameron Diaz",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30758,6 +31094,7 @@
  {
   "shelf": "Actors",
   "title": "Cate Blanchett",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30786,6 +31123,7 @@
  {
   "shelf": "Actors",
   "title": "Channing Tatum",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30825,6 +31163,7 @@
  {
   "shelf": "Actors",
   "title": "Charlize Theron",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30853,6 +31192,7 @@
  {
   "shelf": "Actors",
   "title": "Chris Evans",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30892,6 +31232,7 @@
  {
   "shelf": "Actors",
   "title": "Chris Hemsworth",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30931,6 +31272,7 @@
  {
   "shelf": "Actors",
   "title": "Chris Pratt",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -30970,6 +31312,7 @@
  {
   "shelf": "Actors",
   "title": "Christian Bale",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31009,6 +31352,7 @@
  {
   "shelf": "Actors",
   "title": "Christoph Waltz",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31037,6 +31381,7 @@
  {
   "shelf": "Actors",
   "title": "Chuck Norris",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31076,6 +31421,7 @@
  {
   "shelf": "Actors",
   "title": "Cillian Murphy",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31115,6 +31461,7 @@
  {
   "shelf": "Actors",
   "title": "Clint Eastwood",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31154,6 +31501,7 @@
  {
   "shelf": "Actors",
   "title": "Colin Farrell",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31193,6 +31541,7 @@
  {
   "shelf": "Actors",
   "title": "Daniel Craig",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31232,6 +31581,7 @@
  {
   "shelf": "Actors",
   "title": "Daniel Day-Lewis",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31271,6 +31621,7 @@
  {
   "shelf": "Actors",
   "title": "Daniel Kaluuya",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31310,6 +31661,7 @@
  {
   "shelf": "Actors",
   "title": "Daniel Radcliffe",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31349,6 +31701,7 @@
  {
   "shelf": "Actors",
   "title": "Denzel Washington",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31388,6 +31741,7 @@
  {
   "shelf": "Actors",
   "title": "Dev Patel",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31427,6 +31781,7 @@
  {
   "shelf": "Actors",
   "title": "Donnie Yen",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31455,6 +31810,7 @@
  {
   "shelf": "Actors",
   "title": "Drew Barrymore",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31494,6 +31850,7 @@
  {
   "shelf": "Actors",
   "title": "Dwayne Johnson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31533,6 +31890,7 @@
  {
   "shelf": "Actors",
   "title": "Eddie Murphy",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31572,6 +31930,7 @@
  {
   "shelf": "Actors",
   "title": "Emily Blunt",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31611,6 +31970,7 @@
  {
   "shelf": "Actors",
   "title": "Emma Stone",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31650,6 +32010,7 @@
  {
   "shelf": "Actors",
   "title": "Emma Watson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31689,6 +32050,7 @@
  {
   "shelf": "Actors",
   "title": "Florence Pugh",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31728,6 +32090,7 @@
  {
   "shelf": "Actors",
   "title": "Forest Whitaker",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31767,6 +32130,7 @@
  {
   "shelf": "Actors",
   "title": "Gary Oldman",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31795,6 +32159,7 @@
  {
   "shelf": "Actors",
   "title": "Gene Hackman",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31823,6 +32188,7 @@
  {
   "shelf": "Actors",
   "title": "George Clooney",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31862,6 +32228,7 @@
  {
   "shelf": "Actors",
   "title": "Glen Powell",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31901,6 +32268,7 @@
  {
   "shelf": "Actors",
   "title": "Halle Berry",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31940,6 +32308,7 @@
  {
   "shelf": "Actors",
   "title": "Harrison Ford",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -31968,6 +32337,7 @@
  {
   "shelf": "Actors",
   "title": "Heath Ledger",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32007,6 +32377,7 @@
  {
   "shelf": "Actors",
   "title": "Hiroyuki Sanada",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32046,6 +32417,7 @@
  {
   "shelf": "Actors",
   "title": "Hugh Jackman",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32085,6 +32457,7 @@
  {
   "shelf": "Actors",
   "title": "Humphrey Bogart",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32124,6 +32497,7 @@
  {
   "shelf": "Actors",
   "title": "Idris Elba",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32163,6 +32537,7 @@
  {
   "shelf": "Actors",
   "title": "Jack Black",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32202,6 +32577,7 @@
  {
   "shelf": "Actors",
   "title": "Jack Nicholson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32230,6 +32606,7 @@
  {
   "shelf": "Actors",
   "title": "Jackie Chan",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32269,6 +32646,7 @@
  {
   "shelf": "Actors",
   "title": "Jake Gyllenhaal",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32308,6 +32686,7 @@
  {
   "shelf": "Actors",
   "title": "Jamie Foxx",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32347,6 +32726,7 @@
  {
   "shelf": "Actors",
   "title": "Jason Statham",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32386,6 +32766,7 @@
  {
   "shelf": "Actors",
   "title": "Javier Bardem",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32414,6 +32795,7 @@
  {
   "shelf": "Actors",
   "title": "Jean-Claude Van Damme",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32442,6 +32824,7 @@
  {
   "shelf": "Actors",
   "title": "Jeffrey Wright",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32481,6 +32864,7 @@
  {
   "shelf": "Actors",
   "title": "Jenna Ortega",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32520,6 +32904,7 @@
  {
   "shelf": "Actors",
   "title": "Jennifer Aniston",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32559,6 +32944,7 @@
  {
   "shelf": "Actors",
   "title": "Jennifer Lawrence",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32598,6 +32984,7 @@
  {
   "shelf": "Actors",
   "title": "Jennifer Lopez",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32637,6 +33024,7 @@
  {
   "shelf": "Actors",
   "title": "Jeremy Allen White",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32676,6 +33064,7 @@
  {
   "shelf": "Actors",
   "title": "Jessica Chastain",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32704,6 +33093,7 @@
  {
   "shelf": "Actors",
   "title": "Jet Li",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32732,6 +33122,7 @@
  {
   "shelf": "Actors",
   "title": "Jim Carrey",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32771,6 +33162,7 @@
  {
   "shelf": "Actors",
   "title": "Joaquin Phoenix",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32810,6 +33202,7 @@
  {
   "shelf": "Actors",
   "title": "John David Washington",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32849,6 +33242,7 @@
  {
   "shelf": "Actors",
   "title": "John Travolta",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32888,6 +33282,7 @@
  {
   "shelf": "Actors",
   "title": "Johnny Depp",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32927,6 +33322,7 @@
  {
   "shelf": "Actors",
   "title": "Jonah Hill",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -32966,6 +33362,7 @@
  {
   "shelf": "Actors",
   "title": "Julia Roberts",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33005,6 +33402,7 @@
  {
   "shelf": "Actors",
   "title": "Kate Winslet",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33033,6 +33431,7 @@
  {
   "shelf": "Actors",
   "title": "Katherine Heigl",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33072,6 +33471,7 @@
  {
   "shelf": "Actors",
   "title": "Keanu Reeves",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33111,6 +33511,7 @@
  {
   "shelf": "Actors",
   "title": "Keira Knightley",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33150,6 +33551,7 @@
  {
   "shelf": "Actors",
   "title": "Kevin Costner",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33189,6 +33591,7 @@
  {
   "shelf": "Actors",
   "title": "Kurt Russell",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33228,6 +33631,7 @@
  {
   "shelf": "Actors",
   "title": "Laurence Fishburne",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33267,6 +33671,7 @@
  {
   "shelf": "Actors",
   "title": "Leonardo DiCaprio",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33306,6 +33711,7 @@
  {
   "shelf": "Actors",
   "title": "Liam Neeson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33345,6 +33751,7 @@
  {
   "shelf": "Actors",
   "title": "Lily Collins",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33384,6 +33791,7 @@
  {
   "shelf": "Actors",
   "title": "Lupita Nyong'o",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33423,6 +33831,7 @@
  {
   "shelf": "Actors",
   "title": "Mads Mikkelsen",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33451,6 +33860,7 @@
  {
   "shelf": "Actors",
   "title": "Mahershala Ali",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33490,6 +33900,7 @@
  {
   "shelf": "Actors",
   "title": "Margot Robbie",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33529,6 +33940,7 @@
  {
   "shelf": "Actors",
   "title": "Mark Wahlberg",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33568,6 +33980,7 @@
  {
   "shelf": "Actors",
   "title": "Marlon Brando",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33596,6 +34009,7 @@
  {
   "shelf": "Actors",
   "title": "Matt Damon",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33635,6 +34049,7 @@
  {
   "shelf": "Actors",
   "title": "Matthew McConaughey",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33674,6 +34089,7 @@
  {
   "shelf": "Actors",
   "title": "Melissa McCarthy",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33713,6 +34129,7 @@
  {
   "shelf": "Actors",
   "title": "Meryl Streep",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33752,6 +34169,7 @@
  {
   "shelf": "Actors",
   "title": "Mia Goth",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33791,6 +34209,7 @@
  {
   "shelf": "Actors",
   "title": "Michael B. Jordan",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33830,6 +34249,7 @@
  {
   "shelf": "Actors",
   "title": "Michael Fassbender",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33869,6 +34289,7 @@
  {
   "shelf": "Actors",
   "title": "Michael Herbig",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33908,6 +34329,7 @@
  {
   "shelf": "Actors",
   "title": "Michelle Yeoh",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33947,6 +34369,7 @@
  {
   "shelf": "Actors",
   "title": "Mila Kunis",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -33986,6 +34409,7 @@
  {
   "shelf": "Actors",
   "title": "Millie Bobby Brown",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34025,6 +34449,7 @@
  {
   "shelf": "Actors",
   "title": "Morgan Freeman",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34064,6 +34489,7 @@
  {
   "shelf": "Actors",
   "title": "Natalie Portman",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34103,6 +34529,7 @@
  {
   "shelf": "Actors",
   "title": "Nicolas Cage",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34142,6 +34569,7 @@
  {
   "shelf": "Actors",
   "title": "Nicole Kidman",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34181,6 +34609,7 @@
  {
   "shelf": "Actors",
   "title": "Octavia Spencer",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34220,6 +34649,7 @@
  {
   "shelf": "Actors",
   "title": "Oscar Isaac",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34259,6 +34689,7 @@
  {
   "shelf": "Actors",
   "title": "Owen Wilson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34298,6 +34729,7 @@
  {
   "shelf": "Actors",
   "title": "Paul Mescal",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34337,6 +34769,7 @@
  {
   "shelf": "Actors",
   "title": "Paul Newman",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34376,6 +34809,7 @@
  {
   "shelf": "Actors",
   "title": "Paul Rudd",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34415,6 +34849,7 @@
  {
   "shelf": "Actors",
   "title": "Pedro Pascal",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34454,6 +34889,7 @@
  {
   "shelf": "Actors",
   "title": "Pen\u00e9lope Cruz",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34493,6 +34929,7 @@
  {
   "shelf": "Actors",
   "title": "Rachel McAdams",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34532,6 +34969,7 @@
  {
   "shelf": "Actors",
   "title": "Rebecca Ferguson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34571,6 +35009,7 @@
  {
   "shelf": "Actors",
   "title": "Reese Witherspoon",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34610,6 +35049,7 @@
  {
   "shelf": "Actors",
   "title": "Robert De Niro",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34638,6 +35078,7 @@
  {
   "shelf": "Actors",
   "title": "Robert Downey Jr.",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34677,6 +35118,7 @@
  {
   "shelf": "Actors",
   "title": "Robert Pattinson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34716,6 +35158,7 @@
  {
   "shelf": "Actors",
   "title": "Robin Williams",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34755,6 +35198,7 @@
  {
   "shelf": "Actors",
   "title": "Russell Crowe",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34794,6 +35238,7 @@
  {
   "shelf": "Actors",
   "title": "Ryan Gosling",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34833,6 +35278,7 @@
  {
   "shelf": "Actors",
   "title": "Ryan Reynolds",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34872,6 +35318,7 @@
  {
   "shelf": "Actors",
   "title": "Sadie Sink",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34911,6 +35358,7 @@
  {
   "shelf": "Actors",
   "title": "Salma Hayek Pinault",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34950,6 +35398,7 @@
  {
   "shelf": "Actors",
   "title": "Samuel L. Jackson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -34989,6 +35438,7 @@
  {
   "shelf": "Actors",
   "title": "Sandra Bullock",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35028,6 +35478,7 @@
  {
   "shelf": "Actors",
   "title": "Scarlett Johansson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35067,6 +35518,7 @@
  {
   "shelf": "Actors",
   "title": "Seth Rogen",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35095,6 +35547,7 @@
  {
   "shelf": "Actors",
   "title": "Sigourney Weaver",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35134,6 +35587,7 @@
  {
   "shelf": "Actors",
   "title": "Song Kang-ho",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35173,6 +35627,7 @@
  {
   "shelf": "Actors",
   "title": "Steve Carell",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35212,6 +35667,7 @@
  {
   "shelf": "Actors",
   "title": "Steve Martin",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35240,6 +35696,7 @@
  {
   "shelf": "Actors",
   "title": "Sydney Sweeney",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35279,6 +35736,7 @@
  {
   "shelf": "Actors",
   "title": "Sylvester Stallone",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35318,6 +35776,7 @@
  {
   "shelf": "Actors",
   "title": "Tessa Thompson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35357,6 +35816,7 @@
  {
   "shelf": "Actors",
   "title": "Timoth\u00e9e Chalamet",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35396,6 +35856,7 @@
  {
   "shelf": "Actors",
   "title": "Tom Cruise",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35435,6 +35896,7 @@
  {
   "shelf": "Actors",
   "title": "Tom Hanks",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35474,6 +35936,7 @@
  {
   "shelf": "Actors",
   "title": "Tom Hardy",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35513,6 +35976,7 @@
  {
   "shelf": "Actors",
   "title": "Tom Holland",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35552,6 +36016,7 @@
  {
   "shelf": "Actors",
   "title": "Vin Diesel",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35591,6 +36056,7 @@
  {
   "shelf": "Actors",
   "title": "Viola Davis",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35619,6 +36085,7 @@
  {
   "shelf": "Actors",
   "title": "Will Ferrell",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35647,6 +36114,7 @@
  {
   "shelf": "Actors",
   "title": "Will Smith",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35686,6 +36154,7 @@
  {
   "shelf": "Actors",
   "title": "Willem Dafoe",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35714,6 +36183,7 @@
  {
   "shelf": "Actors",
   "title": "Woody Harrelson",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35753,6 +36223,7 @@
  {
   "shelf": "Actors",
   "title": "Zac Efron",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35792,6 +36263,7 @@
  {
   "shelf": "Actors",
   "title": "Zendaya",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35831,6 +36303,7 @@
  {
   "shelf": "Actors",
   "title": "Zoe Saldana",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35870,6 +36343,7 @@
  {
   "shelf": "Actors",
   "title": "Zoe Salda\u00f1a",
+  "shape": "poster",
   "sources": [
    {
     "tmdbList": {
@@ -35909,6 +36383,7 @@
  {
   "shelf": "Film Collections",
   "title": "Action Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -36401,6 +36876,7 @@
  {
   "shelf": "Film Collections",
   "title": "Comedy Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -36722,6 +37198,7 @@
  {
   "shelf": "Film Collections",
   "title": "Crime Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -36809,6 +37286,7 @@
  {
   "shelf": "Film Collections",
   "title": "Drama Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -36905,6 +37383,7 @@
  {
   "shelf": "Film Collections",
   "title": "Family & Animation Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -37307,6 +37786,7 @@
  {
   "shelf": "Film Collections",
   "title": "Fantasy Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -37529,6 +38009,7 @@
  {
   "shelf": "Film Collections",
   "title": "Mystery Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -37580,6 +38061,7 @@
  {
   "shelf": "Film Collections",
   "title": "Sci-Fi Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -37919,6 +38401,7 @@
  {
   "shelf": "Film Collections",
   "title": "Thriller Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38069,6 +38552,7 @@
  {
   "shelf": "Film Collections",
   "title": "War Collections",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38129,6 +38613,7 @@
  {
   "shelf": "Film Collections",
   "title": "28 Days/Weeks/Years Later Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38144,6 +38629,7 @@
  {
   "shelf": "Film Collections",
   "title": "A Quiet Place",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38159,6 +38645,7 @@
  {
   "shelf": "Film Collections",
   "title": "Ace Ventura",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38174,6 +38661,7 @@
  {
   "shelf": "Film Collections",
   "title": "Aladdin Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38189,6 +38677,7 @@
  {
   "shelf": "Film Collections",
   "title": "Alien",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38204,6 +38693,7 @@
  {
   "shelf": "Film Collections",
   "title": "Alien vs. Predator Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38219,6 +38709,7 @@
  {
   "shelf": "Film Collections",
   "title": "Alvin and the Chipmunks",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38234,6 +38725,7 @@
  {
   "shelf": "Film Collections",
   "title": "American Pie",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38249,6 +38741,7 @@
  {
   "shelf": "Film Collections",
   "title": "Anchorman",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38264,6 +38757,7 @@
  {
   "shelf": "Film Collections",
   "title": "Annabelle Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38279,6 +38773,7 @@
  {
   "shelf": "Film Collections",
   "title": "Austin Powers",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38294,6 +38789,7 @@
  {
   "shelf": "Film Collections",
   "title": "Avatar Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38309,6 +38805,7 @@
  {
   "shelf": "Film Collections",
   "title": "Back to the Future",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38324,6 +38821,7 @@
  {
   "shelf": "Film Collections",
   "title": "Bad Boys",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38339,6 +38837,7 @@
  {
   "shelf": "Film Collections",
   "title": "Basic Instinct Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38354,6 +38853,7 @@
  {
   "shelf": "Film Collections",
   "title": "Batman Collection (1989-1997)",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38369,6 +38869,7 @@
  {
   "shelf": "Film Collections",
   "title": "Beauty and the Beast Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38384,6 +38885,7 @@
  {
   "shelf": "Film Collections",
   "title": "Behind Enemy Lines",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38399,6 +38901,7 @@
  {
   "shelf": "Film Collections",
   "title": "Beverly Hills Cop",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38414,6 +38917,7 @@
  {
   "shelf": "Film Collections",
   "title": "Big Momma's House",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38429,6 +38933,7 @@
  {
   "shelf": "Film Collections",
   "title": "Bill & Ted Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38444,6 +38949,7 @@
  {
   "shelf": "Film Collections",
   "title": "Blade",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38459,6 +38965,7 @@
  {
   "shelf": "Film Collections",
   "title": "Blade Runner",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38474,6 +38981,7 @@
  {
   "shelf": "Film Collections",
   "title": "Bridget Jones",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38489,6 +38997,7 @@
  {
   "shelf": "Film Collections",
   "title": "Bring It On",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38504,6 +39013,7 @@
  {
   "shelf": "Film Collections",
   "title": "Candyman Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38519,6 +39029,7 @@
  {
   "shelf": "Film Collections",
   "title": "Cars",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38534,6 +39045,7 @@
  {
   "shelf": "Film Collections",
   "title": "Child's Play",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38549,6 +39061,7 @@
  {
   "shelf": "Film Collections",
   "title": "Clash of the Titans Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38564,6 +39077,7 @@
  {
   "shelf": "Film Collections",
   "title": "Clerks",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38579,6 +39093,7 @@
  {
   "shelf": "Film Collections",
   "title": "Cloudy with a Chance of Meatballs Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38594,11 +39109,13 @@
  {
   "shelf": "Film Collections",
   "title": "Cloverfield collection",
+  "shape": "wide",
   "sources": []
  },
  {
   "shelf": "Film Collections",
   "title": "Conan the Barbarian Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38614,6 +39131,7 @@
  {
   "shelf": "Film Collections",
   "title": "Creed",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38629,6 +39147,7 @@
  {
   "shelf": "Film Collections",
   "title": "Daddy's Home",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38644,6 +39163,7 @@
  {
   "shelf": "Film Collections",
   "title": "Deadpool Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38659,6 +39179,7 @@
  {
   "shelf": "Film Collections",
   "title": "Death Wish Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38674,6 +39195,7 @@
  {
   "shelf": "Film Collections",
   "title": "Demon Slayer",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38689,6 +39211,7 @@
  {
   "shelf": "Film Collections",
   "title": "Despicable Me",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38704,6 +39227,7 @@
  {
   "shelf": "Film Collections",
   "title": "Detective Conan",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38719,6 +39243,7 @@
  {
   "shelf": "Film Collections",
   "title": "Diary of a Wimpy Kid",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38734,6 +39259,7 @@
  {
   "shelf": "Film Collections",
   "title": "Die Hard",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38749,6 +39275,7 @@
  {
   "shelf": "Film Collections",
   "title": "Dirty Harry",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38764,6 +39291,7 @@
  {
   "shelf": "Film Collections",
   "title": "Divergent",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38779,6 +39307,7 @@
  {
   "shelf": "Film Collections",
   "title": "Don't Breathe",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38794,6 +39323,7 @@
  {
   "shelf": "Film Collections",
   "title": "Dragon Ball",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38809,6 +39339,7 @@
  {
   "shelf": "Film Collections",
   "title": "Dumb and Dumber Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38824,6 +39355,7 @@
  {
   "shelf": "Film Collections",
   "title": "Dune",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38839,6 +39371,7 @@
  {
   "shelf": "Film Collections",
   "title": "Eastrail 177 Trilogy",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38854,6 +39387,7 @@
  {
   "shelf": "Film Collections",
   "title": "Enola Holmes",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38869,6 +39403,7 @@
  {
   "shelf": "Film Collections",
   "title": "Escape Plan Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38884,6 +39419,7 @@
  {
   "shelf": "Film Collections",
   "title": "Escape Room",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38899,6 +39435,7 @@
  {
   "shelf": "Film Collections",
   "title": "Evangelion",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38914,6 +39451,7 @@
  {
   "shelf": "Film Collections",
   "title": "Evil Dead",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38929,6 +39467,7 @@
  {
   "shelf": "Film Collections",
   "title": "Extraction Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38944,6 +39483,7 @@
  {
   "shelf": "Film Collections",
   "title": "Fantastic Beasts",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38959,6 +39499,7 @@
  {
   "shelf": "Film Collections",
   "title": "Fifty Shades",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38974,6 +39515,7 @@
  {
   "shelf": "Film Collections",
   "title": "Final Destination",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -38989,6 +39531,7 @@
  {
   "shelf": "Film Collections",
   "title": "Finding Nemo",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39004,6 +39547,7 @@
  {
   "shelf": "Film Collections",
   "title": "Friday the 13th",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39019,6 +39563,7 @@
  {
   "shelf": "Film Collections",
   "title": "G.I. Joe (Live-Action) Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39034,6 +39579,7 @@
  {
   "shelf": "Film Collections",
   "title": "Ghostbusters",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39049,6 +39595,7 @@
  {
   "shelf": "Film Collections",
   "title": "Goal!",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39064,6 +39611,7 @@
  {
   "shelf": "Film Collections",
   "title": "Godzilla",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39079,6 +39627,7 @@
  {
   "shelf": "Film Collections",
   "title": "Godzilla x Kong Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39094,6 +39643,7 @@
  {
   "shelf": "Film Collections",
   "title": "Grown Ups Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39109,6 +39659,7 @@
  {
   "shelf": "Film Collections",
   "title": "Guardians of the Galaxy",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39124,6 +39675,7 @@
  {
   "shelf": "Film Collections",
   "title": "Halloween",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39139,6 +39691,7 @@
  {
   "shelf": "Film Collections",
   "title": "Hannibal Lecter",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39154,6 +39707,7 @@
  {
   "shelf": "Film Collections",
   "title": "Harold & Kumar Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39169,6 +39723,7 @@
  {
   "shelf": "Film Collections",
   "title": "Harry Potter",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39184,6 +39739,7 @@
  {
   "shelf": "Film Collections",
   "title": "Has Fallen Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39199,6 +39755,7 @@
  {
   "shelf": "Film Collections",
   "title": "Highlander Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39214,6 +39771,7 @@
  {
   "shelf": "Film Collections",
   "title": "Home Alone",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39229,6 +39787,7 @@
  {
   "shelf": "Film Collections",
   "title": "Horrible Bosses Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39244,6 +39803,7 @@
  {
   "shelf": "Film Collections",
   "title": "Hotel Transylvania",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39259,6 +39819,7 @@
  {
   "shelf": "Film Collections",
   "title": "How to Train Your Dragon",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39274,6 +39835,7 @@
  {
   "shelf": "Film Collections",
   "title": "Ice Age",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39289,6 +39851,7 @@
  {
   "shelf": "Film Collections",
   "title": "Indiana Jones",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39304,6 +39867,7 @@
  {
   "shelf": "Film Collections",
   "title": "Inside Out Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39319,6 +39883,7 @@
  {
   "shelf": "Film Collections",
   "title": "Insidious",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39334,6 +39899,7 @@
  {
   "shelf": "Film Collections",
   "title": "Ip Man Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39349,6 +39915,7 @@
  {
   "shelf": "Film Collections",
   "title": "It",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39364,6 +39931,7 @@
  {
   "shelf": "Film Collections",
   "title": "Jack Reacher Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39379,6 +39947,7 @@
  {
   "shelf": "Film Collections",
   "title": "James Bond",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39394,6 +39963,7 @@
  {
   "shelf": "Film Collections",
   "title": "Jarhead",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39409,6 +39979,7 @@
  {
   "shelf": "Film Collections",
   "title": "Jaws",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39424,6 +39995,7 @@
  {
   "shelf": "Film Collections",
   "title": "Jeepers Creepers Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39439,6 +40011,7 @@
  {
   "shelf": "Film Collections",
   "title": "John Wick",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39454,6 +40027,7 @@
  {
   "shelf": "Film Collections",
   "title": "Johnny English Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39469,6 +40043,7 @@
  {
   "shelf": "Film Collections",
   "title": "Jumanji",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39484,6 +40059,7 @@
  {
   "shelf": "Film Collections",
   "title": "Jump Street",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39499,6 +40075,7 @@
  {
   "shelf": "Film Collections",
   "title": "Jurassic Park",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39514,6 +40091,7 @@
  {
   "shelf": "Film Collections",
   "title": "Kick-Ass Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39529,6 +40107,7 @@
  {
   "shelf": "Film Collections",
   "title": "King Kong (1976)",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39544,6 +40123,7 @@
  {
   "shelf": "Film Collections",
   "title": "Kingsman",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39559,6 +40139,7 @@
  {
   "shelf": "Film Collections",
   "title": "Knives Out",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39574,6 +40155,7 @@
  {
   "shelf": "Film Collections",
   "title": "Kung Fu Panda",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39589,6 +40171,7 @@
  {
   "shelf": "Film Collections",
   "title": "Legally Blonde",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39604,6 +40187,7 @@
  {
   "shelf": "Film Collections",
   "title": "Lethal Weapon",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39619,6 +40203,7 @@
  {
   "shelf": "Film Collections",
   "title": "Look Who's Talking Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39634,6 +40219,7 @@
  {
   "shelf": "Film Collections",
   "title": "Mad Max",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39649,6 +40235,7 @@
  {
   "shelf": "Film Collections",
   "title": "Madagascar",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39664,6 +40251,7 @@
  {
   "shelf": "Film Collections",
   "title": "Magic Mike",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39679,6 +40267,7 @@
  {
   "shelf": "Film Collections",
   "title": "Major League",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39694,6 +40283,7 @@
  {
   "shelf": "Film Collections",
   "title": "Man of Steel",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39709,6 +40299,7 @@
  {
   "shelf": "Film Collections",
   "title": "Meet the Parents",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39724,6 +40315,7 @@
  {
   "shelf": "Film Collections",
   "title": "Men in Black Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39739,6 +40331,7 @@
  {
   "shelf": "Film Collections",
   "title": "Minions Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39754,6 +40347,7 @@
  {
   "shelf": "Film Collections",
   "title": "Missing in Action",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39769,6 +40363,7 @@
  {
   "shelf": "Film Collections",
   "title": "Mission: Impossible",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39784,6 +40379,7 @@
  {
   "shelf": "Film Collections",
   "title": "Monsters, Inc.",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39799,6 +40395,7 @@
  {
   "shelf": "Film Collections",
   "title": "Mortal Kombat Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39814,6 +40411,7 @@
  {
   "shelf": "Film Collections",
   "title": "Mulan Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39829,6 +40427,7 @@
  {
   "shelf": "Film Collections",
   "title": "My Hero Academia",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39844,6 +40443,7 @@
  {
   "shelf": "Film Collections",
   "title": "Naruto",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39859,6 +40459,7 @@
  {
   "shelf": "Film Collections",
   "title": "National Lampoon's Vacation",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39874,6 +40475,7 @@
  {
   "shelf": "Film Collections",
   "title": "National Treasure",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39889,6 +40491,7 @@
  {
   "shelf": "Film Collections",
   "title": "Night at the Museum",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39904,6 +40507,7 @@
  {
   "shelf": "Film Collections",
   "title": "Now You See Me",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39919,6 +40523,7 @@
  {
   "shelf": "Film Collections",
   "title": "Ocean's",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39934,6 +40539,7 @@
  {
   "shelf": "Film Collections",
   "title": "One Piece",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39949,6 +40555,7 @@
  {
   "shelf": "Film Collections",
   "title": "Ong Bak Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39964,6 +40571,7 @@
  {
   "shelf": "Film Collections",
   "title": "Open Season Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39979,6 +40587,7 @@
  {
   "shelf": "Film Collections",
   "title": "Pacific Rim",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -39994,6 +40603,7 @@
  {
   "shelf": "Film Collections",
   "title": "Paddington",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40009,6 +40619,7 @@
  {
   "shelf": "Film Collections",
   "title": "Percy Jackson",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40024,6 +40635,7 @@
  {
   "shelf": "Film Collections",
   "title": "Phantasm Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40039,6 +40651,7 @@
  {
   "shelf": "Film Collections",
   "title": "Pirates of the Caribbean",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40054,6 +40667,7 @@
  {
   "shelf": "Film Collections",
   "title": "Pitch Perfect",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40069,6 +40683,7 @@
  {
   "shelf": "Film Collections",
   "title": "Planet of the Apes (Original)",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40084,6 +40699,7 @@
  {
   "shelf": "Film Collections",
   "title": "Planet of the Apes (Reboot) Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40099,6 +40715,7 @@
  {
   "shelf": "Film Collections",
   "title": "Pok\u00e9mon",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40114,6 +40731,7 @@
  {
   "shelf": "Film Collections",
   "title": "Police Academy Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40129,6 +40747,7 @@
  {
   "shelf": "Film Collections",
   "title": "Police Story Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40144,6 +40763,7 @@
  {
   "shelf": "Film Collections",
   "title": "Poltergeist",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40159,6 +40779,7 @@
  {
   "shelf": "Film Collections",
   "title": "Predator",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40174,6 +40795,7 @@
  {
   "shelf": "Film Collections",
   "title": "Rambo",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40189,6 +40811,7 @@
  {
   "shelf": "Film Collections",
   "title": "Ride Along Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40204,6 +40827,7 @@
  {
   "shelf": "Film Collections",
   "title": "Robert Langdon",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40219,6 +40843,7 @@
  {
   "shelf": "Film Collections",
   "title": "RoboCop",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40234,6 +40859,7 @@
  {
   "shelf": "Film Collections",
   "title": "Rocky",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40249,6 +40875,7 @@
  {
   "shelf": "Film Collections",
   "title": "Rush Hour",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40264,6 +40891,7 @@
  {
   "shelf": "Film Collections",
   "title": "Saw",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40279,6 +40907,7 @@
  {
   "shelf": "Film Collections",
   "title": "Scooby-Doo",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40294,6 +40923,7 @@
  {
   "shelf": "Film Collections",
   "title": "Shaft Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40309,6 +40939,7 @@
  {
   "shelf": "Film Collections",
   "title": "Sherlock Holmes",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40324,6 +40955,7 @@
  {
   "shelf": "Film Collections",
   "title": "Shrek",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40339,6 +40971,7 @@
  {
   "shelf": "Film Collections",
   "title": "Sicario",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40354,6 +40987,7 @@
  {
   "shelf": "Film Collections",
   "title": "Silent Hill Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40369,6 +41003,7 @@
  {
   "shelf": "Film Collections",
   "title": "Sing",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40384,6 +41019,7 @@
  {
   "shelf": "Film Collections",
   "title": "Smile Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40399,6 +41035,7 @@
  {
   "shelf": "Film Collections",
   "title": "Sniper",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40414,6 +41051,7 @@
  {
   "shelf": "Film Collections",
   "title": "Sonic the Hedgehog Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40429,6 +41067,7 @@
  {
   "shelf": "Film Collections",
   "title": "Speed Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40444,6 +41083,7 @@
  {
   "shelf": "Film Collections",
   "title": "Spider-Man",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40459,6 +41099,7 @@
  {
   "shelf": "Film Collections",
   "title": "Spider-Man: Spider-Verse",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40474,6 +41115,7 @@
  {
   "shelf": "Film Collections",
   "title": "Spy Kids Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40489,6 +41131,7 @@
  {
   "shelf": "Film Collections",
   "title": "Star Trek: Alternate Reality",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40504,6 +41147,7 @@
  {
   "shelf": "Film Collections",
   "title": "Star Trek: The Next Generation Movies",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40519,6 +41163,7 @@
  {
   "shelf": "Film Collections",
   "title": "Star Trek: The Original Series Movies",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40534,6 +41179,7 @@
  {
   "shelf": "Film Collections",
   "title": "Star Wars",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40549,6 +41195,7 @@
  {
   "shelf": "Film Collections",
   "title": "Starship Troopers",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40564,6 +41211,7 @@
  {
   "shelf": "Film Collections",
   "title": "Step Up",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40579,6 +41227,7 @@
  {
   "shelf": "Film Collections",
   "title": "Superman Classic Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40594,6 +41243,7 @@
  {
   "shelf": "Film Collections",
   "title": "Taken Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40609,6 +41259,7 @@
  {
   "shelf": "Film Collections",
   "title": "Ted Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40624,6 +41275,7 @@
  {
   "shelf": "Film Collections",
   "title": "Teenage Mutant Ninja Turtles Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40639,6 +41291,7 @@
  {
   "shelf": "Film Collections",
   "title": "Terrifier Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40654,6 +41307,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Addams Family (Animated)",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40669,6 +41323,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Amityville Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40684,6 +41339,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Avengers Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40699,6 +41355,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Before Trilogy",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40714,6 +41371,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Boondock Saints",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40729,6 +41387,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Boss Baby",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40744,6 +41403,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Bourne",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40759,6 +41419,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Chronicles of Narnia",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40774,6 +41435,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Chronicles of Riddick Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40789,6 +41451,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Crow Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40804,6 +41467,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Dark Knight",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40819,6 +41483,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Dirty Dozen",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40834,6 +41499,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Equalizer",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40849,6 +41515,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Expendables",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40864,6 +41531,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Fast and the Furious",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40879,6 +41547,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Fly Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40894,6 +41563,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Godfather",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40909,6 +41579,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Grudge",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40924,6 +41595,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Hangover",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40939,6 +41611,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Hitman's Bodyguard Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40954,6 +41627,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Hobbit",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40969,6 +41643,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Hunger Games",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40984,6 +41659,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Incredibles",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -40999,6 +41675,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Jack Ryan Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41014,6 +41691,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Karate Kid",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41029,6 +41707,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Land Before Time Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41044,6 +41723,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Lego Movie",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41059,6 +41739,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Lion King Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41074,6 +41755,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Little Mermaid Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41089,6 +41771,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Lord of the Rings",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41104,6 +41787,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Matrix",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41119,6 +41803,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Maze Runner",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41134,6 +41819,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Meg Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41149,6 +41835,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Mighty Ducks",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41164,6 +41851,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Mummy",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41179,6 +41867,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Naked Gun Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41194,6 +41883,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Nun Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41209,6 +41899,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Pink Panther (Original)",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41224,6 +41915,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Pink Panther (Reboot)",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41239,6 +41931,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Purge",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41254,6 +41947,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Raid Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41269,6 +41963,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Ring",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41284,6 +41979,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Secret Life of Pets",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41299,6 +41995,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Terminator",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41314,6 +42011,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Transporter",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41329,6 +42027,7 @@
  {
   "shelf": "Film Collections",
   "title": "The Twilight",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41344,6 +42043,7 @@
  {
   "shelf": "Film Collections",
   "title": "Ti West's X Trilogy",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41359,6 +42059,7 @@
  {
   "shelf": "Film Collections",
   "title": "Tomb Raider Collection",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41374,6 +42075,7 @@
  {
   "shelf": "Film Collections",
   "title": "Top Gun",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41389,6 +42091,7 @@
  {
   "shelf": "Film Collections",
   "title": "Toy Story",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41404,6 +42107,7 @@
  {
   "shelf": "Film Collections",
   "title": "Transformers",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41419,6 +42123,7 @@
  {
   "shelf": "Film Collections",
   "title": "Tremors",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41434,6 +42139,7 @@
  {
   "shelf": "Film Collections",
   "title": "Trolls Holiday",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41449,6 +42155,7 @@
  {
   "shelf": "Film Collections",
   "title": "TRON",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41464,6 +42171,7 @@
  {
   "shelf": "Film Collections",
   "title": "Underworld",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41479,6 +42187,7 @@
  {
   "shelf": "Film Collections",
   "title": "V/H/S",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41494,6 +42203,7 @@
  {
   "shelf": "Film Collections",
   "title": "Wayne's World",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41509,6 +42219,7 @@
  {
   "shelf": "Film Collections",
   "title": "Wreck-It Ralph",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41524,6 +42235,7 @@
  {
   "shelf": "Film Collections",
   "title": "X-Men",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41539,6 +42251,7 @@
  {
   "shelf": "Film Collections",
   "title": "xXx",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41554,6 +42267,7 @@
  {
   "shelf": "Film Collections",
   "title": "Zoolander",
+  "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
@@ -41569,6 +42283,7 @@
  {
   "shelf": "Kids and Family",
   "title": "Discover Family",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -41685,6 +42400,7 @@
  {
   "shelf": "Kids and Family",
   "title": "Animated Studio Spotlight",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -41852,6 +42568,7 @@
  {
   "shelf": "Kids and Family",
   "title": "Family Movie Night",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -41973,6 +42690,7 @@
  {
   "shelf": "Kids and Family",
   "title": "Saturday Morning & Nostalgic Cartoons",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -42102,6 +42820,7 @@
  {
   "shelf": "Kids and Family",
   "title": "Preschool, Toddlers & Little Kids",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -42225,6 +42944,7 @@
  {
   "shelf": "Kids and Family",
   "title": "Disney Channel & Family TV Series",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -42344,6 +43064,7 @@
  {
   "shelf": "Anime",
   "title": "Discover Anime",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -42563,6 +43284,7 @@
  {
   "shelf": "Anime",
   "title": "Shonen & Action Anime",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -42791,6 +43513,7 @@
  {
   "shelf": "Anime",
   "title": "Studio Spotlight",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -43010,6 +43733,7 @@
  {
   "shelf": "Anime",
   "title": "Isekai & Fantasy Sagas",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -43239,6 +43963,7 @@
  {
   "shelf": "Anime",
   "title": "Slice of Life & Romance",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
@@ -43477,6 +44202,7 @@
  {
   "shelf": "Anime",
   "title": "Sports & Competition Anime",
+  "shape": "wide",
   "sources": [
    {
     "tmdbDiscover": {
