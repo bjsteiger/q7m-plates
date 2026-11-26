@@ -355,6 +355,8 @@ def art_query_source(tmdb, aq):
     provider "streaming service name" (US watch providers unless region is set),
     before "YYYY-MM-DD", after "YYYY-MM-DD", languages "fr|ko|ja", min_rating, min_votes
     """
+    if aq.get("titles") and not any(aq.get(k) for k in ("keywords", "director", "actor", "provider", "genres")):
+        return None
     q = {"mediaType": aq.get("media", "movie"), "genres": aq.get("genres", [])}
     if aq.get("keywords"):
         ids = [resolve_keyword(tmdb, k) for k in aq["keywords"]]
@@ -410,6 +412,21 @@ def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None, mode=
         out.append(_norm(media, r))
 
     sources = list(tile["sources"])
+    pinned = []
+    for i, name in enumerate((art_query or {}).get("titles", [])):   # named shows or films the art should come from, first
+        media_pref = (art_query or {}).get("media")
+        try:
+            for media in ([media_pref] if media_pref in ("tv", "movie") else ["tv", "movie"]):
+                res = tmdb.get(f"/search/{media}", query=name).get("results", [])
+                res = [r for r in res if r.get("backdrop_path")]
+                if res:
+                    before = len(out)
+                    add(media, res[0])
+                    if len(out) > before:
+                        pinned.append(out[-1])
+                    break
+        except requests.HTTPError as e:
+            print(f"    title skipped ({name}): {e}")
     if art_query:
         extra = art_query_source(tmdb, art_query)
         if extra:
@@ -455,7 +472,9 @@ def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None, mode=
         except requests.HTTPError as e:
             print(f"    source skipped ({kind}): {e}")
     if mode != "classic":
-        out.sort(key=lambda t: t["popularity"], reverse=True)
+        rest = [t for t in out if t not in pinned]
+        rest.sort(key=lambda t: t["popularity"], reverse=True)
+        out = pinned + rest
     return out[:want]
 
 

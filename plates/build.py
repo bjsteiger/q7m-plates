@@ -428,7 +428,7 @@ def main():
                 print(f"  + {key}  (title only, no usable imagery)")
                 continue
 
-            c = pick(cov_titles, used, cov_off)
+            c = pick(cov_titles, used, 0 if isinstance(aq, dict) and aq.get("titles") else cov_off)   # named titles: the first one is the cover
             used.add((c["media"], c["id"]))
             rest = [t for t in bg_titles if (t["media"], t["id"]) != (c["media"], c["id"])]
             k = bg_off % max(1, len(rest))
