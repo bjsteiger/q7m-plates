@@ -31,10 +31,18 @@ def main():
     site = Path(a.site)
     manifest = json.loads((site / "manifest.json").read_text())
     tiles = manifest["tiles"] if isinstance(manifest, dict) else manifest
+    # only the shape each card actually uses (from the plan), plus its background
+    shapes = {}
+    tp = Path(__file__).resolve().parent.parent / "config" / "tiles.json"
+    if tp.exists():
+        shapes = {f'{t["shelf"]}/{t["title"]}': t.get("shape") for t in json.loads(tp.read_text())}
     out = {}
     for t in tiles:
         rec = {}
+        want = shapes.get(f'{t["shelf"]}/{t["tile"]}')
         for shape, rel in t.get("covers", {}).items():
+            if want and shape != want:
+                continue
             p = site / rel
             if p.exists():
                 rec[shape] = data_uri(p, SIZES.get(shape, (320, 180)))

@@ -14,6 +14,7 @@ Every tile gets all three cover shapes, so a tile's shape can change without a r
 """
 import argparse
 import datetime as dt
+import hashlib
 import json
 import os
 import re
@@ -231,6 +232,7 @@ def main():
     ap.add_argument("--limit", type=int, help="max tiles per shelf, for quick tests")
     ap.add_argument("--offline", help="folder of local stills to use instead of TMDB")
     ap.add_argument("--out", default=str(ROOT / "site"))
+    ap.add_argument("--full", action="store_true", help="redraw every tile, even unchanged ones")
     args = ap.parse_args()
 
     settings = json.loads((ROOT / "config" / "settings.json").read_text())
@@ -267,7 +269,47 @@ def main():
         return week, week
 
     used, manifest, per_shelf = set(), [], {}
-    done = failed = kept = 0
+    done = failed = kept = reused = 0
+
+    # Change detection: a tile whose inputs match the live site's last build is copied, not redrawn.
+    # Inputs include the code, the house style, the tile's rows and overrides, its saved logo and the
+    # refresh period, so Look changes, code changes and the weekly/monthly refresh still redraw.
+    site_url = os.environ.get("PAGES_URL", "https://bjsteiger.github.io/q7m-plates").rstrip("/")
+    code_sig = hashlib.sha1(b"".join((ROOT / "plates" / f).read_bytes() for f in ("look.py", "build.py", "sources.py"))).hexdigest()[:12]
+    prev = {}
+    if not args.offline and not args.full and not os.environ.get("FULL_BUILD"):
+        try:
+            import requests
+            live = requests.get(site_url + "/manifest.json", timeout=30).json()
+            prev = {f'{t["shelf"]}/{t["tile"]}': t for t in live.get("tiles", []) if t.get("sig")}
+            print(f"{len(prev)} tiles from the live site can be reused if unchanged")
+        except Exception as e:
+            print(f"live manifest unavailable ({e}), drawing everything")
+
+    def tile_sig(tile, key, shelf, name, aq, t_, cov_off, bg_off):
+        logo_hash = None
+        folder = ROOT / "logos" / slug(shelf)
+        lp = next((folder / f"{slug(name)}{e}" for e in LOGO_EXTS if (folder / f"{slug(name)}{e}").exists()), None)
+        if lp:
+            logo_hash = hashlib.sha1(lp.read_bytes()).hexdigest()
+        parts = [code_sig, tile.get("sources"), aq, t_, cov_off, bg_off, settings.get("cover"), settings.get("background"),
+                 settings.get("rules"), settings.get("logos", {}).get(shelf), shelf in settings.get("outline_shelves", []),
+                 shelf in refresh.get("classic_art", []), shelf in refresh.get("fixed_monthly_bg", []), logo_hash]
+        parts += [settings.get(k, {}).get(key) for k in ("fonts", "tile_style", "logo_choice", "logo_scale", "brand_colors", "logo_parts", "rename")]
+        parts += [key in settings.get(k, []) for k in ("logo_color", "logo_white")]
+        return hashlib.sha1(json.dumps(parts, sort_keys=True, default=str).encode()).hexdigest()[:16]
+
+    def reuse(entry, d_out):
+        import requests
+        files = list(entry.get("covers", {}).values()) + [entry["background"]]
+        for f in files:
+            r = requests.get(f"{site_url}/{f}", timeout=60)
+            if not r.ok:
+                return False
+            dst = d_out / f
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            dst.write_bytes(r.content)
+        return True
 
     for tile in tiles:
         shelf, name = tile["shelf"], tile["title"]
@@ -287,6 +329,12 @@ def main():
                 aq = {"director": name}
             t_ = tier(shelf)
             cov_off, bg_off = offsets(shelf)
+            sig = tile_sig(tile, key, shelf, name, aq, t_, cov_off, bg_off)
+            old = prev.get(key)
+            if old and old.get("sig") == sig and reuse(old, out):
+                manifest.append(old)
+                reused += 1
+                continue
             classic = t_ in ("monthly",) or shelf in refresh.get("classic_art", [])
             bg_titles = fetch.titles(tile, aq, mode="classic" if classic else "fresh")
             cov_titles = fetch.titles(tile, aq, mode="classic") if t_ == "fixed" and not classic else bg_titles
@@ -301,7 +349,7 @@ def main():
                     look.title_only_cover(label, settings["cover"], (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
                 bw, bh = settings["background"]["width"], settings["background"]["height"]
                 look.plain_field((bw, bh)).save(d / "background.webp", "WEBP", quality=84)
-                manifest.append({"shelf": shelf, "tile": name, "path": rel, "title_only": True,
+                manifest.append({"shelf": shelf, "tile": name, "path": rel, "title_only": True, "sig": sig,
                                  "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
                                  "background": f"{rel}/background.webp"})
                 done += 1
@@ -370,7 +418,7 @@ def main():
                     im = look.cover(still, label, cover_cfg, (w, h), logo=logo, logo_scale=scale)
                 im.save(d / f"cover-{shape}.webp", "WEBP", quality=88)
             look.background(bg_imgs, settings["background"]).save(d / "background.webp", "WEBP", quality=84)
-            manifest.append({"shelf": shelf, "tile": name, "path": rel,
+            manifest.append({"shelf": shelf, "tile": name, "path": rel, "sig": sig,
                              "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
                              "background": f"{rel}/background.webp"})
             done += 1
@@ -393,11 +441,11 @@ def main():
     (out / ".nojekyll").write_text("")
     (out / "manifest.json").write_text(json.dumps({
         "built": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-        "week": week, "rendered": done, "skipped": kept, "failed": failed,
+        "week": week, "rendered": done, "reused": reused, "skipped": kept, "failed": failed,
         "tiles": manifest,
     }, indent=1))
-    print(f"\nDone. rendered={done} skipped={kept} failed={failed}")
-    if done == 0:
+    print(f"\nDone. rendered={done} reused={reused} skipped={kept} failed={failed}")
+    if done == 0 and reused == 0:
         sys.exit("Nothing rendered, not publishing.")
 
 

@@ -69,7 +69,7 @@ for t in tiles:
         a = {**a, "artQuery": {"director": t["title"]}}
     if not a.get("artQuery") and st == "portrait-actor" and not usable:
         a = {**a, "artQuery": {"actor": t["title"]}}
-    out_tiles.append({"shelf": t["shelf"], "title": t["title"], "sources": usable})
+    out_tiles.append({"shelf": t["shelf"], "title": t["title"], "shape": t.get("shape", "wide"), "sources": usable})
     if a.get("font") or "upper" in a or a.get("fontScale") or a.get("tracking") is not None:
         f = {}
         if a.get("font"):
