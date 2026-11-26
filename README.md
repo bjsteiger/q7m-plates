@@ -30,9 +30,9 @@ The images are not committed to the repo. Each run publishes them straight to Pa
 | Shelf | Cover style |
 |---|---|
 | Most shelves | Graded film still, darker edges, centered title in Montserrat Bold at 85% white |
-| Streaming services | Full-colour logo on the service's brand colour, dark gradient rising from the bottom |
+| Streaming services | The service's own app-icon mark on the icon's colour, dark gradient rising from the bottom |
 | Networks | Dim blurred still, soft centre glow, white logo with a slight top-to-bottom gradient |
-| Studios | Large full-colour logo on a deep field tinted from the logo, still faintly underneath |
+| Studios | Large white logo on a deep field tinted from the logo's colour, still faintly underneath |
 | Directors | Moody headshot, name anchored bottom left with a small role line |
 | Awards | White award logo over a film still (pinned Commons files), title if no logo is pinned |
 

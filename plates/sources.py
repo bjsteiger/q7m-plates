@@ -122,6 +122,13 @@ class TMDB:
         hit = (exact or res or [None])[0]
         return hit["id"] if hit else None
 
+    def provider_icon(self, provider_name):
+        """The service's own app icon from TMDB (e.g. Netflix's red N on black)."""
+        r = find_provider(self, provider_name)
+        if not r or not r.get("logo_path"):
+            return None, None
+        return self.logo_image(r["logo_path"]), r["provider_name"]
+
     def service_network(self, provider_name, service_name):
         """Find the TMDB network behind a streaming service (e.g. Netflix -> network 213)
         by looking at the networks of its most popular shows."""
@@ -273,25 +280,46 @@ def resolve_keyword(tmdb, text):
 
 
 _provider_cache = {}
+_SKIP = ("amazonchannel", "rokupremiumchannel", "applechannel", "channel", "withads", "basic")
+
+
+def _norm_name(n):
+    n = n.lower().replace("+", "plus")
+    return "".join(ch for ch in n if ch.isalnum())
+
+
+def find_provider(tmdb, name, region="US"):
+    """Look a streaming service up in TMDB's US provider list by name (or a list of
+    alternative names, tried in order). Returns the provider dict."""
+    if isinstance(name, (list, tuple)):
+        for n in name:
+            r = find_provider(tmdb, n, region)
+            if r:
+                return r
+        return None
+    key = (name.lower(), region)
+    if key in _provider_cache:
+        return _provider_cache[key]
+    want = _norm_name(name)
+    allp = {}
+    for media in ("tv", "movie"):
+        for r in tmdb.get(f"/watch/providers/{media}", watch_region=region).get("results", []):
+            allp[r["provider_id"]] = r
+    best = None
+    for r in sorted(allp.values(), key=lambda r: r.get("display_priority", 999)):
+        n = _norm_name(r["provider_name"])
+        if n == want:
+            best = r
+            break
+        if best is None and n.startswith(want) and not any(x in n for x in _SKIP):
+            best = r
+    _provider_cache[key] = best
+    return best
 
 
 def resolve_provider(tmdb, name, region="US"):
-    """Find a streaming service's TMDB watch-provider id by its name."""
-    key = (name.lower(), region)
-    if key not in _provider_cache:
-        best = None
-        for media in ("tv", "movie"):
-            for r in tmdb.get(f"/watch/providers/{media}", watch_region=region).get("results", []):
-                pn = r["provider_name"].lower()
-                if pn == name.lower():
-                    best = r["provider_id"]
-                    break
-                if best is None and name.lower() in pn and "channel" not in pn and "amazon channel" not in pn:
-                    best = r["provider_id"]
-            if best:
-                break
-        _provider_cache[key] = best
-    return _provider_cache[key]
+    r = find_provider(tmdb, name, region)
+    return r["provider_id"] if r else None
 
 
 def resolve_person(tmdb, name):

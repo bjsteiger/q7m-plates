@@ -53,43 +53,75 @@
   "art_queries": {
     "Streaming Services/Netflix": {
       "media": "tv",
-      "provider": "Netflix"
+      "provider": [
+        "Netflix"
+      ]
     },
     "Streaming Services/Apple TV+": {
       "media": "tv",
-      "provider": "Apple TV"
+      "provider": [
+        "Apple TV+",
+        "Apple TV Plus",
+        "Apple TV"
+      ]
     },
     "Streaming Services/HBO Max": {
       "media": "tv",
-      "provider": "HBO Max"
+      "provider": [
+        "HBO Max",
+        "Max"
+      ]
     },
     "Streaming Services/Paramount+": {
       "media": "tv",
-      "provider": "Paramount Plus"
+      "provider": [
+        "Paramount Plus",
+        "Paramount+",
+        "Paramount Plus Premium"
+      ]
     },
     "Streaming Services/Prime Video": {
       "media": "tv",
-      "provider": "Amazon Prime Video"
+      "provider": [
+        "Amazon Prime Video",
+        "Prime Video"
+      ]
     },
     "Streaming Services/Disney+": {
       "media": "tv",
-      "provider": "Disney Plus"
+      "provider": [
+        "Disney Plus",
+        "Disney+"
+      ]
     },
     "Streaming Services/Hulu": {
       "media": "tv",
-      "provider": "Hulu"
+      "provider": [
+        "Hulu"
+      ]
     },
     "Streaming Services/Discovery+": {
       "media": "tv",
-      "provider": "Discovery+"
+      "provider": [
+        "Discovery+",
+        "Discovery Plus"
+      ]
     },
     "Streaming Services/Magellan": {
       "media": "tv",
-      "provider": "Magellan TV"
+      "provider": [
+        "MagellanTV",
+        "Magellan TV",
+        "MagellanTV Documentary Club"
+      ]
     },
     "Streaming Services/Peacock": {
       "media": "tv",
-      "provider": "Peacock"
+      "provider": [
+        "Peacock Premium",
+        "Peacock",
+        "Peacock Premium Plus"
+      ]
     },
     "Genres/Action Adventures": {
       "genres": [
@@ -382,19 +414,7 @@
     "Streaming Services": {
       "type": "service",
       "style": "brand",
-      "default_color": "#0b0d10",
-      "colors": {
-        "Netflix": "#0a0a0a",
-        "Apple TV+": "#000000",
-        "HBO Max": "#0d1240",
-        "Paramount+": "#0b3fd6",
-        "Prime Video": "#4a90e2",
-        "Disney+": "#0b1a46",
-        "Hulu": "#10232a",
-        "Discovery+": "#0a3fa8",
-        "Magellan": "#0e1f2e",
-        "Peacock": "#000000"
-      }
+      "scale": 1.15
     },
     "Studios": {
       "type": "company",
@@ -410,8 +430,7 @@
       "files": {
         "Oscars": "File:Oscars logo.svg",
         "Golden Globes": "File:Golden Globes (2024, logo).png",
-        "Cannes": "File:Palme d'Or 2023.svg",
-        "Venice": "File:Internationale Filmfestspiele von Venedig 2012 Logo.svg"
+        "Cannes": "File:Palme d'Or 2023.svg"
       }
     },
     "Directors": {

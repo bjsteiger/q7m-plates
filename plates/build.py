@@ -70,8 +70,8 @@ class OnlineFetcher:
                 path = cid and self.tmdb.best_logo("company", cid)
             elif kind == "service":
                 prov = (art_query or {}).get("provider", tile["title"])
-                nid = self.tmdb.service_network(prov, tile["title"])
-                path = nid and self.tmdb.best_logo("network", nid)
+                img, pname = self.tmdb.provider_icon(prov)
+                return img, (f"tmdb app icon: {pname}" if img is not None else f"no app icon for {prov}")
             elif kind == "person":
                 img = self.tmdb.person_headshot(tile["title"])
                 return img, ("tmdb headshot" if img is not None else "no headshot")
@@ -232,8 +232,9 @@ def main():
                 if h > w and not (rule and logo is not None):   # poster: text-free poster when TMDB has one
                     still = fetch.poster_still(c) or wide_still
                 if logo is not None and rule.get("style") == "brand":
-                    bgc = rule.get("colors", {}).get(name, rule.get("default_color", "#0b0d10"))
-                    im = look.brand_cover(logo, bgc, (w, h), scale)
+                    # the app icon's own backdrop colour becomes the tile colour; its mark sits on top
+                    bgc = rule.get("colors", {}).get(name) or look.corner_color(logo)
+                    im = look.brand_cover(look.knock_background(logo), bgc, (w, h), scale)
                 elif logo is not None and rule.get("style") == "station":
                     im = look.station_cover(still, logo, (w, h), scale)
                 elif logo is not None and rule.get("style") == "studio":

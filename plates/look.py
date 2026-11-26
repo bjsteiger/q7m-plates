@@ -96,33 +96,80 @@ def _fit(draw, title, max_w, size, tracking_ratio, weight, max_lines=2):
     return options[-1], font(44, weight), 44 * tracking_ratio
 
 
+def _knockout_white(logo):
+    """White logo that keeps its inner details.
+
+    Marks that sit inside a solid plate (the letters in an ABC circle, the letters on TLC's
+    squares, the text in a Sky Max box) are much lighter or darker than the plate around them.
+    Those are cut out so they still read; everything else turns white. Text next to an icon,
+    rather than inside it, stays white because it isn't surrounded by a solid area.
+    """
+    a = logo.getchannel("A")
+    out = Image.new("RGBA", logo.size, (255, 255, 255, 0))
+    out.putalpha(a)
+    w0, h0 = logo.size
+    sc = min(1.0, 240 / max(w0, h0))
+    sw, sh = max(1, int(w0 * sc)), max(1, int(h0 * sc))
+    small = logo.resize((sw, sh), Image.LANCZOS)
+    sa = small.getchannel("A")
+    # rainbow-style logos (many strong hues, like a peacock fan) read fine as a plain silhouette
+    hsv = small.convert("RGB").convert("HSV")
+    hues = [hh * 12 // 256 for (hh, ss, vv), al in zip(hsv.getdata(), sa.getdata()) if al > 128 and ss > 90 and vv > 60]
+    if hues:
+        counts = [hues.count(i) for i in range(12)]
+        if sum(1 for c in counts if c > 0.06 * len(hues)) >= 4:
+            return out
+    # luminance over black where transparent, so the plate edge doesn't count as a mark
+    lum = Image.composite(small.convert("L"), Image.new("L", (sw, sh), 0), sa)
+    k = max(5, min(41, int(min(sw, sh) / 2.2) | 1))
+    plate = lum.filter(ImageFilter.MedianFilter(k))
+    solid = sa.filter(ImageFilter.MedianFilter(k)).point(lambda v: 255 if v > 230 else 0)
+    marks = ImageChops.difference(lum, plate).point(lambda v: 255 if v > 55 else 0)
+    marks = ImageChops.multiply(ImageChops.multiply(marks, solid), sa.point(lambda v: 255 if v > 128 else 0))
+    n_marks = marks.histogram()[255]
+    n_opaque = sa.point(lambda v: 255 if v > 128 else 0).histogram()[255]
+    if n_marks < 0.01 * n_opaque or n_marks > 0.6 * n_opaque:
+        return out
+    marks = marks.resize((w0, h0), Image.LANCZOS).filter(ImageFilter.GaussianBlur(0.7))
+    out.putalpha(ImageChops.subtract(a, marks))
+    return out
+
+
 def _prep_logo(logo, mode):
-    """Trim empty edges; in 'white' mode turn the logo into a white silhouette."""
+    """Trim empty edges; 'white' turns the logo white but keeps inner details cut out."""
     logo = logo.convert("RGBA")
     alpha = logo.getchannel("A")
-    if alpha.getextrema()[0] == 255:      # no transparency: knock out a near-white or near-black backdrop
-        gray = logo.convert("L")
-        corner = gray.getpixel((0, 0))
-        alpha = gray.point(lambda v: 255 if abs(v - corner) > 40 else 0)
-        logo.putalpha(alpha)
+    if alpha.getextrema()[0] == 255:      # no transparency: knock out a flat backdrop
+        logo = knock_background(logo)
+        alpha = logo.getchannel("A")
     bbox = alpha.getbbox()
     if bbox:
         logo = logo.crop(bbox)
     if mode == "white":
-        # white logo, but keep near-black details (letters inside a badge) dark so they stay readable
-        a = logo.getchannel("A")
-        lum = logo.convert("L")
-        dark = Image.eval(lum, lambda v: 255 if v < 60 else 0)
-        dark = Image.composite(dark, Image.new("L", logo.size, 0), a.point(lambda v: 255 if v > 200 else 0))
-        n_dark = dark.histogram()[255]
-        n_opaque = a.point(lambda v: 255 if v > 200 else 0).histogram()[255]
-        has_dark = 0 < n_dark < 0.6 * max(1, n_opaque)
-        out = Image.new("RGBA", logo.size, (255, 255, 255, 0))
-        out.putalpha(a)
-        if has_dark:
-            out.paste((18, 20, 24, 255), (0, 0), dark)
-        logo = out
+        logo = _knockout_white(logo)
     return logo
+
+
+def knock_background(img, tol=38):
+    """Make a flat backdrop colour (sampled from the corners) transparent, with a soft edge."""
+    img = img.convert("RGBA")
+    rgb = img.convert("RGB")
+    w, h = rgb.size
+    corners = [rgb.getpixel(p) for p in ((0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1))]
+    bg = tuple(sorted(c[i] for c in corners)[1] for i in range(3))
+    r, g, b = rgb.split()
+    d = ImageChops.add(ImageChops.add(r.point(lambda v: abs(v - bg[0])), g.point(lambda v: abs(v - bg[1]))),
+                       b.point(lambda v: abs(v - bg[2])))
+    a = d.point(lambda v: 0 if v < tol else (255 if v > tol * 2 else int((v - tol) * 255 / tol)))
+    img.putalpha(ImageChops.multiply(a, img.getchannel("A")))
+    return img
+
+
+def corner_color(img):
+    rgb = img.convert("RGB")
+    w, h = rgb.size
+    corners = [rgb.getpixel(p) for p in ((2, 2), (w - 3, 2), (2, h - 3), (w - 3, h - 3))]
+    return "#%02x%02x%02x" % tuple(sorted(c[i] for c in corners)[1] for i in range(3))
 
 
 def _vgradient(logo, top=1.0, bottom=0.78):
@@ -244,10 +291,9 @@ def studio_cover(still, logo, size, scale=1.0):
     """Studio tile: the logo large and in its own colours over a deep field tinted from the logo,
     with the film still faintly underneath, like a studio's opening card."""
     w, h = size
-    lg = _prep_logo(logo, "color")
-    col, lum = _dominant(lg)
-    if lum < 60:                      # dark logo: show it in white so it doesn't vanish
-        lg = _prep_logo(logo, "white")
+    col, _ = _dominant(_prep_logo(logo, "color"))
+    lg = _vgradient(_prep_logo(logo, "white"), 1.0, 0.82)   # every studio logo in white, same treatment
+    if max(col) - min(col) < 25:      # grey or black logo: use a neutral blue-grey field
         col = (60, 70, 90)
     deep = tuple(max(6, int(c * 0.28)) for c in col)
     mid = tuple(max(10, int(c * 0.55)) for c in col)
