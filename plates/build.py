@@ -131,6 +131,7 @@ STYLE_RULES = {
     "studio": {"type": "company", "style": "studio"},
     "portrait-director": {"type": "person", "style": "portrait", "role": "Director"},
     "portrait-actor": {"type": "person", "style": "portrait", "role": "Actor"},
+    "portrait-actress": {"type": "person", "style": "portrait", "role": "Actress"},
 }
 
 LOGO_EXTS = (".png", ".webp", ".jpg", ".jpeg", ".svg")

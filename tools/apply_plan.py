@@ -52,6 +52,7 @@ RULES = {
     "studio": {"type": "company", "style": "studio"},
     "portrait-director": {"type": "person", "style": "portrait", "role": "Director"},
     "portrait-actor": {"type": "person", "style": "portrait", "role": "Actor"},
+    "portrait-actress": {"type": "person", "style": "portrait", "role": "Actress"},
 }
 
 out_tiles, notes, problems = [], [], []
@@ -68,7 +69,7 @@ for t in tiles:
     st = a.get("style") or style_of.get(t["shelf"], "")
     if not a.get("artQuery") and st == "portrait-director":
         a = {**a, "artQuery": {"director": t["title"]}}
-    if not a.get("artQuery") and st == "portrait-actor" and not usable:
+    if not a.get("artQuery") and st in ("portrait-actor", "portrait-actress") and not usable:
         a = {**a, "artQuery": {"actor": t["title"]}}
     out_tiles.append({"shelf": t["shelf"], "title": t["title"], "shape": t.get("shape", "wide"), "sources": usable})
     if a.get("font") or "upper" in a or a.get("fontScale") or a.get("tracking") is not None:
