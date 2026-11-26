@@ -580,18 +580,18 @@ def outline_year_cover(still, text, size, cfg):
     f_file = cfg.get("outline_font", "BebasNeue-Regular.ttf")
     if cfg.get("outline_drop_s", True) and text[-1:] in "sS" and text[:-1].isdigit():
         text = text[:-1]                 # "1970s" -> "1970"
-    if h > w and len(text) > 3:          # tall tile: stack it, "19" over "70s"
+    if h > w and len(text) > 3 and cfg.get("outline_stack", True):          # tall tile: stack it, "19" over "70s"
         text = text[:2] + "\n" + text[2:]
     # size the text so it is ~1.12x the tile width: it bleeds past both sides, every digit still visible
     probe = font(400, ow, f_file)
     d0 = ImageDraw.Draw(Image.new("L", (1, 1)))
     tw = max(d0.textlength(ln, font=probe) for ln in text.split("\n"))
     fs = int(400 * (w * cfg.get("outline_bleed", 1.12)) / max(1, tw))
-    fs = min(fs, int(h * (0.62 if "\n" in text else 1.25)))
+    fs = min(fs, int(h * (0.62 if "\n" in text else 1.25) * cfg.get("outline_bleed", 1.12) / 1.12))
     f = font(fs, ow, f_file)
     bbox = d0.multiline_textbbox((0, 0), text, font=f, spacing=-int(fs * 0.12), align="center")
     tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    x = (w - tw) / 2 - bbox[0]
+    x = (w - tw) * cfg.get("year_x", 0.5) - bbox[0]     # 0 shows the start of the year, 1 the end
     y = (h - th) / 2 - bbox[1] + h * 0.03 + h * (cfg.get("title_y", 0.5) - 0.5)
     stroke = max(2, fs // cfg.get("outline_weight", 85))
     layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
