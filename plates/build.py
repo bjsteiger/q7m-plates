@@ -295,7 +295,7 @@ def main():
         parts = [code_sig, tile.get("sources"), aq, t_, cov_off, bg_off, settings.get("cover"), settings.get("background"),
                  settings.get("rules"), settings.get("logos", {}).get(shelf), shelf in settings.get("outline_shelves", []),
                  shelf in refresh.get("classic_art", []), shelf in refresh.get("fixed_monthly_bg", []), logo_hash]
-        parts += [settings.get(k, {}).get(key) for k in ("fonts", "tile_style", "logo_choice", "logo_scale", "brand_colors", "logo_parts", "rename")]
+        parts += [settings.get(k, {}).get(key) for k in ("fonts", "tile_style", "logo_choice", "logo_scale", "brand_colors", "logo_parts", "rename", "subtitles")]
         parts += [key in settings.get(k, []) for k in ("logo_color", "logo_white")]
         return hashlib.sha1(json.dumps(parts, sort_keys=True, default=str).encode()).hexdigest()[:16]
 
@@ -364,7 +364,7 @@ def main():
             n = settings["background"]["panels"]
             bg_imgs = [fetch.still(t, big=i < n) for i, t in enumerate(rest)]
             rule = settings.get("logos", {}).get(shelf)
-            if tstyle == "cinema" or tstyle == "outline":
+            if tstyle in ("cinema", "outline", "vibrant"):
                 rule = None
             elif tstyle in STYLE_RULES:
                 rule = {**STYLE_RULES[tstyle], **({k: v for k, v in (rule or {}).items() if k == "scale"} if rule and rule.get("style") == STYLE_RULES[tstyle]["style"] else {})}
@@ -397,7 +397,9 @@ def main():
                 still = wide_still
                 if h > w and not (rule and logo is not None):   # poster: text-free poster when TMDB has one
                     still = fetch.poster_still(c) or wide_still
-                if outline:
+                if tstyle == "vibrant":
+                    im = look.vibrant_cover(still if h > w else wide_still, label, settings.get("subtitles", {}).get(key, ""), (w, h), cover_cfg)
+                elif outline:
                     im = look.outline_year_cover(wide_still, label, (w, h), cover_cfg)
                 elif logo is not None and rule.get("style") == "brand":
                     # the app icon's own backdrop colour becomes the tile colour; its mark sits on top

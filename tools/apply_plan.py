@@ -56,6 +56,7 @@ RULES = {
 
 out_tiles, notes, problems = [], [], []
 fonts, tile_style, logo_choice, logo_color, logo_scale, brand, queries, links = {}, {}, {}, [], {}, {}, {}, {}
+subtitles = {}
 for t in tiles:
     key = f'{t["shelf"]}/{t["title"]}'
     srcs = t["sources"]
@@ -85,6 +86,8 @@ for t in tiles:
         fonts[key] = f
     if a.get("style"):
         tile_style[key] = a["style"]
+    if a.get("subtitle"):
+        subtitles[key] = a["subtitle"]
     if a.get("logoSource") in ("tmdb", "none"):
         logo_choice[key] = a["logoSource"]
     if a.get("logoUrl"):
@@ -117,10 +120,10 @@ for s in shelf_cfg:
         logos[title] = old_logos.get(title) or {"type": "wikimedia", "scale": 1.6, "files": {}}
     elif st == "outline":
         outline.append(title)
-    elif st == "title":
+    elif st in ("title", "vibrant"):
         for t in tiles:
             if t["shelf"] == title:
-                tile_style.setdefault(f'{title}/{t["title"]}', "title")
+                tile_style.setdefault(f'{title}/{t["title"]}', st)
 settings["logos"] = logos
 settings["outline_shelves"] = outline
 
@@ -139,6 +142,7 @@ settings["logo_color"] = logo_color
 settings["logo_scale"] = logo_scale
 settings["brand_colors"] = brand
 settings["art_queries"] = queries
+settings["subtitles"] = subtitles
 prefs = meta.get("prefs", {})
 settings["cover"].update({k: v for k, v in prefs.get("cover", {}).items() if k in ("weight", "opacity", "title_size", "tracking", "dash")})
 settings["background"].update({k: v for k, v in prefs.get("background", {}).items()

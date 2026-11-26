@@ -549,3 +549,94 @@ def background(images, cfg):
     front = _blended_panels(front_imgs, w, h, n, cfg["panel_lean"], cfg["blend_softness"], cfg["max_dark"])
     mask = _mask_from_fn(w, h, lambda x, y: (x - 0.42) / 0.2, 40)
     return Image.composite(front, back, mask)
+
+
+# ---------- vibrant ----------
+
+def accent_color(img):
+    """A bright, saturated colour taken from the picture, for the subtitle."""
+    small = img.convert("RGB").resize((64, 36))
+    hsv = small.convert("HSV")
+    bins = {}
+    for (h, s, v) in hsv.getdata():
+        if s > 70 and v > 60:
+            b = h // 16
+            bins[b] = bins.get(b, 0) + s * v
+    if not bins:
+        return (235, 235, 240)
+    h = (max(bins, key=bins.get) * 16 + 8) % 256
+    px = Image.new("HSV", (1, 1), (h, 200, 250)).convert("RGB").getpixel((0, 0))
+    return px
+
+
+def vibrant_cover(still, title, subtitle, size, cfg=None):
+    """Bold title filled with a brightened copy of the picture, a light outline, and a short
+    subtitle in a colour pulled from the picture."""
+    cfg = cfg or {}
+    w, h = size
+    k = min(w, h) / 720
+    base = ImageEnhance.Contrast(ImageEnhance.Color(fill(still, w, h)).enhance(1.25)).enhance(1.08)
+    img = ImageEnhance.Brightness(base).enhance(0.5)
+    img = Image.composite(img, Image.new("RGB", (w, h), DARK), _vignette(w, h, 0.75, 0.2))
+    vivid = ImageEnhance.Brightness(ImageEnhance.Color(base).enhance(1.7)).enhance(1.45)
+    vivid = Image.blend(vivid, Image.new("RGB", (w, h), (255, 255, 255)), 0.18)
+
+    d0 = ImageDraw.Draw(Image.new("L", (1, 1)))
+    text = title.upper()
+    size_ = int(cfg.get("title_size", 88) * 1.45 * k * cfg.get("font_scale", 1.0))
+    max_w = w * (0.86 if h >= w else 0.82)
+    words = text.split()
+    lines = [text]
+    while True:
+        f = font(size_, "Black", cfg.get("font_file"))
+        tr = size_ * 0.01
+        widest = max(sum(d0.textlength(c, font=f) for c in ln) + tr * (len(ln) - 1) for ln in lines)
+        if widest <= max_w or size_ < 30 * k:
+            break
+        if len(lines) == 1 and len(words) > 1 and h > w:
+            mid = max(1, len(words) // 2)
+            lines = [" ".join(words[:mid]), " ".join(words[mid:])]
+            continue
+        size_ = int(size_ * 0.94)
+    sub = (subtitle or "").upper()
+    sf = font(max(12, int(size_ * 0.21)), "Bold")
+    str_ = sf.size * 0.14
+    lh = f.size * 1.0
+    block = lh * len(lines) + (sf.size * 1.8 if sub else 0)
+    top = h / 2 - block / 2
+
+    mask = Image.new("L", (w, h), 0)
+    outline = Image.new("L", (w, h), 0)
+    md, od = ImageDraw.Draw(mask), ImageDraw.Draw(outline)
+    sw = max(2, int(size_ * 0.03))
+    for i, ln in enumerate(lines):
+        widths = [d0.textlength(c, font=f) for c in ln]
+        x = w / 2 - (sum(widths) + tr * (len(ln) - 1)) / 2
+        y = top + lh * i
+        for ch, cw in zip(ln, widths):
+            od.text((x, y), ch, font=f, fill=255, stroke_width=sw, stroke_fill=255)
+            md.text((x, y), ch, font=f, fill=255)
+            x += cw + tr
+    ring = ImageChops.subtract(outline, mask)
+    shadow = outline.filter(ImageFilter.GaussianBlur(max(4, int(10 * k)))).point(lambda v: int(v * 0.55))
+    img = Image.composite(Image.new("RGB", (w, h), (0, 0, 0)), img, shadow)
+    img = Image.composite(vivid, img, mask)
+    img = Image.composite(Image.new("RGB", (w, h), (245, 245, 250)), img, ring.point(lambda v: int(v * 0.8)))
+
+    if sub:
+        col = accent_color(still)
+        dd = ImageDraw.Draw(img)
+        widths = [dd.textlength(c, font=sf) for c in sub]
+        total = sum(widths) + str_ * (len(sub) - 1)
+        if total > w * 0.9:
+            sf = font(max(10, int(sf.size * w * 0.9 / total)), "Bold")
+            str_ = sf.size * 0.1
+            widths = [dd.textlength(c, font=sf) for c in sub]
+            total = sum(widths) + str_ * (len(sub) - 1)
+        x = w / 2 - total / 2
+        y = top + lh * len(lines) + sf.size * 0.8
+        for ch, cw in zip(sub, widths):
+            dd.text((x + 1, y + 2), ch, font=sf, fill=(0, 0, 0))
+            dd.text((x, y), ch, font=sf, fill=col)
+            x += cw + str_
+    return img
