@@ -380,7 +380,21 @@
   },
   "logos": {
     "Streaming Services": {
-      "type": "service"
+      "type": "service",
+      "style": "brand",
+      "default_color": "#0b0d10",
+      "colors": {
+        "Netflix": "#0a0a0a",
+        "Apple TV+": "#000000",
+        "HBO Max": "#0d1240",
+        "Paramount+": "#0b3fd6",
+        "Prime Video": "#4a90e2",
+        "Disney+": "#0b1a46",
+        "Hulu": "#10232a",
+        "Discovery+": "#0a3fa8",
+        "Magellan": "#0e1f2e",
+        "Peacock": "#000000"
+      }
     },
     "Studios": {
       "type": "company"

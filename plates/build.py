@@ -191,8 +191,12 @@ def main():
                 still = wide_still
                 if h > w:   # poster: use a text-free poster when TMDB has one
                     still = fetch.poster_still(c) or wide_still
-                look.cover(still, label, cover_cfg, (w, h), logo=logo, logo_scale=scale).save(
-                    d / f"cover-{shape}.webp", "WEBP", quality=88)
+                if logo is not None and rule.get("style") == "brand":
+                    bgc = rule.get("colors", {}).get(name, rule.get("default_color", "#0b0d10"))
+                    im = look.brand_cover(logo, bgc, (w, h), scale)
+                else:
+                    im = look.cover(still, label, cover_cfg, (w, h), logo=logo, logo_scale=scale)
+                im.save(d / f"cover-{shape}.webp", "WEBP", quality=88)
             look.background(bg_imgs, settings["background"]).save(d / "background.webp", "WEBP", quality=84)
             manifest.append({"shelf": shelf, "tile": name, "path": rel,
                              "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},

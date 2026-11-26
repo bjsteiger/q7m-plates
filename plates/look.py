@@ -163,6 +163,28 @@ def cover(still, title, cfg, size=None, logo=None, logo_scale=1.0):
     return out.convert("RGB")
 
 
+def brand_cover(logo, bg_hex, size, scale=1.0):
+    """App-tile style: brand-colour field, full-colour logo, soft dark gradient rising from the bottom."""
+    w, h = size
+    bg = tuple(int(bg_hex.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4))
+    img = Image.new("RGB", (w, h), bg)
+    # gentle lift in the middle so the field isn't flat
+    glow = _mask_from_fn(w, h, lambda x, y: 0.10 * max(0, 1 - (((x - 0.5) * 1.6) ** 2 + ((y - 0.42) * 2) ** 2)), 40)
+    img = Image.composite(Image.new("RGB", (w, h), tuple(min(255, c + 40) for c in bg)), img, glow)
+    # dark gradient coming up from the bottom
+    fade = _mask_from_fn(w, h, lambda x, y: (max(0, (y - 0.45) / 0.55) ** 1.4) * 0.6, 10)
+    img = Image.composite(Image.new("RGB", (w, h), (0, 0, 0)), img, fade)
+
+    lg = _prep_logo(logo, "color")
+    box_w = min(w * 0.8, w * (0.58 if h >= w else 0.42) * scale)
+    box_h = min(h * 0.5, h * (0.22 if h > w else 0.28) * scale)
+    k = min(box_w / lg.width, box_h / lg.height)
+    lg = lg.resize((max(1, int(lg.width * k)), max(1, int(lg.height * k))), Image.LANCZOS)
+    out = img.convert("RGBA")
+    out.alpha_composite(lg, ((w - lg.width) // 2, int(h * 0.44 - lg.height / 2)))
+    return out.convert("RGB")
+
+
 # ---------- background ----------
 
 def _left_fade(img, start, end, bottom, max_dark):
