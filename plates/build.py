@@ -429,6 +429,16 @@ def main():
                 continue
 
             c = pick(cov_titles, used, 0 if isinstance(aq, dict) and aq.get("titles") else cov_off)   # named titles: the first one is the cover
+            # never a cover with the title written on it: skip titles that only have text-on-picture backdrops
+            tm = getattr(fetch, "tmdb", None)
+            if tm is not None and hasattr(tm, "has_clean_backdrop"):
+                tried = {(c["media"], c["id"])}
+                while not tm.has_clean_backdrop(c["media"], c["id"]) and len(tried) < min(6, len(cov_titles)):
+                    nxt = next((t for t in cov_titles if (t["media"], t["id"]) not in tried and (t["media"], t["id"]) not in used), None)
+                    if nxt is None:
+                        break
+                    tried.add((nxt["media"], nxt["id"]))
+                    c = nxt
             used.add((c["media"], c["id"]))
             rest = [t for t in bg_titles if (t["media"], t["id"]) != (c["media"], c["id"])]
             k = bg_off % max(1, len(rest))

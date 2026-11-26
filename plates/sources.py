@@ -72,6 +72,14 @@ class TMDB:
         return fallback
 
 
+    def has_clean_backdrop(self, media, tmdb_id):
+        """True when TMDB has a backdrop for this title with no text on it."""
+        try:
+            data = self.get(f"/{media}/{tmdb_id}/images", include_image_language="null")
+            return any(b.get("iso_639_1") is None for b in data.get("backdrops", []))
+        except requests.HTTPError:
+            return True
+
     def clean_poster(self, media, tmdb_id):
         """A poster with no text on it, if TMDB has one. Many titles don't."""
         try:
