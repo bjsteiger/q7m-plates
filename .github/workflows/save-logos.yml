@@ -5,6 +5,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   save:
@@ -37,11 +38,37 @@ jobs:
                       os.remove(os.path.join(d, old))
               open(f"{d}/{slug(tile)}{ext}", "wb").write(r.content)
               print("saved", key)
+
+          # logos picked from TMDB: download the exact file, then use the saved copy from now on
+          settings = json.load(open("config/settings.json"))
+          choice = settings.get("logo_choice", {})
+          for key, val in list(choice.items()):
+              if not val.startswith("tmdb:/"):
+                  continue
+              shelf, tile = key.split("/", 1)
+              r = requests.get("https://image.tmdb.org/t/p/original" + val[5:], timeout=60)
+              if not r.ok:
+                  print("failed", key, r.status_code); continue
+              d = f"logos/{slug(shelf)}"; os.makedirs(d, exist_ok=True)
+              for old in os.listdir(d):
+                  if os.path.splitext(old)[0] == slug(tile):
+                      os.remove(os.path.join(d, old))
+              open(f"{d}/{slug(tile)}.png", "wb").write(r.content)
+              del choice[key]
+              print("saved TMDB pick", key)
+          json.dump(settings, open("config/settings.json", "w"), indent=2)
           PY
       - name: Commit
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add logos
-          git diff --cached --quiet || git commit -m "Save logo links"
+          git add logos config/settings.json
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          git commit -m "Save picked logos"
           git push
+          echo "rebuild=yes" >> "$GITHUB_ENV"
+      - name: Rebuild with the saved logos
+        if: env.rebuild == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/actions/workflows/build.yml/dispatches" -f ref=main
