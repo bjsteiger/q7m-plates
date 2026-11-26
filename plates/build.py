@@ -225,7 +225,8 @@ def main():
             if rule and logo is None:
                 print(f"    {key}: {logo_note}, using text")
             scale = (rule or {}).get("scale", 1.0)
-            cover_cfg = {**settings["cover"], "logo_mode": (rule or {}).get("mode", settings["cover"].get("logo_mode", "white"))}
+            cover_cfg = {**settings["cover"], "logo_mode": (rule or {}).get("mode", settings["cover"].get("logo_mode", "white")),
+                         **settings.get("fonts", {}).get(key, {})}
             wide_still = fetch.cover_still(c)
             for shape, (w, h) in settings["cover"]["shapes"].items():
                 still = wide_still

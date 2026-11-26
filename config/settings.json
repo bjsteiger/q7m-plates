@@ -465,5 +465,14 @@
       "Directors",
       "Awards"
     ]
+  },
+  "fonts": {
+    "Moods & Vibes/Christmas": {
+      "font_file": "MountainsofChristmas-Bold.ttf",
+      "upper": false,
+      "tracking": 0.02,
+      "font_scale": 1.45,
+      "dash": false
+    }
   }
 }

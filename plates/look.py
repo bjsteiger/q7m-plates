@@ -13,7 +13,13 @@ DARK = (8, 10, 14)
 
 # ---------- shared helpers ----------
 
-def font(size, weight):
+FONT_DIR = Path(FONT_PATH).parent
+
+
+def font(size, weight, file=None):
+    """Montserrat at a named weight, or a specific font file from fonts/ (e.g. a seasonal face)."""
+    if file:
+        return ImageFont.truetype(str(FONT_DIR / file), size)
     f = ImageFont.truetype(FONT_PATH, size)
     f.set_variation_by_name(weight)
     return f
@@ -73,8 +79,8 @@ def _tracked(draw, cx, cy, text, fnt, tracking, fill_rgba, shadow=None):
         x += w + tracking
 
 
-def _fit(draw, title, max_w, size, tracking_ratio, weight, max_lines=2):
-    words = title.upper().split()
+def _fit(draw, title, max_w, size, tracking_ratio, weight, max_lines=2, file=None, upper=True):
+    words = (title.upper() if upper else title).split()
     options = [[" ".join(words)]]
     if len(words) > 1:
         best = min(range(1, len(words)),
@@ -87,13 +93,13 @@ def _fit(draw, title, max_w, size, tracking_ratio, weight, max_lines=2):
                                               len(" ".join(words[ij[1]:]))))
         options.append([" ".join(words[:i]), " ".join(words[i:j]), " ".join(words[j:])])
     for s in range(size, 40, -4):
-        f = font(s, weight)
+        f = font(s, weight, file)
         tr = s * tracking_ratio
         for lines in options:
             widest = max(sum(draw.textlength(c, font=f) for c in ln) + tr * (len(ln) - 1) for ln in lines)
             if widest <= max_w:
                 return lines, f, tr
-    return options[-1], font(44, weight), 44 * tracking_ratio
+    return options[-1], font(44, weight, file), 44 * tracking_ratio
 
 
 def _knockout_white(logo):
@@ -241,7 +247,9 @@ def cover(still, title, cfg, size=None, logo=None, logo_scale=1.0):
         return out.convert("RGB")
     d = ImageDraw.Draw(layer)
     base = int(cfg["title_size"] * min(w, h) / 720)
+    base = int(base * cfg.get("font_scale", 1.0))
     lines, f, tr = _fit(d, title, w * (0.84 if h >= w else 0.78), base, cfg["tracking"], cfg["weight"],
+                        file=cfg.get("font_file"), upper=cfg.get("upper", True),
                         max_lines=3 if h > w else 2)
     a = int(255 * cfg["opacity"])
     lh = f.size * 1.08
