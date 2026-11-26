@@ -20987,7 +20987,7 @@
  },
  {
   "shelf": "Decades",
-  "title": "50s Movies",
+  "title": "1950s",
   "shape": "wide",
   "sources": [
    {
@@ -27999,499 +27999,6 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "Action Collections",
-  "shape": "wide",
-  "sources": [
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 14890,
-      "name": "Bad Boys Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 1570,
-      "name": "Die Hard Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 10456,
-      "name": "Dirty Harry Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 9485,
-      "name": "The Fast and the Furious Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 645,
-      "name": "James Bond Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 404609,
-      "name": "John Wick Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 391860,
-      "name": "Kingsman Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 945,
-      "name": "Lethal Weapon Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 87359,
-      "name": "Mission: Impossible Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 304,
-      "name": "Ocean's Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 5039,
-      "name": "Rambo Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 1575,
-      "name": "Rocky Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 496796,
-      "name": "Sicario Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 31562,
-      "name": "The Bourne Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 263,
-      "name": "The Dark Knight Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 523855,
-      "name": "The Equalizer Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 126125,
-      "name": "The Expendables Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 8580,
-      "name": "The Karate Kid Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 9518,
-      "name": "The Transporter Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 531330,
-      "name": "Top Gun Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 52785,
-      "name": "xXx Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 135468,
-      "name": "G.I. Joe (Live-Action) Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 86055,
-      "name": "Men in Black Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 376650,
-      "name": "Ride Along Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 135483,
-      "name": "Taken Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 86311,
-      "name": "The Avengers Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 608101,
-      "name": "The Hitman's Bodyguard Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 257960,
-      "name": "The Raid Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 192492,
-      "name": "The Jack Ryan Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 386534,
-      "name": "Has Fallen Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 735127,
-      "name": "Extraction Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 86117,
-      "name": "Johnny English Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 86486,
-      "name": "Spy Kids Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 495,
-      "name": "Shaft Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 525891,
-      "name": "Escape Plan Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 10457,
-      "name": "Death Wish Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 43064,
-      "name": "Speed Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 742536,
-      "name": "The Meg Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 70068,
-      "name": "Ip Man Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 269098,
-      "name": "Police Story Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 9818,
-      "name": "Mortal Kombat Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 2467,
-      "name": "Tomb Raider Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 179892,
-      "name": "Kick-Ass Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 17235,
-      "name": "Hellboy Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 9436,
-      "name": "The Crow Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 43055,
-      "name": "Conan the Barbarian Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 94589,
-      "name": "Ong Bak Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 115762,
-      "name": "Alien vs. Predator Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 2794,
-      "name": "The Chronicles of Riddick Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 120794,
-      "name": "Batman Collection (1989-1997)",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 8537,
-      "name": "Superman Classic Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 401562,
-      "name": "Teenage Mutant Ninja Turtles Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 1539140,
-      "name": "Godzilla x Kong Collection",
-      "sortBy": "original"
-     }
-    }
-   },
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 448150,
-      "name": "Deadpool Collection",
-      "sortBy": "original"
-     }
-    }
-   }
-  ]
- },
- {
-  "shelf": "Film Collections",
   "title": "Comedy Collections",
   "shape": "wide",
   "sources": [
@@ -30405,7 +29912,7 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "Batman Collection (1989-1997)",
+  "title": "Batman (1989-1997)",
   "shape": "wide",
   "sources": [
    {
@@ -44512,6 +44019,499 @@
      "_0": {
       "collectionId": 23616,
       "name": "Naruto Collection",
+      "sortBy": "original"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Film Collections",
+  "title": "Action Collections",
+  "shape": "wide",
+  "sources": [
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 14890,
+      "name": "Bad Boys Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 1570,
+      "name": "Die Hard Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 10456,
+      "name": "Dirty Harry Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 9485,
+      "name": "The Fast and the Furious Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 645,
+      "name": "James Bond Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 404609,
+      "name": "John Wick Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 391860,
+      "name": "Kingsman Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 945,
+      "name": "Lethal Weapon Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 87359,
+      "name": "Mission: Impossible Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 304,
+      "name": "Ocean's Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 5039,
+      "name": "Rambo Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 1575,
+      "name": "Rocky Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 496796,
+      "name": "Sicario Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 31562,
+      "name": "The Bourne Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 263,
+      "name": "The Dark Knight Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 523855,
+      "name": "The Equalizer Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 126125,
+      "name": "The Expendables Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 8580,
+      "name": "The Karate Kid Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 9518,
+      "name": "The Transporter Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 531330,
+      "name": "Top Gun Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 52785,
+      "name": "xXx Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 135468,
+      "name": "G.I. Joe (Live-Action) Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 86055,
+      "name": "Men in Black Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 376650,
+      "name": "Ride Along Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 135483,
+      "name": "Taken Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 86311,
+      "name": "The Avengers Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 608101,
+      "name": "The Hitman's Bodyguard Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 257960,
+      "name": "The Raid Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 192492,
+      "name": "The Jack Ryan Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 386534,
+      "name": "Has Fallen Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 735127,
+      "name": "Extraction Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 86117,
+      "name": "Johnny English Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 86486,
+      "name": "Spy Kids Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 495,
+      "name": "Shaft Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 525891,
+      "name": "Escape Plan Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 10457,
+      "name": "Death Wish Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 43064,
+      "name": "Speed Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 742536,
+      "name": "The Meg Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 70068,
+      "name": "Ip Man Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 269098,
+      "name": "Police Story Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 9818,
+      "name": "Mortal Kombat Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 2467,
+      "name": "Tomb Raider Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 179892,
+      "name": "Kick-Ass Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 17235,
+      "name": "Hellboy Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 9436,
+      "name": "The Crow Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 43055,
+      "name": "Conan the Barbarian Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 94589,
+      "name": "Ong Bak Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 115762,
+      "name": "Alien vs. Predator Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 2794,
+      "name": "The Chronicles of Riddick Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 120794,
+      "name": "Batman Collection (1989-1997)",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 8537,
+      "name": "Superman Classic Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 401562,
+      "name": "Teenage Mutant Ninja Turtles Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 1539140,
+      "name": "Godzilla x Kong Collection",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 448150,
+      "name": "Deadpool Collection",
       "sortBy": "original"
      }
     }
