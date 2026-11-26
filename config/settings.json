@@ -37,7 +37,8 @@
         1000,
         1000
       ]
-    }
+    },
+    "logo_mode": "white"
   },
   "background": {
     "width": 1920,
@@ -375,6 +376,31 @@
         "independent film"
       ],
       "min_rating": 7.2
+    }
+  },
+  "logos": {
+    "Streaming Services": {
+      "type": "service"
+    },
+    "Studios": {
+      "type": "company"
+    },
+    "Networks": {
+      "type": "network"
+    },
+    "Awards": {
+      "type": "wikimedia",
+      "scale": 1.6,
+      "queries": {
+        "Oscars": "Academy Awards logo",
+        "BAFTA": "BAFTA logo",
+        "Golden Globes": "Golden Globe Awards logo",
+        "Cannes": "Festival de Cannes logo",
+        "Venice": "Venice Film Festival logo",
+        "Independent Spirit": "Independent Spirit Awards logo"
+      },
+      "files": {},
+      "mode": "color"
     }
   }
 }

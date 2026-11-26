@@ -96,7 +96,26 @@ def _fit(draw, title, max_w, size, tracking_ratio, weight, max_lines=2):
     return options[-1], font(44, weight), 44 * tracking_ratio
 
 
-def cover(still, title, cfg, size=None):
+def _prep_logo(logo, mode):
+    """Trim empty edges; in 'white' mode turn the logo into a white silhouette."""
+    logo = logo.convert("RGBA")
+    alpha = logo.getchannel("A")
+    if alpha.getextrema()[0] == 255:      # no transparency: knock out a near-white or near-black backdrop
+        gray = logo.convert("L")
+        corner = gray.getpixel((0, 0))
+        alpha = gray.point(lambda v: 255 if abs(v - corner) > 40 else 0)
+        logo.putalpha(alpha)
+    bbox = alpha.getbbox()
+    if bbox:
+        logo = logo.crop(bbox)
+    if mode == "white":
+        a = logo.getchannel("A")
+        logo = Image.new("RGBA", logo.size, (255, 255, 255, 0))
+        logo.putalpha(a)
+    return logo
+
+
+def cover(still, title, cfg, size=None, logo=None, logo_scale=1.0):
     """Cinema-style tile: one graded still, darker edges, centered title.
 
     size: (w, h). Wide, poster and square tiles all use the same look; the
@@ -111,6 +130,23 @@ def cover(still, title, cfg, size=None):
     img = Image.composite(dark, img, band.filter(ImageFilter.GaussianBlur(70)))
 
     layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    if logo is not None:
+        lg = _prep_logo(logo, cfg.get("logo_mode", "white"))
+        box_w = min(w * 0.86, w * (0.62 if h >= w else 0.46) * logo_scale)
+        box_h = min(h * 0.6, h * (0.24 if h > w else 0.30) * logo_scale)
+        s_ = min(box_w / lg.width, box_h / lg.height)
+        lg = lg.resize((max(1, int(lg.width * s_)), max(1, int(lg.height * s_))), Image.LANCZOS)
+        a = cfg["opacity"]
+        lg.putalpha(lg.getchannel("A").point(lambda v: int(v * a)))
+        shadow = Image.new("RGBA", lg.size, (0, 0, 0, 0))
+        shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * 0.45)))
+        shadow = shadow.filter(ImageFilter.GaussianBlur(6))
+        x, y = (w - lg.width) // 2, (h - lg.height) // 2
+        layer.alpha_composite(shadow, (x, y + 3))
+        layer.alpha_composite(lg, (x, y))
+        out = img.convert("RGBA")
+        out.alpha_composite(layer)
+        return out.convert("RGB")
     d = ImageDraw.Draw(layer)
     base = int(cfg["title_size"] * min(w, h) / 720)
     lines, f, tr = _fit(d, title, w * (0.84 if h >= w else 0.78), base, cfg["tracking"], cfg["weight"],

@@ -24,7 +24,7 @@ from pathlib import Path
 from PIL import Image
 
 from . import look
-from .sources import TMDB, gather, trakt_from_env
+from .sources import TMDB, Wikimedia, gather, trakt_from_env
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -50,6 +50,39 @@ class OnlineFetcher:
     def cover_still(self, t):
         path = self.tmdb.clean_backdrop(t["media"], t["id"], t["backdrop"])
         return self.tmdb.image(path, "original")
+
+    def logo(self, tile, rule, art_query):
+        """Return (logo image, where it came from) or (None, reason)."""
+        kind = rule["type"]
+        def first(field):
+            for s in tile["sources"]:
+                ids = s.get("tmdbDiscover", {}).get("_0", {}).get(field) or []
+                if ids:
+                    return ids[0]
+            return None
+        try:
+            if kind == "network":
+                nid = first("networks")
+                path = nid and self.tmdb.best_logo("network", nid)
+            elif kind == "company":
+                cid = first("companies") or self.tmdb.search_company(tile["title"])
+                path = cid and self.tmdb.best_logo("company", cid)
+            elif kind == "service":
+                prov = (art_query or {}).get("provider", tile["title"])
+                nid = self.tmdb.service_network(prov, tile["title"])
+                path = nid and self.tmdb.best_logo("network", nid)
+            elif kind == "wikimedia":
+                wm = self.wiki = getattr(self, "wiki", None) or Wikimedia()
+                f = rule.get("files", {}).get(tile["title"])
+                img, src = wm.file(f) if f else wm.logo(rule.get("queries", {}).get(tile["title"], tile["title"] + " logo"))
+                return img, f"commons: {src}" if img else "no commons logo"
+            else:
+                return None, f"unknown logo type {kind}"
+            if not path:
+                return None, "no TMDB logo"
+            return self.tmdb.logo_image(path), f"tmdb {kind} logo"
+        except Exception as e:
+            return None, f"logo lookup failed: {e}"
 
     def still(self, t, big=False):
         return self.tmdb.image(t["backdrop"], "original" if big else "w1280")
@@ -79,6 +112,9 @@ class OfflineFetcher:
 
     def poster_still(self, t):
         return None
+
+    def logo(self, tile, rule, art_query):
+        return None, "offline"
 
 
 def pick(titles, used, offset):
@@ -144,18 +180,25 @@ def main():
             d = out / rel
             d.mkdir(parents=True, exist_ok=True)
             label = settings.get("rename", {}).get(key, name)
+            rule = settings.get("logos", {}).get(shelf)
+            logo, logo_note = (fetch.logo(tile, rule, aq) if rule else (None, ""))
+            if rule and logo is None:
+                print(f"    {key}: {logo_note}, using text")
+            scale = (rule or {}).get("scale", 1.0)
+            cover_cfg = {**settings["cover"], "logo_mode": (rule or {}).get("mode", settings["cover"].get("logo_mode", "white"))}
             wide_still = fetch.cover_still(c)
             for shape, (w, h) in settings["cover"]["shapes"].items():
                 still = wide_still
                 if h > w:   # poster: use a text-free poster when TMDB has one
                     still = fetch.poster_still(c) or wide_still
-                look.cover(still, label, settings["cover"], (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
+                look.cover(still, label, cover_cfg, (w, h), logo=logo, logo_scale=scale).save(
+                    d / f"cover-{shape}.webp", "WEBP", quality=88)
             look.background(bg_imgs, settings["background"]).save(d / "background.webp", "WEBP", quality=84)
             manifest.append({"shelf": shelf, "tile": name, "path": rel,
                              "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
                              "background": f"{rel}/background.webp"})
             done += 1
-            print(f"  + {key}  (cover: {c['title']})")
+            print(f"  + {key}  (cover: {c['title']}{'; ' + logo_note if logo is not None else ''})")
         except Exception as e:  # one bad tile shouldn't sink the run
             failed += 1
             print(f"  ! {key}: {e}")

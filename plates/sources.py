@@ -84,6 +84,89 @@ class TMDB:
         return None
 
 
+    # ---------- logos ----------
+
+    def best_logo(self, kind, oid):
+        """Best PNG logo TMDB has for a network or company (kind: 'network' or 'company')."""
+        try:
+            logos = self.get(f"/{kind}/{oid}/images").get("logos", [])
+        except requests.HTTPError:
+            return None
+        pngs = [l for l in logos if str(l.get("file_type", ".png")).lower() == ".png" or l["file_path"].endswith(".png")]
+        pngs.sort(key=lambda l: (l.get("vote_average", 0), l.get("width", 0)), reverse=True)
+        return pngs[0]["file_path"] if pngs else None
+
+    def logo_image(self, path):
+        r = self.s.get(f"{TMDB_IMG}/original{path}", timeout=60)
+        self._check(r, f"logo {path}")
+        return Image.open(io.BytesIO(r.content)).convert("RGBA")
+
+    def search_company(self, name):
+        res = self.get("/search/company", query=name).get("results", [])
+        exact = [r for r in res if r["name"].lower() == name.lower()]
+        hit = (exact or res or [None])[0]
+        return hit["id"] if hit else None
+
+    def service_network(self, provider_name, service_name):
+        """Find the TMDB network behind a streaming service (e.g. Netflix -> network 213)
+        by looking at the networks of its most popular shows."""
+        pid = resolve_provider(self, provider_name)
+        if not pid:
+            return None
+        shows = self.get("/discover/tv", with_watch_providers=pid, watch_region="US",
+                         sort_by="popularity.desc", **{"vote_count.gte": 100}).get("results", [])[:12]
+        counts, names = {}, {}
+        for sh in shows:
+            try:
+                for n in self.get(f"/tv/{sh['id']}").get("networks", []):
+                    counts[n["id"]] = counts.get(n["id"], 0) + 1
+                    names[n["id"]] = n["name"]
+            except requests.HTTPError:
+                continue
+        if not counts:
+            return None
+        key = service_name.lower().replace("+", "").replace(" ", "")
+        for nid, nm in names.items():
+            if key in nm.lower().replace("+", "").replace(" ", ""):
+                return nid
+        return max(counts, key=counts.get)
+
+
+class Wikimedia:
+    """Fetch an award logo from Wikimedia Commons by searching file names."""
+    API = "https://commons.wikimedia.org/w/api.php"
+
+    def __init__(self):
+        self.s = requests.Session()
+        self.s.headers["User-Agent"] = "q7m-plates/1.0 (personal image build)"
+
+    def logo(self, query, width=1200):
+        params = {"action": "query", "format": "json", "generator": "search", "gsrnamespace": 6,
+                  "gsrsearch": query, "gsrlimit": 10, "prop": "imageinfo",
+                  "iiprop": "url|mime", "iiurlwidth": width}
+        pages = self.s.get(self.API, params=params, timeout=30).json().get("query", {}).get("pages", {})
+        for pg in sorted(pages.values(), key=lambda p: p.get("index", 99)):
+            info = (pg.get("imageinfo") or [{}])[0]
+            if info.get("mime") in ("image/svg+xml", "image/png") and info.get("thumburl"):
+                r = self.s.get(info["thumburl"], timeout=60)
+                if r.ok:
+                    return Image.open(io.BytesIO(r.content)).convert("RGBA"), pg.get("title")
+        return None, None
+
+    def file(self, title, width=1200):
+        """Fetch a specific Commons file, e.g. 'File:Academy Awards logo.svg'."""
+        params = {"action": "query", "format": "json", "titles": title, "prop": "imageinfo",
+                  "iiprop": "url|mime", "iiurlwidth": width}
+        pages = self.s.get(self.API, params=params, timeout=30).json().get("query", {}).get("pages", {})
+        for pg in pages.values():
+            info = (pg.get("imageinfo") or [{}])[0]
+            if info.get("thumburl"):
+                r = self.s.get(info["thumburl"], timeout=60)
+                if r.ok:
+                    return Image.open(io.BytesIO(r.content)).convert("RGBA"), title
+        return None, None
+
+
 class Trakt:
     def __init__(self, client_id):
         self.s = requests.Session()
