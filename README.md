@@ -27,8 +27,25 @@ The images are not committed to the repo. Each run publishes them straight to Pa
 
 ## Look
 
-- Cover: one graded film still, darker edges, centered title in Montserrat Bold at 85% white.
-- Background: three blended slanted panels on the right over a faint tilted wall of stills, fading to 90% black on the left.
+| Shelf | Cover style |
+|---|---|
+| Most shelves | Graded film still, darker edges, centered title in Montserrat Bold at 85% white |
+| Streaming services | Full-colour logo on the service's brand colour, dark gradient rising from the bottom |
+| Networks | Dim blurred still, soft centre glow, white logo with a slight top-to-bottom gradient |
+| Studios | Large full-colour logo on a deep field tinted from the logo, still faintly underneath |
+| Directors | Moody headshot, name anchored bottom left with a small role line |
+| Awards | White award logo over a film still (pinned Commons files), title if no logo is pinned |
+
+Background: three blended slanted panels on the right over a faint tilted wall of stills, fading to 90% black on the left.
+
+## Rules
+
+- **No horror.** Horror films are never used in covers or backgrounds (TMDB genre 27, plus the horror keyword for TV). A tile with nothing left gets a title-only cover on a plain dark field.
+- **Refresh tiers** (`refresh` in settings):
+  - `weekly`: newest popular titles (about the last 18 months, topped up with older ones), changes every week.
+  - `monthly`: all-time favourites, changes once a month.
+  - `fixed`: logo and portrait covers stay the same; their backgrounds still rotate (weekly, or monthly for `fixed_monthly_bg`).
+- After each deploy a cleanup job keeps the 3 newest runs and only the live deployment.
 
 ## Schedule
 

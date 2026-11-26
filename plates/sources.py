@@ -3,6 +3,7 @@
 Supported source types:
   tmdbDiscover, tmdbList, tmdbCollection, traktList (needs TRAKT_CLIENT_ID)
 """
+import datetime as dt
 import io
 import os
 import time
@@ -101,6 +102,20 @@ class TMDB:
         self._check(r, f"logo {path}")
         return Image.open(io.BytesIO(r.content)).convert("RGBA")
 
+    def person_headshot(self, name):
+        """Best profile photo TMDB has for a person, looked up by name."""
+        pid = resolve_person(self, name)
+        if not pid:
+            return None
+        try:
+            profiles = self.get(f"/person/{pid}/images").get("profiles", [])
+        except requests.HTTPError:
+            return None
+        profiles.sort(key=lambda p: (p.get("vote_average", 0), p.get("height", 0)), reverse=True)
+        if not profiles:
+            return None
+        return self.image(profiles[0]["file_path"], "original")
+
     def search_company(self, name):
         res = self.get("/search/company", query=name).get("results", [])
         exact = [r for r in res if r["name"].lower() == name.lower()]
@@ -140,7 +155,7 @@ class Wikimedia:
         self.s = requests.Session()
         self.s.headers["User-Agent"] = "q7m-plates/1.0 (personal image build)"
 
-    def logo(self, query, width=1200):
+    def search_logo(self, query, width=1200):
         params = {"action": "query", "format": "json", "generator": "search", "gsrnamespace": 6,
                   "gsrsearch": query, "gsrlimit": 10, "prop": "imageinfo",
                   "iiprop": "url|mime", "iiurlwidth": width}
@@ -189,12 +204,22 @@ class Trakt:
         return out
 
 
-def _discover_params(q, min_votes):
-    p = {"sort_by": "popularity.desc", "include_adult": "false", "page": 1}
+HORROR = 27
+
+
+def _discover_params(q, min_votes, mode=None, no_horror_kw=None):
+    sort = "vote_count.desc" if mode == "classic" else "popularity.desc"
+    p = {"sort_by": sort, "include_adult": "false", "page": 1}
     if q.get("genres"):
         p["with_genres"] = ",".join(map(str, q["genres"]))
-    if q.get("excludeGenres"):
-        p["without_genres"] = ",".join(map(str, q["excludeGenres"]))
+    without = list(q.get("excludeGenres") or [])
+    tv = q.get("mediaType") == "tv"
+    if not tv and HORROR not in without:
+        without.append(HORROR)
+    if without:
+        p["without_genres"] = ",".join(map(str, without))
+    if tv and no_horror_kw:
+        p["without_keywords"] = str(no_horror_kw)
     if q.get("keywords"):
         p["with_keywords"] = "|".join(map(str, q["keywords"]))
     if q.get("companies"):
@@ -203,7 +228,9 @@ def _discover_params(q, min_votes):
         p["with_networks"] = "|".join(map(str, q["networks"]))
     if q.get("originalLanguage"):
         p["with_original_language"] = q["originalLanguage"]
-    tv = q.get("mediaType") == "tv"
+    if mode == "fresh" and not q.get("releaseDateGte") and not q.get("releaseDateLte"):
+        since = (dt.date.today() - dt.timedelta(days=540)).isoformat()
+        p["first_air_date.gte" if tv else "primary_release_date.gte"] = since
     if q.get("releaseDateGte"):
         p["first_air_date.gte" if tv else "primary_release_date.gte"] = q["releaseDateGte"]
     if q.get("releaseDateLte"):
@@ -217,6 +244,10 @@ def _discover_params(q, min_votes):
         p["vote_average.gte"] = q["voteAverageGte"]
     p["vote_count.gte"] = max(int(q.get("voteCountGte") or 0), min_votes)
     return p
+
+
+def _is_horror(media, r):
+    return media == "movie" and HORROR in (r.get("genre_ids") or [g.get("id") for g in r.get("genres", [])])
 
 
 def _norm(media, r):
@@ -307,17 +338,21 @@ def art_query_source(tmdb, aq):
     return {"tmdbDiscover": {"_0": q}}
 
 
-def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None):
+def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None, mode=None):
     """Return up to `want` distinct titles (most popular first) that have a backdrop.
 
     Discover queries are re-sorted by popularity with a vote floor so the
     artwork uses recognizable titles even if the row itself sorts by newest.
     """
     seen, out = set(), []
+    try:
+        no_horror_kw = resolve_keyword(tmdb, "horror")
+    except Exception:
+        no_horror_kw = None
 
     def add(media, r):
         key = (media, r["id"])
-        if key in seen or not r.get("backdrop_path"):
+        if key in seen or not r.get("backdrop_path") or _is_horror(media, r):
             return
         seen.add(key)
         out.append(_norm(media, r))
@@ -336,12 +371,14 @@ def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None):
         try:
             if kind == "tmdbDiscover":
                 media = "tv" if q.get("mediaType") == "tv" else "movie"
-                res = tmdb.get(f"/discover/{media}", **_discover_params(q, min_votes))["results"]
+                res = tmdb.get(f"/discover/{media}", **_discover_params(q, min_votes, mode, no_horror_kw))["results"]
+                if mode == "fresh" and len(res) < 8:   # not enough new titles: top up with all-time ones
+                    res += tmdb.get(f"/discover/{media}", **_discover_params(q, min_votes, None, no_horror_kw))["results"]
                 if len(res) < 6:   # niche query, relax the vote floor
-                    res = tmdb.get(f"/discover/{media}", **_discover_params(q, 10))["results"]
+                    res += tmdb.get(f"/discover/{media}", **_discover_params(q, 10, None, no_horror_kw))["results"]
                 if len([r for r in res if r.get("backdrop_path")]) < 3:   # very small catalog
                     q0 = {**q, "voteCountGte": 0}
-                    p0 = _discover_params(q0, 0)
+                    p0 = _discover_params(q0, 0, None, no_horror_kw)
                     p0["vote_count.gte"] = 0
                     res = tmdb.get(f"/discover/{media}", **p0)["results"]
                 for r in res:
@@ -365,7 +402,8 @@ def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None):
                         break
         except requests.HTTPError as e:
             print(f"    source skipped ({kind}): {e}")
-    out.sort(key=lambda t: t["popularity"], reverse=True)
+    if mode != "classic":
+        out.sort(key=lambda t: t["popularity"], reverse=True)
     return out[:want]
 
 

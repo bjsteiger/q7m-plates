@@ -44,8 +44,9 @@ class OnlineFetcher:
         self.want = settings["titles_per_tile"]
         self.min_votes = settings["min_votes"]
 
-    def titles(self, tile, art_query=None):
-        return gather(tile, self.tmdb, self.trakt, want=self.want, min_votes=self.min_votes, art_query=art_query)
+    def titles(self, tile, art_query=None, mode=None):
+        return gather(tile, self.tmdb, self.trakt, want=self.want, min_votes=self.min_votes,
+                      art_query=art_query, mode=mode)
 
     def cover_still(self, t):
         path = self.tmdb.clean_backdrop(t["media"], t["id"], t["backdrop"])
@@ -71,11 +72,16 @@ class OnlineFetcher:
                 prov = (art_query or {}).get("provider", tile["title"])
                 nid = self.tmdb.service_network(prov, tile["title"])
                 path = nid and self.tmdb.best_logo("network", nid)
+            elif kind == "person":
+                img = self.tmdb.person_headshot(tile["title"])
+                return img, ("tmdb headshot" if img is not None else "no headshot")
             elif kind == "wikimedia":
                 wm = self.wiki = getattr(self, "wiki", None) or Wikimedia()
                 f = rule.get("files", {}).get(tile["title"])
-                img, src = wm.file(f) if f else wm.logo(rule.get("queries", {}).get(tile["title"], tile["title"] + " logo"))
-                return img, f"commons: {src}" if img else "no commons logo"
+                if not f:
+                    return None, "no pinned logo file"
+                img, src = wm.file(f)
+                return img, (f"commons: {src}" if img is not None else "commons file not found")
             else:
                 return None, f"unknown logo type {kind}"
             if not path:
@@ -99,7 +105,7 @@ class OfflineFetcher:
         self.files = sorted(p for p in Path(folder).iterdir() if p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp"))
         self.want = settings["titles_per_tile"]
 
-    def titles(self, tile, art_query=None):
+    def titles(self, tile, art_query=None, mode=None):
         n = len(tile["title"])
         return [{"media": "movie", "id": (n * 7 + i) % len(self.files), "title": f.stem, "backdrop": str(f), "popularity": 0}
                 for i, f in enumerate(self.files[n % len(self.files):] + self.files[:n % len(self.files)])][: self.want]
@@ -144,8 +150,27 @@ def main():
     fetch = OfflineFetcher(settings, args.offline) if args.offline else OnlineFetcher(settings)
     wanted = args.only or settings["shelves"]
     skip = set(settings.get("skip_tiles", []))
-    week = dt.date.today().isocalendar()[1]
-    offset = week if settings.get("rotate_weekly", True) else 0
+    today = dt.date.today()
+    week = today.isocalendar()[1]
+    month = today.year * 12 + today.month
+    refresh = settings.get("refresh", {})
+
+    def tier(shelf):
+        for name, shelves_ in refresh.items():
+            if shelf in shelves_:
+                return name
+        return "weekly"
+
+    def offsets(shelf):
+        """(cover offset, background offset) for this shelf's refresh tier."""
+        t = tier(shelf)
+        if not settings.get("rotate_weekly", True):
+            return 0, 0
+        if t == "fixed":
+            return 0, (month if shelf in refresh.get("fixed_monthly_bg", []) else week)
+        if t == "monthly":
+            return month, month
+        return week, week
 
     used, manifest, per_shelf = set(), [], {}
     done = failed = kept = 0
@@ -166,20 +191,35 @@ def main():
             aq = settings.get("art_queries", {}).get(key)
             if aq is None and shelf == "Directors":
                 aq = {"director": name}
-            titles = fetch.titles(tile, aq)
-            if len(titles) < 2:
-                print(f"  - {key}: not enough titles with art, skipped")
-                kept += 1
-                continue
-            c = pick(titles, used, offset)
-            used.add((c["media"], c["id"]))
-            rest = [t for t in titles if t is not c]
-            n = settings["background"]["panels"]
-            bg_imgs = [fetch.still(t, big=i < n) for i, t in enumerate(rest)]
-
+            t_ = tier(shelf)
+            cov_off, bg_off = offsets(shelf)
+            classic = t_ in ("monthly",) or shelf in refresh.get("classic_art", [])
+            bg_titles = fetch.titles(tile, aq, mode="classic" if classic else "fresh")
+            cov_titles = fetch.titles(tile, aq, mode="classic") if t_ == "fixed" and not classic else bg_titles
             d = out / rel
             d.mkdir(parents=True, exist_ok=True)
             label = settings.get("rename", {}).get(key, name)
+
+            if len(cov_titles) < 2 or len(bg_titles) < 2:
+                # nothing usable once horror is filtered out: title-only cover, plain background
+                for shape, (w, h) in settings["cover"]["shapes"].items():
+                    look.title_only_cover(label, settings["cover"], (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
+                bw, bh = settings["background"]["width"], settings["background"]["height"]
+                look.plain_field((bw, bh)).save(d / "background.webp", "WEBP", quality=84)
+                manifest.append({"shelf": shelf, "tile": name, "path": rel, "title_only": True,
+                                 "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
+                                 "background": f"{rel}/background.webp"})
+                done += 1
+                print(f"  + {key}  (title only, no usable imagery)")
+                continue
+
+            c = pick(cov_titles, used, cov_off)
+            used.add((c["media"], c["id"]))
+            rest = [t for t in bg_titles if (t["media"], t["id"]) != (c["media"], c["id"])]
+            k = bg_off % max(1, len(rest))
+            rest = rest[k:] + rest[:k]
+            n = settings["background"]["panels"]
+            bg_imgs = [fetch.still(t, big=i < n) for i, t in enumerate(rest)]
             rule = settings.get("logos", {}).get(shelf)
             logo, logo_note = (fetch.logo(tile, rule, aq) if rule else (None, ""))
             if rule and logo is None:
@@ -189,13 +229,17 @@ def main():
             wide_still = fetch.cover_still(c)
             for shape, (w, h) in settings["cover"]["shapes"].items():
                 still = wide_still
-                if h > w:   # poster: use a text-free poster when TMDB has one
+                if h > w and not (rule and logo is not None):   # poster: text-free poster when TMDB has one
                     still = fetch.poster_still(c) or wide_still
                 if logo is not None and rule.get("style") == "brand":
                     bgc = rule.get("colors", {}).get(name, rule.get("default_color", "#0b0d10"))
                     im = look.brand_cover(logo, bgc, (w, h), scale)
                 elif logo is not None and rule.get("style") == "station":
                     im = look.station_cover(still, logo, (w, h), scale)
+                elif logo is not None and rule.get("style") == "studio":
+                    im = look.studio_cover(wide_still, logo, (w, h), scale)
+                elif logo is not None and rule.get("style") == "portrait":
+                    im = look.person_cover(logo, label, rule.get("role", ""), (w, h), cover_cfg)
                 else:
                     im = look.cover(still, label, cover_cfg, (w, h), logo=logo, logo_scale=scale)
                 im.save(d / f"cover-{shape}.webp", "WEBP", quality=88)

@@ -52,3 +52,27 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  cleanup:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      deployments: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Keep the 3 newest runs
+        run: |
+          gh api "repos/$GH_REPO/actions/runs?per_page=100" \
+            --jq '[.workflow_runs[] | select(.status=="completed")][3:][] | .id' |
+          while read -r id; do gh api -X DELETE "repos/$GH_REPO/actions/runs/$id" || true; done
+
+      - name: Keep only the live deployment
+        run: |
+          gh api "repos/$GH_REPO/deployments?per_page=100" --jq '.[1:][] | .id' |
+          while read -r id; do
+            gh api -X POST "repos/$GH_REPO/deployments/$id/statuses" -f state=inactive >/dev/null || true
+            gh api -X DELETE "repos/$GH_REPO/deployments/$id" || true
+          done

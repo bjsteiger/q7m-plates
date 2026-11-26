@@ -397,7 +397,8 @@
       }
     },
     "Studios": {
-      "type": "company"
+      "type": "company",
+      "style": "studio"
     },
     "Networks": {
       "type": "network",
@@ -406,15 +407,44 @@
     "Awards": {
       "type": "wikimedia",
       "scale": 1.6,
-      "queries": {
-        "Oscars": "Academy Awards logo",
-        "BAFTA": "BAFTA logo",
-        "Golden Globes": "Golden Globe Awards logo",
-        "Cannes": "Festival de Cannes logo",
-        "Venice": "Venice Film Festival logo",
-        "Independent Spirit": "Independent Spirit Awards logo"
-      },
-      "files": {}
+      "files": {
+        "Oscars": "File:Oscars logo.svg",
+        "Golden Globes": "File:Golden Globes (2024, logo).png",
+        "Cannes": "File:Palme d'Or 2023.svg",
+        "Venice": "File:Internationale Filmfestspiele von Venedig 2012 Logo.svg"
+      }
+    },
+    "Directors": {
+      "type": "person",
+      "style": "portrait",
+      "role": "Director"
     }
+  },
+  "refresh": {
+    "weekly": [
+      "Genres",
+      "Moods & Vibes",
+      "Based on",
+      "Documentaries",
+      "Reality TV"
+    ],
+    "monthly": [
+      "Decades"
+    ],
+    "fixed": [
+      "Awards",
+      "Streaming Services",
+      "Networks",
+      "Studios",
+      "Directors"
+    ],
+    "fixed_monthly_bg": [
+      "Directors",
+      "Awards"
+    ],
+    "classic_art": [
+      "Directors",
+      "Awards"
+    ]
   }
 }

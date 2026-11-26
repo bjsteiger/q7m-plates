@@ -5,7 +5,7 @@ Every number that shapes the look lives in config/settings.json under
 """
 from pathlib import Path
 
-from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 
 FONT_PATH = str(Path(__file__).resolve().parent.parent / "fonts" / "Montserrat.ttf")
 DARK = (8, 10, 14)
@@ -228,6 +228,110 @@ def brand_cover(logo, bg_hex, size, scale=1.0):
     out = img.convert("RGBA")
     out.alpha_composite(lg, ((w - lg.width) // 2, int(h * 0.44 - lg.height / 2)))
     return out.convert("RGB")
+
+
+def _dominant(logo):
+    """Average colour of the logo's visible pixels, and how bright it is (0..255)."""
+    rgba = logo.convert("RGBA").resize((64, 64))
+    px = [p for p in rgba.getdata() if p[3] > 128]
+    if not px:
+        return (40, 40, 48), 128
+    r, g, b = (sum(p[i] for p in px) / len(px) for i in range(3))
+    return (int(r), int(g), int(b)), 0.299 * r + 0.587 * g + 0.114 * b
+
+
+def studio_cover(still, logo, size, scale=1.0):
+    """Studio tile: the logo large and in its own colours over a deep field tinted from the logo,
+    with the film still faintly underneath, like a studio's opening card."""
+    w, h = size
+    lg = _prep_logo(logo, "color")
+    col, lum = _dominant(lg)
+    if lum < 60:                      # dark logo: show it in white so it doesn't vanish
+        lg = _prep_logo(logo, "white")
+        col = (60, 70, 90)
+    deep = tuple(max(6, int(c * 0.28)) for c in col)
+    mid = tuple(max(10, int(c * 0.55)) for c in col)
+    base = Image.new("RGB", (w, h), deep)
+    glow = _mask_from_fn(w, h, lambda x, y: max(0, 1 - ((x - 0.5) * 1.5) ** 2 - ((y - 0.45) * 1.8) ** 2) * 0.75, 50)
+    base = Image.composite(Image.new("RGB", (w, h), mid), base, glow)
+    under = ImageEnhance.Brightness(ImageOps.grayscale(fill(still, w, h)).convert("RGB")).enhance(0.5)
+    base = Image.blend(base, ImageChops.multiply(base, under.point(lambda v: min(255, v + 120))), 0.6)
+    base = Image.composite(Image.new("RGB", (w, h), (0, 0, 0)), base,
+                           _mask_from_fn(w, h, lambda x, y: (max(0, (y - 0.55) / 0.45) ** 1.5) * 0.55, 10))
+    box_w = min(w * 0.88, w * (0.78 if h >= w else 0.62) * scale)
+    box_h = min(h * 0.7, h * (0.42 if h > w else 0.56) * scale)
+    k = min(box_w / lg.width, box_h / lg.height)
+    lg = lg.resize((max(1, int(lg.width * k)), max(1, int(lg.height * k))), Image.LANCZOS)
+    shadow = Image.new("RGBA", lg.size, (0, 0, 0, 0))
+    shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * 0.55)))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(10))
+    out = base.convert("RGBA")
+    x, y = (w - lg.width) // 2, int(h * 0.47 - lg.height / 2)
+    out.alpha_composite(shadow, (x, y + 6))
+    out.alpha_composite(lg, (x, y))
+    return out.convert("RGB")
+
+
+def person_cover(headshot, name, role, size, cfg):
+    """Portrait tile for a person: moody headshot, dark vignette, name anchored bottom left."""
+    w, h = size
+    img = fill(headshot, w, h, focus_x=0.5, focus_y=0.18)
+    img = ImageEnhance.Color(img).enhance(0.75)
+    img = ImageEnhance.Contrast(img).enhance(1.1)
+    dark = Image.new("RGB", (w, h), (6, 7, 10))
+    img = Image.composite(img, dark, _vignette(w, h, 0.85, 0.3))
+    img = Image.composite(dark, img, _mask_from_fn(w, h, lambda x, y: (max(0, (y - 0.5) / 0.5) ** 1.3) * 0.92, 12))
+
+    layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    a = int(255 * cfg["opacity"])
+    words = name.upper().split()
+    lines = [" ".join(words[:1]), " ".join(words[1:])] if len(words) > 1 else [name.upper()]
+    size_ = int(min(w, h) * 0.085)
+    tr = size_ * 0.12
+    while size_ > 18:
+        f = font(size_, cfg.get("weight", "Bold"))
+        widest = max(sum(d.textlength(c, font=f) for c in ln) + tr * (len(ln) - 1) for ln in lines)
+        if widest <= w * 0.84:
+            break
+        size_ -= 2
+        tr = size_ * 0.12
+    f = font(size_, cfg.get("weight", "Bold"))
+    small = font(max(12, int(size_ * 0.32)), "SemiBold")
+    x0 = int(w * 0.08)
+    lh = size_ * 1.02
+    bottom = h - int(h * 0.06) - (small.size + 10 if role else 0)
+    y = bottom - lh * len(lines)
+    for ln in lines:
+        cx = x0
+        for ch in ln:
+            d.text((cx, y + 2), ch, font=f, fill=(0, 0, 0, 90))
+            d.text((cx, y), ch, font=f, fill=(255, 255, 255, a))
+            cx += d.textlength(ch, font=f) + tr
+        y += lh
+    if role:
+        cx = x0
+        for ch in role.upper():
+            d.text((cx, y + 6), ch, font=small, fill=(255, 255, 255, int(a * 0.55)))
+            cx += d.textlength(ch, font=small) + small.size * 0.35
+    out = img.convert("RGBA")
+    out.alpha_composite(layer)
+    return out.convert("RGB")
+
+
+def plain_field(size):
+    """Dark textured field used when a tile has no usable imagery."""
+    w, h = size
+    img = Image.new("RGB", (w, h), (12, 13, 17))
+    glow = _mask_from_fn(w, h, lambda x, y: 0.35 * max(0, 1 - ((x - 0.5) * 1.4) ** 2 - ((y - 0.45) * 1.8) ** 2), 50)
+    img = Image.composite(Image.new("RGB", (w, h), (34, 37, 46)), img, glow)
+    noise = Image.effect_noise((w, h), 18).convert("RGB")
+    return Image.blend(img, noise, 0.04)
+
+
+def title_only_cover(title, cfg, size):
+    """Same title treatment as the Cinema cover, on a plain dark field, no film image."""
+    return cover(plain_field(size), title, {**cfg, "title_band": 0.0}, size)
 
 
 # ---------- background ----------
