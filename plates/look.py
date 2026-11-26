@@ -123,7 +123,9 @@ def _knockout_white(logo):
     hues = [hh * 12 // 256 for (hh, ss, vv), al in zip(hsv.getdata(), sa.getdata()) if al > 128 and ss > 90 and vv > 60]
     if hues:
         counts = [hues.count(i) for i in range(12)]
-        if sum(1 for c in counts if c > 0.08 * len(hues)) >= 5:
+        strong = [i for i, c in enumerate(counts) if c > 0.08 * len(hues)]
+        # a true rainbow runs through green and blue too, not just a purple-to-orange gradient
+        if len(strong) >= 5 and any(3 <= i <= 5 for i in strong) and any(6 <= i <= 8 for i in strong):
             return out
     # luminance over black where transparent, so the plate edge doesn't count as a mark
     # transparent areas take the plate's own brightness (the most common opaque value), so the
@@ -144,8 +146,12 @@ def _knockout_white(logo):
     n_opaque = sa.point(lambda v: 255 if v > 128 else 0).histogram()[255]
     if n_marks < 0.01 * n_opaque or n_marks > 0.6 * n_opaque:
         return out
-    marks = marks.resize((w0, h0), Image.LANCZOS).filter(ImageFilter.GaussianBlur(0.7))
-    out.putalpha(ImageChops.subtract(a, marks))
+    # refine at full size so the edges are as crisp as the original artwork
+    near = marks.filter(ImageFilter.MaxFilter(5)).resize((w0, h0), Image.NEAREST)
+    full = logo.convert("L").point(lambda v: 255 if abs(v - plate_lum) > 55 else 0)
+    crisp = ImageChops.multiply(ImageChops.multiply(full, near), a.point(lambda v: 255 if v > 128 else 0))
+    # marks become solid near-black inside the white logo (sharp, not see-through)
+    out = Image.composite(Image.new("RGBA", logo.size, DARK + (255,)), out, crisp)
     return out
 
 
@@ -234,7 +240,7 @@ def station_cover(still, logo, size, scale=1.0):
     img = ImageEnhance.Brightness(img).enhance(0.24)
     dark = Image.new("RGB", (w, h), (6, 7, 10))
     img = Image.composite(img, dark, _vignette(w, h, 0.95, 0.15))
-    glow = _mask_from_fn(w, h, lambda x, y: 0.22 * max(0, 1 - ((x - 0.5) * 2.2) ** 2 - ((y - 0.46) * 2.4 * (h / w if h > w else 1)) ** 2), 60)
+    glow = _mask_from_fn(w, h, lambda x, y: 0.22 * max(0, 1 - ((x - 0.5) * 2.2) ** 2 - ((y - 0.5) * 2.4 * (h / w if h > w else 1)) ** 2), 60)
     img = Image.composite(Image.new("RGB", (w, h), (120, 140, 170)), img, glow)
 
     lg = _vgradient(_prep_logo(logo, "white"))
@@ -246,7 +252,7 @@ def station_cover(still, logo, size, scale=1.0):
     shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * 0.5)))
     shadow = shadow.filter(ImageFilter.GaussianBlur(8))
     out = img.convert("RGBA")
-    x, y = (w - lg.width) // 2, int(h * 0.46 - lg.height / 2)
+    x, y = (w - lg.width) // 2, int(h * 0.5 - lg.height / 2)
     out.alpha_composite(shadow, (x, y + 4))
     out.alpha_composite(lg, (x, y))
     return out.convert("RGB")
@@ -308,7 +314,7 @@ def brand_cover(logo, bg_hex, size, scale=1.0):
     bg = tuple(int(bg_hex.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4))
     img = Image.new("RGB", (w, h), bg)
     # gentle lift in the middle so the field isn't flat
-    glow = _mask_from_fn(w, h, lambda x, y: 0.10 * max(0, 1 - (((x - 0.5) * 1.6) ** 2 + ((y - 0.42) * 2) ** 2)), 40)
+    glow = _mask_from_fn(w, h, lambda x, y: 0.10 * max(0, 1 - (((x - 0.5) * 1.6) ** 2 + ((y - 0.5) * 2) ** 2)), 40)
     img = Image.composite(Image.new("RGB", (w, h), tuple(min(255, c + 40) for c in bg)), img, glow)
     # dark gradient coming up from the bottom
     fade = _mask_from_fn(w, h, lambda x, y: (max(0, (y - 0.45) / 0.55) ** 1.4) * 0.6, 10)
@@ -323,7 +329,7 @@ def brand_cover(logo, bg_hex, size, scale=1.0):
     k = min(box_w / lg.width, box_h / lg.height)
     lg = lg.resize((max(1, int(lg.width * k)), max(1, int(lg.height * k))), Image.LANCZOS)
     out = img.convert("RGBA")
-    out.alpha_composite(lg, ((w - lg.width) // 2, int(h * 0.44 - lg.height / 2)))
+    out.alpha_composite(lg, ((w - lg.width) // 2, int(h * 0.5 - lg.height / 2)))
     return out.convert("RGB")
 
 
@@ -348,7 +354,7 @@ def studio_cover(still, logo, size, scale=1.0):
     deep = tuple(max(6, int(c * 0.28)) for c in col)
     mid = tuple(max(10, int(c * 0.55)) for c in col)
     base = Image.new("RGB", (w, h), deep)
-    glow = _mask_from_fn(w, h, lambda x, y: max(0, 1 - ((x - 0.5) * 1.5) ** 2 - ((y - 0.45) * 1.8) ** 2) * 0.75, 50)
+    glow = _mask_from_fn(w, h, lambda x, y: max(0, 1 - ((x - 0.5) * 1.5) ** 2 - ((y - 0.5) * 1.8) ** 2) * 0.75, 50)
     base = Image.composite(Image.new("RGB", (w, h), mid), base, glow)
     under = ImageEnhance.Brightness(ImageOps.grayscale(fill(still, w, h)).convert("RGB")).enhance(0.5)
     base = Image.blend(base, ImageChops.multiply(base, under.point(lambda v: min(255, v + 120))), 0.6)
@@ -362,7 +368,7 @@ def studio_cover(still, logo, size, scale=1.0):
     shadow.putalpha(lg.getchannel("A").point(lambda v: int(v * 0.55)))
     shadow = shadow.filter(ImageFilter.GaussianBlur(10))
     out = base.convert("RGBA")
-    x, y = (w - lg.width) // 2, int(h * 0.47 - lg.height / 2)
+    x, y = (w - lg.width) // 2, int(h * 0.5 - lg.height / 2)
     out.alpha_composite(shadow, (x, y + 6))
     out.alpha_composite(lg, (x, y))
     return out.convert("RGB")
@@ -419,7 +425,7 @@ def plain_field(size):
     """Dark textured field used when a tile has no usable imagery."""
     w, h = size
     img = Image.new("RGB", (w, h), (12, 13, 17))
-    glow = _mask_from_fn(w, h, lambda x, y: 0.35 * max(0, 1 - ((x - 0.5) * 1.4) ** 2 - ((y - 0.45) * 1.8) ** 2), 50)
+    glow = _mask_from_fn(w, h, lambda x, y: 0.35 * max(0, 1 - ((x - 0.5) * 1.4) ** 2 - ((y - 0.5) * 1.8) ** 2), 50)
     img = Image.composite(Image.new("RGB", (w, h), (34, 37, 46)), img, glow)
     noise = Image.effect_noise((w, h), 18).convert("RGB")
     return Image.blend(img, noise, 0.04)
