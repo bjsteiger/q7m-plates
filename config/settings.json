@@ -344,11 +344,11 @@
       "media": "tv"
     },
     "Reality TV/Discover Reality TV": {
+      "actor": "Jeff Probst",
+      "media": "tv",
       "titles": [
         "Survivor"
-      ],
-      "media": "tv",
-      "actor": "Jeff Probst"
+      ]
     },
     "Reality TV/Culinary Battles & Cooking Shows": {
       "media": "tv",
