@@ -681,22 +681,42 @@
         "B81",
         "B82",
         "B83",
-        "B84",
+        {
+          "a": {
+            "logoColor": true
+          },
+          "r": "B84"
+        },
         "B85",
         "B86",
         "B87",
         "B88",
         "B89",
-        "B90",
+        {
+          "a": {
+            "logoColor": true
+          },
+          "r": "B90"
+        },
         "B91",
         "B92",
-        "B93",
+        {
+          "a": {
+            "logoColor": true
+          },
+          "r": "B93"
+        },
         "B94",
         "B95",
         "B96",
         "B98",
         "B99",
-        "B100"
+        {
+          "a": {
+            "logoColor": true
+          },
+          "r": "B100"
+        }
       ],
       "refresh": "fixed",
       "shape": "wide",
