@@ -339,16 +339,41 @@ def main():
             parts.append(tint)
         return hashlib.sha1(json.dumps(parts, sort_keys=True, default=str).encode()).hexdigest()[:16]
 
+    # fetch the live art of every card in parallel up front, so reusing unchanged cards is quick
+    import requests
+    from concurrent.futures import ThreadPoolExecutor
+    fetched = {}
+    sess = requests.Session()
+    sess.mount("https://", requests.adapters.HTTPAdapter(pool_connections=32, pool_maxsize=32))
+
+    def grab(f):
+        for _ in range(3):
+            try:
+                r = sess.get(f"{site_url}/{f}", timeout=60)
+                if r.ok:
+                    return f, r.content
+            except requests.RequestException:
+                pass
+        return f, None
+    if prev:
+        want = sorted({f for e in prev.values() for f in list(e.get("covers", {}).values()) + [e["background"]]})
+        with ThreadPoolExecutor(24) as pool:
+            for f, data in pool.map(grab, want):
+                if data is not None:
+                    fetched[f] = data
+        print(f"fetched {len(fetched)} of {len(want)} live files for reuse")
+
     def reuse(entry, d_out):
-        import requests
         files = list(entry.get("covers", {}).values()) + [entry["background"]]
         for f in files:
-            r = requests.get(f"{site_url}/{f}", timeout=60)
-            if not r.ok:
-                return False
+            data = fetched.get(f)
+            if data is None:
+                data = grab(f)[1]
+                if data is None:
+                    return False
             dst = d_out / f
             dst.parent.mkdir(parents=True, exist_ok=True)
-            dst.write_bytes(r.content)
+            dst.write_bytes(data)
         return True
 
     for tile in tiles:
