@@ -450,7 +450,8 @@
     "Streaming Services/Disney+": "#0b1a46",
     "Streaming Services/Paramount+": "#0b3fd6",
     "Streaming Services/Netflix": "#000000",
-    "Streaming Services/HBO Max": "#0d1240"
+    "Streaming Services/HBO Max": "#0d1240",
+    "Streaming Services/Discovery+": "#2175d9"
   },
   "logo_parts": {},
   "logo_white": [],
@@ -460,5 +461,8 @@
   ],
   "logo_color": [
     "Networks/Game Show Network"
-  ]
+  ],
+  "logo_scale": {
+    "Networks/Game Show Network": 1.35
+  }
 }
