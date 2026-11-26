@@ -1,16 +1,21 @@
 {
   "shelves": [
+    "Discover",
     "Streaming Services",
     "Genres",
     "Decades",
-    "Directors",
     "Awards",
     "Studios",
     "Networks",
     "Moods & Vibes",
     "Based on",
     "Documentaries",
-    "Reality TV"
+    "Reality TV",
+    "Directors",
+    "Actors",
+    "Film Collections",
+    "Kids and Family",
+    "Anime"
   ],
   "skip_tiles": [],
   "rename": {},
@@ -18,9 +23,9 @@
   "min_votes": 200,
   "rotate_weekly": true,
   "cover": {
-    "weight": "Bold",
+    "weight": "SemiBold",
     "opacity": 0.85,
-    "title_size": 88,
+    "title_size": 110,
     "tracking": 0.14,
     "title_band": 0.37,
     "dash": true,
@@ -138,30 +143,25 @@
       ]
     },
     "Genres/Adult Animation": {
-      "media": "tv",
+      "genres": [
+        16
+      ],
       "keywords": [
         "adult animation"
       ],
-      "genres": [
-        16
-      ]
+      "media": "tv"
     },
     "Genres/Adventure": {
       "genres": [
         12
       ]
     },
-    "Genres/Aliens": {
-      "keywords": [
-        "alien"
-      ]
-    },
     "Genres/Arthouse Animation": {
-      "keywords": [
-        "stop motion"
-      ],
       "genres": [
         16
+      ],
+      "keywords": [
+        "stop motion"
       ]
     },
     "Genres/Classics": {
@@ -206,12 +206,12 @@
       ]
     },
     "Genres/Favorite Cartoons": {
-      "media": "tv",
+      "before": "2008-12-31",
       "genres": [
         16,
         10762
       ],
-      "before": "2008-12-31"
+      "media": "tv"
     },
     "Genres/Frontier Grit": {
       "keywords": [
@@ -265,13 +265,13 @@
       ]
     },
     "Genres/Nature": {
-      "media": "tv",
       "genres": [
         99
       ],
       "keywords": [
         "nature"
-      ]
+      ],
+      "media": "tv"
     },
     "Genres/Robots and AI": {
       "keywords": [
@@ -284,11 +284,11 @@
       ]
     },
     "Genres/Space Epics": {
-      "keywords": [
-        "space"
-      ],
       "genres": [
         878
+      ],
+      "keywords": [
+        "space"
       ]
     },
     "Genres/Spies": {
@@ -302,11 +302,11 @@
       ]
     },
     "Genres/Tearjerkers": {
-      "keywords": [
-        "melodrama"
-      ],
       "genres": [
         18
+      ],
+      "keywords": [
+        "melodrama"
       ]
     },
     "Genres/Techno Thrillers": {
@@ -330,13 +330,39 @@
       ]
     },
     "Genres/Workplace Comedies": {
-      "media": "tv",
       "genres": [
         35
       ],
       "keywords": [
         "workplace comedy"
-      ]
+      ],
+      "media": "tv"
+    },
+    "Awards/BAFTA": {
+      "genres": [
+        18
+      ],
+      "languages": "en",
+      "min_rating": 7.6,
+      "min_votes": 5000
+    },
+    "Awards/Independent Spirit": {
+      "keywords": [
+        "independent film"
+      ],
+      "min_rating": 7.2
+    },
+    "Awards/Golden Globes": {
+      "genres": [
+        35
+      ],
+      "min_rating": 7.6,
+      "min_votes": 6000
+    },
+    "Awards/Cannes": {
+      "languages": "fr|ko|it|es|ja",
+      "min_rating": 7.6,
+      "min_votes": 800
     },
     "Awards/Oscars": {
       "genres": [
@@ -345,37 +371,263 @@
       "min_rating": 7.8,
       "min_votes": 8000
     },
-    "Awards/BAFTA": {
-      "languages": "en",
-      "min_rating": 7.6,
-      "min_votes": 5000,
-      "genres": [
-        18
-      ]
-    },
-    "Awards/Golden Globes": {
-      "min_rating": 7.6,
-      "min_votes": 6000,
-      "genres": [
-        35
-      ]
-    },
-    "Awards/Cannes": {
-      "languages": "fr|ko|it|es|ja",
-      "min_rating": 7.6,
-      "min_votes": 800
-    },
     "Awards/Venice": {
+      "before": "2005-12-31",
       "languages": "it|fr|en",
       "min_rating": 7.5,
-      "min_votes": 2000,
-      "before": "2005-12-31"
+      "min_votes": 2000
     },
-    "Awards/Independent Spirit": {
-      "keywords": [
-        "independent film"
-      ],
-      "min_rating": 7.2
+    "Directors/Akira Kurosawa": {
+      "director": "Akira Kurosawa"
+    },
+    "Directors/Alejandro Gonz\u00e1lez I\u00f1\u00e1rritu": {
+      "director": "Alejandro Gonz\u00e1lez I\u00f1\u00e1rritu"
+    },
+    "Directors/Alex Garland": {
+      "director": "Alex Garland"
+    },
+    "Directors/Alfonso Cuar\u00f3n": {
+      "director": "Alfonso Cuar\u00f3n"
+    },
+    "Directors/Alfred Hitchcock": {
+      "director": "Alfred Hitchcock"
+    },
+    "Directors/Antoine Fuqua": {
+      "director": "Antoine Fuqua"
+    },
+    "Directors/Ari Aster": {
+      "director": "Ari Aster"
+    },
+    "Directors/Billy Wilder": {
+      "director": "Billy Wilder"
+    },
+    "Directors/Bong Joon Ho": {
+      "director": "Bong Joon Ho"
+    },
+    "Directors/Brian De Palma": {
+      "director": "Brian De Palma"
+    },
+    "Directors/Chad Stahelski": {
+      "director": "Chad Stahelski"
+    },
+    "Directors/Christopher Nolan": {
+      "director": "Christopher Nolan"
+    },
+    "Directors/Clint Eastwood": {
+      "director": "Clint Eastwood"
+    },
+    "Directors/Damien Chazelle": {
+      "director": "Damien Chazelle"
+    },
+    "Directors/Daniel Scheinert": {
+      "director": "Daniel Scheinert"
+    },
+    "Directors/Danny Boyle": {
+      "director": "Danny Boyle"
+    },
+    "Directors/Darren Aronofsky": {
+      "director": "Darren Aronofsky"
+    },
+    "Directors/David Cronenberg": {
+      "director": "David Cronenberg"
+    },
+    "Directors/David Fincher": {
+      "director": "David Fincher"
+    },
+    "Directors/David Lynch": {
+      "director": "David Lynch"
+    },
+    "Directors/Denis Villeneuve": {
+      "director": "Denis Villeneuve"
+    },
+    "Directors/Edgar Wright": {
+      "director": "Edgar Wright"
+    },
+    "Directors/Emerald Fennell": {
+      "director": "Emerald Fennell"
+    },
+    "Directors/Francis Ford Coppola": {
+      "director": "Francis Ford Coppola"
+    },
+    "Directors/George Lucas": {
+      "director": "George Lucas"
+    },
+    "Directors/George Miller": {
+      "director": "George Miller"
+    },
+    "Directors/Gore Verbinski": {
+      "director": "Gore Verbinski"
+    },
+    "Directors/Greta Gerwig": {
+      "director": "Greta Gerwig"
+    },
+    "Directors/Guillermo del Toro": {
+      "director": "Guillermo del Toro"
+    },
+    "Directors/Guy Ritchie": {
+      "director": "Guy Ritchie"
+    },
+    "Directors/Hayao Miyazaki": {
+      "director": "Hayao Miyazaki"
+    },
+    "Directors/James Cameron": {
+      "director": "James Cameron"
+    },
+    "Directors/James Gunn": {
+      "director": "James Gunn"
+    },
+    "Directors/James Wan": {
+      "director": "James Wan"
+    },
+    "Directors/Joel Coen": {
+      "director": "Joel Coen"
+    },
+    "Directors/John Carpenter": {
+      "director": "John Carpenter"
+    },
+    "Directors/John Hughes": {
+      "director": "John Hughes"
+    },
+    "Directors/Jonathan Demme": {
+      "director": "Jonathan Demme"
+    },
+    "Directors/Jordan Peele": {
+      "director": "Jordan Peele"
+    },
+    "Directors/Kathryn Bigelow": {
+      "director": "Kathryn Bigelow"
+    },
+    "Directors/Luc Besson": {
+      "director": "Luc Besson"
+    },
+    "Directors/Martin McDonagh": {
+      "director": "Martin McDonagh"
+    },
+    "Directors/Martin Scorsese": {
+      "director": "Martin Scorsese"
+    },
+    "Directors/Mel Brooks": {
+      "director": "Mel Brooks"
+    },
+    "Directors/Michael Mann": {
+      "director": "Michael Mann"
+    },
+    "Directors/Mike Flanagan": {
+      "director": "Mike Flanagan"
+    },
+    "Directors/Oliver Stone": {
+      "director": "Oliver Stone"
+    },
+    "Directors/Park Chan-wook": {
+      "director": "Park Chan-wook"
+    },
+    "Directors/Paul Thomas Anderson": {
+      "director": "Paul Thomas Anderson"
+    },
+    "Directors/Paul Verhoeven": {
+      "director": "Paul Verhoeven"
+    },
+    "Directors/Pedro Almod\u00f3var": {
+      "director": "Pedro Almod\u00f3var"
+    },
+    "Directors/Peter Jackson": {
+      "director": "Peter Jackson"
+    },
+    "Directors/Quentin Tarantino": {
+      "director": "Quentin Tarantino"
+    },
+    "Directors/Richard Linklater": {
+      "director": "Richard Linklater"
+    },
+    "Directors/Ridley Scott": {
+      "director": "Ridley Scott"
+    },
+    "Directors/Rob Reiner": {
+      "director": "Rob Reiner"
+    },
+    "Directors/Robert Eggers": {
+      "director": "Robert Eggers"
+    },
+    "Directors/Robert Zemeckis": {
+      "director": "Robert Zemeckis"
+    },
+    "Directors/Roland Emmerich": {
+      "director": "Roland Emmerich"
+    },
+    "Directors/Ron Howard": {
+      "director": "Ron Howard"
+    },
+    "Directors/Ryan Coogler": {
+      "director": "Ryan Coogler"
+    },
+    "Directors/Sam Esmail": {
+      "director": "Sam Esmail"
+    },
+    "Directors/Sam Mendes": {
+      "director": "Sam Mendes"
+    },
+    "Directors/Sam Raimi": {
+      "director": "Sam Raimi"
+    },
+    "Directors/Satoshi Kon": {
+      "director": "Satoshi Kon"
+    },
+    "Directors/Sergio Leone": {
+      "director": "Sergio Leone"
+    },
+    "Directors/Sidney Lumet": {
+      "director": "Sidney Lumet"
+    },
+    "Directors/Spike Jonze": {
+      "director": "Spike Jonze"
+    },
+    "Directors/Spike Lee": {
+      "director": "Spike Lee"
+    },
+    "Directors/Stanley Kubrick": {
+      "director": "Stanley Kubrick"
+    },
+    "Directors/Steven Soderbergh": {
+      "director": "Steven Soderbergh"
+    },
+    "Directors/Steven Spielberg": {
+      "director": "Steven Spielberg"
+    },
+    "Directors/Taika Waititi": {
+      "director": "Taika Waititi"
+    },
+    "Directors/Terry Gilliam": {
+      "director": "Terry Gilliam"
+    },
+    "Directors/Tim Burton": {
+      "director": "Tim Burton"
+    },
+    "Directors/Todd Phillips": {
+      "director": "Todd Phillips"
+    },
+    "Directors/Tony Scott": {
+      "director": "Tony Scott"
+    },
+    "Directors/Vince Gilligan": {
+      "director": "Vince Gilligan"
+    },
+    "Directors/The Wachowskis": {
+      "director": "The Wachowskis"
+    },
+    "Directors/Wes Anderson": {
+      "director": "Wes Anderson"
+    },
+    "Directors/Wes Craven": {
+      "director": "Wes Craven"
+    },
+    "Directors/Wong Kar-wai": {
+      "director": "Wong Kar-wai"
+    },
+    "Directors/Yorgos Lanthimos": {
+      "director": "Yorgos Lanthimos"
+    },
+    "Directors/Zack Snyder": {
+      "director": "Zack Snyder"
     }
   },
   "logos": {
@@ -383,14 +635,6 @@
       "type": "service",
       "style": "brand",
       "scale": 1.7
-    },
-    "Studios": {
-      "type": "company",
-      "style": "studio"
-    },
-    "Networks": {
-      "type": "network",
-      "style": "station"
     },
     "Awards": {
       "type": "wikimedia",
@@ -401,56 +645,76 @@
         "Cannes": "File:Palme d'Or 2023.svg"
       }
     },
+    "Studios": {
+      "type": "company",
+      "style": "studio"
+    },
+    "Networks": {
+      "type": "network",
+      "style": "station"
+    },
     "Directors": {
       "type": "person",
       "style": "portrait",
       "role": "Director"
+    },
+    "Actors": {
+      "type": "person",
+      "style": "portrait",
+      "role": "Actor"
     }
   },
   "refresh": {
     "weekly": [
+      "Discover",
       "Genres",
       "Moods & Vibes",
       "Based on",
       "Documentaries",
-      "Reality TV"
+      "Reality TV",
+      "Kids and Family",
+      "Anime"
     ],
     "monthly": [
-      "Decades"
+      "Decades",
+      "Film Collections"
     ],
     "fixed": [
-      "Awards",
       "Streaming Services",
-      "Networks",
+      "Awards",
       "Studios",
-      "Directors"
+      "Networks",
+      "Directors",
+      "Actors"
     ],
     "fixed_monthly_bg": [
-      "Directors",
-      "Awards"
+      "Actors",
+      "Awards",
+      "Directors"
     ],
     "classic_art": [
-      "Directors",
-      "Awards"
+      "Actors",
+      "Awards",
+      "Directors"
     ]
   },
   "fonts": {
     "Moods & Vibes/Christmas": {
       "font_file": "MountainsofChristmas-Bold.ttf",
       "upper": false,
+      "font_scale": 1.65,
       "tracking": 0.02,
-      "font_scale": 1.45,
       "dash": false
     }
   },
   "brand_colors": {
-    "Streaming Services/Apple TV+": "#000000",
-    "Streaming Services/Prime Video": "#00a8e1",
-    "Streaming Services/Hulu": "#0b0c0f",
-    "Streaming Services/Disney+": "#0b1a46",
-    "Streaming Services/Paramount+": "#0b3fd6",
     "Streaming Services/Netflix": "#000000",
+    "Streaming Services/Apple TV+": "#000000",
     "Streaming Services/HBO Max": "#0d1240",
+    "Streaming Services/Paramount+": "#0b3fd6",
+    "Streaming Services/Prime Video": "#00a8e1",
+    "Streaming Services/Disney+": "#0b1a46",
+    "Streaming Services/Hulu": "#0b0c0f",
     "Streaming Services/Discovery+": "#2175d9"
   },
   "logo_parts": {},
@@ -464,5 +728,10 @@
   ],
   "logo_scale": {
     "Networks/Game Show Network": 1.35
+  },
+  "tile_style": {},
+  "rules": {
+    "noHorror": true,
+    "freshDays": 360
   }
 }
