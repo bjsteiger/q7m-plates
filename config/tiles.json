@@ -6587,38 +6587,6 @@
  },
  {
   "shelf": "Genres",
-  "title": "Anime",
-  "sources": [
-   {
-    "tmdbDiscover": {
-     "_0": {
-      "genres": [
-       16
-      ],
-      "mediaType": "movie",
-      "originalLanguage": "ja",
-      "sortBy": "popularity.desc",
-      "voteCountGte": 100
-     }
-    }
-   },
-   {
-    "tmdbDiscover": {
-     "_0": {
-      "genres": [
-       16
-      ],
-      "mediaType": "tv",
-      "originalLanguage": "ja",
-      "sortBy": "popularity.desc",
-      "voteCountGte": 100
-     }
-    }
-   }
-  ]
- },
- {
-  "shelf": "Genres",
   "title": "Arthouse Animation",
   "sources": []
  },
@@ -6663,11 +6631,6 @@
     }
    }
   ]
- },
- {
-  "shelf": "Genres",
-  "title": "Creature Features",
-  "sources": []
  },
  {
   "shelf": "Genres",
@@ -6789,24 +6752,6 @@
  },
  {
   "shelf": "Genres",
-  "title": "Horror",
-  "sources": [
-   {
-    "tmdbDiscover": {
-     "_0": {
-      "genres": [
-       27
-      ],
-      "mediaType": "movie",
-      "sortBy": "popularity.desc",
-      "voteCountGte": 200
-     }
-    }
-   }
-  ]
- },
- {
-  "shelf": "Genres",
   "title": "Independent",
   "sources": []
  },
@@ -6835,11 +6780,6 @@
  },
  {
   "shelf": "Genres",
-  "title": "Learning Corner",
-  "sources": []
- },
- {
-  "shelf": "Genres",
   "title": "Lovable Monsters",
   "sources": []
  },
@@ -6861,11 +6801,6 @@
  {
   "shelf": "Genres",
   "title": "Nature",
-  "sources": []
- },
- {
-  "shelf": "Genres",
-  "title": "Psychological Terror",
   "sources": []
  },
  {
@@ -6959,11 +6894,6 @@
  },
  {
   "shelf": "Genres",
-  "title": "Super Shocks",
-  "sources": []
- },
- {
-  "shelf": "Genres",
   "title": "Superheroes",
   "sources": []
  },
@@ -6998,11 +6928,6 @@
  {
   "shelf": "Genres",
   "title": "Treasure Hunts",
-  "sources": []
- },
- {
-  "shelf": "Genres",
-  "title": "VHS Era Frightmares",
   "sources": []
  },
  {
@@ -12352,7 +12277,7 @@
  },
  {
   "shelf": "Based on",
-  "title": "True Story",
+  "title": "True Stories",
   "sources": [
    {
     "tmdbDiscover": {
@@ -12436,7 +12361,7 @@
  },
  {
   "shelf": "Based on",
-  "title": "Book",
+  "title": "Books",
   "sources": [
    {
     "tmdbDiscover": {
@@ -12646,7 +12571,7 @@
  },
  {
   "shelf": "Based on",
-  "title": "Play",
+  "title": "Plays",
   "sources": [
    {
     "tmdbDiscover": {
@@ -12739,7 +12664,7 @@
  },
  {
   "shelf": "Based on",
-  "title": "Fairy Tale",
+  "title": "Fairy Tales",
   "sources": [
    {
     "tmdbDiscover": {
@@ -12832,7 +12757,7 @@
  },
  {
   "shelf": "Based on",
-  "title": "Toy",
+  "title": "Toys",
   "sources": [
    {
     "tmdbDiscover": {
@@ -12925,7 +12850,7 @@
  },
  {
   "shelf": "Based on",
-  "title": "TV Show",
+  "title": "TV Shows",
   "sources": [
    {
     "tmdbDiscover": {
@@ -13018,7 +12943,7 @@
  },
  {
   "shelf": "Based on",
-  "title": "Short Story",
+  "title": "Short Stories",
   "sources": [
    {
     "tmdbDiscover": {
@@ -13956,7 +13881,7 @@
  },
  {
   "shelf": "Reality TV",
-  "title": "High-Stakes Competition & Survival",
+  "title": "Survivor",
   "sources": [
    {
     "tmdbDiscover": {

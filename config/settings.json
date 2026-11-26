@@ -167,14 +167,6 @@
       "min_rating": 7.8,
       "min_votes": 1500
     },
-    "Genres/Creature Features": {
-      "keywords": [
-        "monster"
-      ],
-      "genres": [
-        27
-      ]
-    },
     "Genres/Crime": {
       "genres": [
         80
@@ -245,12 +237,6 @@
       "min_rating": 7.5,
       "min_votes": 1000
     },
-    "Genres/Learning Corner": {
-      "genres": [
-        99,
-        36
-      ]
-    },
     "Genres/Lovable Monsters": {
       "genres": [
         16,
@@ -285,11 +271,6 @@
         "nature"
       ]
     },
-    "Genres/Psychological Terror": {
-      "keywords": [
-        "psychological thriller"
-      ]
-    },
     "Genres/Robots and AI": {
       "keywords": [
         "artificial intelligence"
@@ -311,14 +292,6 @@
     "Genres/Spies": {
       "keywords": [
         "spy"
-      ]
-    },
-    "Genres/Super Shocks": {
-      "keywords": [
-        "supernatural"
-      ],
-      "genres": [
-        27
       ]
     },
     "Genres/Superheroes": {
@@ -343,13 +316,6 @@
       "keywords": [
         "treasure hunt"
       ]
-    },
-    "Genres/VHS Era Frightmares": {
-      "genres": [
-        27
-      ],
-      "after": "1978-01-01",
-      "before": "1995-12-31"
     },
     "Genres/Westerns": {
       "genres": [
@@ -414,7 +380,7 @@
     "Streaming Services": {
       "type": "service",
       "style": "brand",
-      "scale": 1.15
+      "scale": 1.9
     },
     "Studios": {
       "type": "company",
@@ -473,6 +439,28 @@
       "tracking": 0.02,
       "font_scale": 1.45,
       "dash": false
+    }
+  },
+  "logo_overrides": {
+    "Streaming Services/Apple TV+": {
+      "url": "https://crystalpng.com/wp-content/uploads/2025/11/apple-tv-logo.png",
+      "bg": "#000000",
+      "white": true
+    },
+    "Streaming Services/Prime Video": {
+      "url": "https://cdn.rebrand.gallery/images/vf63fv1z/production/336131f2d140dd230e15e8d000b93d6136dee855-393x396.svg",
+      "bg": "#00a8e1"
+    },
+    "Streaming Services/Hulu": {
+      "url": "https://www.thisishulu.com/app/uploads/2023/10/logo-gradient-3up.svg",
+      "part": 0,
+      "bg": "#0b0c0f"
+    },
+    "Streaming Services/Discovery+": {
+      "url": "https://static.wikitide.net/avidwiki/thumb/1/1c/Discovery%2B_Originals_%282020%29.png/1200px-Discovery%2B_Originals_%282020%29.png"
+    },
+    "Streaming Services/Magellan": {
+      "url": "https://image.roku.com/developer_channels/prod/d307578f55088038cca8e20a76bddb91537fb00e0a5494bf9646d7f752cd9004.png"
     }
   }
 }

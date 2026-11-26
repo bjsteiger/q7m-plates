@@ -52,6 +52,27 @@ class OnlineFetcher:
         path = self.tmdb.clean_backdrop(t["media"], t["id"], t["backdrop"])
         return self.tmdb.image(path, "original")
 
+    def override_logo(self, ov):
+        """Download a logo from a link you chose (png, jpg, webp or svg)."""
+        import io
+        import requests
+        r = requests.get(ov["url"], timeout=60, headers={"User-Agent": "Mozilla/5.0 (q7m-plates image build)"})
+        r.raise_for_status()
+        data = r.content
+        if ov["url"].lower().split("?")[0].endswith(".svg") or data[:200].lstrip().startswith((b"<svg", b"<?xml")):
+            import cairosvg
+            data = cairosvg.svg2png(bytestring=data, output_width=1800)
+        img = Image.open(io.BytesIO(data)).convert("RGBA")
+        raw = img
+        if img.getchannel("A").getextrema()[0] == 255:
+            img = look.knock_background(img)
+        blocks = look.split_blocks(img)
+        img = blocks[min(ov.get("part", 0), len(blocks) - 1)]
+        if ov.get("white"):
+            img = look._prep_logo(img, "white")
+        bg = ov.get("bg") or (look.corner_color(raw) if raw.getchannel("A").getextrema()[0] == 255 else None)
+        return img, bg, len(blocks)
+
     def logo(self, tile, rule, art_query):
         """Return (logo image, where it came from) or (None, reason)."""
         kind = rule["type"]
@@ -221,7 +242,17 @@ def main():
             n = settings["background"]["panels"]
             bg_imgs = [fetch.still(t, big=i < n) for i, t in enumerate(rest)]
             rule = settings.get("logos", {}).get(shelf)
-            logo, logo_note = (fetch.logo(tile, rule, aq) if rule else (None, ""))
+            ov = settings.get("logo_overrides", {}).get(key)
+            ov_bg = None
+            logo, logo_note = (None, "")
+            if ov and hasattr(fetch, "override_logo"):
+                try:
+                    logo, ov_bg, nblocks = fetch.override_logo(ov)
+                    logo_note = f"your logo link ({nblocks} logo{'s' if nblocks != 1 else ''} in file)"
+                except Exception as e:
+                    print(f"    {key}: logo link failed ({e}), falling back")
+            if logo is None and rule:
+                logo, logo_note = fetch.logo(tile, rule, aq)
             if rule and logo is None:
                 print(f"    {key}: {logo_note}, using text")
             scale = (rule or {}).get("scale", 1.0)
@@ -234,8 +265,12 @@ def main():
                     still = fetch.poster_still(c) or wide_still
                 if logo is not None and rule.get("style") == "brand":
                     # the app icon's own backdrop colour becomes the tile colour; its mark sits on top
-                    bgc = rule.get("colors", {}).get(name) or look.corner_color(logo)
-                    im = look.brand_cover(look.knock_background(logo), bgc, (w, h), scale)
+                    if ov_bg or (ov and logo is not None):
+                        bgc = ov_bg or "#0b0d10"
+                        im = look.brand_cover(logo, bgc, (w, h), scale)
+                    else:
+                        bgc = rule.get("colors", {}).get(name) or look.corner_color(logo)
+                        im = look.brand_cover(look.knock_background(logo), bgc, (w, h), scale)
                 elif logo is not None and rule.get("style") == "station":
                     im = look.station_cover(still, logo, (w, h), scale)
                 elif logo is not None and rule.get("style") == "studio":

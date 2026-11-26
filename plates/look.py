@@ -171,6 +171,37 @@ def knock_background(img, tol=38):
     return img
 
 
+def split_blocks(img, gap=0.03):
+    """Split an image holding several logos side by side (or stacked) on transparency.
+    Returns the blocks left to right (or top to bottom)."""
+    a = img.getchannel("A")
+    w, h = img.size
+    def runs(sums, length):
+        out, start, empty = [], None, 0
+        for i, v in enumerate(sums):
+            if v:
+                if start is None:
+                    start = i
+                empty = 0
+            elif start is not None:
+                empty += 1
+                if empty > length * gap:
+                    out.append((start, i - empty + 1))
+                    start, empty = None, 0
+        if start is not None:
+            out.append((start, len(sums)))
+        return out
+    cols = [1 if a.crop((x, 0, x + 1, h)).getbbox() else 0 for x in range(w)]
+    rc = runs(cols, w)
+    if len(rc) > 1:
+        return [img.crop((x0, 0, x1, h)) for x0, x1 in rc]
+    rows = [1 if a.crop((0, y, w, y + 1)).getbbox() else 0 for y in range(h)]
+    rr = runs(rows, h)
+    if len(rr) > 1:
+        return [img.crop((0, y0, w, y1)) for y0, y1 in rr]
+    return [img]
+
+
 def corner_color(img):
     rgb = img.convert("RGB")
     w, h = rgb.size
