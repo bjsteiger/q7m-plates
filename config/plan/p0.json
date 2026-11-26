@@ -642,18 +642,18 @@
    "cards": [
     {
      "a": {
-      "note": "Cover and background from recent, well known dramas based on true stories, newest releases first. No horror, no documentaries, no photos of real people.",
       "artQuery": {
-       "media": "movie",
+       "after": "2023-01-01",
        "genres": [
         18
        ],
        "keywords": [
         "based on true story"
        ],
-       "after": "2023-01-01",
+       "media": "movie",
        "min_votes": 300
       },
+      "note": "Cover and background from recent, well known dramas based on true stories, newest releases first. No horror, no documentaries, no photos of real people.",
       "noteDone": true
      },
      "id": "8ACD8406-4A37-5A44-9F5E-3FBEC1E26CA6",
