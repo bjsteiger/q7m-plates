@@ -19767,10 +19767,18 @@
    {
     "tmdbDiscover": {
      "_0": {
+      "companies": [],
+      "excludeGenres": [
+       99,
+       27
+      ],
+      "genres": [],
       "keywords": [
        9672
       ],
       "mediaType": "movie",
+      "name": "New Movies",
+      "networks": [],
       "originalLanguage": "en",
       "sortBy": "primary_release_date.desc",
       "voteCountGte": 10
@@ -19780,10 +19788,18 @@
    {
     "tmdbDiscover": {
      "_0": {
+      "companies": [],
+      "excludeGenres": [
+       99,
+       27
+      ],
+      "genres": [],
       "keywords": [
        9672
       ],
       "mediaType": "tv",
+      "name": "New Series",
+      "networks": [],
       "originalLanguage": "en",
       "sortBy": "first_air_date.desc",
       "voteCountGte": 10
@@ -19793,10 +19809,18 @@
    {
     "tmdbDiscover": {
      "_0": {
+      "companies": [],
+      "excludeGenres": [
+       99,
+       27
+      ],
+      "genres": [],
       "keywords": [
        9672
       ],
       "mediaType": "movie",
+      "name": "Popular Movies",
+      "networks": [],
       "originalLanguage": "en",
       "sortBy": "popularity.desc",
       "voteCountGte": 75
@@ -19806,10 +19830,18 @@
    {
     "tmdbDiscover": {
      "_0": {
+      "companies": [],
+      "excludeGenres": [
+       99,
+       27
+      ],
+      "genres": [],
       "keywords": [
        9672
       ],
       "mediaType": "tv",
+      "name": "Popular Series",
+      "networks": [],
       "originalLanguage": "en",
       "sortBy": "popularity.desc",
       "voteCountGte": 40
@@ -19819,10 +19851,18 @@
    {
     "tmdbDiscover": {
      "_0": {
+      "companies": [],
+      "excludeGenres": [
+       99,
+       27
+      ],
+      "genres": [],
       "keywords": [
        9672
       ],
       "mediaType": "movie",
+      "name": "Top All Time Movies",
+      "networks": [],
       "originalLanguage": "en",
       "sortBy": "vote_average.desc",
       "voteCountGte": 200
@@ -19832,10 +19872,18 @@
    {
     "tmdbDiscover": {
      "_0": {
+      "companies": [],
+      "excludeGenres": [
+       99,
+       27
+      ],
+      "genres": [],
       "keywords": [
        9672
       ],
       "mediaType": "tv",
+      "name": "Top All Time Series",
+      "networks": [],
       "originalLanguage": "en",
       "sortBy": "vote_average.desc",
       "voteCountGte": 100

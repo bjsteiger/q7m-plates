@@ -343,6 +343,17 @@
       ],
       "media": "tv"
     },
+    "Based on/True Stories": {
+      "media": "movie",
+      "genres": [
+        18
+      ],
+      "keywords": [
+        "based on true story"
+      ],
+      "after": "2023-01-01",
+      "min_votes": 300
+    },
     "Reality TV/Discover Reality TV": {
       "actor": "Jeff Probst",
       "media": "tv",
@@ -801,7 +812,8 @@
     "Streaming Services/Prime Video": "#00a8e1",
     "Streaming Services/Disney+": "#0b1a46",
     "Streaming Services/Hulu": "#0b0c0f",
-    "Streaming Services/Discovery+": "#2175d9"
+    "Streaming Services/Discovery+": "#2175d9",
+    "Studios/Paramount Pictures": "#14161b"
   },
   "logo_parts": {},
   "logo_white": [],
@@ -811,7 +823,7 @@
   ],
   "logo_color": [
     "Studios/DC",
-    "Studios/Marvel Studios",
+    "Studios/MGM",
     "Studios/Paramount Pictures",
     "Studios/Warner Bros. Entertainment",
     "Networks/A&E",
