@@ -695,6 +695,33 @@ def background(images, cfg):
     return Image.composite(front, back, mask)
 
 
+def background_name(img, title, cfg, fcfg):
+    """The card's name in the top left of its background, a little way down, in the card's own font."""
+    if not title or not cfg.get("name_show", False):
+        return img
+    w, h = img.size
+    layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    size = int(cfg.get("name_size", 64) * h / 1080 * fcfg.get("font_scale", 1.0))
+    lines, f, tr = _fit(d, title, w * cfg.get("name_width", 0.42), size, fcfg.get("tracking", 0.14) * 0.7, fcfg.get("weight", "SemiBold"),
+                        file=fcfg.get("font_file"), upper=fcfg.get("upper", True), max_lines=2)
+    x0, y0 = w * cfg.get("name_x", 0.05), h * cfg.get("name_y", 0.14)
+    lh = f.size * 1.1
+    a = int(255 * cfg.get("name_opacity", 0.92))
+    col = hex_rgb(cfg.get("name_color", "#ffffff"))
+    sh = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(sh)
+    for i, ln in enumerate(lines):
+        lw = sum(d.textlength(c, font=f) for c in ln) + tr * (len(ln) - 1)
+        cx, cy = x0 + lw / 2, y0 + lh * i + lh / 2
+        _tracked(sd, cx, cy + 3, ln, f, tr, (0, 0, 0, int(a * 0.75)))
+        _tracked(d, cx, cy, ln, f, tr, col + (a,))
+    out = img.convert("RGBA")
+    out.alpha_composite(sh.filter(ImageFilter.GaussianBlur(max(2, f.size // 14))))
+    out.alpha_composite(layer)
+    return out.convert("RGB")
+
+
 # ---------- vibrant ----------
 
 def accent_color(img):

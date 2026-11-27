@@ -415,9 +415,10 @@ def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None, mode=
     except Exception:
         no_horror_kw = None
 
-    def add(media, r):
+    def add(media, r, chosen=False):
         key = (media, r["id"])
-        if key in seen or not r.get("backdrop_path") or _is_horror(media, r):
+        # a franchise you picked by name (a TMDB collection) keeps its own films even when TMDB tags them horror
+        if key in seen or not r.get("backdrop_path") or (not chosen and _is_horror(media, r)):
             return
         seen.add(key)
         out.append(_norm(media, r))
@@ -471,7 +472,7 @@ def gather(tile, tmdb, trakt=None, want=14, min_votes=200, art_query=None, mode=
             elif kind == "tmdbCollection":
                 data = tmdb.get(f"/collection/{q['collectionId']}")
                 for r in sorted(data.get("parts", []), key=lambda r: r.get("popularity", 0), reverse=True):
-                    add("movie", r)
+                    add("movie", r, chosen=True)
             elif kind == "traktList" and trakt:
                 for media, tid in trakt.list_items(q["username"], q["listSlug"])[:want * 2]:
                     try:

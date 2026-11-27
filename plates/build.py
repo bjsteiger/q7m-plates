@@ -436,9 +436,9 @@ def main():
                 # nothing usable once horror is filtered out: title-only cover, plain background
                 for shape, (w, h) in settings["cover"]["shapes"].items():
                     tl = looks.get("title", {})
-                    look.title_only_cover(label, {**settings["cover"], **{k: v for k, v in tl.items() if k != "sizes"}, **tl.get("sizes", {}).get(shape, {})}, (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
+                    look.title_only_cover(label, {**settings["cover"], **{k: v for k, v in tl.items() if k != "sizes"}, **tl.get("sizes", {}).get(shape, {}), **settings.get("fonts", {}).get(key, {})}, (w, h)).save(d / f"cover-{shape}.webp", "WEBP", quality=88)
                 bw, bh = settings["background"]["width"], settings["background"]["height"]
-                look.plain_field((bw, bh)).save(d / "background.webp", "WEBP", quality=84)
+                look.background_name(look.plain_field((bw, bh)), label, settings["background"], {**settings["cover"], **settings.get("fonts", {}).get(key, {})}).save(d / "background.webp", "WEBP", quality=84)
                 manifest.append({"shelf": shelf, "tile": name, "path": rel, "title_only": True, "sig": sig,
                                  "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
                                  "background": f"{rel}/background.webp"})
@@ -543,7 +543,7 @@ def main():
                 else:
                     im = look.cover(still, label, cover_cfg, (w, h), logo=logo, logo_scale=scale)
                 im.save(d / f"cover-{shape}.webp", "WEBP", quality=88)
-            look.background(bg_imgs, settings["background"]).save(d / "background.webp", "WEBP", quality=84)
+            look.background_name(look.background(bg_imgs, settings["background"]), label, settings["background"], cfg_for("wide")).save(d / "background.webp", "WEBP", quality=84)
             entry = {"shelf": shelf, "tile": name, "path": rel, "sig": sig,
                      "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
                      "background": f"{rel}/background.webp"}
