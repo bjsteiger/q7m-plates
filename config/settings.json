@@ -1163,7 +1163,9 @@
       "dash": false
     },
     "Moods & Vibes/Period Dramas": {
-      "font_file": "gf:Cormorant"
+      "font_file": "gf:Cormorant",
+      "font_scale": 1.25,
+      "weight": "Bold"
     },
     "Kids and Family/Discover Family": {
       "font_file": "gf:Mouse Memoirs",
