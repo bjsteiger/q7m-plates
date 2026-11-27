@@ -1,0 +1,40 @@
+name: TMDB lookup
+on:
+  workflow_dispatch:
+    inputs:
+      keywords:
+        description: "Comma separated keyword searches"
+        required: false
+        default: ""
+      titles:
+        description: "Comma separated movie:Title or tv:Title, prints their keywords"
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  look:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          KW: ${{ inputs.keywords }}
+          TT: ${{ inputs.titles }}
+        run: |
+          python3 - <<'PY'
+          import os, json, urllib.request, urllib.parse
+          key = os.environ["TMDB_API_KEY"].strip()
+          def get(path, **q):
+              q["api_key"] = key
+              return json.load(urllib.request.urlopen(f"https://api.themoviedb.org/3{path}?" + urllib.parse.urlencode(q), timeout=30))
+          for k in [x.strip() for x in os.environ["KW"].split(",") if x.strip()]:
+              r = get("/search/keyword", query=k)["results"][:6]
+              print("KW", k, "=>", "; ".join(f'{x["id"]}:{x["name"]}' for x in r))
+          for t in [x.strip() for x in os.environ["TT"].split(",") if x.strip()]:
+              m, name = t.split(":", 1)
+              r = get(f"/search/{m}", query=name)["results"]
+              if not r: print("TT", t, "none"); continue
+              i = r[0]["id"]; kw = get(f"/{m}/{i}/keywords")
+              ks = kw.get("keywords") or kw.get("results") or []
+              print("TT", t, i, "=>", "; ".join(f'{x["id"]}:{x["name"]}' for x in ks))
+          PY
