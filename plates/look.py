@@ -719,7 +719,28 @@ def background_name(img, title, cfg, fcfg):
         cx, cy = x0 + lw / 2, y0 + lh * i + lh / 2
         _tracked(sd, cx, cy + 3, ln, f, tr, (0, 0, 0, int(a * 0.75)))
         _tracked(d, cx, cy, ln, f, tr, col + (a,))
+    # shading: the letters go from top brightness to bottom brightness down each line, like the logo shading
+    top, bot = cfg.get("name_shade_top", 1.0), cfg.get("name_shade_bottom", 0.8)
+    if top != 1 or bot != 1:
+        ramp = Image.new("L", (w, h), 255)
+        rd = ImageDraw.Draw(ramp)
+        for i in range(len(lines)):
+            cy = y0 + lh * i + lh / 2
+            y1, y2 = int(cy - f.size * 0.42), int(cy + f.size * 0.42)
+            for y in range(max(0, int(cy - lh / 2)), min(h, int(cy + lh / 2) + 1)):
+                t = min(1, max(0, (y - y1) / max(1, y2 - y1)))
+                rd.line([(0, y), (w, y)], fill=int(255 * (top + (bot - top) * t)))
+        r, g, b, al = layer.split()
+        r, g, b = (ImageChops.multiply(c, ramp) for c in (r, g, b))
+        layer = Image.merge("RGBA", (r, g, b, al))
     out = img.convert("RGBA")
+    glow = cfg.get("name_glow", 0.35)
+    if glow > 0:      # soft halo in the glow color behind the letters
+        m = layer.getchannel("A").filter(ImageFilter.GaussianBlur(max(2, f.size * cfg.get("name_glow_size", 1.2) * 0.45)))
+        m = m.point(lambda v: min(255, int(v * 2.4 * glow)))
+        halo = Image.new("RGBA", (w, h), hex_rgb(cfg.get("name_glow_color", "#788caa")) + (0,))
+        halo.putalpha(m)
+        out.alpha_composite(halo)
     out.alpha_composite(sh.filter(ImageFilter.GaussianBlur(max(2, f.size // 14))))
     out.alpha_composite(layer)
     return out.convert("RGB")
