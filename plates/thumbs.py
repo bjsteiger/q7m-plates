@@ -46,6 +46,8 @@ def main():
             p = site / rel
             if p.exists():
                 rec[shape] = data_uri(p, SIZES.get(shape, (320, 180)))
+        if t.get("still") and (site / t["still"]).exists():
+            rec["still"] = data_uri(site / t["still"], SIZES["background"])
         bg = site / t["background"]
         if bg.exists():
             rec["background"] = data_uri(bg, SIZES["background"])

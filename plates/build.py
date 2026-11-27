@@ -367,7 +367,7 @@ def main():
                 pass
         return f, None
     if prev:
-        want = sorted({f for e in prev.values() for f in list(e.get("covers", {}).values()) + [e["background"]]})
+        want = sorted({f for e in prev.values() for f in list(e.get("covers", {}).values()) + [e["background"]] + ([e["still"]] if e.get("still") else [])})
         with ThreadPoolExecutor(24) as pool:
             for f, data in pool.map(grab, want):
                 if data is not None:
@@ -376,6 +376,13 @@ def main():
 
     def reuse(entry, d_out):
         files = list(entry.get("covers", {}).values()) + [entry["background"]]
+        if entry.get("still"):
+            data = fetched.get(entry["still"]) or grab(entry["still"])[1]
+            if data is None:
+                entry.pop("still")
+            else:
+                (d_out / entry["still"]).parent.mkdir(parents=True, exist_ok=True)
+                (d_out / entry["still"]).write_bytes(data)
         for f in files:
             data = fetched.get(f)
             if data is None:
@@ -537,9 +544,16 @@ def main():
                     im = look.cover(still, label, cover_cfg, (w, h), logo=logo, logo_scale=scale)
                 im.save(d / f"cover-{shape}.webp", "WEBP", quality=88)
             look.background(bg_imgs, settings["background"]).save(d / "background.webp", "WEBP", quality=84)
-            manifest.append({"shelf": shelf, "tile": name, "path": rel, "sig": sig,
-                             "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
-                             "background": f"{rel}/background.webp"})
+            entry = {"shelf": shelf, "tile": name, "path": rel, "sig": sig,
+                     "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
+                     "background": f"{rel}/background.webp"}
+            if wide_still is not None:      # the cover's picture with no title, so the editing page can preview new titles on it
+                try:
+                    look.fill(wide_still, 640, 360).convert("RGB").save(d / "still.webp", "WEBP", quality=80)
+                    entry["still"] = f"{rel}/still.webp"
+                except Exception as e:
+                    print(f"    {key}: still preview skipped ({e})")
+            manifest.append(entry)
             done += 1
             print(f"  + {key}  (cover: {c['title']}{'; ' + logo_note if logo is not None else ''})")
         except Exception as e:  # one bad tile shouldn't sink the run
