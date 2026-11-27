@@ -1,0 +1,44 @@
+name: Find TMDB lists
+on:
+  workflow_dispatch:
+    inputs:
+      names:
+        description: "Comma separated names to look for in list titles"
+        required: true
+      ranges:
+        description: "Comma separated id ranges, e.g. 8659000-8659300"
+        required: true
+permissions:
+  contents: read
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scan list ids and print titles that match
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          NAMES: ${{ inputs.names }}
+          RANGES: ${{ inputs.ranges }}
+        run: |
+          python3 - <<'PY'
+          import os, json, urllib.request, concurrent.futures as cf
+          key = os.environ["TMDB_API_KEY"]; names = [n.strip().lower() for n in os.environ["NAMES"].split(",") if n.strip()]
+          ids = []
+          for r in os.environ["RANGES"].split(","):
+              a, b = r.strip().split("-"); ids += range(int(a), int(b) + 1)
+          def get(i):
+              try:
+                  u = f"https://api.themoviedb.org/3/list/{i}?page=1" + ("&api_key=" + key if len(key) < 40 else "")
+                  req = urllib.request.Request(u, headers={"Authorization": "Bearer " + key} if len(key) >= 40 else {})
+                  d = json.load(urllib.request.urlopen(req, timeout=20))
+                  return i, d.get("name", ""), d.get("created_by", ""), d.get("item_count", 0)
+              except Exception:
+                  return i, None, None, None
+          found = 0
+          with cf.ThreadPoolExecutor(16) as ex:
+              for i, n, by, c in ex.map(get, ids):
+                  if n is None: continue
+                  found += 1
+                  if any(x in n.lower() for x in names): print(f"MATCH {i} | {n} | by {by} | {c} items")
+          print(f"scanned {len(ids)}, readable {found}")
+          PY
