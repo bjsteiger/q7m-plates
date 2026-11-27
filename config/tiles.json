@@ -25267,30 +25267,32 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "Alien",
+  "title": "Aliens",
   "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
      "_0": {
       "collectionId": 8091,
-      "name": "Alien Collection",
+      "name": "Alien",
       "sortBy": "original"
      }
     }
-   }
-  ]
- },
- {
-  "shelf": "Film Collections",
-  "title": "Alien vs. Predator",
-  "shape": "wide",
-  "sources": [
+   },
    {
     "tmdbCollection": {
      "_0": {
       "collectionId": 115762,
-      "name": "Alien vs. Predator Collection",
+      "name": "Alien vs. Predator",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 399,
+      "name": "Predator",
       "sortBy": "original"
      }
     }
@@ -26016,23 +26018,16 @@
     "tmdbCollection": {
      "_0": {
       "collectionId": 535313,
-      "name": "Godzilla Collection",
+      "name": "Godzilla",
       "sortBy": "original"
      }
     }
-   }
-  ]
- },
- {
-  "shelf": "Film Collections",
-  "title": "Godzilla vs Kong",
-  "shape": "wide",
-  "sources": [
+   },
    {
     "tmdbCollection": {
      "_0": {
       "collectionId": 1539140,
-      "name": "Godzilla x Kong Collection",
+      "name": "Godzilla x Kong",
       "sortBy": "original"
      }
     }
@@ -26425,7 +26420,7 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "King Kong (1976)",
+  "title": "King Kong",
   "shape": "wide",
   "sources": [
    {
@@ -26681,7 +26676,7 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "Monsters, Inc.",
+  "title": "Monsters Inc",
   "shape": "wide",
   "sources": [
    {
@@ -26841,22 +26836,6 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "Ong Bak",
-  "shape": "wide",
-  "sources": [
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 94589,
-      "name": "Ong Bak Collection",
-      "sortBy": "original"
-     }
-    }
-   }
-  ]
- },
- {
-  "shelf": "Film Collections",
   "title": "Open Season",
   "shape": "wide",
   "sources": [
@@ -26953,30 +26932,23 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "Planet of the Apes (Original)",
+  "title": "Planet of the Apes",
   "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
      "_0": {
       "collectionId": 1709,
-      "name": "Planet of the Apes (Original) Collection",
+      "name": "Original",
       "sortBy": "original"
      }
     }
-   }
-  ]
- },
- {
-  "shelf": "Film Collections",
-  "title": "Planet of the Apes (Reboot)",
-  "shape": "wide",
-  "sources": [
+   },
    {
     "tmdbCollection": {
      "_0": {
       "collectionId": 173710,
-      "name": "Planet of the Apes (Reboot) Collection",
+      "name": "Reboot",
       "sortBy": "original"
      }
     }
@@ -27025,22 +26997,6 @@
      "_0": {
       "collectionId": 269098,
       "name": "Police Story Collection",
-      "sortBy": "original"
-     }
-    }
-   }
-  ]
- },
- {
-  "shelf": "Film Collections",
-  "title": "Predator",
-  "shape": "wide",
-  "sources": [
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 399,
-      "name": "Predator Collection",
       "sortBy": "original"
      }
     }
@@ -27337,46 +27293,32 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "Star Trek: Alternate Reality",
-  "shape": "wide",
-  "sources": [
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 115575,
-      "name": "Star Trek: Alternate Reality Collection",
-      "sortBy": "original"
-     }
-    }
-   }
-  ]
- },
- {
-  "shelf": "Film Collections",
-  "title": "Star Trek: The Next Generation Movies",
-  "shape": "wide",
-  "sources": [
-   {
-    "tmdbCollection": {
-     "_0": {
-      "collectionId": 115570,
-      "name": "Star Trek: The Next Generation Movies",
-      "sortBy": "original"
-     }
-    }
-   }
-  ]
- },
- {
-  "shelf": "Film Collections",
-  "title": "Star Trek: The Original Series Movies",
+  "title": "Star Trek",
   "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
      "_0": {
       "collectionId": 151,
-      "name": "Star Trek: The Original Series Movies",
+      "name": "The Original Series",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 115570,
+      "name": "The Next Generation",
+      "sortBy": "original"
+     }
+    }
+   },
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 115575,
+      "name": "Alternate Reality",
       "sortBy": "original"
      }
     }
@@ -27497,7 +27439,7 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "The Addams Family (Animated)",
+  "title": "The Addams Family",
   "shape": "wide",
   "sources": [
    {
@@ -28025,30 +27967,23 @@
  },
  {
   "shelf": "Film Collections",
-  "title": "The Pink Panther (Original)",
+  "title": "The Pink Panther",
   "shape": "wide",
   "sources": [
    {
     "tmdbCollection": {
      "_0": {
       "collectionId": 937,
-      "name": "The Pink Panther (Original)",
+      "name": "Original",
       "sortBy": "original"
      }
     }
-   }
-  ]
- },
- {
-  "shelf": "Film Collections",
-  "title": "The Pink Panther (Reboot)",
-  "shape": "wide",
-  "sources": [
+   },
    {
     "tmdbCollection": {
      "_0": {
       "collectionId": 130440,
-      "name": "The Pink Panther (Reboot)",
+      "name": "Reboot",
       "sortBy": "original"
      }
     }
@@ -44560,6 +44495,22 @@
      "_0": {
       "collectionId": 23616,
       "name": "Naruto Collection",
+      "sortBy": "original"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "shelf": "Film Collections",
+  "title": "Ong Bak",
+  "shape": "wide",
+  "sources": [
+   {
+    "tmdbCollection": {
+     "_0": {
+      "collectionId": 94589,
+      "name": "Ong Bak Collection",
       "sortBy": "original"
      }
     }

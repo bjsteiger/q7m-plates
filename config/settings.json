@@ -19,7 +19,10 @@
     "Anime"
   ],
   "skip_tiles": [],
-  "rename": {},
+  "rename": {
+    "Film Collections/Blade Runner": "blade runner",
+    "Film Collections/The Incredibles": "the incredibles"
+  },
   "titles_per_tile": 14,
   "min_votes": 200,
   "rotate_weekly": true,
@@ -749,8 +752,397 @@
       "tracking": 0.02,
       "dash": false
     },
+    "Film Collections/Aliens": {
+      "font_file": "custom/alien-resurrection.ttf"
+    },
+    "Film Collections/Alvin and the Chipmunks": {
+      "font_file": "gf:Archivo Black"
+    },
+    "Film Collections/American Pie": {
+      "font_file": "gf:Libre Franklin"
+    },
+    "Film Collections/Anchorman": {
+      "font_file": "gf:Anton"
+    },
+    "Film Collections/Austin Powers": {
+      "font_file": "custom/action-is.ttf",
+      "font_scale": 1.1
+    },
+    "Film Collections/Bad Boys": {
+      "font_file": "gf:Bungee"
+    },
+    "Film Collections/Beauty and the Beast": {
+      "font_file": "custom/beautyofthebeast.ttf",
+      "upper": false
+    },
+    "Film Collections/Behind Enemy Lines": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/Beverly Hills Cop": {
+      "font_file": "custom/beverly-hills-cop.ttf"
+    },
+    "Film Collections/Blade": {
+      "font_file": "custom/blade-2.ttf",
+      "font_scale": 1.8
+    },
+    "Film Collections/Blade Runner": {
+      "font_file": "custom/blade-runner-movie-font.ttf",
+      "upper": false
+    },
+    "Film Collections/Cars": {
+      "font_file": "custom/magnetob.ttf",
+      "upper": false
+    },
+    "Film Collections/Clash of the Titans": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/Cloudy with a Chance of Meatballs": {
+      "font_file": "custom/cloudy-with-a-chance-of-love.ttf"
+    },
+    "Film Collections/Conan the Barbarian": {
+      "font_file": "custom/crushyourenemies.ttf"
+    },
+    "Film Collections/Creed": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/Daddy's Home": {
+      "font_file": "gf:Archivo Black"
+    },
+    "Film Collections/Deadpool": {
+      "font_file": "custom/rogue-hero.ttf"
+    },
+    "Film Collections/Despicable Me": {
+      "font_file": "gf:Londrina Solid"
+    },
+    "Film Collections/Die Hard": {
+      "font_file": "gf:Anton"
+    },
+    "Film Collections/Dirty Harry": {
+      "font_file": "gf:Archivo Black"
+    },
+    "Film Collections/Divergent": {
+      "font_file": "custom/kleinslabserif-bold.ttf"
+    },
+    "Film Collections/Dragon Ball": {
+      "font_file": "custom/saiyan-sans.ttf"
+    },
+    "Film Collections/Dumb and Dumber": {
+      "font_file": "gf:Righteous"
+    },
+    "Film Collections/Dune": {
+      "font_file": "custom/dune-rise.ttf"
+    },
+    "Film Collections/Escape Plan": {
+      "font_file": "gf:Anton"
+    },
+    "Film Collections/Extraction": {
+      "font_file": "gf:Anton"
+    },
+    "Film Collections/Fantastic Beasts": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/Final Destination": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/Finding Nemo": {
+      "font_file": "custom/findet-nemo.ttf",
+      "font_scale": 1.15
+    },
+    "Film Collections/G.I. Joe": {
+      "font_file": "custom/cyberverse.otf"
+    },
+    "Film Collections/Ghostbusters": {
+      "font_file": "custom/ghostbusters.ttf"
+    },
+    "Film Collections/Guardians of the Galaxy": {
+      "font_file": "custom/guardians.ttf"
+    },
+    "Film Collections/Harry Potter": {
+      "font_file": "custom/harry-p.ttf"
+    },
+    "Film Collections/Highlander": {
+      "font_file": "custom/highlander.ttf"
+    },
+    "Film Collections/Home Alone": {
+      "font_file": "gf:Cormorant Garamond"
+    },
+    "Film Collections/Horrible Bosses": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/Hotel Transylvania": {
+      "font_file": "custom/hosteltransilvania.ttf"
+    },
+    "Film Collections/How to Train Your Dragon": {
+      "font_file": "gf:Anton"
+    },
+    "Film Collections/Ice Age": {
+      "font_file": "custom/ice-age-font.ttf",
+      "font_scale": 1.75
+    },
+    "Film Collections/Indiana Jones": {
+      "font_file": "custom/sf-fedora-titles.ttf"
+    },
+    "Film Collections/Inside Out": {
+      "font_file": "gf:Londrina Solid"
+    },
+    "Film Collections/Jaws": {
+      "font_file": "custom/amity-jack.ttf"
+    },
+    "Film Collections/John Wick": {
+      "font_file": "gf:Anton"
+    },
+    "Film Collections/Johnny English": {
+      "font_file": "custom/addcityboy.ttf"
+    },
+    "Film Collections/Jumanji": {
+      "font_file": "custom/dock11.otf"
+    },
+    "Film Collections/Jurassic Park": {
+      "font_file": "custom/jurassic-park.ttf",
+      "font_scale": 1.4
+    },
+    "Film Collections/Kingsman": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/Kung Fu Panda": {
+      "font_file": "custom/kung-fu-panda.ttf"
+    },
+    "Film Collections/Legally Blonde": {
+      "font_file": "gf:Anton"
+    },
+    "Film Collections/Lethal Weapon": {
+      "font_file": "gf:Orbitron"
+    },
+    "Film Collections/Mad Max": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/Madagascar": {
+      "font_file": "gf:Londrina Solid",
+      "font_scale": 1.35
+    },
+    "Film Collections/Men in Black": {
+      "font_file": "gf:Archivo Black"
+    },
+    "Film Collections/Minions": {
+      "font_file": "gf:Londrina Solid",
+      "font_scale": 1.45
+    },
+    "Film Collections/Mission: Impossible": {
+      "font_file": "custom/impossible-0.ttf"
+    },
+    "Film Collections/Mulan": {
+      "font_file": "custom/mulan.ttf",
+      "font_scale": 1.7
+    },
+    "Film Collections/My Hero Academia": {
+      "font_file": "gf:Bangers"
+    },
+    "Film Collections/National Lampoon": {
+      "font_file": "gf:Cormorant Garamond"
+    },
+    "Film Collections/National Treasure": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/Night at the Museum": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/One Piece": {
+      "font_file": "custom/one-piece.ttf"
+    },
+    "Film Collections/Open Season": {
+      "font_file": "custom/open-season.ttf"
+    },
+    "Film Collections/Pacific Rim": {
+      "font_file": "gf:Oswald"
+    },
+    "Film Collections/Percy Jackson": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/Pirates of the Caribbean": {
+      "font_file": "custom/pieces-of-eight.ttf"
+    },
+    "Film Collections/Pitch Perfect": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/Planet of the Apes": {
+      "font_file": "custom/planet-of-the-apes.ttf"
+    },
+    "Film Collections/Pok\u00e9mon": {
+      "font_file": "custom/pocket-monk.otf",
+      "upper": false
+    },
+    "Film Collections/Rambo": {
+      "font_file": "gf:Bungee"
+    },
+    "Film Collections/RoboCop": {
+      "font_file": "custom/alex-murphy-solid.otf"
+    },
+    "Film Collections/Rocky": {
+      "font_file": "gf:Libre Franklin"
+    },
+    "Film Collections/Scooby-Doo": {
+      "font_file": "custom/scooby-doo.ttf"
+    },
+    "Film Collections/Sherlock Holmes": {
+      "font_file": "custom/sherlock-holmes.ttf"
+    },
+    "Film Collections/Sicario": {
+      "font_file": "custom/basica-v-2012.ttf"
+    },
+    "Film Collections/Sing": {
+      "font_file": "gf:Abril Fatface"
+    },
+    "Film Collections/Sniper": {
+      "font_file": "gf:Oswald"
+    },
+    "Film Collections/Sonic the Hedgehog": {
+      "font_file": "gf:Bangers"
+    },
+    "Film Collections/Speed": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/Spider-Man: Spider-Verse": {
+      "font_file": "gf:Bangers"
+    },
+    "Film Collections/Spy Kids": {
+      "font_file": "custom/sf-sports-night.ttf"
+    },
+    "Film Collections/Star Wars": {
+      "font_file": "custom/star-jedi.ttf"
+    },
+    "Film Collections/Starship Troopers": {
+      "font_file": "custom/mobile-infantry.ttf"
+    },
+    "Film Collections/Step Up": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/Superman Classic": {
+      "font_file": "gf:Archivo Black"
+    },
+    "Film Collections/Taken": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/The Avengers": {
+      "font_file": "custom/avengeance-mightiest-avenger.ttf"
+    },
+    "Film Collections/The Before Trilogy": {
+      "font_file": "gf:Cormorant Garamond"
+    },
+    "Film Collections/The Boss Baby": {
+      "font_file": "gf:Archivo Black"
+    },
+    "Film Collections/The Bourne": {
+      "font_file": "gf:Libre Franklin"
+    },
+    "Film Collections/The Chronicles of Narnia": {
+      "font_file": "custom/narnia-bll.ttf"
+    },
+    "Film Collections/The Chronicles of Riddick": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/The Crow": {
+      "font_file": "custom/mael.ttf"
+    },
+    "Film Collections/The Dark Knight": {
+      "font_file": "gf:Libre Franklin"
+    },
+    "Film Collections/The Equalizer": {
+      "font_file": "gf:Libre Franklin"
+    },
+    "Film Collections/The Expendables": {
+      "font_file": "gf:Bungee"
+    },
+    "Film Collections/The Godfather": {
+      "font_file": "custom/corleone.otf",
+      "upper": false
+    },
+    "Film Collections/The Hangover": {
+      "font_file": "gf:Anton"
+    },
+    "Film Collections/The Hitman's Bodyguard": {
+      "font_file": "custom/evogria.otf"
+    },
+    "Film Collections/The Hobbit": {
+      "font_file": "custom/ringbearer.ttf",
+      "upper": false
+    },
+    "Film Collections/The Hunger Games": {
+      "font_file": "gf:Orbitron"
+    },
+    "Film Collections/The Incredibles": {
+      "font_file": "custom/the-incredibles.ttf",
+      "upper": false
+    },
+    "Film Collections/The Jack Ryan": {
+      "font_file": "gf:Bungee"
+    },
+    "Film Collections/The Karate Kid": {
+      "font_file": "gf:Abril Fatface"
+    },
+    "Film Collections/The Lego Movie": {
+      "font_file": "gf:Bungee"
+    },
+    "Film Collections/The Lion King": {
+      "font_file": "custom/lion-king.ttf"
+    },
+    "Film Collections/The Little Mermaid": {
+      "font_file": "gf:Cormorant Garamond"
+    },
+    "Film Collections/The Lord of the Rings": {
+      "font_file": "custom/ringbearer.ttf",
+      "upper": false
+    },
+    "Film Collections/The Matrix": {
+      "font_file": "custom/miltown.ttf"
+    },
+    "Film Collections/The Maze Runner": {
+      "font_file": "gf:Orbitron"
+    },
+    "Film Collections/The Meg": {
+      "font_file": "gf:Anton"
+    },
+    "Film Collections/The Mighty Ducks": {
+      "font_file": "gf:Bungee"
+    },
+    "Film Collections/The Mummy": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/The Raid": {
+      "font_file": "gf:Abril Fatface"
+    },
+    "Film Collections/The Terminator": {
+      "font_file": "custom/terminator.ttf"
+    },
+    "Film Collections/The Transporter": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/Tomb Raider": {
+      "font_file": "custom/tomb-raider.ttf"
+    },
     "Film Collections/Top Gun": {
       "font_file": "custom/top-gun.ttf"
+    },
+    "Film Collections/Toy Story": {
+      "font_file": "custom/agent-orange.ttf"
+    },
+    "Film Collections/Transformers": {
+      "font_file": "custom/transformers.ttf",
+      "upper": false
+    },
+    "Film Collections/TRON": {
+      "font_file": "custom/tron.ttf"
+    },
+    "Film Collections/Underworld": {
+      "font_file": "gf:Cinzel"
+    },
+    "Film Collections/Wayne's World": {
+      "font_file": "BebasNeue-Regular.ttf"
+    },
+    "Film Collections/Wreck-It Ralph": {
+      "font_file": "custom/wreck-it-ralph-credits.otf"
+    },
+    "Film Collections/X-Men": {
+      "font_file": "gf:Orbitron"
     },
     "Kids and Family/Discover Family": {
       "font_file": "gf:Mouse Memoirs",
@@ -1131,8 +1523,7 @@
     "Film Collections/War Collections": "cinema",
     "Film Collections/Ace Ventura": "cinema",
     "Film Collections/Aladdin": "cinema",
-    "Film Collections/Alien": "cinema",
-    "Film Collections/Alien vs. Predator": "cinema",
+    "Film Collections/Aliens": "cinema",
     "Film Collections/Alvin and the Chipmunks": "cinema",
     "Film Collections/American Pie": "cinema",
     "Film Collections/Anchorman": "cinema",
@@ -1179,7 +1570,6 @@
     "Film Collections/Ghostbusters": "cinema",
     "Film Collections/Goal!": "cinema",
     "Film Collections/Godzilla": "cinema",
-    "Film Collections/Godzilla vs Kong": "cinema",
     "Film Collections/Grown Ups": "cinema",
     "Film Collections/Guardians of the Galaxy": "cinema",
     "Film Collections/Harold & Kumar": "cinema",
@@ -1204,7 +1594,7 @@
     "Film Collections/Jump Street": "cinema",
     "Film Collections/Jurassic Park": "cinema",
     "Film Collections/Kick-Ass": "cinema",
-    "Film Collections/King Kong (1976)": "cinema",
+    "Film Collections/King Kong": "cinema",
     "Film Collections/Kingsman": "cinema",
     "Film Collections/Knives Out": "cinema",
     "Film Collections/Kung Fu Panda": "cinema",
@@ -1220,7 +1610,7 @@
     "Film Collections/Minions": "cinema",
     "Film Collections/Missing in Action": "cinema",
     "Film Collections/Mission: Impossible": "cinema",
-    "Film Collections/Monsters, Inc.": "cinema",
+    "Film Collections/Monsters Inc": "cinema",
     "Film Collections/Mortal Kombat": "cinema",
     "Film Collections/Mulan": "cinema",
     "Film Collections/My Hero Academia": "cinema",
@@ -1230,19 +1620,16 @@
     "Film Collections/Now You See Me": "cinema",
     "Film Collections/Ocean's": "cinema",
     "Film Collections/One Piece": "cinema",
-    "Film Collections/Ong Bak": "cinema",
     "Film Collections/Open Season": "cinema",
     "Film Collections/Pacific Rim": "cinema",
     "Film Collections/Paddington": "cinema",
     "Film Collections/Percy Jackson": "cinema",
     "Film Collections/Pirates of the Caribbean": "cinema",
     "Film Collections/Pitch Perfect": "cinema",
-    "Film Collections/Planet of the Apes (Original)": "cinema",
-    "Film Collections/Planet of the Apes (Reboot)": "cinema",
+    "Film Collections/Planet of the Apes": "cinema",
     "Film Collections/Pok\u00e9mon": "cinema",
     "Film Collections/Police Academy": "cinema",
     "Film Collections/Police Story": "cinema",
-    "Film Collections/Predator": "cinema",
     "Film Collections/Rambo": "cinema",
     "Film Collections/Ride Along": "cinema",
     "Film Collections/Robert Langdon": "cinema",
@@ -1261,9 +1648,7 @@
     "Film Collections/Spider-Man": "cinema",
     "Film Collections/Spider-Man: Spider-Verse": "cinema",
     "Film Collections/Spy Kids": "cinema",
-    "Film Collections/Star Trek: Alternate Reality": "cinema",
-    "Film Collections/Star Trek: The Next Generation Movies": "cinema",
-    "Film Collections/Star Trek: The Original Series Movies": "cinema",
+    "Film Collections/Star Trek": "cinema",
     "Film Collections/Star Wars": "cinema",
     "Film Collections/Starship Troopers": "cinema",
     "Film Collections/Step Up": "cinema",
@@ -1271,7 +1656,7 @@
     "Film Collections/Taken": "cinema",
     "Film Collections/Ted": "cinema",
     "Film Collections/Teenage Mutant Ninja Turtles": "cinema",
-    "Film Collections/The Addams Family (Animated)": "cinema",
+    "Film Collections/The Addams Family": "cinema",
     "Film Collections/The Avengers": "cinema",
     "Film Collections/The Before Trilogy": "cinema",
     "Film Collections/The Boondock Saints": "cinema",
@@ -1304,8 +1689,7 @@
     "Film Collections/The Mighty Ducks": "cinema",
     "Film Collections/The Mummy": "cinema",
     "Film Collections/The Naked Gun": "cinema",
-    "Film Collections/The Pink Panther (Original)": "cinema",
-    "Film Collections/The Pink Panther (Reboot)": "cinema",
+    "Film Collections/The Pink Panther": "cinema",
     "Film Collections/The Raid": "cinema",
     "Film Collections/The Secret Life of Pets": "cinema",
     "Film Collections/The Terminator": "cinema",
@@ -1599,6 +1983,7 @@
     "Film Collections/Basic Instinct": "cinema",
     "Film Collections/Fifty Shades": "cinema",
     "Film Collections/Naruto": "cinema",
+    "Film Collections/Ong Bak": "cinema",
     "Studios/Studio Ghibli": "studio"
   },
   "looks": {
