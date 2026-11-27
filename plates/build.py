@@ -27,6 +27,12 @@ from PIL import Image
 from . import look, sources
 from .sources import TMDB, Wikimedia, gather, trakt_from_env
 
+def _px(im):
+    """Pixel values, flat. Uses the newer Pillow call when it exists."""
+    f = getattr(im, "get_flattened_data", None)
+    return f() if f else im.getdata()
+
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -110,7 +116,7 @@ class OnlineFetcher:
 def _title_card(img):
     """True for a picture that is mostly black with a little lettering in the middle: a title card, not a scene."""
     g = img.convert("L").resize((96, 54))
-    px = list(g.getdata())
+    px = list(_px(g))
     dark = sum(p < 30 for p in px) / len(px)
     edge = [g.getpixel((x, y)) for x in range(96) for y in range(54) if x < 10 or x > 85 or y < 7 or y > 46]
     mid = sum(45 < p < 170 for p in px) / len(px)

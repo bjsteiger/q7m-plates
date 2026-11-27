@@ -7,6 +7,12 @@ from pathlib import Path
 
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 
+def _px(im):
+    """Pixel values, flat. Uses the newer Pillow call when it exists."""
+    f = getattr(im, "get_flattened_data", None)
+    return f() if f else im.getdata()
+
+
 FONT_PATH = str(Path(__file__).resolve().parent.parent / "fonts" / "Montserrat.ttf")
 DARK = (8, 10, 14)
 
@@ -171,7 +177,7 @@ def _knockout_white(logo):
     sa = small.getchannel("A")
     # rainbow-style logos (many strong hues, like a peacock fan) read fine as a plain silhouette
     hsv = small.convert("RGB").convert("HSV")
-    hues = [hh * 12 // 256 for (hh, ss, vv), al in zip(hsv.getdata(), sa.getdata()) if al > 128 and ss > 90 and vv > 60]
+    hues = [hh * 12 // 256 for (hh, ss, vv), al in zip(_px(hsv), _px(sa)) if al > 128 and ss > 90 and vv > 60]
     if hues:
         counts = [hues.count(i) for i in range(12)]
         strong = [i for i, c in enumerate(counts) if c > 0.08 * len(hues)]
@@ -183,7 +189,7 @@ def _knockout_white(logo):
     # empty space around a small logo doesn't drag the local estimate toward black
     L = small.convert("L")
     hist = [0] * 256
-    for v, al in zip(L.getdata(), sa.getdata()):
+    for v, al in zip(_px(L), _px(sa)):
         if al > 200:
             hist[v] += 1
     plate_lum = max(range(256), key=lambda i: sum(hist[max(0, i - 6):i + 7]))
@@ -444,7 +450,7 @@ def brand_cover(logo, bg_hex, size, scale=1.0, cfg=None):
 def _dominant(logo):
     """Average colour of the logo's visible pixels, and how bright it is (0..255)."""
     rgba = logo.convert("RGBA").resize((64, 64))
-    px = [p for p in rgba.getdata() if p[3] > 128]
+    px = [p for p in _px(rgba) if p[3] > 128]
     if not px:
         return (40, 40, 48), 128
     r, g, b = (sum(p[i] for p in px) / len(px) for i in range(3))
@@ -753,7 +759,7 @@ def accent_color(img):
     small = img.convert("RGB").resize((64, 36))
     hsv = small.convert("HSV")
     bins = {}
-    for (h, s, v) in hsv.getdata():
+    for (h, s, v) in _px(hsv):
         if s > 70 and v > 60:
             b = h // 16
             bins[b] = bins.get(b, 0) + s * v
