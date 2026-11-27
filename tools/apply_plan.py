@@ -255,9 +255,19 @@ for lf in sorted(plan_dir.glob("logo*.json")):
         print("saved uploaded logo", f'{it["shelf"]}/{it["title"]}')
 
 # fonts uploaded on the editing page: config/plan/font*.json hold {"items": [{"file": "custom/name.ttf", "data": data URI}]}
+# a big font comes in several pieces ({"part": i, "parts": n}), joined back together here
+_fonts = {}
 for ff in sorted(plan_dir.glob("font*.json")):
     for it in json.loads(ff.read_text()).get("items", []):
-        f = it.get("file", "")
+        _fonts.setdefault(it.get("file", ""), []).append(it)
+for f, pieces in _fonts.items():
+    if True:
+        pieces.sort(key=lambda x: x.get("part", 0))
+        n = pieces[0].get("parts", 1)
+        if len(pieces) != n:
+            print("CHECK uploaded font is missing pieces", f, len(pieces), "of", n)
+            continue
+        it = {"file": f, "data": "".join(x.get("data", "") for x in pieces)}
         m = _re.match(r"data:[^;]*;base64,(.+)", it.get("data", ""), _re.S)
         if not (_re.fullmatch(r"custom/[a-z0-9-]+\.(ttf|otf)", f) and m):
             print("CHECK uploaded font not readable", f)
