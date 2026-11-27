@@ -15695,7 +15695,9 @@
        ]
       },
       "font": "gf:Cormorant",
-      "subtitle": "Crowns, corsets and country houses"
+      "fontScale": 1.25,
+      "subtitle": "Crowns, corsets and country houses",
+      "weight": "Bold"
      },
      "id": "AE988B94-6D22-452F-9D01-6971D243F074",
      "src": [
