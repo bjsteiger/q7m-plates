@@ -106,6 +106,16 @@ class OnlineFetcher:
         return self.tmdb.image(path, "original") if path else None
 
 
+def _title_card(img):
+    """True for a picture that is mostly black with a little lettering in the middle: a title card, not a scene."""
+    g = img.convert("L").resize((96, 54))
+    px = list(g.getdata())
+    dark = sum(p < 30 for p in px) / len(px)
+    edge = [g.getpixel((x, y)) for x in range(96) for y in range(54) if x < 10 or x > 85 or y < 7 or y > 46]
+    mid = sum(45 < p < 170 for p in px) / len(px)
+    return dark > 0.75 and mid < 0.12 and sum(p < 30 for p in edge) / len(edge) > 0.93
+
+
 class OfflineFetcher:
     """Uses local images instead of TMDB, for testing the look without a key."""
 
@@ -483,6 +493,14 @@ def main():
                         **({"logo_y": settings["logo_y"][key]} if key in settings.get("logo_y", {}) else {})}
             base_scale = scale
             wide_still = fetch.cover_still(c)
+            # some titles (often unreleased ones) only have a title card as their picture: use the next title instead
+            if hasattr(fetch, "tmdb"):
+                alts = [t for t in cov_titles if (t["media"], t["id"]) not in used]
+                while wide_still is not None and _title_card(wide_still) and alts:
+                    print(f"    {key}: {c.get('title')} only has a title card, using another title")
+                    c = alts.pop(0)
+                    used.add((c["media"], c["id"]))
+                    wide_still = fetch.cover_still(c)
             outline = tstyle == "outline" or (shelf in settings.get("outline_shelves", []) and tstyle in (None, "outline"))
             for shape, (w, h) in settings["cover"]["shapes"].items():
                 cover_cfg = cfg_for(shape)
