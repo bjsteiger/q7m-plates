@@ -386,7 +386,11 @@ def cover(still, title, cfg, size=None, logo=None, logo_scale=1.0):
     top = h * ty - lh * len(lines) / 2
     sa, sb = int(round(255 * cfg.get("shadow", 70 / 255))), cfg.get("shadow_blur", 0)
     if cfg.get("dash", True):
-        d.rectangle([w / 2 - 22, top - 26, w / 2 + 22, top - 22], fill=col + (int(a * 0.8),))
+        dy = top - 26
+        if cfg.get("font_file"):     # other fonts sit differently in their line: put the dash just above the letters themselves
+            gt = d.textbbox((w / 2, top + lh / 2), lines[0], font=f, anchor="mm")[1]
+            dy = min(dy, gt - 18)
+        d.rectangle([w / 2 - 22, dy, w / 2 + 22, dy + 4], fill=col + (int(a * 0.8),))
     if sb:      # soft shadow on its own layer
         sl = Image.new("RGBA", (w, h), (0, 0, 0, 0))
         sd = ImageDraw.Draw(sl)
