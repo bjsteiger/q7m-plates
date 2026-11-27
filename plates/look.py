@@ -19,7 +19,7 @@ DARK = (8, 10, 14)
 # Bump a style's number when its drawing changes, so only cards using it redraw.
 # DRAW_VERSION covers shared code (grading, fills, backgrounds) and redraws everything.
 DRAW_VERSION = 1
-STYLE_VERSIONS = {"cinema": 1, "vibrant": 1, "outline": 1, "brand": 1, "station": 1, "studio": 1,
+STYLE_VERSIONS = {"cinema": 1, "vibrant": 2, "outline": 1, "brand": 2, "station": 2, "studio": 2,
                   "portrait": 1, "award": 1, "title": 1}
 
 
@@ -701,9 +701,50 @@ def background(images, cfg):
     return Image.composite(front, back, mask)
 
 
-def background_name(img, title, cfg, fcfg):
-    """The card's name in the top left of its background, a little way down, in the card's own font."""
-    if not title or not cfg.get("name_show", False):
+def _background_logo(img, logo, cfg, mode):
+    """The card's logo where the name would go (top left of the background), with the logo effects:
+    top-to-bottom shading, a soft drop shadow and the glow behind it."""
+    w, h = img.size
+    lg = _prep_logo(logo, None if mode == "color" else "white")
+    if mode == "color" and _dominant(lg)[1] < 70:      # a dark logo would vanish on the dark background
+        lg = _prep_logo(logo, "white")
+    lg = _vgradient(lg, cfg.get("name_shade_top", 1.0), cfg.get("name_shade_bottom", 0.8))
+    box_w = w * cfg.get("name_width", 0.42) * cfg.get("logo_bg_width", 0.75)
+    box_h = cfg.get("name_size", 64) * h / 1080 * cfg.get("logo_bg_height", 2.0)
+    k = min(box_w / lg.width, box_h / lg.height)
+    lg = lg.resize((max(1, int(lg.width * k)), max(1, int(lg.height * k))), Image.LANCZOS)
+    a = cfg.get("name_opacity", 0.92)
+    if a < 1:
+        lg.putalpha(lg.getchannel("A").point(lambda v: int(v * a)))
+    x, y = int(w * cfg.get("name_x", 0.05)), int(h * cfg.get("name_y", 0.14))
+    al = Image.new("L", (w, h), 0)
+    al.paste(lg.getchannel("A"), (x, y))
+    out = img.convert("RGBA")
+    glow = cfg.get("name_glow", 0.35)
+    if glow > 0:
+        m = al.filter(ImageFilter.GaussianBlur(max(2, lg.height * cfg.get("name_glow_size", 1.2) * 0.35)))
+        m = m.point(lambda v: min(255, int(v * 2.4 * glow)))
+        halo = Image.new("RGBA", (w, h), hex_rgb(cfg.get("name_glow_color", "#788caa")) + (0,))
+        halo.putalpha(m)
+        out.alpha_composite(halo)
+    sh = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    sh.putalpha(al.point(lambda v: int(v * 0.6)).filter(ImageFilter.GaussianBlur(max(3, lg.height // 14))))
+    out.alpha_composite(sh, (0, 4))
+    out.alpha_composite(lg, (x, y))
+    return out.convert("RGB")
+
+
+def background_name(img, title, cfg, fcfg, logo=None, logo_mode="white"):
+    """The card's name in the top left of its background, a little way down, in the card's own font.
+    Cards with a logo show the logo there instead of the name."""
+    if not cfg.get("name_show", False):
+        return img
+    if logo is not None and cfg.get("name_logo", True):
+        try:
+            return _background_logo(img, logo, cfg, logo_mode)
+        except Exception:
+            pass                          # an odd logo file: fall back to the name
+    if not title:
         return img
     w, h = img.size
     if cfg.get("name_card_font", True) is False:      # one font for every background instead of each card's own
@@ -805,24 +846,43 @@ def vibrant_cover(still, title, subtitle, size, cfg=None):
             continue
         size_ = int(size_ * 0.94)
     sub = (subtitle or "").upper() if cfg.get("show_subtitle", True) else ""
-    sf = font(max(12, int(size_ * cfg.get("subtitle_size", 0.21))), "Bold")
-    str_ = sf.size * cfg.get("subtitle_tracking", 0.14)
+    match = cfg.get("subtitle_style", "match") == "match"      # subtitle in the title's own font and fill
+    left = cfg.get("align", "left") == "left"
+    x0 = w * cfg.get("margin_x", 0.07)
+    sub_w = cfg.get("weight_v", "Black") if match else "Bold"
+    sub_file = cfg.get("font_file") if match else None
+    sf = font(max(12, int(size_ * cfg.get("subtitle_size", 0.21 if not match else 0.26))), sub_w, sub_file)
+    str_ = sf.size * cfg.get("subtitle_tracking", 0.14 if not match else 0.06)
+    if sub:     # shrink the subtitle to fit the width
+        total = sum(d0.textlength(c, font=sf) for c in sub) + str_ * (len(sub) - 1)
+        if total > max_w:
+            sf = font(max(10, int(sf.size * max_w / total)), sub_w, sub_file)
+            str_ = sf.size * cfg.get("subtitle_tracking", 0.14 if not match else 0.06)
     lh = f.size * 1.0
-    block = lh * len(lines) + (sf.size * 1.8 if sub else 0)
+    gap = sf.size * (0.55 if match else 0.8)
+    block = lh * len(lines) + (gap + sf.size * 1.1 if sub else 0)
     top = h * cfg.get("title_y", 0.5) - block / 2
+
+    def start_x(ln, fnt, track):
+        if left:
+            return x0
+        return w / 2 - (sum(d0.textlength(c, font=fnt) for c in ln) + track * (len(ln) - 1)) / 2
 
     mask = Image.new("L", (w, h), 0)
     outline = Image.new("L", (w, h), 0)
     md, od = ImageDraw.Draw(mask), ImageDraw.Draw(outline)
     sw = max(2 if "outline_width" not in cfg else 1, int(size_ * cfg.get("outline_width", 0.03)))
-    for i, ln in enumerate(lines):
-        widths = [d0.textlength(c, font=f) for c in ln]
-        x = w / 2 - (sum(widths) + tr * (len(ln) - 1)) / 2
-        y = top + lh * i
-        for ch, cw in zip(ln, widths):
-            od.text((x, y), ch, font=f, fill=255, stroke_width=sw, stroke_fill=255)
-            md.text((x, y), ch, font=f, fill=255)
-            x += cw + tr
+    runs = [(ln, f, tr, top + lh * i, sw) for i, ln in enumerate(lines)]
+    sub_y = top + lh * len(lines) + gap
+    if sub and match:
+        runs.append((sub, sf, str_, sub_y, max(1, int(sw * sf.size / f.size))))
+    for ln, fnt, track, y, stroke in runs:
+        x = start_x(ln, fnt, track)
+        for ch in ln:
+            cw = d0.textlength(ch, font=fnt)
+            od.text((x, y), ch, font=fnt, fill=255, stroke_width=stroke, stroke_fill=255)
+            md.text((x, y), ch, font=fnt, fill=255)
+            x += cw + track
     ring = ImageChops.subtract(outline, mask)
     sa = cfg.get("shadow", 0.55)
     shadow = outline.filter(ImageFilter.GaussianBlur(max(4 if "shadow_blur" not in cfg else 1, int(cfg.get("shadow_blur", 10) * k)))).point(lambda v: int(v * sa))
@@ -831,20 +891,13 @@ def vibrant_cover(still, title, subtitle, size, cfg=None):
     oa = cfg.get("outline", 0.8)
     img = Image.composite(Image.new("RGB", (w, h), hex_rgb(cfg.get("outline_color", "#f5f5fa"))), img, ring.point(lambda v: int(v * oa)))
 
-    if sub:
+    if sub and not match:
         col = accent_color(still) if cfg.get("subtitle_color", "auto") == "auto" else hex_rgb(cfg["subtitle_color"])
         dd = ImageDraw.Draw(img)
-        widths = [dd.textlength(c, font=sf) for c in sub]
-        total = sum(widths) + str_ * (len(sub) - 1)
-        if total > w * 0.9:
-            sf = font(max(10, int(sf.size * w * 0.9 / total)), "Bold")
-            str_ = sf.size * cfg.get("subtitle_tracking", 0.14) * 0.1 / 0.14
-            widths = [dd.textlength(c, font=sf) for c in sub]
-            total = sum(widths) + str_ * (len(sub) - 1)
-        x = w / 2 - total / 2
-        y = top + lh * len(lines) + sf.size * 0.8
-        for ch, cw in zip(sub, widths):
-            dd.text((x + 1, y + 2), ch, font=sf, fill=(0, 0, 0))
-            dd.text((x, y), ch, font=sf, fill=col)
+        x = start_x(sub, sf, str_)
+        for ch in sub:
+            cw = dd.textlength(ch, font=sf)
+            dd.text((x + 1, sub_y + 2), ch, font=sf, fill=(0, 0, 0))
+            dd.text((x, sub_y), ch, font=sf, fill=col)
             x += cw + str_
     return img

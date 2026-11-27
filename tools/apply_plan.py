@@ -175,7 +175,8 @@ settings["background"].update({k: v for k, v in prefs.get("background", {}).item
                                if k in ("panels", "panel_lean", "blend_softness", "wall_angle", "wall_brightness", "max_dark",
                                         "name_show", "name_x", "name_y", "name_size", "name_width", "name_opacity", "name_color",
                                         "name_card_font", "name_font", "name_weight", "name_tracking", "name_upper",
-                                        "name_shade_top", "name_shade_bottom", "name_glow", "name_glow_size", "name_glow_color")})
+                                        "name_shade_top", "name_shade_bottom", "name_glow", "name_glow_size", "name_glow_color",
+                                        "name_logo", "logo_bg_width", "logo_bg_height")})
 looks = prefs.get("looks") or {}
 if "cinema" not in looks:
     looks["cinema"] = {k: v for k, v in prefs.get("cover", {}).items() if k in ("weight", "opacity", "title_size", "tracking", "dash")}

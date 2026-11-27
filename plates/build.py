@@ -552,7 +552,13 @@ def main():
                 else:
                     im = look.cover(still, label, cover_cfg, (w, h), logo=logo, logo_scale=scale)
                 im.save(d / f"cover-{shape}.webp", "WEBP", quality=88)
-            look.background_name(look.background(bg_imgs, settings["background"]), label, settings["background"], cfg_for("wide")).save(d / "background.webp", "WEBP", quality=84)
+            bg_logo, bg_mode = None, "white"
+            if logo is not None and rule and rule.get("style") in ("brand", "station", "studio"):
+                bg_logo = look.knock_background(logo) if rule.get("style") == "brand" and not ov else logo
+                if rule.get("style") == "brand" or f"{shelf}/{name}" in settings.get("logo_color", []):
+                    bg_mode = "color"
+            look.background_name(look.background(bg_imgs, settings["background"]), label, settings["background"], cfg_for("wide"),
+                                 logo=bg_logo, logo_mode=bg_mode).save(d / "background.webp", "WEBP", quality=84)
             entry = {"shelf": shelf, "tile": name, "path": rel, "sig": sig,
                      "covers": {sh: f"{rel}/cover-{sh}.webp" for sh in settings["cover"]["shapes"]},
                      "background": f"{rel}/background.webp"}
