@@ -59,7 +59,7 @@ RULES = {
 
 out_tiles, notes, problems = [], [], []
 fonts, tile_style, logo_choice, logo_color, logo_scale, brand, queries, links = {}, {}, {}, [], {}, {}, {}, {}
-subtitles, logo_y, logo_white = {}, {}, []
+subtitles, logo_y, logo_white, rename = {}, {}, [], {}
 tile_look = {}
 shelf_style = {s["title"]: s["style"] for s in meta["shelves"]}
 look_base = {c["id"]: c["base"] for c in meta.get("prefs", {}).get("customLooks", [])}
@@ -93,6 +93,8 @@ for t in tiles:
     if a.get("style"):
         tile_style[key] = a["style"]
     tile_look[key] = a.get("style") or shelf_style.get(t["shelf"], "cinema")
+    if a.get("label"):
+        rename[key] = a["label"]          # words on the art, when they differ from the card title
     if a.get("subtitle"):
         subtitles[key] = a["subtitle"]
     if a.get("logoSource") in ("tmdb", "none"):
@@ -153,6 +155,7 @@ ref["fixed_monthly_bg"] = sorted(set(x for x in ref.get("fixed_monthly_bg", []) 
 ref["classic_art"] = sorted(set(x for x in ref.get("classic_art", []) if x in names) | set(portrait))
 
 settings["fonts"] = fonts
+settings["rename"] = rename
 settings["tile_style"] = tile_style
 settings["logo_choice"] = {**{k: v for k, v in settings.get("logo_choice", {}).items() if v.startswith("tmdb:")}, **logo_choice}
 settings["logo_color"] = logo_color
