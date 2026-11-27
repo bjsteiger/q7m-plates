@@ -364,17 +364,19 @@ def main():
     sess.mount("https://", requests.adapters.HTTPAdapter(pool_connections=32, pool_maxsize=32))
 
     def grab(f):
-        for _ in range(3):
+        import time
+        for i in range(5):
             try:
                 r = sess.get(f"{site_url}/{f}", timeout=60)
                 if r.ok:
                     return f, r.content
             except requests.RequestException:
                 pass
+            time.sleep(1 + 2 * i)          # Pages sometimes refuses bursts: back off and try again
         return f, None
     if prev:
         want = sorted({f for e in prev.values() for f in list(e.get("covers", {}).values()) + [e["background"]] + ([e["still"]] if e.get("still") else [])})
-        with ThreadPoolExecutor(24) as pool:
+        with ThreadPoolExecutor(12) as pool:
             for f, data in pool.map(grab, want):
                 if data is not None:
                     fetched[f] = data
@@ -424,7 +426,8 @@ def main():
                 if reuse(old, out):            # not selected this time: keep the live art as it is
                     manifest.append(old)
                     reused += 1
-                continue
+                    continue
+                print(f"  ! {key}: live art couldn't be fetched, drawing it again so it isn't lost")
             if build_only is None and old and old.get("sig") == sig and reuse(old, out):
                 manifest.append(old)
                 reused += 1
