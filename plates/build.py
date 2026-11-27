@@ -99,7 +99,8 @@ class OnlineFetcher:
             return None, f"logo lookup failed: {e}"
 
     def still(self, t, big=False):
-        return self.tmdb.image(t["backdrop"], "original" if big else "w1280")
+        path = self.tmdb.clean_backdrop(t["media"], t["id"], t["backdrop"])     # backgrounds too: no titles written on the picture
+        return self.tmdb.image(path, "original" if big else "w1280")
 
     def poster_still(self, t):
         path = self.tmdb.clean_poster(t["media"], t["id"])
@@ -454,6 +455,10 @@ def main():
             k = bg_off % max(1, len(rest))
             rest = rest[k:] + rest[:k]
             n = settings["background"]["panels"]
+            if tm is not None and hasattr(tm, "has_clean_backdrop"):      # titles with a text-free picture first
+                clean = [t for t in rest if tm.has_clean_backdrop(t["media"], t["id"])]
+                if len(clean) >= min(n, len(rest)):
+                    rest = clean + [t for t in rest if t not in clean]
             bg_imgs = [fetch.still(t, big=i < n) for i, t in enumerate(rest)]
             rule = settings.get("logos", {}).get(shelf)
             if tstyle in ("cinema", "outline", "vibrant"):

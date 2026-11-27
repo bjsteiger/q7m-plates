@@ -59,26 +59,29 @@ class TMDB:
             self._img_cache.popitem(last=False)
         return img
 
+    def _clean_backdrops(self, media, tmdb_id):
+        """Backdrops with no text on them, best first (None when TMDB couldn't say). Asked once per title per build."""
+        cache = self.__dict__.setdefault("_clean_cache", {})
+        key = (media, tmdb_id)
+        if key not in cache:
+            try:
+                data = self.get(f"/{media}/{tmdb_id}/images", include_image_language="null")
+                shots = [b for b in data.get("backdrops", []) if b.get("iso_639_1") is None]
+                shots.sort(key=lambda b: (b.get("vote_average", 0), b.get("width", 0)), reverse=True)
+                cache[key] = [b["file_path"] for b in shots]
+            except requests.HTTPError:
+                cache[key] = None
+        return cache[key]
+
     def clean_backdrop(self, media, tmdb_id, fallback):
         """Prefer a backdrop with no text or logo on it."""
-        try:
-            data = self.get(f"/{media}/{tmdb_id}/images", include_image_language="null")
-            shots = [b for b in data.get("backdrops", []) if b.get("iso_639_1") is None]
-            shots.sort(key=lambda b: (b.get("vote_average", 0), b.get("width", 0)), reverse=True)
-            if shots:
-                return shots[0]["file_path"]
-        except requests.HTTPError:
-            pass
-        return fallback
-
+        shots = self._clean_backdrops(media, tmdb_id)
+        return shots[0] if shots else fallback
 
     def has_clean_backdrop(self, media, tmdb_id):
         """True when TMDB has a backdrop for this title with no text on it."""
-        try:
-            data = self.get(f"/{media}/{tmdb_id}/images", include_image_language="null")
-            return any(b.get("iso_639_1") is None for b in data.get("backdrops", []))
-        except requests.HTTPError:
-            return True
+        shots = self._clean_backdrops(media, tmdb_id)
+        return True if shots is None else bool(shots)
 
     def clean_poster(self, media, tmdb_id):
         """A poster with no text on it, if TMDB has one. Many titles don't."""
