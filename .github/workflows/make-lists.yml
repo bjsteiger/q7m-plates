@@ -4,7 +4,12 @@ on:
     inputs:
       people:
         description: "Comma separated names, one public list of movies is made for each"
-        required: true
+        required: false
+        default: ""
+      request_token:
+        description: "Leave empty to get an approval link. After approving, run again with the token from that link"
+        required: false
+        default: ""
 permissions:
   contents: read
 jobs:
@@ -16,6 +21,7 @@ jobs:
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           PEOPLE: ${{ inputs.people }}
+          REQ: ${{ inputs.request_token }}
         run: |
           python3 - <<'PY'
           import os, json, time, urllib.request, urllib.parse
@@ -28,16 +34,14 @@ jobs:
                   return json.load(urllib.request.urlopen(req, timeout=30))
               except urllib.error.HTTPError as e:
                   return {"_error": e.code, **(json.loads(e.read() or b"{}") or {})}
-          rt = call("GET", "/authentication/token/new")["request_token"]
-          print("APPROVE_URL https://www.themoviedb.org/authenticate/" + rt, flush=True)
-          sid = None
-          for _ in range(90):       # wait up to 15 minutes for the approval click
-              time.sleep(10)
-              r = call("POST", "/authentication/session/new", {"request_token": rt})
-              if r.get("session_id"):
-                  sid = r["session_id"]; break
+          rt = os.environ.get("REQ", "").strip()
+          if not rt:       # step one: hand out the approval link and stop
+              rt = call("GET", "/authentication/token/new")["request_token"]
+              print("APPROVE_URL https://www.themoviedb.org/authenticate/" + rt, flush=True); raise SystemExit(0)
+          r = call("POST", "/authentication/session/new", {"request_token": rt})
+          sid = r.get("session_id")
           if not sid:
-              print("NOT_APPROVED"); raise SystemExit(1)
+              print("NOT_APPROVED", r); raise SystemExit(1)
           print("APPROVED", flush=True)
           for name in [p.strip() for p in os.environ["PEOPLE"].split(",") if p.strip()]:
               s = call("GET", "/search/person", query=name)
