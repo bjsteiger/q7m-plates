@@ -700,6 +700,9 @@ def background_name(img, title, cfg, fcfg):
     if not title or not cfg.get("name_show", False):
         return img
     w, h = img.size
+    if cfg.get("name_card_font", True) is False:      # one font for every background instead of each card's own
+        fcfg = {"font_file": cfg.get("name_font") or None, "weight": cfg.get("name_weight", "SemiBold"),
+                "tracking": cfg.get("name_tracking", 0.1) / 0.7, "upper": cfg.get("name_upper", True)}
     layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     size = int(cfg.get("name_size", 64) * h / 1080 * fcfg.get("font_scale", 1.0))
