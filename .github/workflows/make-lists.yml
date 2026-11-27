@@ -1,0 +1,63 @@
+name: Make TMDB person lists
+on:
+  workflow_dispatch:
+    inputs:
+      people:
+        description: "Comma separated names, one public list of movies is made for each"
+        required: true
+permissions:
+  contents: read
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Ask for approval, then make the lists
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          PEOPLE: ${{ inputs.people }}
+        run: |
+          python3 - <<'PY'
+          import os, json, time, urllib.request, urllib.parse
+          key = os.environ["TMDB_API_KEY"].strip()
+          if len(key) < 60:
+              print("NEEDS_READ_TOKEN the TMDB secret is a short API key, list making needs the long API Read Access Token"); raise SystemExit(1)
+          def call(method, path, body=None, token=key, v=4):
+              req = urllib.request.Request(f"https://api.themoviedb.org/{v}{path}", method=method,
+                  data=json.dumps(body).encode() if body is not None else None,
+                  headers={"Authorization": "Bearer " + token, "Content-Type": "application/json;charset=utf-8"})
+              try:
+                  return json.load(urllib.request.urlopen(req, timeout=30))
+              except urllib.error.HTTPError as e:
+                  return {"_error": e.code, **(json.loads(e.read() or b"{}") or {})}
+          rt = call("POST", "/auth/request_token", {})["request_token"]
+          print("APPROVE_URL https://www.themoviedb.org/auth/access?request_token=" + rt, flush=True)
+          user = None
+          for _ in range(90):       # wait up to 15 minutes for the approval click
+              time.sleep(10)
+              r = call("POST", "/auth/access_token", {"request_token": rt})
+              if r.get("access_token"):
+                  user = r["access_token"]; break
+          if not user:
+              print("NOT_APPROVED"); raise SystemExit(1)
+          print("APPROVED", flush=True)
+          for name in [p.strip() for p in os.environ["PEOPLE"].split(",") if p.strip()]:
+              s = call("GET", "/search/person?" + urllib.parse.urlencode({"query": name}), v=3)
+              hits = [p for p in s.get("results", []) if p.get("known_for_department") == "Acting"] or s.get("results", [])
+              if not hits: print("NO_PERSON", name); continue
+              pid = hits[0]["id"]
+              cr = call("GET", f"/person/{pid}/movie_credits", v=3).get("cast", [])
+              seen, movies = set(), []
+              for m in sorted(cr, key=lambda m: -(m.get("popularity") or 0)):
+                  g = m.get("genre_ids") or []
+                  if m["id"] in seen or 99 in g or 27 in g or not m.get("release_date") or (m.get("vote_count") or 0) < 20: continue
+                  if (m.get("character") or "").lower() in ("herself", "self", "narrator (voice)"): continue
+                  seen.add(m["id"]); movies.append(m["id"])
+              lst = call("POST", "/list", {"name": name, "iso_639_1": "en", "public": True, "description": f"Movies with {name}"}, token=user)
+              lid = lst.get("id")
+              if not lid: print("LIST_FAILED", name, lst); continue
+              for i in range(0, len(movies), 50):
+                  call("POST", f"/list/{lid}/items", {"items": [{"media_type": "movie", "media_id": x} for x in movies[i:i + 50]]}, token=user)
+              print(f"LIST {name} | {lid} | {len(movies)} movies | person {pid}", flush=True)
+          call("DELETE", "/auth/access_token", {"access_token": user})     # sign the job out again
+          PY
