@@ -77,7 +77,7 @@ for t in tiles:
     if not a.get("artQuery") and st in ("portrait-actor", "portrait-actress") and not usable:
         a = {**a, "artQuery": {"actor": t["title"]}}
     out_tiles.append({"shelf": t["shelf"], "title": t["title"], "shape": t.get("shape", "wide"), "sources": usable})
-    if a.get("font") or "upper" in a or a.get("fontScale") or a.get("tracking") is not None:
+    if a.get("font") or "upper" in a or a.get("fontScale") or a.get("weight") or a.get("tracking") is not None:
         f = {}
         if a.get("font"):
             f["font_file"] = a["font"]
@@ -87,6 +87,8 @@ for t in tiles:
             f["font_scale"] = a["fontScale"]
         if a.get("tracking") is not None:
             f["tracking"] = a["tracking"]
+        if a.get("weight"):
+            f["weight"] = a["weight"]
         if a.get("font") == "MountainsofChristmas-Bold.ttf":
             f["dash"] = False
         fonts[key] = f
