@@ -54,12 +54,16 @@
   "background": {
     "width": 1920,
     "height": 1080,
-    "panels": 3,
+    "panels": 2,
     "panel_lean": 0.22,
-    "blend_softness": 60,
-    "wall_angle": -11,
+    "blend_softness": 77,
+    "wall_angle": -8,
     "wall_brightness": 0.45,
-    "max_dark": 0.9
+    "max_dark": 0.9,
+    "name_opacity": 1,
+    "name_show": true,
+    "name_size": 98,
+    "name_x": 0.06
   },
   "art_queries": {
     "Discover/Top Series": {
@@ -624,6 +628,12 @@
     "Directors/Zack Snyder": {
       "director": "Zack Snyder"
     },
+    "Actresses/Amanda Seyfried": {
+      "actor": "Amanda Seyfried"
+    },
+    "Actresses/Julianne Moore": {
+      "actor": "Julianne Moore"
+    },
     "Awards/BAFTA": {
       "genres": [
         18
@@ -752,6 +762,11 @@
       "tracking": 0.02,
       "dash": false
     },
+    "Film Collections/Aladdin": {
+      "font_file": "custom/aladdin.ttf",
+      "upper": false,
+      "font_scale": 1.5
+    },
     "Film Collections/Aliens": {
       "font_file": "custom/alien-resurrection.ttf"
     },
@@ -768,22 +783,25 @@
       "font_file": "custom/action-is.ttf",
       "font_scale": 1.1
     },
+    "Film Collections/Back to the Future": {
+      "font_file": "custom/bttf.ttf"
+    },
     "Film Collections/Bad Boys": {
       "font_file": "gf:Bungee"
     },
+    "Film Collections/Batman": {
+      "font_file": "custom/batmfa.ttf"
+    },
     "Film Collections/Beauty and the Beast": {
       "font_file": "custom/beautyofthebeast.ttf",
-      "upper": false
+      "upper": false,
+      "font_scale": 1.15
     },
     "Film Collections/Behind Enemy Lines": {
       "font_file": "BebasNeue-Regular.ttf"
     },
     "Film Collections/Beverly Hills Cop": {
       "font_file": "custom/beverly-hills-cop.ttf"
-    },
-    "Film Collections/Blade": {
-      "font_file": "custom/blade-2.ttf",
-      "font_scale": 1.8
     },
     "Film Collections/Blade Runner": {
       "font_file": "custom/blade-runner-movie-font.ttf",
@@ -1271,7 +1289,8 @@
     "Networks/WE tv"
   ],
   "logo_scale": {
-    "Networks/Game Show Network": 1.35
+    "Networks/Game Show Network": 1.35,
+    "Film Collections/Aladdin": 0.95
   },
   "tile_style": {
     "Discover/For You": "vibrant",
@@ -1482,22 +1501,6 @@
     "Networks/tvN": "station",
     "Networks/USA Network": "station",
     "Networks/WE tv": "station",
-    "Networks/ABC TV (AU)": "station",
-    "Networks/MTV": "station",
-    "Networks/Animal Planet": "station",
-    "Networks/BET": "station",
-    "Networks/Canal+": "station",
-    "Networks/Dave": "station",
-    "Networks/Disney Junior": "station",
-    "Networks/Disney XD": "station",
-    "Networks/Investigation Discovery": "station",
-    "Networks/MotorTrend": "station",
-    "Networks/Nickelodeon": "station",
-    "Networks/Syfy": "station",
-    "Networks/Tokyo MX": "station",
-    "Networks/TV Tokyo": "station",
-    "Networks/VH1": "station",
-    "Networks/Vice TV": "station",
     "Documentaries/History, War & Civilizations": "cinema",
     "Documentaries/Investigative & Scandals": "cinema",
     "Documentaries/Nature, Wildlife & Earth": "cinema",
@@ -1521,13 +1524,12 @@
     "Film Collections/Avatar": "cinema",
     "Film Collections/Back to the Future": "cinema",
     "Film Collections/Bad Boys": "cinema",
-    "Film Collections/Batman (1989-1997)": "cinema",
+    "Film Collections/Batman": "cinema",
     "Film Collections/Beauty and the Beast": "cinema",
     "Film Collections/Behind Enemy Lines": "cinema",
     "Film Collections/Beverly Hills Cop": "cinema",
     "Film Collections/Big Momma's House": "cinema",
     "Film Collections/Bill & Ted": "cinema",
-    "Film Collections/Blade": "cinema",
     "Film Collections/Blade Runner": "cinema",
     "Film Collections/Bridget Jones": "cinema",
     "Film Collections/Bring It On": "cinema",
@@ -1535,7 +1537,6 @@
     "Film Collections/Clash of the Titans": "cinema",
     "Film Collections/Clerks": "cinema",
     "Film Collections/Cloudy with a Chance of Meatballs": "cinema",
-    "Film Collections/Cloverfield": "cinema",
     "Film Collections/Conan the Barbarian": "cinema",
     "Film Collections/Creed": "cinema",
     "Film Collections/Daddy's Home": "cinema",
@@ -1831,8 +1832,9 @@
     "Actresses/Tessa Thompson": "portrait-actress",
     "Actresses/Viola Davis": "portrait-actress",
     "Actresses/Zendaya": "portrait-actress",
-    "Actresses/Zoe Saldana": "portrait-actress",
     "Actresses/Zoe Salda\u00f1a": "portrait-actress",
+    "Actresses/Amanda Seyfried": "portrait-actress",
+    "Actresses/Julianne Moore": "portrait-actress",
     "Actors/Adam Sandler": "portrait-actor",
     "Actors/Al Pacino": "portrait-actor",
     "Actors/Andrew Garfield": "portrait-actor",
@@ -1984,7 +1986,24 @@
     "Film Collections/Sci-Fi Collections": "cinema",
     "Film Collections/Thriller Collections": "cinema",
     "Film Collections/War Collections": "cinema",
-    "Studios/Studio Ghibli": "studio"
+    "Film Collections/Cloverfield": "cinema",
+    "Studios/Studio Ghibli": "studio",
+    "Networks/Vice TV": "station",
+    "Networks/VH1": "station",
+    "Networks/TV Tokyo": "station",
+    "Networks/Tokyo MX": "station",
+    "Networks/Syfy": "station",
+    "Networks/Nickelodeon": "station",
+    "Networks/MotorTrend": "station",
+    "Networks/Investigation Discovery": "station",
+    "Networks/Disney XD": "station",
+    "Networks/Disney Junior": "station",
+    "Networks/Dave": "station",
+    "Networks/Canal+": "station",
+    "Networks/BET": "station",
+    "Networks/Animal Planet": "station",
+    "Networks/MTV": "station",
+    "Networks/ABC TV (AU)": "station"
   },
   "looks": {
     "award": {},
